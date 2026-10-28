@@ -20,8 +20,8 @@ function filterArchive(){const china=route==='china';const raw=china?CH:SEO;cons
 
 /* 시인이 제공한 원고와 편집자 등록 원고만 전문으로 게시합니다.
    외부 공개 출처의 텍스트를 브라우저에서 무단 복사하지 않습니다. */
-const staticOriginalKeys=new Set(Object.keys(window.MYEONGDO_1028_AUTHORIZED_ORIGINALS||{}));
 const registeredOriginals=Object.assign({},window.MYEONGDO_1028_AUTHORIZED_ORIGINALS||{},window.MYEONGDO_1028_ADDITIONAL_ORIGINALS||{});
+const staticOriginalKeys=new Set(Object.keys(registeredOriginals));
 const originalRecitals=window.MYEONGDO_1028_ORIGINAL_RECITALS||{};
 const itemKey=(p,china)=>(china?'c-':'s-')+String(china?p.id.replace(/^c/,''):p.id).padStart(2,'0');
 const originalOf=(p,china)=>{const record=registeredOriginals[itemKey(p,china)];return {text:(record&&record.text)||p.poem||p.original||'',record}};
