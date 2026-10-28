@@ -1,0 +1,652 @@
+{
+  "intro": {
+    "context_id": "ef5be04963a24eaaa171ccc1a79628aa",
+    "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/170bd6d2-5792-4320-874d-24ed2855c199.mp3",
+    "audio_url": "https://www.aidocmaker.com/g0/audio?name=ef5be04963a24eaaa171ccc1a79628aa",
+    "status": "ready",
+    "preview_transcript": "명도재. 이명우의 시 읽기입니다. 명도재 문예신문 시낭송실에 오신 것을 환영합니다. 이곳에서는 시 원문 전문 낭송과 구별하여, 작품에 대한 독립적인 해설을 들려드립니다. 각 작품을 선택해 해설 미리듣기를 감상해 주세요.",
+    "voice_id": "delicate"
+  },
+  "voices": {
+    "s-01": {
+      "context_id": "10f5d680ddf247eb8c4230abf9d0abe0",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/e0160fbe-485a-43be-90d3-d307ea0c4361.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=10f5d680ddf247eb8c4230abf9d0abe0",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「뻐꾸기 소리」. 명도재. 이명우의 시 읽기. 「뻐꾸기 소리」를 읽을 때 점심밥 때 울리는 새소리에서 어머니의 목소리를 듣는 순간이 작품의 중심이다. 이승과 저승의 거리를 한 끼 식사와 작은 새 울음으로 줄이는 절제가 빛난다. 이 시에서 주목할 것은 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이다. 이미지의 결을 따라가면 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘이 한층 뚜렷해진다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-02": {
+      "context_id": "07087c272d094d828222bd24cbb3fd42",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/3d0af982-64de-4a8c-912b-60aeeccc3feb.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=07087c272d094d828222bd24cbb3fd42",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「슬픈 밤이 오거든」. 명도재. 이명우의 시 읽기. 「슬픈 밤이 오거든」을 읽을 때 창을 열어 별을 보라는 권유에서 시작해, 꽃과 별과 이슬이 서로의 자리로 이동한다. 밤은 단순한 배경이 아니라 살아 있는 것들의 가슴을 품은 공간이다. 이 시에서 주목할 것은 다정함과 이별의 기운이 한 장면 속에서 교차하는 순간이다. 이미지의 결을 따라가면 말하지 못한 마음을 이미지의 울림으로 남기는 방법이 한층 뚜렷해진다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-03": {
+      "context_id": "331140a3c47341bbbb1be49b142c5966",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/6cedef8b-8f58-4fe0-aff1-1ead3ea6f65c.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=331140a3c47341bbbb1be49b142c5966",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「내 첫사랑 여자의 외가집 산골의 흐릿한 날 밤」. 명도재. 이명우의 시 읽기. 「내 첫사랑 여자의 외가집 산골의 흐릿한 날 밤」은 저녁과 밤, 기다림의 거리와 마음의 여백을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 다정함과 이별의 기운이 한 장면 속에서 교차하는 순간이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 말하지 못한 마음을 이미지의 울림으로 남기는 방법을 발견하게 한다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-04": {
+      "context_id": "62426eaf568c4481bba3ab35ab424119",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/8c9762c7-d6e0-4aa3-a2f1-536ea46aa9ae.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=62426eaf568c4481bba3ab35ab424119",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「새각시풀꽃」. 명도재. 이명우의 시 읽기. 「새각시풀꽃」을 읽을 때 꽃가마와 연지, 신랑 같은 민속적 이미지가 풀꽃 한 송이에 투사된다. 작은 풀꽃의 고독을 인간의 사연처럼 읽게 만드는 의인화와 낮달의 대비가 인상적이다. 이 시에서 주목할 것은 잠깐 스쳐 가는 풍경에 삶의 깊이를 부여하는 관찰이다. 이미지의 결을 따라가면 작은 존재를 함부로 지나치지 않는 시적 시선이 한층 뚜렷해진다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-05": {
+      "context_id": "e9deb58b26204a6bba26210e6eb500be",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/7da6f917-3826-4bae-8174-26f87a6449a4.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=e9deb58b26204a6bba26210e6eb500be",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「세월」. 명도재. 이명우의 시 읽기. 「세월」을 읽을 때 나무와 풀잎, 바람과 개울물까지 아프다는 연쇄는 고통을 인간에게만 한정하지 않는다. 자연의 감각을 빌려 시간의 상처를 표현하는 통각적 서정이 선명하다. 이 시에서 주목할 것은 현실에 대한 사유가 서정의 목소리와 만나는 자리이다. 이미지의 결을 따라가면 서둘러 결론 내리지 않는 느린 사색의 품격이 한층 뚜렷해진다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-06": {
+      "context_id": "ea440a96960b4be189c6767aa54fe909",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/ca47079c-0185-436a-aa7a-298d5024b8a0.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=ea440a96960b4be189c6767aa54fe909",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「쪽빛 하늘」. 명도재. 이명우의 시 읽기. 「쪽빛 하늘」은 저녁과 밤, 기다림의 거리와 마음의 여백을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 다정함과 이별의 기운이 한 장면 속에서 교차하는 순간이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 말하지 못한 마음을 이미지의 울림으로 남기는 방법을 발견하게 한다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-07": {
+      "context_id": "db17cddd3cd54ab58fbea75ec42aeb40",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/e2e72433-ebdc-4fa8-8024-f5bc57f01266.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=db17cddd3cd54ab58fbea75ec42aeb40",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「여름비」. 명도재. 이명우의 시 읽기. 「여름비」를 읽을 때 비가 내리지 않는 마음에 누군가의 말 한마디로 빗소리가 시작된다. 계절의 풍경과 인간관계의 미묘한 기척을 겹치는 방식이 절제된 서정을 만든다. 이 시에서 주목할 것은 다정함과 이별의 기운이 한 장면 속에서 교차하는 순간이다. 이미지의 결을 따라가면 말하지 못한 마음을 이미지의 울림으로 남기는 방법이 한층 뚜렷해진다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-08": {
+      "context_id": "e991ec8fef464845a3252ade02c49df6",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f7fa1851-71fd-4004-892b-a9a2dbbdb90a.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=e991ec8fef464845a3252ade02c49df6",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「달맞이꽃과 철조망」. 명도재. 이명우의 시 읽기. 「달맞이꽃과 철조망」을 읽을 때 두만강과 철조망을 사이에 둔 달맞이꽃의 몸짓을 통해 자연과 인위적 경계의 충돌을 드러낸다. 꽃의 시선은 국경을 넘지만 철조망은 움직이지 않는다. 이 시에서 주목할 것은 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이다. 이미지의 결을 따라가면 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도가 한층 뚜렷해진다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-09": {
+      "context_id": "f40c43cf69ee456382bea7ca13fc7220",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/15c2c74a-d47d-499a-9b97-1bd5b09f7e23.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=f40c43cf69ee456382bea7ca13fc7220",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「오월 단오」. 명도재. 이명우의 시 읽기. 「오월 단오」는 어머니와 아버지, 집과 마을의 구체적인 사물을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 발견하게 한다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-10": {
+      "context_id": "6873916df89c47929d45bf18bbd34e5e",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/3d2e8788-9b2e-4edc-8bf7-3c7108410afd.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=6873916df89c47929d45bf18bbd34e5e",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「흑룡강성 밀산역」. 명도재. 이명우의 시 읽기. 「흑룡강성 밀산역」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-11": {
+      "context_id": "b9c5adbd427f48459dc4907a4d40d973",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/cb339c91-8967-4943-aa66-ae545ab0f3e8.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=b9c5adbd427f48459dc4907a4d40d973",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「쓸쓸한 느낌」. 명도재. 이명우의 시 읽기. 「쓸쓸한 느낌」은 저녁과 밤, 기다림의 거리와 마음의 여백을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 다정함과 이별의 기운이 한 장면 속에서 교차하는 순간이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 말하지 못한 마음을 이미지의 울림으로 남기는 방법을 발견하게 한다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-12": {
+      "context_id": "0e822127732c4a72ab140bfdb1639af3",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d3d2c60b-ad8a-41b9-8b63-3e9edb0a33c1.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=0e822127732c4a72ab140bfdb1639af3",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「복사꽃이 피었다고 일러라」. 명도재. 이명우의 시 읽기. 「복사꽃이 피었다고 일러라」를 읽을 때 복사꽃의 개화는 하나의 자연현상을 넘어 사라진 유년과 사랑을 부르는 신호다. 후렴처럼 반복되는 제목은 기억을 현재로 다시 불러내는 노래의 장치가 된다. 이 시에서 주목할 것은 잠깐 스쳐 가는 풍경에 삶의 깊이를 부여하는 관찰이다. 이미지의 결을 따라가면 작은 존재를 함부로 지나치지 않는 시적 시선이 한층 뚜렷해진다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-13": {
+      "context_id": "d5fb795bd9bd44a6b94aaa4b51f63952",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d25244ac-d64b-43d3-961b-7f8a2676bf16.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=d5fb795bd9bd44a6b94aaa4b51f63952",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「일송정과 해란강」. 명도재. 이명우의 시 읽기. 「일송정과 해란강」을 읽을 때 일송정과 해란강을 오누이처럼 불러내어 지리적 거리를 다정한 대화로 바꾼다. 역사적 공간을 생활의 언어로 가까이 데려오는 시적 상상력이 돋보인다. 이 시에서 주목할 것은 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이다. 이미지의 결을 따라가면 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도가 한층 뚜렷해진다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-17": {
+      "context_id": "f8e49b8fbc574d42b355f3ff8197ecfa",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/90910138-95ca-417c-8eb4-9cc8574d260f.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=f8e49b8fbc574d42b355f3ff8197ecfa",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「백파율사의 정신」. 명도재. 이명우의 시 읽기. 「백파율사의 정신」은 시간의 흐름과 사물의 침묵, 삶을 묻는 질문을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 현실에 대한 사유가 서정의 목소리와 만나는 자리이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 서둘러 결론 내리지 않는 느린 사색의 품격을 발견하게 한다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-14": {
+      "context_id": "305418ea0e1647d19b129d24c5daf716",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/89619844-16e5-4dd4-8ffd-543d314fa0a2.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=305418ea0e1647d19b129d24c5daf716",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「삼형제 강」. 명도재. 이명우의 시 읽기. 「삼형제 강」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-18": {
+      "context_id": "5993aac7e9f3474fabc970bbdec66ae5",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/2ab7bd84-25c0-47ae-a937-3c9816558d25.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=5993aac7e9f3474fabc970bbdec66ae5",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「두보가 말하기를」. 명도재. 이명우의 시 읽기. 「두보가 말하기를」은 시간의 흐름과 사물의 침묵, 삶을 묻는 질문을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 현실에 대한 사유가 서정의 목소리와 만나는 자리이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 서둘러 결론 내리지 않는 느린 사색의 품격을 발견하게 한다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-15": {
+      "context_id": "8dc356bcd9bc42bfbc271a3d4f7fffc7",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d6a80600-5b09-4f0b-882e-1d9cebc28049.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=8dc356bcd9bc42bfbc271a3d4f7fffc7",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「백도라지꽃의 노래」. 명도재. 이명우의 시 읽기. 「백도라지꽃의 노래」를 읽을 때 흰 도라지꽃이라는 작은 이미지에 머나먼 길과 흩어진 삶의 기억이 스며 있다. 민족적 서정이 직접적인 구호 대신 꽃의 자세와 고독에 내려앉는 장면이 중요하다. 이 시에서 주목할 것은 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이다. 이미지의 결을 따라가면 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도가 한층 뚜렷해진다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-19": {
+      "context_id": "7e9dbb2001e5471480bff27e2301af9b",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/7631092e-2f75-4e69-87f2-e32e814882cb.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=7e9dbb2001e5471480bff27e2301af9b",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「비슬산 참꽃」. 명도재. 이명우의 시 읽기. 「비슬산 참꽃」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-16": {
+      "context_id": "cf21b5e833f6492caa8f32cef9e33630",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/00599075-8bd5-4898-9876-0e4f8961d758.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=cf21b5e833f6492caa8f32cef9e33630",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「신 귀거래사」. 명도재. 이명우의 시 읽기. 「신 귀거래사」를 읽을 때 숲을 식탁으로, 흙을 양식으로 받아들이는 생각은 자연과 함께 사는 삶의 윤리를 제안한다. 거창한 선언을 피하고 물 한 바가지의 촉감으로 귀환의 뜻을 전한다. 이 시에서 주목할 것은 현실에 대한 사유가 서정의 목소리와 만나는 자리이다. 이미지의 결을 따라가면 서둘러 결론 내리지 않는 느린 사색의 품격이 한층 뚜렷해진다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-20": {
+      "context_id": "b7d41eb2fefa462492696fd2ee74d9c9",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d5b7542d-905e-4bde-a6c4-e966ff825ee9.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=b7d41eb2fefa462492696fd2ee74d9c9",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「날마다 어머니는」. 명도재. 이명우의 시 읽기. 「날마다 어머니는」은 어머니와 아버지, 집과 마을의 구체적인 사물을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 발견하게 한다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-23": {
+      "context_id": "d65cfb88794f4021aebff9bc96394b8f",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/b5f1c55c-1f00-44a2-9669-a420186a2b45.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=d65cfb88794f4021aebff9bc96394b8f",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「가난한 꽃」. 명도재. 이명우의 시 읽기. 「가난한 꽃」을 읽을 때 산모롱이에 피었다 지는 가난한 꽃은 누가 보아주지 않아도 자기 시간을 산다. 지나가는 이들의 눈길과 무관하게 피고 지는 존재의 존엄을 서정적인 운율로 남긴다. 이 시에서 주목할 것은 잠깐 스쳐 가는 풍경에 삶의 깊이를 부여하는 관찰이다. 이미지의 결을 따라가면 작은 존재를 함부로 지나치지 않는 시적 시선이 한층 뚜렷해진다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-21": {
+      "context_id": "1ef4d8abab184150b4d12e6598b5c393",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/7a32f0c5-9054-42e2-abf5-73492d5f7204.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=1ef4d8abab184150b4d12e6598b5c393",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「미당 선생님 집 뜰의 감나무」. 명도재. 이명우의 시 읽기. 「미당 선생님 집 뜰의 감나무」의 표제와 알려진 발표 맥락을 바탕으로 한 시 읽기 예비 메모다. 어머니와 아버지, 집과 마을의 구체적인 사물이라는 서지월 서정시의 특징을 생각하며, 이 작품에서 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 어떻게 구체화될지 원문을 대조해 살펴볼 필요가 있다. 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 주요 검토 지점으로 삼되, 아직 확인하지 못한 시구나 표현을 작품에 있다고 단정하지 않는다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-24": {
+      "context_id": "e3b3ba616bb747a7ad28934e67f1e177",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/c0df5527-f356-4098-b66a-e32ae85b179c.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=e3b3ba616bb747a7ad28934e67f1e177",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「집 보는 날」. 명도재. 이명우의 시 읽기. 「집 보는 날」은 어머니와 아버지, 집과 마을의 구체적인 사물을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 발견하게 한다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-26": {
+      "context_id": "6dd264f455954eb085d2d6d94c3c51e5",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/61d6c202-d40f-47c2-b222-e9904fde3826.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=6dd264f455954eb085d2d6d94c3c51e5",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「소월의 산새는 지금도 우는가」. 명도재. 이명우의 시 읽기. 「소월의 산새는 지금도 우는가」는 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-25": {
+      "context_id": "47e1e2c20c1e4e6a8f80a7e9b460de57",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/5394762e-682a-4d49-9a83-c1862d4b8c5d.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=47e1e2c20c1e4e6a8f80a7e9b460de57",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「진달래 산천」. 명도재. 이명우의 시 읽기. 「진달래 산천」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-22": {
+      "context_id": "6c01fcdf4d314a8aad4be026ea3598a9",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/aedc32d8-c11e-48a0-82a6-d12277197a9f.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=6c01fcdf4d314a8aad4be026ea3598a9",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「꽃잎이여」. 명도재. 이명우의 시 읽기. 「꽃잎이여」를 읽을 때 인생의 퇴장과 새 아침을 동시에 응시하며 살아가는 법을 묻는다. 질문의 반복은 훈계가 아니라 독자에게 자신의 생애를 조용히 되돌아보게 하는 호흡이다. 이 시에서 주목할 것은 현실에 대한 사유가 서정의 목소리와 만나는 자리이다. 이미지의 결을 따라가면 서둘러 결론 내리지 않는 느린 사색의 품격이 한층 뚜렷해진다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-27": {
+      "context_id": "31bcbddacd414629bdeb6eea34a98140",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/85c1070e-0078-476e-8d20-68f5d93dca35.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=31bcbddacd414629bdeb6eea34a98140",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「나비야 청산 가자」. 명도재. 이명우의 시 읽기. 「나비야 청산 가자」는 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-28": {
+      "context_id": "2f27dc0650ba491f8441b4ca97f77c5a",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/0a204423-cf7d-495c-8adf-c3919209c320.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=2f27dc0650ba491f8441b4ca97f77c5a",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「강물과 빨랫줄」. 명도재. 이명우의 시 읽기. 「강물과 빨랫줄」을 읽을 때 강물을 훔쳐 와 빨랫줄에 넌다는 첫 이미지에서 물·바람·햇빛과 어머니의 노동이 한데 포개진다. 바지랑대는 사라지기 쉬운 삶을 떠받치는 오래된 기둥이 된다. 이 시에서 주목할 것은 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이다. 이미지의 결을 따라가면 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘이 한층 뚜렷해진다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-30": {
+      "context_id": "a1fb627e3fb44f30a9b1b7a37e4e073b",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/94c211e1-c224-4124-a15b-7442600db421.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=a1fb627e3fb44f30a9b1b7a37e4e073b",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「바람 불어 좋은 날」. 명도재. 이명우의 시 읽기. 「바람 불어 좋은 날」은 꽃과 바람, 풀잎과 작은 생명이 만드는 움직임을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 잠깐 스쳐 가는 풍경에 삶의 깊이를 부여하는 관찰이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 작은 존재를 함부로 지나치지 않는 시적 시선을 발견하게 한다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-29": {
+      "context_id": "615ecd72eb76420286ffad5ad884cd0f",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/90237afa-b0c7-47c5-b3df-24936e92df7d.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=615ecd72eb76420286ffad5ad884cd0f",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「개밥그릇의 노래」. 명도재. 이명우의 시 읽기. 「개밥그릇의 노래」는 시간의 흐름과 사물의 침묵, 삶을 묻는 질문을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 현실에 대한 사유가 서정의 목소리와 만나는 자리이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 서둘러 결론 내리지 않는 느린 사색의 품격을 발견하게 한다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-31": {
+      "context_id": "cd97ec1c4a674498b3c17003197ca2ed",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/cafda87a-cef9-49f9-abd0-0c00ec2bd845.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=cd97ec1c4a674498b3c17003197ca2ed",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「한국의 달빛」. 명도재. 이명우의 시 읽기. 「한국의 달빛」은 꽃과 바람, 풀잎과 작은 생명이 만드는 움직임을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 잠깐 스쳐 가는 풍경에 삶의 깊이를 부여하는 관찰이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 작은 존재를 함부로 지나치지 않는 시적 시선을 발견하게 한다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-34": {
+      "context_id": "b24a5938f92a4e1d9780f129ba8c2ecc",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/7c56eda2-ac6a-4e59-a41a-a2ac2af7624f.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=b24a5938f92a4e1d9780f129ba8c2ecc",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「조선의 눈발」. 명도재. 이명우의 시 읽기. 「조선의 눈발」을 읽을 때 소달구지와 흰 눈, 서당골의 사물은 민족적 시간과 서정적 일상을 함께 품는다. 조선의 눈발은 지나간 시대를 박제하기보다 현재의 발걸음에 내리는 풍경이 된다. 이 시에서 주목할 것은 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이다. 이미지의 결을 따라가면 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도가 한층 뚜렷해진다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-32": {
+      "context_id": "6d7e6a233d4a4951af2b4d9f8e7333ed",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/28c7c682-93e7-4858-9e3d-0c19b23dd652.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=6d7e6a233d4a4951af2b4d9f8e7333ed",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「홍시를 보며」. 명도재. 이명우의 시 읽기. 「홍시를 보며」를 읽을 때 감나무의 열매와 낙엽은 아버지와 어머니를 서로 다른 방식으로 기억하게 한다. 익어 가는 붉은 열매는 시간의 무게와 삶의 결실을 한눈에 보여준다. 이 시에서 주목할 것은 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이다. 이미지의 결을 따라가면 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘이 한층 뚜렷해진다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-33": {
+      "context_id": "7877434c66dc47edab8fcd88ad9e7f0c",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/941daa28-c450-4f9f-af61-dcb2f7dc1225.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=7877434c66dc47edab8fcd88ad9e7f0c",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「팔조령에서의 별 보기」. 명도재. 이명우의 시 읽기. 「팔조령에서의 별 보기」는 꽃과 바람, 풀잎과 작은 생명이 만드는 움직임을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 잠깐 스쳐 가는 풍경에 삶의 깊이를 부여하는 관찰이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 작은 존재를 함부로 지나치지 않는 시적 시선을 발견하게 한다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-35": {
+      "context_id": "1e8d2129d8b44a18838785b4351fb8e6",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/5add45de-4af3-4b0e-bd65-bf95638c2efc.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=1e8d2129d8b44a18838785b4351fb8e6",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「둥근 밥그릇의 노래」. 명도재. 이명우의 시 읽기. 「둥근 밥그릇의 노래」는 어머니와 아버지, 집과 마을의 구체적인 사물을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 발견하게 한다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-36": {
+      "context_id": "6d1c8645f25044aba5cf59a0400a9f31",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/28790bf9-b91c-48cd-941a-c45e7cbe85d3.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=6d1c8645f25044aba5cf59a0400a9f31",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「시위를 떠난 화살」. 명도재. 이명우의 시 읽기. 「시위를 떠난 화살」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-38": {
+      "context_id": "eb028f544873493eb8f3e7ed05090b39",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/69468aa3-fa90-443c-bd94-d048356461ec.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=eb028f544873493eb8f3e7ed05090b39",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「그리운 금강산」. 명도재. 이명우의 시 읽기. 「그리운 금강산」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-37": {
+      "context_id": "1846b61c1e424cd0ad83623051fbf344",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/48ecfd41-1c84-40dc-9a08-be51881be529.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=1846b61c1e424cd0ad83623051fbf344",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「나의 서정시」. 명도재. 이명우의 시 읽기. 「나의 서정시」를 읽을 때 시 쓰기의 초기 기억에서 시작해 현실을 바라보는 눈의 변화를 따라간다. 서정시는 아름다운 풍경만이 아니라 생활의 근심을 함께 짊어져야 한다는 자각을 드러낸다. 이 시에서 주목할 것은 현실에 대한 사유가 서정의 목소리와 만나는 자리이다. 이미지의 결을 따라가면 서둘러 결론 내리지 않는 느린 사색의 품격이 한층 뚜렷해진다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-39": {
+      "context_id": "204d67d51932469e99eb7316cbd4049d",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/60320149-58ee-4948-b29d-c9705ceab384.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=204d67d51932469e99eb7316cbd4049d",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「일송정 푸른 솔」. 명도재. 이명우의 시 읽기. 「일송정 푸른 솔」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-41": {
+      "context_id": "0017f2cee126410b97fbd6fb84d0e2ed",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/491e1d3b-8afa-4134-a1ef-8dd976a1884c.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=0017f2cee126410b97fbd6fb84d0e2ed",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「우리는 마부」. 명도재. 이명우의 시 읽기. 「우리는 마부」는 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-43": {
+      "context_id": "880e136392f94d6499a2513268eca76d",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/9308f367-ad66-432e-b374-1df368016185.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=880e136392f94d6499a2513268eca76d",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「첫 뻐꾸기 울음소리」. 명도재. 이명우의 시 읽기. 「첫 뻐꾸기 울음소리」는 어머니와 아버지, 집과 마을의 구체적인 사물을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 발견하게 한다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-40": {
+      "context_id": "de60b9cd7f9649b0a01ce6984b54cea6",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/828ab401-5520-4d37-9f75-d6b617c8eba7.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=de60b9cd7f9649b0a01ce6984b54cea6",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「북방하늘의 땅」. 명도재. 이명우의 시 읽기. 「북방하늘의 땅」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-42": {
+      "context_id": "d7e999d8e25543c3b29f666f0836b467",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/58836110-24dc-49e8-beec-d04f9b5727f7.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=d7e999d8e25543c3b29f666f0836b467",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「우리 조선사람들은」. 명도재. 이명우의 시 읽기. 「우리 조선사람들은」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-45": {
+      "context_id": "9478263a0bc6465287fa0c19c72feb52",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/9d12af5a-83d8-4d96-ba7b-f8b5807e74bd.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=9478263a0bc6465287fa0c19c72feb52",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「푸른 하늘의 뜻은」. 명도재. 이명우의 시 읽기. 「푸른 하늘의 뜻은」은 시간의 흐름과 사물의 침묵, 삶을 묻는 질문을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 현실에 대한 사유가 서정의 목소리와 만나는 자리이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 서둘러 결론 내리지 않는 느린 사색의 품격을 발견하게 한다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-44": {
+      "context_id": "a7ddf06bfd8f4905a3c8be4d65ba2040",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/c51297d5-4088-41c5-ad52-f469771436c9.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=a7ddf06bfd8f4905a3c8be4d65ba2040",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「파냄새 속에서」. 명도재. 이명우의 시 읽기. 「파냄새 속에서」는 어머니와 아버지, 집과 마을의 구체적인 사물을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 발견하게 한다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-46": {
+      "context_id": "296334b6ca6142ff812f4a9ca94adf52",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/4767c69d-d6c6-42ae-8e8e-2b1246ef0e1e.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=296334b6ca6142ff812f4a9ca94adf52",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「밥그릇」. 명도재. 이명우의 시 읽기. 「밥그릇」은 어머니와 아버지, 집과 마을의 구체적인 사물을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 발견하게 한다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-47": {
+      "context_id": "7e56b891aa094db5a1446fed821a4a62",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/aa860e6f-fd74-4490-8c91-eaa036007463.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=7e56b891aa094db5a1446fed821a4a62",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「내가 심은 꽃나무」. 명도재. 이명우의 시 읽기. 「내가 심은 꽃나무」를 읽을 때 나무의 동서남북으로 뻗은 가지마다 어머니와 아버지의 기억, 아직 걷지 못한 길, 숨 고를 자리를 배치한다. 한 그루 나무가 가족의 정신적 지도가 된다. 이 시에서 주목할 것은 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이다. 이미지의 결을 따라가면 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘이 한층 뚜렷해진다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-48": {
+      "context_id": "965cce04a3f14d158fd68ed55135daf8",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/70d9bcaf-c648-4de3-9576-632be3c521c5.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=965cce04a3f14d158fd68ed55135daf8",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「저 눈발을 보며」. 명도재. 이명우의 시 읽기. 「저 눈발을 보며」는 시간의 흐름과 사물의 침묵, 삶을 묻는 질문을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 현실에 대한 사유가 서정의 목소리와 만나는 자리이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 서둘러 결론 내리지 않는 느린 사색의 품격을 발견하게 한다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-51": {
+      "context_id": "c35e477298814f5fb24359eeba05f55c",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/bb9b7e75-cadf-45c2-ac0b-7e0ae53847cf.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=c35e477298814f5fb24359eeba05f55c",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「비류수에 와서」. 명도재. 이명우의 시 읽기. 「비류수에 와서」는 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 명도재 문예신문은 이 시를 통해 문학이 사라진 것의 기록이면서 오늘의 감정을 새롭게 발견하게 하는 예술임을 살펴본다.",
+      "voice_id": "delicate"
+    },
+    "s-49": {
+      "context_id": "c2d8b226e9e949cfaa58037372142ace",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/5614156b-a21f-4dfe-b220-0f224a31870d.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=c2d8b226e9e949cfaa58037372142ace",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「상화시인을 생각함」. 명도재. 이명우의 시 읽기. 「상화시인을 생각함」은 강과 산, 국경과 길 위에 겹쳐지는 시간을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 개인의 그리움이 역사적 기억과 민족적 정서로 넓어지는 방향이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 웅변보다 한 풍경 속에 쌓인 감정을 오래 바라보는 태도를 발견하게 한다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-52": {
+      "context_id": "1028d5b19fb44afbaadf68066a3070d9",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/04fb9af9-fbfd-49e2-a4b5-01e3bb7fe645.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=1028d5b19fb44afbaadf68066a3070d9",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「흰꽃」. 명도재. 이명우의 시 읽기. 「흰꽃」은 서지월 시인의 서정 세계를 한 번 더 살피게 하는 작품이다. 자연과 시간, 기억이라는 일상의 소재가 어떻게 문학적인 장면으로 옮겨 가는지에 관심을 기울여 읽는다. 제목이 부르는 정서와 개별 시어의 만남, 문장 사이의 호흡을 따라가면 사물의 겉모습 뒤에 놓인 인간의 마음을 생각하게 된다. 명도재의 시 읽기는 작은 장면에서 출발해 삶의 보편적인 질문까지 이동하는 순간을 중요하게 여긴다. 작품의 정확한 문장과 행갈이는 원문과 대조한 후에 낭송할 필요가 있다.",
+      "voice_id": "delicate"
+    },
+    "s-53": {
+      "context_id": "9c5207bf298b43ae86ebd38cac250aaf",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/59cf7719-bcc7-415e-b212-746dfed56e1d.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=9c5207bf298b43ae86ebd38cac250aaf",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「갓바위 부처님」. 명도재. 이명우의 시 읽기. 「갓바위 부처님」은 시간의 흐름과 사물의 침묵, 삶을 묻는 질문을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 현실에 대한 사유가 서정의 목소리와 만나는 자리이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 서둘러 결론 내리지 않는 느린 사색의 품격을 발견하게 한다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-54": {
+      "context_id": "eccbc1f84639403585a43a4a99e4b04e",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/46747752-b8b9-4894-9d79-99b0d77fe635.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=eccbc1f84639403585a43a4a99e4b04e",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「건들바위」. 명도재. 이명우의 시 읽기. 「건들바위」의 표제와 알려진 발표 맥락을 바탕으로 한 시 읽기 예비 메모다. 어머니와 아버지, 집과 마을의 구체적인 사물이라는 서지월 서정시의 특징을 생각하며, 이 작품에서 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 어떻게 구체화될지 원문을 대조해 살펴볼 필요가 있다. 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 주요 검토 지점으로 삼되, 아직 확인하지 못한 시구나 표현을 작품에 있다고 단정하지 않는다. 시의 힘은 감정을 직접 설명하기보다 하나의 장면을 오래 머물게 하는 데 있다. 그 여운이 곧 작품을 다시 찾게 하는 이유가 된다.",
+      "voice_id": "delicate"
+    },
+    "s-50": {
+      "context_id": "d44f5024fc3e4b28b87409f260575391",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/694ea30d-22a0-4e29-979e-7968a5b35c61.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=d44f5024fc3e4b28b87409f260575391",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「미당은 가고 뻐꾹새는 우는데」. 명도재. 이명우의 시 읽기. 「미당은 가고 뻐꾹새는 우는데」는 어머니와 아버지, 집과 마을의 구체적인 사물을 통해 우리의 삶을 돌아보게 한다. 작품의 중심에는 한 사람의 사적 체험이 여러 세대의 공통 기억으로 옮겨 가는 움직임이 놓여 있다. 시인의 문장은 관념으로 감정을 밀어붙이기보다 익숙한 대상에 잠시 시선을 머물게 하며, 그 안에서 익숙한 풍경이 새롭게 보이는 순간에 마음을 붙드는 힘을 발견하게 한다. 작품 속 풍경을 천천히 다시 읽을 때 사물의 색채와 소리가 서로를 비추며 독자의 내면에도 새로운 해석의 길을 낸다.",
+      "voice_id": "delicate"
+    },
+    "s-55": {
+      "context_id": "e35704f4da1a453db057dc7ac311b660",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/9b21912e-e010-41cc-a1bb-e3f7639d84af.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=e35704f4da1a453db057dc7ac311b660",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「밀다원에서」. 명도재. 이명우의 시 읽기. 서지월 시인의 「밀다원에서」는 한국시인협회 2024년 사화집 목차에서 제목과 수록 사실을 확인한 작품이다. ‘밀다원’이라는 공간의 이름은 예술가들이 드나들던 다방과 문화적 교류의 장소를 떠올리게 한다. 그러나 원문 본문을 확보하지 못했으므로 장소의 실제 묘사나 화자의 감정을 단정해서는 안 된다. 명도재의 이번 시 읽기는 이 제목이 독자에게 환기하는 문학적 장소성과 기억의 가능성을 짚는 예비 해설이다. 작품의 행과 이미지, 발표 맥락을 확인한 뒤 구체적인 비평으로 보완할 예정이다.",
+      "voice_id": "delicate"
+    },
+    "s-58": {
+      "context_id": "aceb482ced114833bd80bba57dbc0ac3",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/df2420f3-8ba5-4374-912a-29d57da9f484.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=aceb482ced114833bd80bba57dbc0ac3",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「바람에 귀대이면」. 명도재. 이명우의 시 읽기. 「바람에 귀대이면」의 표제와 알려진 발표 맥락을 바탕으로 한 시 읽기 예비 메모다. 꽃과 바람, 풀잎과 작은 생명이 만드는 움직임이라는 서지월 서정시의 특징을 생각하며, 이 작품에서 잠깐 스쳐 가는 풍경에 삶의 깊이를 부여하는 관찰이 어떻게 구체화될지 원문을 대조해 살펴볼 필요가 있다. 작은 존재를 함부로 지나치지 않는 시적 시선을 주요 검토 지점으로 삼되, 아직 확인하지 못한 시구나 표현을 작품에 있다고 단정하지 않는다. 이러한 표현은 보이는 것 뒤에 숨어 있는 삶의 결을 묻도록 이끌며, 시를 읽는 시간을 자신의 기억을 되짚는 시간으로 바꾼다.",
+      "voice_id": "delicate"
+    },
+    "s-56": {
+      "context_id": "19826ff23f074ebe88faba076c8e8a68",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/c04be566-5519-48f6-b428-33e8e931beaa.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=19826ff23f074ebe88faba076c8e8a68",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「해란강에 와서」. 명도재. 이명우의 시 읽기. 「해란강에 와서」는 서지월 시인의 서정 세계를 한 번 더 살피게 하는 작품이다. 자연과 시간, 기억이라는 일상의 소재가 어떻게 문학적인 장면으로 옮겨 가는지에 관심을 기울여 읽는다. 제목이 부르는 정서와 개별 시어의 만남, 문장 사이의 호흡을 따라가면 사물의 겉모습 뒤에 놓인 인간의 마음을 생각하게 된다. 명도재의 시 읽기는 작은 장면에서 출발해 삶의 보편적인 질문까지 이동하는 순간을 중요하게 여긴다. 작품의 정확한 문장과 행갈이는 원문과 대조한 후에 낭송할 필요가 있다.",
+      "voice_id": "delicate"
+    },
+    "s-59": {
+      "context_id": "1eb10c848a354429b3f4c5fa84d6f153",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/1ca9555c-61d3-44a9-9464-b396eed599c7.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=1eb10c848a354429b3f4c5fa84d6f153",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「유리왕의 수양버들나무」. 명도재. 이명우의 시 읽기. 「유리왕의 수양버들나무」는 서지월 시인의 서정 세계를 한 번 더 살피게 하는 작품이다. 자연과 시간, 기억이라는 일상의 소재가 어떻게 문학적인 장면으로 옮겨 가는지에 관심을 기울여 읽는다. 제목이 부르는 정서와 개별 시어의 만남, 문장 사이의 호흡을 따라가면 사물의 겉모습 뒤에 놓인 인간의 마음을 생각하게 된다. 명도재의 시 읽기는 작은 장면에서 출발해 삶의 보편적인 질문까지 이동하는 순간을 중요하게 여긴다. 작품의 정확한 문장과 행갈이는 원문과 대조한 후에 낭송할 필요가 있다.",
+      "voice_id": "delicate"
+    },
+    "s-57": {
+      "context_id": "87134113cf7e4952abe1f3d8d71e895c",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/c3097fc2-207f-4a32-8fcd-9c5c0ad70478.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=87134113cf7e4952abe1f3d8d71e895c",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「겨울 신호등」. 명도재. 이명우의 시 읽기. 「겨울 신호등」의 표제와 알려진 발표 맥락을 바탕으로 한 시 읽기 예비 메모다. 시간의 흐름과 사물의 침묵, 삶을 묻는 질문이라는 서지월 서정시의 특징을 생각하며, 이 작품에서 현실에 대한 사유가 서정의 목소리와 만나는 자리이 어떻게 구체화될지 원문을 대조해 살펴볼 필요가 있다. 서둘러 결론 내리지 않는 느린 사색의 품격을 주요 검토 지점으로 삼되, 아직 확인하지 못한 시구나 표현을 작품에 있다고 단정하지 않는다. 독자는 이 작품을 통해 거대한 사건보다 작고 구체적인 사물이 더 오래 마음을 건드릴 수 있다는 사실을 떠올리게 된다.",
+      "voice_id": "delicate"
+    },
+    "s-60": {
+      "context_id": "be43d36258f94e9e8fc4c0e71c05af8d",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/a03652c8-8d2c-4bf2-92ba-83f207539994.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=be43d36258f94e9e8fc4c0e71c05af8d",
+      "status": "ready",
+      "preview_transcript": "서지월 시인의 작품 「이 땅에 봄이 오면」. 명도재. 이명우의 시 읽기. 「이 땅에 봄이 오면」은 서지월 시인의 서정 세계를 한 번 더 살피게 하는 작품이다. 자연과 시간, 기억이라는 일상의 소재가 어떻게 문학적인 장면으로 옮겨 가는지에 관심을 기울여 읽는다. 제목이 부르는 정서와 개별 시어의 만남, 문장 사이의 호흡을 따라가면 사물의 겉모습 뒤에 놓인 인간의 마음을 생각하게 된다. 명도재의 시 읽기는 작은 장면에서 출발해 삶의 보편적인 질문까지 이동하는 순간을 중요하게 여긴다. 작품의 정확한 문장과 행갈이는 원문과 대조한 후에 낭송할 필요가 있다.",
+      "voice_id": "delicate"
+    },
+    "c-01": {
+      "context_id": "94bfd08107664ed88a03ce636165e19a",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/ab2c0fc3-57a6-46b6-a7d0-5b00e4f9d447.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=94bfd08107664ed88a03ce636165e19a",
+      "status": "ready",
+      "preview_transcript": "홍용암 시인의 「기러기」. 명도재. 이명우의 시 읽기. 압록강을 마주한 화자는 남쪽으로 날아가는 기러기에게 말을 건넨다. 새는 울면서도 국경을 넘지만 사람의 발길은 멈춰 있다. 이 짧은 대비가 망향의 정서를 단번에 응축한다. 반복되는 울음소리는 단순한 자연의 소리가 아니라 떠나온 땅을 잊지 못하는 마음의 발화처럼 들린다. 이 시를 천천히 읽으면 질문의 끝에 남는 것은 새에 대한 부러움이 아니라 사람을 가르는 경계의 무게다. 한 편의 작은 노래가 압록강의 풍경을 오래 남는 민족적 기억으로 바꾼다. 작품을 다시 읽을 때 시어의 배열과 행갈이, 반복되는 소리에도 귀를 기울이게 된다.",
+      "voice_id": "delicate"
+    },
+    "c-03": {
+      "context_id": "83d7df8cc0cb4b6593c5161ab2e25272",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/1a1ba98b-008d-4dae-8d85-3d099184ca90.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=83d7df8cc0cb4b6593c5161ab2e25272",
+      "status": "ready",
+      "preview_transcript": "김창영 시인의 「민들레 꽃씨」. 명도재. 이명우의 시 읽기. 김창영의 「민들레 꽃씨」는 바람을 만난 작은 씨앗에 시선을 고정한다. 뿌리에서 떨어져 나오는 순간은 헤어짐이면서 동시에 다른 흙을 향한 출발이다. 떠도는 삶의 감각과 정착하고 싶은 마음이 하나의 이미지 속에서 마주친다. 눈에 잘 띄지 않는 꽃씨의 움직임을 따라가다 보면 개인의 선택과 공동체의 이동 역사가 함께 떠오른다. 과장된 목소리 없이 작고 가벼운 사물에 삶의 무게를 실어 주는 것이 이 시를 읽는 중요한 열쇠다. 씨앗은 끝내 새로운 땅에서 다시 피어날 가능성이다. 한편의 시가 개인의 사연과 공동체의 기억을 이어 주는 순간을 이 지면에서 발견한다.",
+      "voice_id": "delicate"
+    },
+    "c-02": {
+      "context_id": "a42203098a314255a320fe9c9ae1269c",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/69f70a48-7e1b-4764-bdd9-5feb13737b92.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=a42203098a314255a320fe9c9ae1269c",
+      "status": "ready",
+      "preview_transcript": "김학송 시인의 「봄•산촌•아이들」. 명도재. 이명우의 시 읽기. 김학송의 「봄•산촌•아이들」은 달래의 손끝과 버들개지, 살구나무의 붉은 기운 속에 아이들의 눈망울을 배치한다. 봄은 그 자체로 완성된 풍경이 아니라 자라나는 세대의 기쁨과 포개진다. 시어의 부드러운 색채와 새소리의 감각이 산촌을 생동하는 공간으로 만든다. 작품의 마지막을 향해 갈수록 자연을 보는 눈은 아이들의 미래를 바라보는 공동체의 눈으로 바뀐다. 계절의 변화를 삶의 희망으로 읽어 내는 과정에서 조선족 서정시의 따뜻한 생활 감각을 만난다. 마지막 문장의 울림을 따라가면 이 풍경이 품은 고유한 시간이 한층 또렷해진다.",
+      "voice_id": "delicate"
+    },
+    "c-04": {
+      "context_id": "b0908c42e9754b949fceac3ea3b63065",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/6140daec-1bb2-4efb-80f6-cc4aec0da60f.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=b0908c42e9754b949fceac3ea3b63065",
+      "status": "ready",
+      "preview_transcript": "한일송 시인의 「오랑캐령아리랑-1」. 명도재. 이명우의 시 읽기. 한일송의 「오랑캐령아리랑-1」은 국경의 고개를 넘던 사람들의 굶주림과 눈물, 그들의 노래를 되살린다. 아리랑은 장식적인 후렴이 아니라 역사의 고통을 실어 나르는 소리의 길이다. 두만강으로 흘러가는 가락을 따라가면 떠난 사람과 남은 사람의 삶이 같은 물길에 놓인다. 고개라는 지형이 공동체의 기억을 품은 서사 공간으로 바뀌는 지점이 인상적이다. 이 작품은 단순한 회고에 머무르지 않고 한 세대의 비극이 어떻게 우리말 노래의 리듬 속에 살아남는지 묻는다. 작품을 다시 읽을 때 시어의 배열과 행갈이, 반복되는 소리에도 귀를 기울이게 된다.",
+      "voice_id": "delicate"
+    },
+    "c-07": {
+      "context_id": "63eefee7b8974705bbc3b577c001e5f5",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d4c2e44a-747c-4af6-b293-f743ceb0f8e5.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=63eefee7b8974705bbc3b577c001e5f5",
+      "status": "ready",
+      "preview_transcript": "남영전 시인의 「나비」. 명도재. 이명우의 시 읽기. 남영전의 「나비」는 작은 몸에 넓은 세계의 빛깔을 담아낸다. 날갯짓은 한곳에 고정되지 않고 여러 풍경을 오가면서 자연과 인간 사이의 경계를 부드럽게 흐린다. 색채의 변화는 단순한 장식이 아니라 자유롭게 움직이고 싶은 생명의 소망을 보여 주는 이미지가 된다. 이 작품을 읽을 때는 나비를 하나의 상징으로 고정하기보다 날고, 멈추고, 다시 움직이는 리듬을 느끼는 것이 중요하다. 조선족 시문학의 자연 친화적 상상력이 작고 섬세한 생명의 움직임 속에서 드러난다. 작품을 다시 읽을 때 시어의 배열과 행갈이, 반복되는 소리에도 귀를 기울이게 된다.",
+      "voice_id": "delicate"
+    },
+    "c-05": {
+      "context_id": "2610d47cfb4b4d36a91246dbc8e07652",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/9809ca20-6007-4061-9ee4-440e9ab4cdd6.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=2610d47cfb4b4d36a91246dbc8e07652",
+      "status": "ready",
+      "preview_transcript": "심예란 시인의 「역사 교과서」. 명도재. 이명우의 시 읽기. 심예란의 「역사 교과서」는 한 권의 책을 과거의 사건들이 움직이는 자리로 다시 바라보게 한다. 고정된 문자와 살아 움직이는 사람 사이의 거리를 좁히는 상상력이 중심을 이룬다. 역사란 지나가 버린 시간의 목록만이 아니라 지금 읽는 이가 책임 있게 마주해야 할 삶이라는 생각이 따라온다. 서지월 시인이 심예란의 작품 세계를 다룬 평론을 발표한 기록은 있으나, 그것을 곧바로 이 작품에 대한 직접 시평으로 인용할 수는 없다. 이 지면의 해석은 명도재가 독립적으로 작성한 읽기이다. 마지막 문장의 울림을 따라가면 이 풍경이 품은 고유한 시간이 한층 또렷해진다.",
+      "voice_id": "delicate"
+    },
+    "c-08": {
+      "context_id": "19f20b1294fe4a7f9dc944a644c82b48",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/f4b91972-a94c-4a61-b4b2-d818bd1afcee.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=19f20b1294fe4a7f9dc944a644c82b48",
+      "status": "ready",
+      "preview_transcript": "김성우 시인의 「진달래를 노래하는 이유는」. 명도재. 이명우의 시 읽기. 김성우의 「진달래를 노래하는 이유는」은 봄마다 피어나는 꽃을 기억과 정체성의 자리로 불러낸다. 진달래는 예쁜 풍경의 일부이면서 이주와 정착, 긴 세월을 건너온 사람들의 삶을 떠올리게 하는 꽃이다. 제목이 던지는 질문은 ‘왜 꽃을 노래하는가’에서 ‘왜 이 기억을 지켜야 하는가’로 넓어진다. 같은 꽃을 바라보더라도 사람마다 간직한 사연이 다르다는 사실이 시의 여백을 깊게 한다. 한 송이 진달래에 민족적 정서가 스며드는 과정을 무리한 구호 없이 따라가게 한다. 마지막 문장의 울림을 따라가면 이 풍경이 품은 고유한 시간이 한층 또렷해진다.",
+      "voice_id": "delicate"
+    },
+    "c-06": {
+      "context_id": "d625b0ed78a244759e5012c29beed73f",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/c5dfe8ce-6b66-4078-ac22-5de05add8cac.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=d625b0ed78a244759e5012c29beed73f",
+      "status": "ready",
+      "preview_transcript": "김응준 시인의 「꽃 한 송이와 호랑나비」. 명도재. 이명우의 시 읽기. 김응준의 「꽃 한 송이와 호랑나비」에서 작은 꽃과 나비의 만남은 계절이 움직이는 순간처럼 펼쳐진다. 움직이는 나비와 자리를 지키는 꽃은 서로 다른 생명의 방식이면서도 한 장면 안에서 긴밀하게 호응한다. 시는 자연의 작은 관계를 통해 살아 있다는 사실의 기쁨을 다시 발견하게 한다. 화려한 수사보다 대상의 움직임과 색을 따라가는 독법이 잘 어울린다. 독자는 꽃과 나비가 주고받는 짧은 순간에 주목하면서 인간의 관계 또한 서로 다른 자리에서 시작된다는 뜻을 떠올릴 수 있다. 한편의 시가 개인의 사연과 공동체의 기억을 이어 주는 순간을 이 지면에서 발견한다.",
+      "voice_id": "delicate"
+    },
+    "c-09": {
+      "context_id": "8ef853c9eced400c9656b06ea55c6810",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/4207a822-d2e5-400f-b9f8-dc37ee248ead.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=8ef853c9eced400c9656b06ea55c6810",
+      "status": "ready",
+      "preview_transcript": "석화 시인의 「거울을 닦습니다」. 명도재. 이명우의 시 읽기. 석화의 「거울을 닦습니다」는 거울을 닦는 구체적인 손동작에서 출발해 스스로를 돌아보는 시간을 만든다. 더 또렷하게 보려는 노력은 바깥의 먼지를 지우는 일과 자신의 마음을 가다듬는 일을 나란히 놓는다. 거울은 남의 얼굴을 비추면서 동시에 자신을 외면하지 못하게 만드는 사물이다. 반복되는 행위에 주목하면 완전한 깨끗함에 도달하기 어렵다는 사실도 읽힌다. 눈앞에 있는 사람과 마음속의 자기 모습을 다시 대면하게 하는 소박하지만 힘 있는 자기 성찰의 시로 감상할 만하다. 한편의 시가 개인의 사연과 공동체의 기억을 이어 주는 순간을 이 지면에서 발견한다.",
+      "voice_id": "delicate"
+    },
+    "c-11": {
+      "context_id": "8f5f4f4edfee4a57a050a12737fadd3c",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/8768aa8a-4955-4515-b8ab-e44b2dcc2255.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=8f5f4f4edfee4a57a050a12737fadd3c",
+      "status": "ready",
+      "preview_transcript": "리홍규 시인의 「세월의 강은」. 명도재. 이명우의 시 읽기. 리홍규의 「세월의 강은」에서 강은 흘러가는 물이면서 멈출 수 없는 시간의 얼굴이다. 겨울의 찬 기운과 강물의 지속적인 흐름이 대비되며 계절을 건너는 삶의 감각을 전한다. 얼어붙는 듯한 풍경에서도 감정과 기억이 완전히 멈추지 않는다는 점이 작품의 중심에 놓인다. 강을 따라 떠내려가는 것은 단순한 과거가 아니라 사람이 차마 놓지 못한 관계일지도 모른다. 이 시의 울림은 격정적인 표현보다 차갑고 넓은 풍경을 오래 바라보게 하는 데서 생겨난다. 마지막 문장의 울림을 따라가면 이 풍경이 품은 고유한 시간이 한층 또렷해진다.",
+      "voice_id": "delicate"
+    },
+    "c-10": {
+      "context_id": "18a051c8f0234dc892c60001232df22d",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/8a025b91-bdf8-4c28-8d6f-fb4e7f228225.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=18a051c8f0234dc892c60001232df22d",
+      "status": "ready",
+      "preview_transcript": "조민호 시인의 「개산툰진 광소촌」. 명도재. 이명우의 시 읽기. 조민호의 「개산툰진 광소촌」은 실제 지명을 제목에 올려놓으며 생활의 터전을 문학의 중심으로 옮긴다. 두만강과 촌락을 둘러싼 아침 풍경은 막연한 향수가 아니라 그곳에서 살아온 사람들의 시간으로 채워진다. 지역의 이름을 시 안에 남기는 일은 사라질 수 있는 장소의 기억을 기록하는 일과도 같다. 도시에서 멀리 떨어진 작은 마을이 어떻게 개인의 정체성과 공동체의 언어를 지탱하는지 눈여겨볼 필요가 있다. 지명 하나가 곧 사람들의 삶을 불러오는 시적 장치가 된다. 작품을 다시 읽을 때 시어의 배열과 행갈이, 반복되는 소리에도 귀를 기울이게 된다.",
+      "voice_id": "delicate"
+    },
+    "c-12": {
+      "context_id": "596d22e864bb479ca1574e9e9a83b3fd",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/92b99a0b-69d2-4da7-b235-078cf5bc6abb.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=596d22e864bb479ca1574e9e9a83b3fd",
+      "status": "ready",
+      "preview_transcript": "윤청남 시인의 「비는 잔잔한 비」. 명도재. 이명우의 시 읽기. 윤청남의 「비는 잔잔한 비」는 거친 소나기보다 작고 조용한 빗줄기에 귀를 기울인다. 잔잔한 비는 눈에 띄지 않는 방식으로 물건과 마음을 적시며 사람에게 조금씩 가까워진다. 부드럽게 반복되는 말의 박자는 시 자체를 비처럼 낮게 흐르게 한다. 강한 감정의 폭발 없이도 섬세한 슬픔과 다정함을 전달할 수 있음을 보여 준다. 낭송한다면 빠른 박자보다 여유 있는 호흡으로 각 행 사이의 잔향을 살리는 것이 적절하다. 작은 기척을 알아채는 감각이 이 시의 미덕이다. 한편의 시가 개인의 사연과 공동체의 기억을 이어 주는 순간을 이 지면에서 발견한다.",
+      "voice_id": "delicate"
+    },
+    "c-13": {
+      "context_id": "1dbd72dcfd654f10be9cf4dc24340a12",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/d63bcd20-5baa-469c-9f2b-2cb218dd8e9c.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=1dbd72dcfd654f10be9cf4dc24340a12",
+      "status": "ready",
+      "preview_transcript": "허동식 시인의 「진달래」. 명도재. 이명우의 시 읽기. 허동식의 「진달래」는 익숙한 봄꽃을 오래된 그리움의 표정으로 다시 읽게 한다. 피어난 꽃은 짧게 머물지만 그것을 바라보는 사람의 시간은 그보다 길다. 같은 자리에 되풀이하여 피는 꽃과 매번 달라지는 사람의 마음 사이에서 삶의 변화가 드러난다. 시의 꽃은 화려한 자연 묘사를 넘어 기억을 부르는 매개가 된다. 제목만으로 쉽게 뜻을 정하기보다 작품 속 진달래의 자리, 주변 풍경, 화자의 시선을 함께 살펴보는 읽기가 필요하다. 작은 꽃 한 송이가 여러 계절의 이야기를 품는다. 작품을 다시 읽을 때 시어의 배열과 행갈이, 반복되는 소리에도 귀를 기울이게 된다.",
+      "voice_id": "delicate"
+    },
+    "c-14": {
+      "context_id": "1bbf0664517b42528ac5d8c3be42253b",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/a878af49-5cb5-4a7f-87fe-44bff15934fa.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=1bbf0664517b42528ac5d8c3be42253b",
+      "status": "ready",
+      "preview_transcript": "한영남 시인의 「내게 꽃멀미나 시켜라」. 명도재. 이명우의 시 읽기. 한영남의 「내게 꽃멀미나 시켜라」는 꽃이 한꺼번에 피어나는 계절의 넘치는 감각을 적극적으로 받아들이겠다는 목소리다. ‘꽃멀미’라는 감각적 표현은 아름다움을 눈으로만 보는 것이 아니라 온몸으로 겪는 상태로 바꿔 놓는다. 어지러울 만큼 빛나는 봄은 고단한 현실을 잠시 잊게 하는 생명의 힘이 된다. 제목의 청유는 자연을 향한 대담한 요청이자 다시 살아 보겠다는 의지처럼 들린다. 시인은 풍경을 조심스레 감상하는 데 머무르지 않고 그 속으로 깊이 들어간다. 마지막 문장의 울림을 따라가면 이 풍경이 품은 고유한 시간이 한층 또렷해진다.",
+      "voice_id": "delicate"
+    },
+    "c-15": {
+      "context_id": "447353f7ae75479ea48c2c95ba160dc1",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/6d1db1a6-2b30-4a75-bf3b-ff23b843f766.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=447353f7ae75479ea48c2c95ba160dc1",
+      "status": "ready",
+      "preview_transcript": "림금산 시인의 「산으로 가는 소녀야」. 명도재. 이명우의 시 읽기. 림금산의 「산으로 가는 소녀야」는 산을 향해 걷는 소녀에게 말을 건네며 자연 속에서 마음을 정화할 가능성을 찾는다. 이슬, 풀잎, 바람과 같은 작은 자연물은 상처받은 마음을 잠시 쉴 수 있게 하는 동반자로 놓인다. 그러나 산은 현실에서 벗어나기만 하는 피난처가 아니다. 서로가 불러들인 슬픔을 조심스럽게 돌아보는 성찰의 자리이기도 하다. 청유와 질문을 섞어 부르는 목소리는 독자도 그 길에 동행하게 만든다. 자연과 인간 사이에서 다시 신뢰를 회복하려는 태도가 따뜻하게 다가온다. 한편의 시가 개인의 사연과 공동체의 기억을 이어 주는 순간을 이 지면에서 발견한다.",
+      "voice_id": "delicate"
+    },
+    "c-18": {
+      "context_id": "fd81668633324a4d991ac67a67259608",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/a05c0028-05b6-47e8-bf2f-94cb875255a4.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=fd81668633324a4d991ac67a67259608",
+      "status": "ready",
+      "preview_transcript": "김선희 시인의 「연가」. 명도재. 이명우의 시 읽기. 김선희의 「연가」는 한 잔의 차와 그 위에 비친 얼굴에서 멀리 있는 이를 향한 그리움을 불러낸다. 차가 식어 가는 시간은 만남을 기다리는 마음의 길이와 닮아 있다. 일상적인 그릇 하나가 곧 감정을 담는 풍경이 되며 바다의 밀물과 썰물처럼 멀고 가까운 사랑의 움직임이 겹쳐진다. 과장된 고백 대신 손끝에 닿는 작은 생활의 장면을 통해 정서가 자라나는 점이 인상적이다. 독자는 자신이 오래 간직한 물건 하나를 떠올리면서 이 노래의 여운을 이해할 수 있다. 한편의 시가 개인의 사연과 공동체의 기억을 이어 주는 순간을 이 지면에서 발견한다.",
+      "voice_id": "delicate"
+    },
+    "c-19": {
+      "context_id": "5434e9a94bda4cffad8e02c8743d1d74",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/dff0f6f0-eb5c-4e05-8b57-c6230b9106d9.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=5434e9a94bda4cffad8e02c8743d1d74",
+      "status": "ready",
+      "preview_transcript": "김경희 시인의 「느낌」. 명도재. 이명우의 시 읽기. 김경희의 「느낌」은 배고픔과 외로움을 알아채 주는 사람이 있다는 사실에 눈을 돌린다. 인간을 위로하는 것은 거창한 약속이 아니라 지금 곁에 있는 사람의 어려움을 지나치지 않는 일이라는 생각이 작품을 이끈다. 말보다 앞서 감지되는 마음의 움직임을 ‘느낌’이라는 제목에 담아낸다. 친밀함은 모든 문제를 해결하는 힘이 아니라 함께 살아갈 용기를 조금씩 돌려주는 관계의 감각이다. 시 속 일상의 온기는 낭송할 때도 절제된 목소리로 전하는 편이 좋다. 서로를 알아보는 감수성이 작품의 중심에 있다. 작품을 다시 읽을 때 시어의 배열과 행갈이, 반복되는 소리에도 귀를 기울이게 된다.",
+      "voice_id": "delicate"
+    },
+    "c-16": {
+      "context_id": "ba0915a8a51f4a0eafa99a82f81877e6",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/1887fcee-7eb3-4746-be8e-c5818215ed46.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=ba0915a8a51f4a0eafa99a82f81877e6",
+      "status": "ready",
+      "preview_transcript": "최기자 시인의 「강자의 미로」. 명도재. 이명우의 시 읽기. 최기자의 「강자의 미로」는 도시의 숨 막히는 공기와 오염된 삶의 조건을 돌아보게 한다. 강자의 논리가 만든 길은 겉으로는 빠르고 확실해 보여도 그 안에 사는 약자의 움직임을 막는 미로가 되기도 한다. 작품을 읽을 때는 구체적 현실 비판이 어떤 사물과 풍경을 통해 드러나는지 주목할 필요가 있다. 생태적 감수성은 단순히 자연을 찬미하는 태도가 아니라 인간이 만들어 낸 환경의 불균형을 질문하는 데서 생긴다. 독자는 시의 문제의식을 오늘의 생활과 겹쳐 보게 된다. 작품을 다시 읽을 때 시어의 배열과 행갈이, 반복되는 소리에도 귀를 기울이게 된다.",
+      "voice_id": "delicate"
+    },
+    "c-20": {
+      "context_id": "48553b724f704f5c9aa1ccc93574da7c",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/43ea2b15-c559-4d67-bcb7-4d727ce588fb.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=48553b724f704f5c9aa1ccc93574da7c",
+      "status": "ready",
+      "preview_transcript": "이호원 시인의 「달의 이면」. 명도재. 이명우의 시 읽기. 이호원의 「달의 이면」은 환하게 보이는 한쪽 면만으로 대상을 판단할 수 없다는 사실을 달의 이미지로 생각하게 한다. 어둠 속에 가려져 있는 면은 결핍이 아니라 아직 알지 못하는 다른 진실이기도 하다. 시는 익숙한 달의 상징을 뒤집어 관용과 성찰의 질문을 던진다. 바라보는 위치가 달라지면 무엇이 밝고 무엇이 어두운지도 달라질 수 있다. 단정적인 결론보다 다른 사람의 고통과 그림자를 이해하려는 태도를 남기는 작품으로 읽을 만하다. 달빛은 결국 우리 마음의 그늘까지 비추는 빛이 된다. 마지막 문장의 울림을 따라가면 이 풍경이 품은 고유한 시간이 한층 또렷해진다.",
+      "voice_id": "delicate"
+    },
+    "c-17": {
+      "context_id": "984481e350ed4669b943cd2152a23b44",
+      "preview_url": "https://storage.googleapis.com/adm--audio-playback--7d--public/mcp-preview/95af92b4-54ac-4441-bbfb-4d764550ec21.mp3",
+      "audio_url": "https://www.aidocmaker.com/g0/audio?name=984481e350ed4669b943cd2152a23b44",
+      "status": "ready",
+      "preview_transcript": "리옥금 시인의 「별의 사연」. 명도재. 이명우의 시 읽기. 리옥금의 「별의 사연」은 어머니를 기억하는 마음을 밤하늘의 별에 옮겨 놓는다. 멀리 떨어져 보이는 빛은 닿을 수 없다는 슬픔과 여전히 길을 밝혀 준다는 위안을 동시에 지닌다. 별은 한 개인의 추억이면서 어머니의 돌봄이 지나간 뒤에도 계속 살아 있다는 표지가 된다. 별빛이라는 작은 이미지가 죽음의 무게를 완전히 없애지는 못하지만 그 슬픔을 건너는 방향을 제시한다. 이 시를 읽는 동안 독자는 자신의 삶을 비춰 준 사람들의 얼굴도 떠올리게 된다. 서정의 진정성이 친숙한 상징 안에서 살아난다. 마지막 문장의 울림을 따라가면 이 풍경이 품은 고유한 시간이 한층 또렷해진다.",
+      "voice_id": "delicate"
+    }
+  }
+}

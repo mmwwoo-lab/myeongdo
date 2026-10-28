@@ -17,7 +17,7 @@
       ]
     },
     {
-      "source": "/audio/(.*)",
+      "source": "/audio-v2/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
