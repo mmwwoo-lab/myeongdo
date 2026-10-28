@@ -1,6 +1,6 @@
 {
   "framework": null,
-  "buildCommand": "node prepare-audio.cjs",
+  "buildCommand": "node restore-original-audio.cjs && node prepare-audio.cjs",
   "outputDirectory": ".",
   "headers": [
     {

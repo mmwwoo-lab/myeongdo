@@ -1,0 +1,468 @@
+{
+  "audio-originals/c-01.mp3": {
+    "chunks": [
+      "audio-source/c-01/000.part"
+    ],
+    "bytes": 61353,
+    "sha256": "490e87b1655fd5dc8b017a2d01a902f86453e56442c2d0162bae5d5cbc1e5ab7"
+  },
+  "audio-originals/s-01.mp3": {
+    "chunks": [
+      "audio-source/s-01/000.part",
+      "audio-source/s-01/001.part"
+    ],
+    "bytes": 114016,
+    "sha256": "e4b1ac2f70e8289d3c90ce166f0e4ce68af083eee534b42f88bfdb81f8413288"
+  },
+  "audio-originals/s-02.mp3": {
+    "chunks": [
+      "audio-source/s-02/000.part",
+      "audio-source/s-02/001.part"
+    ],
+    "bytes": 174593,
+    "sha256": "0c5cf124ddb0bde33b1a9d73ba91df69c32d295d091593337f15e8b42a4b917f"
+  },
+  "audio-originals/s-04.mp3": {
+    "chunks": [
+      "audio-source/s-04/000.part",
+      "audio-source/s-04/001.part"
+    ],
+    "bytes": 120128,
+    "sha256": "5cc902ac2d196af98c9b2105fa3243517888588631b6d029e02455f4d3c7b299"
+  },
+  "audio-originals/s-46.mp3": {
+    "chunks": [
+      "audio-source/s-46/000.part",
+      "audio-source/s-46/001.part",
+      "audio-source/s-46/002.part",
+      "audio-source/s-46/003.part"
+    ],
+    "bytes": 325764,
+    "sha256": "eb38615166ee99dd8fceeaddd2ffdf55825abdbf9a95385bde357934dd8371df"
+  },
+  "audio-originals/s-03.mp3": {
+    "chunks": [
+      "audio-source/s-03/000.part",
+      "audio-source/s-03/001.part",
+      "audio-source/s-03/002.part",
+      "audio-source/s-03/003.part"
+    ],
+    "bytes": 294025,
+    "sha256": "64b02f6870ffe5787d34671c6da4232c23331fc5167a33dc7d05af6db32e30e9"
+  },
+  "audio-originals/s-05.mp3": {
+    "chunks": [
+      "audio-source/s-05/000.part",
+      "audio-source/s-05/001.part"
+    ],
+    "bytes": 107198,
+    "sha256": "85e72b0a423b8ab3d5e267bee64d0d16e05b2e532497aedd73bb1ec75a5d6669"
+  },
+  "audio-originals/s-07.mp3": {
+    "chunks": [
+      "audio-source/s-07/000.part",
+      "audio-source/s-07/001.part"
+    ],
+    "bytes": 139250,
+    "sha256": "f65c2d64df4f67289036548661fc5007b162a03d2e22f539e2bcee0b4afa4a52"
+  },
+  "audio-originals/s-06.mp3": {
+    "chunks": [
+      "audio-source/s-06/000.part",
+      "audio-source/s-06/001.part",
+      "audio-source/s-06/002.part"
+    ],
+    "bytes": 227648,
+    "sha256": "ccbe9bdd5fb009a668d7896fa5b9805d17d2fa7aca4932c6e9da441073b4c3c3"
+  },
+  "audio-originals/s-08.mp3": {
+    "chunks": [
+      "audio-source/s-08/000.part",
+      "audio-source/s-08/001.part"
+    ],
+    "bytes": 173418,
+    "sha256": "19b8827067a866e88e197e4b69370be4ade0fe23846e37baf5b7c53a57026efc"
+  },
+  "audio-originals/s-11.mp3": {
+    "chunks": [
+      "audio-source/s-11/000.part",
+      "audio-source/s-11/001.part"
+    ],
+    "bytes": 147635,
+    "sha256": "72d6a4d16ab7e8c91640e7b130a71618dae6e1a9c675acd2e6d25f165de7d98c"
+  },
+  "audio-originals/s-10.mp3": {
+    "chunks": [
+      "audio-source/s-10/000.part",
+      "audio-source/s-10/001.part",
+      "audio-source/s-10/002.part",
+      "audio-source/s-10/003.part"
+    ],
+    "bytes": 294731,
+    "sha256": "bde77d38b478b0b2dab3bc22ab3c8d30f448351ae154f3fe3856fec4739d40c6"
+  },
+  "audio-originals/s-09.mp3": {
+    "chunks": [
+      "audio-source/s-09/000.part",
+      "audio-source/s-09/001.part",
+      "audio-source/s-09/002.part",
+      "audio-source/s-09/003.part"
+    ],
+    "bytes": 331250,
+    "sha256": "658f0449227b0ef661d6ce37f988f4196ae711e3152e9963e6d9c54681feb60a"
+  },
+  "audio-originals/s-12.mp3": {
+    "chunks": [
+      "audio-source/s-12/000.part",
+      "audio-source/s-12/001.part",
+      "audio-source/s-12/002.part"
+    ],
+    "bytes": 221927,
+    "sha256": "3ebdd15e001b699ce95c44674cbaedfaff83c0ee880fedd398b85d502a5c415e"
+  },
+  "audio-originals/s-13.mp3": {
+    "chunks": [
+      "audio-source/s-13/000.part",
+      "audio-source/s-13/001.part"
+    ],
+    "bytes": 92700,
+    "sha256": "0b8badc9d1c782b2c8f838e6ce9948fba25fd0380b5631b8775675b8b1b85909"
+  },
+  "audio-originals/s-22.mp3": {
+    "chunks": [
+      "audio-source/s-22/000.part",
+      "audio-source/s-22/001.part",
+      "audio-source/s-22/002.part"
+    ],
+    "bytes": 237914,
+    "sha256": "fd3745166a2b8a90f83e193259647dd3f92747155752541d4af738bc1c1bfcba"
+  },
+  "audio-originals/s-28.mp3": {
+    "chunks": [
+      "audio-source/s-28/000.part",
+      "audio-source/s-28/001.part",
+      "audio-source/s-28/002.part"
+    ],
+    "bytes": 231880,
+    "sha256": "7b1c2f1d541d2a3189d3ecc2708b4753fe8c205cd8e75d7483c44bf07356804b"
+  },
+  "audio-originals/s-14.mp3": {
+    "chunks": [
+      "audio-source/s-14/000.part",
+      "audio-source/s-14/001.part",
+      "audio-source/s-14/002.part"
+    ],
+    "bytes": 188386,
+    "sha256": "dc59e4d9c7fd98db4fb19d8a8ff1dddfad10290341296d9452bdaba550f3a8ad"
+  },
+  "audio-originals/s-16.mp3": {
+    "chunks": [
+      "audio-source/s-16/000.part",
+      "audio-source/s-16/001.part",
+      "audio-source/s-16/002.part"
+    ],
+    "bytes": 192383,
+    "sha256": "1e989fe8ea13c775cc6db58d26b0a727ca070340fe526857f37f1e900de97c00"
+  },
+  "audio-originals/s-15.mp3": {
+    "chunks": [
+      "audio-source/s-15/000.part",
+      "audio-source/s-15/001.part"
+    ],
+    "bytes": 176788,
+    "sha256": "f16ab0c2080eb9b86c1817b29ddd851a028d50c6c36bb3467563c1a29347c33c"
+  },
+  "audio-originals/s-19.mp3": {
+    "chunks": [
+      "audio-source/s-19/000.part",
+      "audio-source/s-19/001.part",
+      "audio-source/s-19/002.part"
+    ],
+    "bytes": 191051,
+    "sha256": "18de11f5e8821c2c8adc66750906ca297fbff70f3acd9a3975a3ebffd113096a"
+  },
+  "audio-originals/s-31.mp3": {
+    "chunks": [
+      "audio-source/s-31/000.part",
+      "audio-source/s-31/001.part",
+      "audio-source/s-31/002.part"
+    ],
+    "bytes": 249434,
+    "sha256": "e914c22d7fc42937d55e317517df874f84f2ddde41ca1b0da5399e27cb9756a6"
+  },
+  "audio-originals/s-17.mp3": {
+    "chunks": [
+      "audio-source/s-17/000.part",
+      "audio-source/s-17/001.part",
+      "audio-source/s-17/002.part"
+    ],
+    "bytes": 249748,
+    "sha256": "97b24de766af0bf3a110a9c33e339acc83115e05428ddad998dbfdbb3ed32f02"
+  },
+  "audio-originals/s-18.mp3": {
+    "chunks": [
+      "audio-source/s-18/000.part",
+      "audio-source/s-18/001.part",
+      "audio-source/s-18/002.part"
+    ],
+    "bytes": 238306,
+    "sha256": "a4e0326fd6b77da6e8d95915d4999101709692b78282dbc13dd1c8ed4def8855"
+  },
+  "audio-originals/s-20.mp3": {
+    "chunks": [
+      "audio-source/s-20/000.part",
+      "audio-source/s-20/001.part"
+    ],
+    "bytes": 145989,
+    "sha256": "93d0b2b7b3b1010b15153de546f9d6a9e7c472633c1c7e0cfd5a93dba1316dab"
+  },
+  "audio-originals/s-32.mp3": {
+    "chunks": [
+      "audio-source/s-32/000.part",
+      "audio-source/s-32/001.part",
+      "audio-source/s-32/002.part",
+      "audio-source/s-32/003.part"
+    ],
+    "bytes": 309464,
+    "sha256": "90d2bce903aa384cfd5ca0f37287a0ca02357bd60979fab52e2ecd4d7ba1933f"
+  },
+  "audio-originals/s-23.mp3": {
+    "chunks": [
+      "audio-source/s-23/000.part",
+      "audio-source/s-23/001.part"
+    ],
+    "bytes": 159939,
+    "sha256": "0eaeb742cc4357ad3b0a6e3007782cead1181272afdfcce0553322cdfd7e9fcf"
+  },
+  "audio-originals/s-44.mp3": {
+    "chunks": [
+      "audio-source/s-44/000.part",
+      "audio-source/s-44/001.part"
+    ],
+    "bytes": 174593,
+    "sha256": "424c61d972b43988ee5ed966e7cc7d1ae4344eb066f2fa3d04c8f13a49e361c6"
+  },
+  "audio-originals/s-21.mp3": {
+    "chunks": [
+      "audio-source/s-21/000.part",
+      "audio-source/s-21/001.part",
+      "audio-source/s-21/002.part",
+      "audio-source/s-21/003.part"
+    ],
+    "bytes": 272631,
+    "sha256": "e64ec8c9140e527de4ab5423bb7cef278829c4670d12d267bf676cd0cb08ba40"
+  },
+  "audio-originals/s-43.mp3": {
+    "chunks": [
+      "audio-source/s-43/000.part",
+      "audio-source/s-43/001.part",
+      "audio-source/s-43/002.part"
+    ],
+    "bytes": 246535,
+    "sha256": "73e510a0833cfed68e1987e6642c42594181e69736462f44547edb53097636cf"
+  },
+  "audio-originals/s-45.mp3": {
+    "chunks": [
+      "audio-source/s-45/000.part",
+      "audio-source/s-45/001.part",
+      "audio-source/s-45/002.part"
+    ],
+    "bytes": 224592,
+    "sha256": "474c3ec8d7b9642ec8dd00ec6c49b62b5b383ee54bad472159d344f4ee4fbbc5"
+  },
+  "audio-originals/s-26.mp3": {
+    "chunks": [
+      "audio-source/s-26/000.part",
+      "audio-source/s-26/001.part",
+      "audio-source/s-26/002.part"
+    ],
+    "bytes": 232585,
+    "sha256": "59aa529bc301bbe4208ffa2cf8d33ba6854e985c399e96170afd3930e53ae045"
+  },
+  "audio-originals/s-24.mp3": {
+    "chunks": [
+      "audio-source/s-24/000.part",
+      "audio-source/s-24/001.part"
+    ],
+    "bytes": 121147,
+    "sha256": "3b90b8418f4f6d3c21d6d6730f22c5700780408e219cd25c2bd37a4837503ca3"
+  },
+  "audio-originals/s-34.mp3": {
+    "chunks": [
+      "audio-source/s-34/000.part",
+      "audio-source/s-34/001.part",
+      "audio-source/s-34/002.part",
+      "audio-source/s-34/003.part"
+    ],
+    "bytes": 306878,
+    "sha256": "f9d1c92ec7ca221b48df5bcb19a0ee5bdc2410566a766d0593c9b394421239cc"
+  },
+  "audio-originals/s-29.mp3": {
+    "chunks": [
+      "audio-source/s-29/000.part",
+      "audio-source/s-29/001.part",
+      "audio-source/s-29/002.part"
+    ],
+    "bytes": 190580,
+    "sha256": "9e5ed22782bb73747a4bc876f35b09ace81d4ec531078e4721592c37a6e5a82d"
+  },
+  "audio-originals/s-25.mp3": {
+    "chunks": [
+      "audio-source/s-25/000.part",
+      "audio-source/s-25/001.part",
+      "audio-source/s-25/002.part"
+    ],
+    "bytes": 191364,
+    "sha256": "aa2743e917bca9372d2de964125b3ad4ca9e754f7126cafcf3a9344274e8c95b"
+  },
+  "audio-originals/s-27.mp3": {
+    "chunks": [
+      "audio-source/s-27/000.part",
+      "audio-source/s-27/001.part",
+      "audio-source/s-27/002.part"
+    ],
+    "bytes": 260719,
+    "sha256": "89925b113a1ebccaa6142ffb7750e740ecf8f0f0dcf1f530e720b30901d56b7f"
+  },
+  "audio-originals/s-33.mp3": {
+    "chunks": [
+      "audio-source/s-33/000.part",
+      "audio-source/s-33/001.part",
+      "audio-source/s-33/002.part"
+    ],
+    "bytes": 220595,
+    "sha256": "e24af866ab2c4f23744bc3f63ffd93603f747048e719ce60da8c491ccd407a36"
+  },
+  "audio-originals/s-30.mp3": {
+    "chunks": [
+      "audio-source/s-30/000.part",
+      "audio-source/s-30/001.part",
+      "audio-source/s-30/002.part"
+    ],
+    "bytes": 242381,
+    "sha256": "ba113289f5149a8d72834df2d32b2fb2bec07da1b1634f88ccfaece3610d8bba"
+  },
+  "audio-originals/s-36.mp3": {
+    "chunks": [
+      "audio-source/s-36/000.part",
+      "audio-source/s-36/001.part",
+      "audio-source/s-36/002.part"
+    ],
+    "bytes": 210642,
+    "sha256": "bd2baf194c24b2b57c1012ea462b5523baaa02b4c6412f39746528195238f862"
+  },
+  "audio-originals/s-35.mp3": {
+    "chunks": [
+      "audio-source/s-35/000.part",
+      "audio-source/s-35/001.part",
+      "audio-source/s-35/002.part",
+      "audio-source/s-35/003.part"
+    ],
+    "bytes": 298649,
+    "sha256": "76eeac51b3dad148f9c7403b2a7b3e4c18faf605e4a712f6a069ac4197597ab6"
+  },
+  "audio-originals/s-37.mp3": {
+    "chunks": [
+      "audio-source/s-37/000.part",
+      "audio-source/s-37/001.part",
+      "audio-source/s-37/002.part",
+      "audio-source/s-37/003.part",
+      "audio-source/s-37/004.part",
+      "audio-source/s-37/005.part",
+      "audio-source/s-37/006.part"
+    ],
+    "bytes": 577872,
+    "sha256": "492a6f2df327130b63779f0d66ff981fef40c4b04c642ce37246f62730fb8e49"
+  },
+  "audio-originals/s-38.mp3": {
+    "chunks": [
+      "audio-source/s-38/000.part",
+      "audio-source/s-38/001.part",
+      "audio-source/s-38/002.part",
+      "audio-source/s-38/003.part",
+      "audio-source/s-38/004.part"
+    ],
+    "bytes": 423331,
+    "sha256": "6e52915413a4fd9177d0fb64a475f15b1e086edb7513e8288ccafc5ee48d4f83"
+  },
+  "audio-originals/s-41.mp3": {
+    "chunks": [
+      "audio-source/s-41/000.part",
+      "audio-source/s-41/001.part",
+      "audio-source/s-41/002.part",
+      "audio-source/s-41/003.part"
+    ],
+    "bytes": 334776,
+    "sha256": "708668086ac2d0d25afc5c022ed06c66396bf47cdb051e85eede2deefc6a2583"
+  },
+  "audio-originals/s-40.mp3": {
+    "chunks": [
+      "audio-source/s-40/000.part",
+      "audio-source/s-40/001.part"
+    ],
+    "bytes": 167384,
+    "sha256": "d03e279d2590cbb059ffe94e650b3ef437d120122c4f4c36d13acf39201e7221"
+  },
+  "audio-originals/c-03.mp3": {
+    "chunks": [
+      "audio-source/c-03/000.part",
+      "audio-source/c-03/001.part"
+    ],
+    "bytes": 91681,
+    "sha256": "c12f140f67b6c006be70c70d67e0d4cb271913c8224e07108942dcff6587bf7f"
+  },
+  "audio-originals/s-42.mp3": {
+    "chunks": [
+      "audio-source/s-42/000.part",
+      "audio-source/s-42/001.part",
+      "audio-source/s-42/002.part"
+    ],
+    "bytes": 188621,
+    "sha256": "1419a0b808bb5b2890923b60288676971efa88e0d5f50a5588ea3bf5f709f00d"
+  },
+  "audio-originals/c-21.mp3": {
+    "chunks": [
+      "audio-source/c-21/000.part",
+      "audio-source/c-21/001.part"
+    ],
+    "bytes": 124987,
+    "sha256": "962c443c666ba910e3d41cb47d1fb4edc679848c447637377ca1605a9de058a4"
+  },
+  "audio-originals/s-39.mp3": {
+    "chunks": [
+      "audio-source/s-39/000.part",
+      "audio-source/s-39/001.part",
+      "audio-source/s-39/002.part",
+      "audio-source/s-39/003.part",
+      "audio-source/s-39/004.part",
+      "audio-source/s-39/005.part"
+    ],
+    "bytes": 515100,
+    "sha256": "e9ac1e1faa3f77d1b5297593214daf7bb2727230b14abd1890e94758ebcfb7c8"
+  },
+  "audio-originals/c-22.mp3": {
+    "chunks": [
+      "audio-source/c-22/000.part",
+      "audio-source/c-22/001.part"
+    ],
+    "bytes": 161428,
+    "sha256": "f1a3eafe4e22cfcc572601bcaac765accadf58bd47d0987b81d9b49ce1e287cf"
+  },
+  "audio-originals/c-06.mp3": {
+    "chunks": [
+      "audio-source/c-06/000.part",
+      "audio-source/c-06/001.part"
+    ],
+    "bytes": 121069,
+    "sha256": "9e8728788f61242c2aa7e1e25a44b2fab7de0e0663d220d500bbc2c007df0559"
+  },
+  "audio-originals/c-23.mp3": {
+    "chunks": [
+      "audio-source/c-23/000.part",
+      "audio-source/c-23/001.part",
+      "audio-source/c-23/002.part"
+    ],
+    "bytes": 192775,
+    "sha256": "6a9dd39b9825952a6fe1471fa20bd52634136bd3fcebc603eaed73f4b5053974"
+  }
+}

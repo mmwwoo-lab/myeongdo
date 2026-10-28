@@ -14,3 +14,6 @@
 .poem-introduction{border-top:4px double var(--line);padding-top:20px}
 @media(max-width:600px){.authorized-poem{padding:18px 14px;font-size:16px;line-height:2.05}}
 @media print{.original-recital-player{display:none!important}}
+
+.original-banner{margin:24px 0;padding:24px;border:1px solid var(--line);border-top:4px solid var(--red);background:#fffdf8}.original-banner h2{font-family:var(--serif);margin-top:0}.author-nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.author-section{scroll-margin-top:65px;margin-bottom:40px}.original-page{max-width:900px}.original-page .detail-head h1{overflow-wrap:anywhere}.original-page .read-actions{flex-wrap:wrap}.original-page .original-block{margin:24px 0}.original-page .source-notes{font-size:13px;line-height:1.8;color:var(--muted)}.poem-kind{color:var(--red)}
+@media(max-width:600px){.original-banner{padding:18px}.original-page .detail-head h1{font-size:28px}.author-nav .btn{flex:1;text-align:center}}
