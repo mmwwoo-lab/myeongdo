@@ -1,17 +1,12 @@
-# myeongdo-1028
+# 명도재문예신문 1028 — 서지월 시인 특별호
 
-A lightweight project scaffold added alongside the existing `myeongdo` repository.
+공개 주소: https://myeongdo-1028.vercel.app/
 
-## Overview
+정적 사이트. Vercel 프로젝트 myeongdo-1028의 소스 디렉터리는 이 폴더입니다.
 
-This project is a simple front-end app shell for iterating on the `myeongdo-1028` work item.
+- 서지월 작품 소개 60개, 중국 조선족 시인 소개 20개.
+- audio/의 MP3 80개는 기존 Create Audio 해설의 약 30초 미리듣기입니다. 시 전문 낭송이나 시인의 실제 육성이 아닙니다. 원본 제공자 주소는 audio-previews.js에 보존합니다.
+- 원시 전문은 재게시하지 않으며 외부 출처로 연결합니다. 서지월 직접 평문과 편집 해설을 구별합니다.
+- 최신작, 아카데미 소속, 사용자 제공 자료의 독립 검증 한계는 해당 지면에 표시합니다.
 
-## Run locally
-
-Open `index.html` in a browser, or serve the folder with a simple local server:
-
-```bash
-python -m http.server 8000
-```
-
-Then visit `http://localhost:8000`.
+배포 시 `node prepare-audio.cjs`가 미리듣기 파일을 audio/에 보존합니다. 기존 공개 사이트의 보존본을 먼저 사용하고, 최초 배포에만 원본 제공자 링크를 사용합니다. 파일 확보에 실패하면 배포가 실패해 기존 공개본을 유지합니다.
