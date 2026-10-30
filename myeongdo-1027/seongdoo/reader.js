@@ -20,14 +20,38 @@ function go(page){let p=Math.max(0,Math.min(pages.length-step(),page));if(!mobil
 function pauseResume(){if(speechId===null)return;if(paused){speechSynthesis.resume();paused=false}else{speechSynthesis.pause();paused=true}$('pauseToggle').textContent=paused?'▶ 이어 읽기':'⏸ 낭송 일시정지';render()}
 function readPage(i){
  if(speechId===i){pauseResume();return}
- stop();if(!('speechSynthesis'in window)){alert('크롬 등 한국어 음성합성 지원 브라우저를 이용해 주세요.');return}
- const p=pages[i];if(!p)return;
- const t=p.txt.split(/\n+/).map(x=>x.trim()).filter(Boolean);if(!t.length)return;
- speechId=i;recitalLines=t;recitalIndex=0;
- const local=++token;$('readingStatus').hidden=false;$('pauseToggle').textContent='⏸ 낭송 일시정지';
- const voice=speechSynthesis.getVoices().filter(v=>/^ko([-_]|$)/i.test(v.lang)).find(v=>/female|여성|heami|sunhi|sora|yuna|서연|선희/i.test(v.name))||speechSynthesis.getVoices().find(v=>/^ko([-_]|$)/i.test(v.lang));
- function next(){if(local!==token)return;if(recitalIndex>=recitalLines.length){stop();render();return}
- utterance=new SpeechSynthesisUtterance(recitalLines[recitalIndex++]);utterance.lang='ko-KR';if(voice)utterance.voice=voice;utterance.rate=.86;utterance.pitch=1.05;utterance.onend=next;utterance.onerror=()=>{stop();render()};speechSynthesis.speak(utterance)}
+ stop();
+ const p=pages[i];if(!p||!p.txt.trim())return;
+ if(!('speechSynthesis' in window)||!('SpeechSynthesisUtterance' in window)){alert('이 환경에서는 낭송을 지원하지 않습니다. 크롬에서 열어 주세요.');return}
+ const synth=window.speechSynthesis;
+ synth.cancel();
+ const lines=p.txt.split(/\n+/).map(x=>x.trim()).filter(Boolean);
+ if(!lines.length)return;
+ const voices=synth.getVoices().filter(v=>/^ko([-_]|$)/i.test(v.lang));
+ const voice=voices.find(v=>/female|여성|heami|sunhi|sora|yuna|서연|선희/i.test(v.name))||voices[0]||null;
+ speechId=i;recitalLines=lines;recitalIndex=0;paused=false;
+ const local=++token;
+ $('readingStatus').hidden=false;$('pauseToggle').textContent='⏸ 낭송 일시정지';
+ // Longer passages are spoken in short chunks to prevent browser speech cutoff.
+ function next(){
+  if(local!==token||speechId!==i)return;
+  if(recitalIndex>=recitalLines.length){stop();render();return}
+  const line=recitalLines[recitalIndex++];
+  const chunks=line.match(/.{1,100}(?:[.!?。！？]|$)|.{1,100}/gu)||[line];
+  const chunk=chunks.shift();
+  if(chunks.length)recitalLines.splice(recitalIndex,0,...chunks);
+  utterance=new SpeechSynthesisUtterance(chunk);
+  utterance.lang='ko-KR';if(voice)utterance.voice=voice;
+  utterance.rate=.88;utterance.pitch=1.03;utterance.volume=1;
+  utterance.onend=()=>{if(local===token)next()};
+  utterance.onerror=e=>{
+   if(local!==token)return;
+   if(e.error==='interrupted'||e.error==='canceled')return;
+   console.warn('낭송 오류',e.error);
+   stop();render();alert('음성 재생이 중단되었습니다. 크롬에서 다시 시도해 주세요.');
+  };
+  synth.speak(utterance);
+ }
  next();render();
 }
 function start(data){
