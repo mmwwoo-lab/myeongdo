@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>별꽃은 피고 지고 | 이성두 시인 · 명도재 디지털 시집</title>
+<meta name="description" content="이성두 시인의 다섯 번째 시집 별꽃은 피고 지고. 네 부의 시와 명도재 이명우의 시평을 책장 넘김과 페이지별 시낭송으로 읽습니다.">
+<meta property="og:title" content="별꽃은 피고 지고 | 이성두 디지털 시집"><meta property="og:description" content="이성두 원시 · 명도재 이명우 시 읽기. 시와 시평을 감상하는 디지털 서가.">
+<meta property="og:type" content="book"><meta property="og:url" content="https://mmwwoo-lab.github.io/myeongdo/myeongdo-1027/seongdoo/">
+<style>
+:root{--green:#173b32;--gold:#d9bd79;--paper:#fcfaf3;--ink:#283a34}*{box-sizing:border-box}
+body{margin:0;background:#292f2c;color:#ecede8;font-family:"Noto Serif KR","Malgun Gothic",serif}
+header{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 24px;border-bottom:1px solid #58635b}
+.brand{letter-spacing:.12em;color:#e4c781;font-weight:bold}button{cursor:pointer;font:inherit}
+header button,.actions button{border:1px solid #a6b4a5;border-radius:8px;background:#375348;color:#fff;padding:9px 14px}
+main{max-width:1150px;margin:22px auto;padding:0 20px}.overline{font-size:12px;letter-spacing:.18em;color:#d9c793;margin:0 0 14px}
+.book{display:grid;grid-template-columns:1fr 1fr;min-height:690px;position:relative;box-shadow:0 24px 55px #080f0a88;background:#faf7ef}
+.page{height:690px;min-width:0;overflow:auto;position:relative;background:linear-gradient(90deg,#fcfaf3 92%,#e6e0d2);color:var(--ink);padding:48px 54px 75px;scrollbar-width:thin}
+.page+ .page{background:linear-gradient(90deg,#e7dfd1,#fcfaf3 8%)}
+.page.cover{background:#173b32;color:#f4e9cb;display:flex;align-items:center;justify-content:center;text-align:center;border:12px double #aa986a}
+.cover .kicker{letter-spacing:.22em;font-size:12px;color:#e6d4a2}.cover h1{font-size:clamp(38px,4vw,59px);line-height:1.5;color:#e7cb86;font-weight:600;margin:36px 0}
+.cover .author{margin-top:60px;font-size:17px}.page.divider{background:linear-gradient(125deg,#fbf5e8,#f4eddf)!important}
+.page.divider .partnum{font-size:12px;color:#8d7957;letter-spacing:.22em}
+.page.divider h2{font-size:33px;margin:120px 0 20px;line-height:1.4}
+.poem-number{font-size:11px;color:#9a8562;letter-spacing:.15em}.poem h2{font-size:27px;line-height:1.45;margin:20px 0 10px}
+.poem .poet{font-size:12px;color:#647369}.verse{white-space:pre-wrap;font-size:17px;line-height:2.0;margin:25px 0}
+.critical{font-size:14px;line-height:2.0;word-break:keep-all}.critical h2{font-size:23px;line-height:1.5}.critical p{color:#394e42}
+.read{position:sticky;bottom:0;margin-top:22px;text-align:center;background:linear-gradient(transparent,#fcfaf3 35%);padding:20px 0 0;z-index:2}
+.read button{background:#e6efe6;color:#244936;border:1px solid #abbda9;border-radius:24px;padding:9px 17px;font-weight:bold}
+.page.cover .read{background:none}.page.cover .read button{background:#dbc790}
+.number{position:sticky;bottom:-60px;text-align:right;font:11px Arial;color:#969083;margin-top:10px}
+.crescent{position:absolute;top:50%;transform:translateY(-50%);z-index:8;width:40px;height:84px;border:1px solid #bba56e;background:#ebdbaf;color:#584424;font:34px Georgia}
+.crescent.prev{left:0;border-left:0;border-radius:0 80px 80px 0}.crescent.next{right:0;border-right:0;border-radius:80px 0 0 80px}
+.crescent[hidden]{display:none}.nav{display:flex;align-items:center;justify-content:center;gap:20px;margin:18px auto}
+.nav button{background:#3b564c;color:white;border:1px solid #85998e;border-radius:9px;padding:10px 20px}
+.nav strong{font:13px Arial}.notice{font-size:12px;line-height:1.8;color:#cdd6c9;margin-top:25px}.status{position:sticky;top:8px;z-index:15;margin:auto;text-align:center;background:#eff2df;color:#234936;border:1px solid #bcc8af;border-radius:24px;padding:10px 14px;font:13px Arial;max-width:max-content}
+#tocPanel{background:#f8f5ec;color:#253a30;padding:18px;border-radius:12px;margin:0 0 18px;max-height:55vh;overflow:auto}
+#tocPanel button{display:inline-block;border:1px solid #d5dacd;background:#fff;border-radius:5px;padding:7px 12px;margin:4px;color:#254435}
+@media(max-width:800px){main{padding:0 8px;margin-top:10px}.book{grid-template-columns:1fr;min-height:70vh}.page{height:70vh;min-height:510px;padding:28px 30px 60px}.page.hide-mobile{display:none}.crescent{width:34px;height:72px;font-size:29px}.cover h1{font-size:38px}.verse{font-size:16px;line-height:1.9}}
+</style></head><body>
+<header><div class="brand">明道齋 · 이성두 시집</div><div class="actions"><button id="contents">목차</button></div></header>
+<main><p class="overline">LEE SEONG-DOO · THE FIFTH POETRY COLLECTION</p>
+<div id="tocPanel" hidden></div><div id="readingStatus" class="status" hidden><button id="pauseToggle">⏸ 낭송 일시정지</button></div>
+<div class="book" id="book"><article class="page" id="left"></article><article class="page" id="right"></article><button class="crescent prev" id="edgePrev" aria-label="이전 페이지">‹</button><button class="crescent next" id="edgeNext" aria-label="다음 페이지">›</button></div>
+<nav class="nav"><button id="prev">← 이전</button><strong id="progress">로딩 중</strong><button id="next">다음 →</button></nav>
+<div class="notice">원시 © 이성두 시인 · 시평·편집 명도재 이명우. 제공받은 PDF 텍스트를 바탕으로 제작한 교정 초고이며, 공개 배포 및 재출판에 앞서 원저작자 또는 권리자의 이용 허락과 원문 최종 교열이 필요합니다. 음성은 방문자 브라우저의 한국어 음성합성입니다. 영상은 포함하지 않았습니다.</div>
+</main><script src="reader.js?v=20261030s1"></script></body></html>
