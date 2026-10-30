@@ -9,7 +9,7 @@ function readBtn(i){return '<div class="read"><button data-read="'+i+'" aria-lab
 function render(){
  for(let i=0;i<2;i++){let x=pos+i,el=$(i?'right':'left'),p=pages[x];
  el.className='page'+(p?.kind==='cover'?' cover':p?.kind==='divider'?' divider':'')+(mobile.matches&&i?' hide-mobile':'');
- el.innerHTML=p?p.html+readBtn(x)+'<div class="number">'+(x+1)+'</div>':'';el.scrollTop=0}
+ el.innerHTML=p?readBtn(x)+p.html+'<div class="number">'+(x+1)+'</div>':'';el.scrollTop=0}
  $('progress').textContent=(pos+1)+' — '+Math.min(pos+step(),pages.length)+' / '+pages.length;
  $('prev').disabled=$('edgePrev').hidden=pos===0;
  $('next').disabled=$('edgeNext').hidden=pos+step()>=pages.length;
@@ -17,7 +17,7 @@ function render(){
 }
 function stop(){token++;speechId=null;paused=false;if('speechSynthesis'in window)window.speechSynthesis.cancel();$('readingStatus').hidden=true}
 function go(page){let p=Math.max(0,Math.min(pages.length-step(),page));if(!mobile.matches)p-=p%2;if(p===pos)return;stop();pos=p;render();history.replaceState(null,'','#page-'+(pos+1))}
-function pauseResume(){if(speechId===null)return;if(paused){speechSynthesis.resume();paused=false}else{speechSynthesis.pause();paused=true}$('pauseToggle').textContent=paused?'▶ 이어 읽기':'⏸ 낭송 일시정지';render()}
+function pauseResume(){if(speechId===null)return;try{if(paused){speechSynthesis.resume();paused=false}else{speechSynthesis.pause();paused=true}$('pauseToggle').textContent=paused?'▶ 이어 읽기':'⏸ 낭송 일시정지';document.querySelectorAll('[data-read]').forEach(b=>{if(Number(b.dataset.read)===speechId)b.textContent=paused?'▶ 이어 읽기':'⏸ 일시정지'})}catch(e){console.warn(e)}}
 function readPage(i){
  if(speechId===i){pauseResume();return}
  stop();
@@ -37,7 +37,7 @@ function readPage(i){
   if(local!==token||speechId!==i)return;
   if(recitalIndex>=recitalLines.length){stop();render();return}
   const line=recitalLines[recitalIndex++];
-  const chunks=line.match(/.{1,100}(?:[.!?。！？]|$)|.{1,100}/gu)||[line];
+  const chunks=line.match(/[\s\S]{1,90}/gu)||[line];
   const chunk=chunks.shift();
   if(chunks.length)recitalLines.splice(recitalIndex,0,...chunks);
   utterance=new SpeechSynthesisUtterance(chunk);
@@ -85,4 +85,4 @@ $('pauseToggle').onclick=pauseResume;
 $('book').addEventListener('click',e=>{if(e.target.closest('button'))return;if(speechId!==null){pauseResume();return}const el=e.target.closest('.page');if(!el)return;go(pos+(el.id==='left'?-step():step()))});
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(pos+step());if(e.key==='ArrowLeft')go(pos-step())});
 window.addEventListener('pagehide',stop);
-fetch('poems.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('작품 파일을 열 수 없습니다.');return r.json()}).then(start).catch(e=>{$('progress').textContent='시집 불러오기 실패';console.error(e)});
+fetch('./poems.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('작품 파일을 열 수 없습니다.');return r.json()}).then(start).catch(e=>{$('progress').textContent='시집 불러오기 실패';console.error(e)});
