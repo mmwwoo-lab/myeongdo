@@ -20,10 +20,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-01-1.jpg",
+          "title": "우주 05-IV-71 #200",
+          "image_url": "https://www.galleryhyundai.com/public/2020/04/17/22/18/22/89c16bc7-2a91-4253-9f32-c6c4afac2256.resize_large.jpg",
+          "source_url": "https://www.galleryhyundai.com/story/view/20000000074",
+          "source_name": "갤러리현대",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -56,10 +59,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-02-1.jpg",
+          "title": "황소",
+          "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Bull%281950s%29.jpg",
+          "source_url": "https://commons.wikimedia.org/wiki/File:Bull(1950s).jpg",
+          "source_name": "Wikimedia Commons",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -92,10 +98,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-03-1.jpg",
+          "title": "나무와 두 여인",
+          "image_url": "https://hyundaihwarang.com/upload/works/20141120171903_a0ff623d.jpg",
+          "source_url": "https://hyundaihwarang.com/?c=exhibition&gbn=slider&gp=1&ix=236&mode=past&op=&past=&s=1&start=3&year=2010",
+          "source_name": "현대화랑",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -164,10 +173,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-05-1.jpg",
+          "title": "산",
+          "image_url": "https://image.fnnews.com/resource/media/image/2025/06/05/202506051838197895_e.jpg",
+          "source_url": "https://www.fnnews.com/news/202506051838155450",
+          "source_name": "파이낸셜뉴스",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -236,10 +248,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-07-1.jpg",
+          "title": "Ecriture(Red)",
+          "image_url": "https://d7hftxdivxxvm.cloudfront.net/?height=800&quality=50&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2Fsdaq_mrFbqC42c7xZZZQ_Q%2Fmain.jpg&width=800",
+          "source_url": "https://www.artsy.net/artwork/park-seo-bo-ecriture-red",
+          "source_name": "Artsy",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -272,10 +287,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-08-1.jpg",
+          "title": "물방울",
+          "image_url": "https://img1.daumcdn.net/thumb/R800x0/?fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbBvQeR%2FbtrQK1f0xAY%2FqkZxrlrK8LPUrO4ffzkg7k%2Fimg.jpg&scode=mtistory2",
+          "source_url": "https://j-cas.tistory.com/entry/%EA%B9%80%EC%B0%BD%EC%97%B4-1978%EB%85%84-40%ED%98%B8-%EB%AC%BC%EB%B0%A9%EC%9A%B8-oil-on-hemp-cloth",
+          "source_name": "공개 블로그 자료",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -344,10 +362,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-10-1.jpg",
+          "title": "군상 (1982)",
+          "image_url": "https://media.mutualart.com/Images/2023_11/17/21/211545241/12d1133b-66ec-4482-babd-161b608fb7f8_570.Jpeg",
+          "source_url": "https://www.mutualart.com/Artwork/%EA%B5%B0%EC%83%81/1CE6F59629B595C0F8955CAEDE3EF518",
+          "source_name": "MutualArt",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -452,10 +473,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-13-1.jpg",
+          "title": "자화상",
+          "image_url": "https://cdn.ibulgyo.com/news/photo/201607/150010_101021_1559.jpg",
+          "source_url": "https://www.ibulgyo.com/news/articleView.html?idxno=150010",
+          "source_name": "불교신문",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -524,10 +548,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-15-1.jpg",
+          "title": "남향집",
+          "image_url": "https://img.hankyung.com/photo/202505/01.40619511.1.jpg",
+          "source_url": "https://www.hankyung.com/article/202505265760i",
+          "source_name": "한국경제",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -848,10 +875,13 @@
       "works": [
         {
           "slot": 1,
-          "title": null,
-          "image_path": "assets/works/artist-24-1.jpg",
+          "title": "투레트의 밤 8월 2, 79",
+          "image_url": "https://antiegg.kr/wp-content/uploads/2024/06/10.-%ED%88%AC%EB%A0%88%ED%8A%B8%EC%9D%98-%EB%B0%A4-8%EC%9B%94-2-79-1979-%EC%BA%94%EB%B2%84%EC%8A%A4%EC%97%90-%EC%95%84%ED%81%AC%EB%A6%B4%EB%A6%AD-150x150cm-%EA%B0%9C%EC%9D%B8%EC%86%8C%EC%9E%A5-1.jpg",
+          "source_url": "https://antiegg.kr/22359/",
+          "source_name": "ANTIEGG",
           "file_uploaded": false,
-          "caption": null
+          "display_mode": "외부 이미지 참조",
+          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
         },
         {
           "slot": 2,
@@ -1092,5 +1122,6 @@
     "status": "사용자 허락 확인",
     "independent_documentation": "증빙문서 별도 제출·검토하지 않음",
     "updated_on": "2026-11-02"
-  }
+  },
+  "external_image_notice": "외부 이미지 URL을 참조하는 미리보기 전시입니다. 실제 파일을 GitHub에 복제 업로드한 것은 아니며 외부 호스트의 핫링크 제한에 따라 보이지 않을 수 있습니다. 출처 페이지 링크 제공."
 }
