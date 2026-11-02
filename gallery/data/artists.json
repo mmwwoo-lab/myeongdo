@@ -215,13 +215,13 @@
       "works": [
         {
           "slot": 1,
-          "title": "From Line (1981)",
-          "image_url": "https://d7hftxdivxxvm.cloudfront.net/?height=641&quality=85&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2F5DCumEiDhhC6iFOXmDfwvQ%2Fnormalized.jpg&width=800",
-          "source_url": "https://www.artsy.net/artwork/lee-ufan-from-line-81072",
-          "source_name": "Artsy",
+          "title": "Dialogue (2015)",
+          "image_url": "https://media.mutualart.com/Images/2023_09/24/12/125946319/lee-ufan-dialogue-LJQIU.Jpeg",
+          "source_url": "https://www.mutualart.com/Artwork/Dialogue/9DD69F1B548EC7518052FA7F0AD6D226",
+          "source_name": "MutualArt",
           "file_uploaded": false,
-          "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "display_mode": "외부 이미지 URL 참조",
+          "image_status": "공개 작품 이미지·출처 연결, 원본 파일은 미저장"
         },
         {
           "slot": 2,
@@ -449,13 +449,13 @@
       "works": [
         {
           "slot": 1,
-          "title": "Untitled 97-3-26 (1997)",
-          "image_url": "https://sothebys-com.brightspotcdn.com/dims4/default/bba4c99/2147483647/strip/true/crop/2000x1458%2B0%2B0/resize/566x413%21/quality/90/?url=http%3A%2F%2Fsothebys-brightspot-migration.s3.amazonaws.com%2F76%2Fb2%2F96%2F5071c2594cca211c55b7d768ae4c20634b8bcce35083e2ab12da6befb1%2F220hk0701-95x8l.jpg",
-          "source_url": "https://www.sothebys.com/en/auctions/ecatalogue/2016/tttop-hk0701/lot.615.html",
-          "source_name": "Sotheby's",
+          "title": "Untitled 84-3-1 (1984)",
+          "image_url": "https://dist.phillips.com/auction-assets/HK010417/41_001.jpg?fit=crop&height=730&offset-x=50&offset-y=100",
+          "source_url": "https://www.phillips.com/detail/chung-sanghwa/111787",
+          "source_name": "Phillips",
           "file_uploaded": false,
-          "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "display_mode": "외부 이미지 URL 참조",
+          "image_status": "공개 작품 이미지·출처 연결, 원본 파일은 미저장"
         },
         {
           "slot": 2,
@@ -761,13 +761,13 @@
       "works": [
         {
           "slot": 1,
-          "title": "바보산수",
-          "image_url": "https://thumb.hypen.im/vqw91v6x/3/17851/5pkx9h4tonpjc9p26pyxge.jpg?type=w&w=800",
-          "source_url": "https://www.artness.kr/artwork/ky5q4vpy",
-          "source_name": "아트니스",
+          "title": "신행 (1970년대 청록산수)",
+          "image_url": "https://static-assets.artlogic.net/w_1200%2Cc_limit%2Cf_auto%2Cfl_lossy%2Cq_auto/ws-arario/usr/exhibitions/images/exhibitions/353/40.-1970-104-133-.jpg",
+          "source_url": "https://www.arariogallery.com/exhibitions/353-unbo-kim-ki-chang-arario-collection/",
+          "source_name": "Arario Gallery",
           "file_uploaded": false,
-          "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "display_mode": "외부 이미지 URL 참조",
+          "image_status": "공개 작품 이미지·출처 연결, 원본 파일은 미저장"
         },
         {
           "slot": 2,
@@ -1034,13 +1034,13 @@
       "works": [
         {
           "slot": 1,
-          "title": "사북 – 미자네 집 (2000)",
-          "source_url": "https://images.k-auction.com/www/pdfFileUpload/2017_02/2017_3.pdf",
-          "source_name": "K-Auction 작품 도록",
-          "image_url": null,
+          "title": "Central Park (2014)",
+          "source_url": "https://www.artsy.net/artist/oh-chi-gyun",
+          "source_name": "Artsy",
+          "image_url": "https://d7hftxdivxxvm.cloudfront.net/?height=445&quality=85&resize_to=fill&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2Ff4clNxMRrvrtd3CS5xi6sA%2Flarger.jpg&width=445",
           "file_uploaded": false,
-          "display_mode": "원본 출처만 확보",
-          "image_status": "작품명·소장 도록 확보, 독립된 이미지 URL 미확보"
+          "display_mode": "외부 이미지 URL 참조",
+          "image_status": "공개 작품 이미지·출처 연결, 원본 파일은 미저장"
         },
         {
           "slot": 2,
