@@ -63,9 +63,10 @@
           "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Bull%281950s%29.jpg",
           "source_url": "https://commons.wikimedia.org/wiki/File:Bull(1950s).jpg",
           "source_name": "Wikimedia Commons",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 참조",
-          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-02-1.webp"
         },
         {
           "slot": 2,
@@ -102,9 +103,10 @@
           "image_url": "https://hyundaihwarang.com/upload/works/20141120171903_a0ff623d.jpg",
           "source_url": "https://hyundaihwarang.com/?c=exhibition&gbn=slider&gp=1&ix=236&mode=past&op=&past=&s=1&start=3&year=2010",
           "source_name": "현대화랑",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 참조",
-          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-03-1.webp"
         },
         {
           "slot": 2,
@@ -141,9 +143,10 @@
           "image_url": "https://cphoto.asiae.co.kr/listimglink/1/2020012015054815704_1579500348.jpg",
           "source_url": "https://cm.asiae.co.kr/article/2020012015221220167",
           "source_name": "아시아경제",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-04-1.webp"
         },
         {
           "slot": 2,
@@ -180,9 +183,10 @@
           "image_url": "https://image.fnnews.com/resource/media/image/2025/06/05/202506051838197895_e.jpg",
           "source_url": "https://www.fnnews.com/news/202506051838155450",
           "source_name": "파이낸셜뉴스",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 참조",
-          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-05-1.webp"
         },
         {
           "slot": 2,
@@ -219,9 +223,10 @@
           "image_url": "https://media.mutualart.com/Images/2023_09/24/12/125946319/lee-ufan-dialogue-LJQIU.Jpeg",
           "source_url": "https://www.mutualart.com/Artwork/Dialogue/9DD69F1B548EC7518052FA7F0AD6D226",
           "source_name": "MutualArt",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 URL 참조",
-          "image_status": "공개 작품 이미지·출처 연결, 원본 파일은 미저장"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-06-1.webp"
         },
         {
           "slot": 2,
@@ -258,9 +263,10 @@
           "image_url": "https://d7hftxdivxxvm.cloudfront.net/?height=800&quality=50&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2Fsdaq_mrFbqC42c7xZZZQ_Q%2Fmain.jpg&width=800",
           "source_url": "https://www.artsy.net/artwork/park-seo-bo-ecriture-red",
           "source_name": "Artsy",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 참조",
-          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-07-1.webp"
         },
         {
           "slot": 2,
@@ -297,9 +303,10 @@
           "image_url": "https://img1.daumcdn.net/thumb/R800x0/?fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbBvQeR%2FbtrQK1f0xAY%2FqkZxrlrK8LPUrO4ffzkg7k%2Fimg.jpg&scode=mtistory2",
           "source_url": "https://j-cas.tistory.com/entry/%EA%B9%80%EC%B0%BD%EC%97%B4-1978%EB%85%84-40%ED%98%B8-%EB%AC%BC%EB%B0%A9%EC%9A%B8-oil-on-hemp-cloth",
           "source_name": "공개 블로그 자료",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 참조",
-          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-08-1.webp"
         },
         {
           "slot": 2,
@@ -336,9 +343,10 @@
           "image_url": "https://image.fnnews.com/resource/media/image/2023/09/29/202309290800378587_l.jpg",
           "source_url": "https://www.fnnews.com/news/202309290801533052",
           "source_name": "파이낸셜뉴스",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-09-1.webp"
         },
         {
           "slot": 2,
@@ -375,9 +383,10 @@
           "image_url": "https://media.mutualart.com/Images/2023_11/17/21/211545241/12d1133b-66ec-4482-babd-161b608fb7f8_570.Jpeg",
           "source_url": "https://www.mutualart.com/Artwork/%EA%B5%B0%EC%83%81/1CE6F59629B595C0F8955CAEDE3EF518",
           "source_name": "MutualArt",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 참조",
-          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-10-1.webp"
         },
         {
           "slot": 2,
@@ -414,9 +423,10 @@
           "image_url": "https://cdn.imweb.me/upload/S20220929097e8ef5d876b/d38b24c5c2eb2.jpeg",
           "source_url": "https://www.artart.today/artletter0217",
           "source_name": "ARTLETTER",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-11-1.webp"
         },
         {
           "slot": 2,
@@ -453,9 +463,10 @@
           "image_url": "https://dist.phillips.com/auction-assets/HK010417/41_001.jpg?fit=crop&height=730&offset-x=50&offset-y=100",
           "source_url": "https://www.phillips.com/detail/chung-sanghwa/111787",
           "source_name": "Phillips",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 URL 참조",
-          "image_status": "공개 작품 이미지·출처 연결, 원본 파일은 미저장"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-12-1.webp"
         },
         {
           "slot": 2,
@@ -502,9 +513,10 @@
           "image_url": "https://cdn.ibulgyo.com/news/photo/201607/150010_101021_1559.jpg",
           "source_url": "https://www.ibulgyo.com/news/articleView.html?idxno=150010",
           "source_name": "불교신문",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 참조",
-          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-13-1.webp"
         },
         {
           "slot": 2,
@@ -541,9 +553,10 @@
           "image_url": "https://og-data.s3.amazonaws.com/media/artstory/post_image/4/5.jpg",
           "source_url": "https://www.opengallery.co.kr/art-readings/4/",
           "source_name": "오픈갤러리",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-14-1.webp"
         },
         {
           "slot": 2,
@@ -580,9 +593,10 @@
           "image_url": "https://img.hankyung.com/photo/202505/01.40619511.1.jpg",
           "source_url": "https://www.hankyung.com/article/202505265760i",
           "source_name": "한국경제",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 참조",
-          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-15-1.webp"
         },
         {
           "slot": 2,
@@ -619,9 +633,10 @@
           "image_url": "https://media.mutualart.com/Images/2015_07/08/18/185647538/f0d8ecf7-e1c2-469a-8058-1307cedaff01_570.Jpeg",
           "source_url": "https://www.mutualart.com/Artwork/Joseon-White-Porcelain/4C7B9C1A230E563B",
           "source_name": "MutualArt",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-16-1.webp"
         },
         {
           "slot": 2,
@@ -658,9 +673,10 @@
           "image_url": "https://img1.daumcdn.net/thumb/R1280x0/?fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcLH3pR%2FbtrRMv1Hulh%2F87z97yaF8vmjc2VwFx7ijK%2Fimg.jpg&scode=mtistory2",
           "source_url": "https://j-cas.tistory.com/entry/%EC%9D%B4%EB%8C%80%EC%9B%901921-2005-%EB%86%8D%EC%9B%90-1977%EB%85%84-50%C3%97606cm-12%ED%98%B8",
           "source_name": "공개 미술 자료",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-17-1.webp"
         },
         {
           "slot": 2,
@@ -697,9 +713,10 @@
           "image_url": "https://img2.daumcdn.net/thumb/R658x0.q70/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fnews%2F202604%2F20%2Ffnnewsi%2F20260420185638178ziga.jpg",
           "source_url": "https://v.daum.net/v/20260420185638498",
           "source_name": "뉴시스",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-18-1.webp"
         },
         {
           "slot": 2,
@@ -736,9 +753,10 @@
           "image_url": "https://pubstorage.myartauction.com/files/attach/images/184/396/473/5cccb75d3a29b26ef09c1ea0dffdb06d.jpg",
           "source_url": "https://myartauction.com/stories/columns/d5fb13d1fb194bf59386c241d4f4ea87",
           "source_name": "마이아트옥션",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-19-1.webp"
         },
         {
           "slot": 2,
@@ -775,9 +793,10 @@
           "image_url": "https://static-assets.artlogic.net/w_1200%2Cc_limit%2Cf_auto%2Cfl_lossy%2Cq_auto/ws-arario/usr/exhibitions/images/exhibitions/353/40.-1970-104-133-.jpg",
           "source_url": "https://www.arariogallery.com/exhibitions/353-unbo-kim-ki-chang-arario-collection/",
           "source_name": "Arario Gallery",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 URL 참조",
-          "image_status": "공개 작품 이미지·출처 연결, 원본 파일은 미저장"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-20-1.webp"
         },
         {
           "slot": 2,
@@ -814,9 +833,10 @@
           "image_url": "https://www.mmcaresearch.kr/admin/uploadGoods/df57bc1f-ee87-42c4-8773-9fe5d9c5d728.jpg",
           "source_url": "https://www.mmcaresearch.kr/timeline/view.do?searchYearmm=194811",
           "source_name": "MMCA Research",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-21-1.webp"
         },
         {
           "slot": 2,
@@ -853,9 +873,10 @@
           "image_url": "https://img1.newsis.com/2018/09/10/NISI20180910_0000199398_web.jpg",
           "source_url": "https://mobile.newsis.com/view/NISX20180910_0000414508",
           "source_name": "뉴시스",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-22-1.webp"
         },
         {
           "slot": 2,
@@ -892,9 +913,10 @@
           "image_url": "https://media.mutualart.com/Images/2023_02/18/06/064402564/8f2e81b4-ce62-4039-8f3e-18dc0dd3d84b.Jpeg",
           "source_url": "https://www.mutualart.com/Artwork/%EB%AC%B4%EB%8B%B9-%E5%B7%AB%E5%A0%82-/6B0EBDF0BC843480FE2FCC0A443389F6",
           "source_name": "MutualArt",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-23-1.webp"
         },
         {
           "slot": 2,
@@ -931,9 +953,10 @@
           "image_url": "https://antiegg.kr/wp-content/uploads/2024/06/10.-%ED%88%AC%EB%A0%88%ED%8A%B8%EC%9D%98-%EB%B0%A4-8%EC%9B%94-2-79-1979-%EC%BA%94%EB%B2%84%EC%8A%A4%EC%97%90-%EC%95%84%ED%81%AC%EB%A6%B4%EB%A6%AD-150x150cm-%EA%B0%9C%EC%9D%B8%EC%86%8C%EC%9E%A5-1.jpg",
           "source_url": "https://antiegg.kr/22359/",
           "source_name": "ANTIEGG",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 참조",
-          "image_status": "출처 확인·외부 URL 연결 (원본 파일 저장소 미등록)"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-24-1.webp"
         },
         {
           "slot": 2,
@@ -970,9 +993,10 @@
           "image_url": "https://cdn.artbava.com/media/img/06_dccFHfh.jpg",
           "source_url": "https://artbava.com/exhibits/%EB%82%A8%EA%B4%80%EC%9D%98-%EC%B6%94%EC%83%81%ED%9A%8C%ED%99%94-1955-1990",
           "source_name": "ARTBAVA",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-25-1.webp"
         },
         {
           "slot": 2,
@@ -1009,9 +1033,10 @@
           "image_url": "https://cdn.thekbs.co.kr/news/photo/201911/1690_3694_2728.png",
           "source_url": "https://www.thekbs.co.kr/news/articleView.html?idxno=1690",
           "source_name": "THE K BEAUTY SCIENCE",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-26-1.webp"
         },
         {
           "slot": 2,
@@ -1048,9 +1073,10 @@
           "source_url": "https://www.artsy.net/artist/oh-chi-gyun",
           "source_name": "Artsy",
           "image_url": "https://d7hftxdivxxvm.cloudfront.net/?height=445&quality=85&resize_to=fill&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2Ff4clNxMRrvrtd3CS5xi6sA%2Flarger.jpg&width=445",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 이미지 URL 참조",
-          "image_status": "공개 작품 이미지·출처 연결, 원본 파일은 미저장"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-27-1.webp"
         },
         {
           "slot": 2,
@@ -1087,9 +1113,10 @@
           "image_url": "https://d1z7ls0lpgvz0q.cloudfront.net/media/artwork/image/main/Main_CjUQswq.jpg",
           "source_url": "https://artnedition.com/artwork/B61KBJ1001/",
           "source_name": "아트앤에디션",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-28-1.webp"
         },
         {
           "slot": 2,
@@ -1126,9 +1153,10 @@
           "image_url": "https://media.mutualart.com/Images/2014_03/03/15/151405662/f555a0cf-0dd0-4716-9eaf-7a666cb2f667.Jpeg",
           "source_url": "https://www.mutualart.com/Artwork/Golden-Barley/494DCA43850C439B",
           "source_name": "MutualArt",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-29-1.webp"
         },
         {
           "slot": 2,
@@ -1165,9 +1193,10 @@
           "image_url": "https://media.gurim.com/media/filer_public/ca/13/ca13cb7c-4de2-4960-9555-31ae7e8dcd54/ops2khs1001.jpg",
           "source_url": "https://gurim.com/artwork/korea-fantasy-150-editions-B51AL00399/",
           "source_name": "그림닷컴",
-          "file_uploaded": false,
+          "file_uploaded": true,
           "display_mode": "외부 URL 참조",
-          "image_status": "작품 공개 페이지 및 이미지 주소 확인; 실물 파일은 아직 미등록"
+          "image_status": "Downloaded and optimized preview; source attributed",
+          "image_path": "assets/works/artist-30-1.webp"
         },
         {
           "slot": 2,

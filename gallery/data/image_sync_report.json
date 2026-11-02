@@ -1,0 +1,332 @@
+{
+  "total_artists": 30,
+  "local_images": 29,
+  "results": [
+    {
+      "artist": "김환기",
+      "title": "우주 05-IV-71 #200",
+      "status": "failed",
+      "source_url": "https://www.galleryhyundai.com/story/view/20000000074",
+      "message": "HTTP Error 404: Not Found"
+    },
+    {
+      "artist": "이중섭",
+      "title": "황소",
+      "status": "downloaded",
+      "path": "assets/works/artist-02-1.webp",
+      "dimensions": [
+        795,
+        601
+      ],
+      "bytes": 92384
+    },
+    {
+      "artist": "박수근",
+      "title": "나무와 두 여인",
+      "status": "downloaded",
+      "path": "assets/works/artist-03-1.webp",
+      "dimensions": [
+        800,
+        600
+      ],
+      "bytes": 96350
+    },
+    {
+      "artist": "천경자",
+      "title": "꽃을 든 여인 (1982)",
+      "status": "downloaded",
+      "path": "assets/works/artist-04-1.webp",
+      "dimensions": [
+        745,
+        1013
+      ],
+      "bytes": 121572
+    },
+    {
+      "artist": "유영국",
+      "title": "산",
+      "status": "downloaded",
+      "path": "assets/works/artist-05-1.webp",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "bytes": 45222
+    },
+    {
+      "artist": "이우환",
+      "title": "Dialogue (2015)",
+      "status": "downloaded",
+      "path": "assets/works/artist-06-1.webp",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "bytes": 25424
+    },
+    {
+      "artist": "박서보",
+      "title": "Ecriture(Red)",
+      "status": "downloaded",
+      "path": "assets/works/artist-07-1.webp",
+      "dimensions": [
+        800,
+        800
+      ],
+      "bytes": 21258
+    },
+    {
+      "artist": "김창열",
+      "title": "물방울",
+      "status": "downloaded",
+      "path": "assets/works/artist-08-1.webp",
+      "dimensions": [
+        800,
+        645
+      ],
+      "bytes": 196074
+    },
+    {
+      "artist": "장욱진",
+      "title": "가족 (1955)",
+      "status": "downloaded",
+      "path": "assets/works/artist-09-1.webp",
+      "dimensions": [
+        800,
+        503
+      ],
+      "bytes": 93226
+    },
+    {
+      "artist": "이응노",
+      "title": "군상 (1982)",
+      "status": "downloaded",
+      "path": "assets/works/artist-10-1.webp",
+      "dimensions": [
+        570,
+        427
+      ],
+      "bytes": 118728
+    },
+    {
+      "artist": "윤형근",
+      "title": "Blue Monochrome",
+      "status": "downloaded",
+      "path": "assets/works/artist-11-1.webp",
+      "dimensions": [
+        1200,
+        1201
+      ],
+      "bytes": 437306
+    },
+    {
+      "artist": "정상화",
+      "title": "Untitled 84-3-1 (1984)",
+      "status": "downloaded",
+      "path": "assets/works/artist-12-1.webp",
+      "dimensions": [
+        1302,
+        1600
+      ],
+      "bytes": 275730
+    },
+    {
+      "artist": "나혜석",
+      "title": "자화상",
+      "status": "downloaded",
+      "path": "assets/works/artist-13-1.webp",
+      "dimensions": [
+        500,
+        633
+      ],
+      "bytes": 77534
+    },
+    {
+      "artist": "이인성",
+      "title": "가을 어느 날 (1934)",
+      "status": "downloaded",
+      "path": "assets/works/artist-14-1.webp",
+      "dimensions": [
+        740,
+        442
+      ],
+      "bytes": 121706
+    },
+    {
+      "artist": "오지호",
+      "title": "남향집",
+      "status": "downloaded",
+      "path": "assets/works/artist-15-1.webp",
+      "dimensions": [
+        1200,
+        1481
+      ],
+      "bytes": 282986
+    },
+    {
+      "artist": "도상봉",
+      "title": "조선 백자 (1972)",
+      "status": "downloaded",
+      "path": "assets/works/artist-16-1.webp",
+      "dimensions": [
+        570,
+        488
+      ],
+      "bytes": 33368
+    },
+    {
+      "artist": "이대원",
+      "title": "농원 (1977)",
+      "status": "downloaded",
+      "path": "assets/works/artist-17-1.webp",
+      "dimensions": [
+        1280,
+        1045
+      ],
+      "bytes": 454060
+    },
+    {
+      "artist": "김종학",
+      "title": "설악산 풍경 (1999)",
+      "status": "downloaded",
+      "path": "assets/works/artist-18-1.webp",
+      "dimensions": [
+        658,
+        436
+      ],
+      "bytes": 145602
+    },
+    {
+      "artist": "박래현",
+      "title": "노점 (1956)",
+      "status": "downloaded",
+      "path": "assets/works/artist-19-1.webp",
+      "dimensions": [
+        1600,
+        1599
+      ],
+      "bytes": 235308
+    },
+    {
+      "artist": "김기창",
+      "title": "신행 (1970년대 청록산수)",
+      "status": "downloaded",
+      "path": "assets/works/artist-20-1.webp",
+      "dimensions": [
+        1200,
+        937
+      ],
+      "bytes": 251506
+    },
+    {
+      "artist": "이상범",
+      "title": "안개 낀 산촌 풍경",
+      "status": "downloaded",
+      "path": "assets/works/artist-21-1.webp",
+      "dimensions": [
+        1200,
+        983
+      ],
+      "bytes": 268504
+    },
+    {
+      "artist": "변관식",
+      "title": "외금강 삼선암",
+      "status": "downloaded",
+      "path": "assets/works/artist-22-1.webp",
+      "dimensions": [
+        640,
+        647
+      ],
+      "bytes": 107034
+    },
+    {
+      "artist": "박생광",
+      "title": "무당 (1982)",
+      "status": "downloaded",
+      "path": "assets/works/artist-23-1.webp",
+      "dimensions": [
+        1600,
+        1600
+      ],
+      "bytes": 575824
+    },
+    {
+      "artist": "이성자",
+      "title": "투레트의 밤 8월 2, 79",
+      "status": "downloaded",
+      "path": "assets/works/artist-24-1.webp",
+      "dimensions": [
+        1000,
+        1002
+      ],
+      "bytes": 218212
+    },
+    {
+      "artist": "남관",
+      "title": "추상 회화 (전시 이미지)",
+      "status": "downloaded",
+      "path": "assets/works/artist-25-1.webp",
+      "dimensions": [
+        800,
+        522
+      ],
+      "bytes": 180632
+    },
+    {
+      "artist": "권옥연",
+      "title": "모자를 쓴 여인",
+      "status": "downloaded",
+      "path": "assets/works/artist-26-1.webp",
+      "dimensions": [
+        600,
+        431
+      ],
+      "bytes": 21348
+    },
+    {
+      "artist": "오치균",
+      "title": "Central Park (2014)",
+      "status": "downloaded",
+      "path": "assets/works/artist-27-1.webp",
+      "dimensions": [
+        445,
+        445
+      ],
+      "bytes": 87882
+    },
+    {
+      "artist": "김병종",
+      "title": "생명의 노래",
+      "status": "downloaded",
+      "path": "assets/works/artist-28-1.webp",
+      "dimensions": [
+        800,
+        619
+      ],
+      "bytes": 52490
+    },
+    {
+      "artist": "이숙자",
+      "title": "황금 보리",
+      "status": "downloaded",
+      "path": "assets/works/artist-29-1.webp",
+      "dimensions": [
+        1000,
+        799
+      ],
+      "bytes": 274466
+    },
+    {
+      "artist": "김흥수",
+      "title": "코리아 환타지",
+      "status": "downloaded",
+      "path": "assets/works/artist-30-1.webp",
+      "dimensions": [
+        800,
+        554
+      ],
+      "bytes": 133690
+    }
+  ]
+}
