@@ -1,0 +1,39 @@
+name: NEXORA — artwork image sync
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/nexora-artwork-sync.yml'
+      - 'gallery/scripts/sync_images.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-artworks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image converter
+        run: python -m pip install Pillow==11.3.0
+      - name: Download verified artwork preview URLs and optimize locally
+        run: python gallery/scripts/sync_images.py
+      - name: Save downloaded files and exhibit metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gallery/assets/works gallery/data/artists.json gallery/data/image_sync_report.json gallery/index.html gallery/3d/index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "NEXORA: store optimized artwork previews locally"
+            git push origin main
+          fi
