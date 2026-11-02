@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0e1716" />
+<title>한국미술 100년, 거장 30인의 빛 | 3D 전시공간</title>
+<style>
+:root{
+  --bg:#eef0eb;--paper:#fffdf8;--ink:#15211d;--muted:#66736d;--line:#d9ddd5;
+  --deep:#10201d;--deep2:#17312b;--gold:#d6b37a;--gold2:#f1d8ab;--room:#ded8ca;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+a{text-decoration:none;color:inherit} button,input{font:inherit} button{cursor:pointer}
+.top{position:sticky;top:0;z-index:30;height:72px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(10,20,18,.92);backdrop-filter:blur(10px);color:#f4f3ec;border-bottom:1px solid rgba(255,255,255,.08)}
+.brand{font:700 18px Georgia,serif;letter-spacing:.08em}.brand small{display:block;font:10px system-ui;letter-spacing:.24em;color:#c7b189;margin-top:4px}
+.nav{display:flex;gap:24px;font-size:13px;color:#d8e0da}.nav a:hover{color:#f1d6a0}
+.hero{min-height:760px;padding:70px max(5%,calc((100vw - 1280px)/2)) 90px;background:radial-gradient(circle at 20% 10%,#26443c 0,#142723 35%,#091311 100%);color:#f5f3ee;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center}
+.over{font-size:11px;letter-spacing:.28em;color:var(--gold);font-weight:700}.hero h1{font:normal clamp(42px,5.3vw,76px)/1.14 Georgia,serif;letter-spacing:-.04em;margin:18px 0 20px}.hero h1 em{color:#f0d8ab;font-style:normal}.hero p{max-width:620px;color:#d0d9d4;font-size:15px;line-height:1.95}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:14px 22px;border:1px solid #d2b382;border-radius:2px;background:#dfc18a;color:#15221d;font-size:13px;font-weight:800}.btn.ghost{background:transparent;color:#f5edde;border-color:#768c82}
+.kicker{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px;max-width:680px}.kicker div{padding:14px 16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03)}.kicker strong{display:block;font:28px Georgia,serif;color:#efd8aa}.kicker span{font-size:12px;color:#c6d0cb}
+.scene-wrap{perspective:1700px;display:flex;justify-content:center;align-items:center;min-height:520px}
+.scene{position:relative;width:min(620px,95vw);height:440px;transform-style:preserve-3d;transform:rotateX(10deg) rotateY(-8deg)}
+.room{position:absolute;inset:0;transform-style:preserve-3d}
+.floor{position:absolute;left:50%;bottom:-68px;width:700px;height:460px;transform:translateX(-50%) rotateX(88deg);transform-origin:center top;background:linear-gradient(90deg,#6d6459 0,#998e7b 18%,#84786a 36%,#a0917b 52%,#887b6c 68%,#998c78 84%,#6e6659 100%);box-shadow:0 0 100px rgba(0,0,0,.45) inset,0 -30px 120px rgba(0,0,0,.25) inset}
+.back-wall{position:absolute;inset:18px 36px 60px;background:linear-gradient(180deg,#f0ece3 0,#e3dbcd 100%);box-shadow:0 16px 80px rgba(0,0,0,.26)}
+.left-wall,.right-wall{position:absolute;top:34px;bottom:78px;width:170px;background:linear-gradient(180deg,#e2dacb 0,#cec3b1 100%)}
+.left-wall{left:-38px;transform:rotateY(66deg);transform-origin:left center}.right-wall{right:-38px;transform:rotateY(-66deg);transform-origin:right center}
+.ceiling-glow{position:absolute;left:8%;right:8%;top:6px;height:72px;background:radial-gradient(circle at 20% 50%,rgba(255,240,205,.75) 0,rgba(255,240,205,.08) 30%,transparent 54%),radial-gradient(circle at 50% 40%,rgba(255,240,205,.8) 0,rgba(255,240,205,.10) 30%,transparent 56%),radial-gradient(circle at 80% 50%,rgba(255,240,205,.7) 0,rgba(255,240,205,.08) 30%,transparent 54%)}
+.frame{position:absolute;border:9px solid #b58b51;background:#fcfaf5;box-shadow:0 12px 25px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.55) inset;overflow:hidden}
+.frame::before{content:"";position:absolute;inset:8px;background:linear-gradient(145deg,var(--a),var(--b))}
+.frame::after{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,.45)}
+.frame .label{position:absolute;left:16px;right:16px;bottom:16px;padding:9px 10px;background:rgba(11,18,16,.62);backdrop-filter:blur(4px);color:#fff}.frame .name{display:block;font-size:12px;font-weight:700}.frame .work{display:block;font-size:11px;color:#e9d8b4;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frame.center{left:50%;top:84px;width:220px;height:250px;transform:translateX(-50%) translateZ(26px)}
+.frame.left1{left:78px;top:112px;width:130px;height:168px;transform:translateZ(20px)}
+.frame.right1{right:78px;top:110px;width:130px;height:168px;transform:translateZ(20px)}
+.frame.leftwall{left:-12px;top:125px;width:112px;height:150px;transform:rotateY(62deg) translateZ(18px)}
+.frame.rightwall{right:-12px;top:125px;width:112px;height:150px;transform:rotateY(-62deg) translateZ(18px)}
+.frame.small-floor{left:50%;bottom:12px;width:200px;height:40px;transform:translateX(-50%) translateZ(28px);background:#fff8ea;border-color:#8f7346;display:flex;align-items:center;justify-content:center;font:700 12px/1 system-ui;color:#6d5434;letter-spacing:.2em}
+.frame.small-floor::before,.frame.small-floor::after{display:none}
+.section{max-width:1280px;margin:auto;padding:78px 5%}.section h2{font:normal clamp(29px,3.2vw,44px)/1.28 Georgia,serif;letter-spacing:-.04em;margin:10px 0 16px}.tag{font-size:11px;letter-spacing:.24em;color:#8e7446;font-weight:700}.lead{color:#627069;line-height:1.9;font-size:15px;max-width:900px}
+.walk{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.walk-card{background:var(--paper);border:1px solid var(--line);padding:24px;box-shadow:0 8px 22px rgba(0,0,0,.04)}.walk-card b{display:block;font:24px Georgia,serif;margin:10px 0}.walk-card p{font-size:13px;line-height:1.8;color:var(--muted)}
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 16px}.controls input{flex:1;min-width:240px;padding:14px 16px;border:1px solid #cdd3ca;background:#fffefb}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:11px 14px;border:1px solid #ccd2c9;background:transparent;color:#42544d;font-size:12px}.chip.active{background:var(--deep2);color:white;border-color:var(--deep2)}
+.results{font-size:12px;color:#6a736d;margin:0 0 16px}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.artist{background:#fffdf8;border:1px solid #dadfd8;overflow:hidden;text-align:left;padding:0;transition:transform .22s,box-shadow .22s}.artist:hover,.artist:focus-visible{transform:translateY(-5px);box-shadow:0 18px 32px rgba(16,32,29,.12);outline:2px solid #bc9e6a}.thumb{height:220px;background:linear-gradient(145deg,var(--a),var(--b));position:relative;overflow:hidden}.thumb::before{content:'';position:absolute;left:11%;top:15%;width:73%;height:70%;background:rgba(255,255,255,.18);border:8px solid rgba(255,255,255,.7);box-shadow:0 10px 20px rgba(0,0,0,.18)}.thumb::after{content:'';position:absolute;left:26%;top:28%;width:45%;height:40%;background:linear-gradient(145deg,var(--a2),var(--b2));box-shadow:0 0 0 1px rgba(255,255,255,.45) inset}.thumb .num{position:absolute;top:14px;left:14px;color:#fff;font:18px Georgia,serif}.thumb .roomlab{position:absolute;right:12px;bottom:12px;color:#fff;font-size:10px;letter-spacing:.18em;background:rgba(0,0,0,.26);padding:5px 8px}.info{padding:18px}.info small{font-size:11px;color:#8f7447}.info h3{font:normal 25px Georgia,serif;margin:8px 0}.info p{font-size:13px;line-height:1.7;color:#64706b;min-height:44px;margin:0 0 12px}.info .more{font-size:12px;font-weight:800;color:#2c594d}
+.notice{background:#fffdf8;border-left:4px solid #b89357;padding:22px 24px;margin-top:26px;color:#5f6c65;line-height:1.9;font-size:14px}
+.overlay{position:fixed;inset:0;display:none;place-items:center;background:rgba(2,8,7,.78);z-index:50;padding:18px}.overlay.open{display:grid}.modal{width:min(1020px,100%);background:#fffdf7;display:grid;grid-template-columns:.95fr 1.05fr;box-shadow:0 22px 80px rgba(0,0,0,.35);position:relative;max-height:90vh;overflow:auto}
+.close{position:absolute;right:14px;top:14px;width:38px;height:38px;border:1px solid #cfd7cd;background:#fff;border-radius:50%;font-size:20px;z-index:2}
+.modal-visual{position:relative;min-height:520px;background:linear-gradient(160deg,var(--a),var(--b));overflow:hidden}.modal-visual::before{content:'';position:absolute;inset:12%;background:rgba(255,255,255,.18);border:12px solid rgba(255,251,240,.88);box-shadow:0 18px 36px rgba(0,0,0,.18)}.modal-visual::after{content:'';position:absolute;left:22%;top:24%;width:48%;height:34%;background:linear-gradient(145deg,var(--a2),var(--b2));box-shadow:0 0 0 1px rgba(255,255,255,.48) inset}
+.modal-visual .cap{position:absolute;left:24px;bottom:24px;color:#fff;font-size:11px;letter-spacing:.2em}
+.modal-body{padding:48px 34px 34px}.modal-body .type{font-size:12px;color:#8d7348}.modal-body h3{font:normal 46px Georgia,serif;margin:12px 0 24px}.modal-body dl{margin:0}.modal-body dt{font-size:11px;color:#7a867f;margin:0 0 7px}.modal-body dd{margin:0 0 22px;font-size:14px;line-height:1.9;color:#33413c}.modal-body .disc{font-size:11px;color:#7d857f;line-height:1.8}
+.footer{background:#132420;color:#d5ddd7;padding:36px 5%;display:flex;justify-content:space-between;gap:20px;line-height:1.8;font-size:12px}.footer strong{display:block;color:#efdbb0;font-size:17px}
+.topbtn{position:fixed;right:24px;bottom:24px;width:44px;height:44px;border:1px solid #b89d72;background:#17312b;color:#fff;display:none;z-index:40}.topbtn.show{display:block}
+@media (max-width:1024px){.hero-grid{grid-template-columns:1fr}.scene-wrap{order:-1}.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.walk{grid-template-columns:1fr}.modal{grid-template-columns:1fr}.modal-visual{min-height:280px}.modal-body h3{font-size:34px}}
+@media (max-width:680px){.top{height:64px}.brand{font-size:15px}.nav{gap:12px;font-size:11px}.nav a:nth-child(1){display:none}.hero{padding-top:46px;min-height:auto}.scene{height:330px;width:min(420px,95vw);transform:rotateX(8deg) rotateY(-8deg) scale(.88)}.back-wall{inset:14px 26px 46px}.left-wall,.right-wall{width:120px}.frame.center{width:160px;height:190px;top:68px}.frame.left1,.frame.right1{width:92px;height:120px;top:92px}.frame.leftwall,.frame.rightwall{width:78px;height:108px;top:104px}.kicker{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr}.thumb{height:190px}.section{padding:58px 5%}.footer{display:block}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a href="#top" class="brand">明道齋 · 명도재<small>3D VIRTUAL EXHIBITION</small></a>
+  <nav class="nav">
+    <a href="#intro">전시 소개</a>
+    <a href="#space">전시 공간</a>
+    <a href="#artists">작가 30인</a>
+    <a href="#guide">관람 안내</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <div class="over">MYEONGDO IMMERSIVE EXHIBITION</div>
+      <h1>참고 전시장처럼<br><em>입체적인 전시 공간</em>으로<br>다시 구성한 웹형 미술관</h1>
+      <p>전시장 벽면과 바닥, 천장 조명, 프레임 작품 배치를 살린 3D 스타일 웹 전시관입니다. 실제 전시장처럼 중심 작품과 좌우 벽면 작품이 보이도록 구성하고, 아래에서는 한국 화가 30인의 전시 해설을 이어서 감상할 수 있습니다.</p>
+      <div class="actions">
+        <a class="btn" href="#space">입체 전시실 보기 ↗</a>
+        <a class="btn ghost" href="#artists">작가 30인 감상</a>
+      </div>
+      <div class="kicker">
+        <div><strong>3D</strong><span>원근감 있는 전시 공간</span></div>
+        <div><strong>30</strong><span>한국 화가 전시 구성</span></div>
+        <div><strong>03</strong><span>주제별 전시실</span></div>
+      </div>
+    </div>
+    <div class="scene-wrap" id="space">
+      <div class="scene" aria-label="입체적인 가상 전시실 화면">
+        <div class="room">
+          <div class="floor"></div>
+          <div class="back-wall"></div>
+          <div class="left-wall"></div>
+          <div class="right-wall"></div>
+          <div class="ceiling-glow"></div>
+          <button class="frame center open-artist" data-id="0" style="--a:#31504b;--b:#7c9e9a"><div class="label"><span class="name">김환기</span><span class="work">어디서 무엇이 되어 다시 만나랴</span></div></button>
+          <button class="frame left1 open-artist" data-id="1" style="--a:#6f5848;--b:#b18868"><div class="label"><span class="name">이중섭</span><span class="work">황소</span></div></button>
+          <button class="frame right1 open-artist" data-id="3" style="--a:#6e474a;--b:#be8b77"><div class="label"><span class="name">천경자</span><span class="work">미인도</span></div></button>
+          <button class="frame leftwall open-artist" data-id="5" style="--a:#315866;--b:#7ea3b0"><div class="label"><span class="name">이우환</span><span class="work">점으로부터</span></div></button>
+          <button class="frame rightwall open-artist" data-id="22" style="--a:#6d463c;--b:#b9785a"><div class="label"><span class="name">박생광</span><span class="work">무속</span></div></button>
+          <div class="frame small-floor">MYEONGDO · KOREAN ART EXHIBITION</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="intro">
+  <div class="tag">EXHIBITION CONCEPT</div>
+  <h2>전시장에 들어선 듯한 공간감과<br>온라인 감상의 편의성을 결합했습니다</h2>
+  <p class="lead">실제 전시장을 참고한 듯한 벽면 구성과 전면·측면 작품 프레임을 적용해, 단순한 카드 나열보다 전시 공간의 분위기가 살아나도록 디자인했습니다. 아래 전시실 안내와 작가 목록에서 원하는 작가를 선택하면 상세 해설 창이 열립니다.</p>
+  <div class="walk">
+    <div class="walk-card"><span class="tag">ROOM 01</span><b>삶과 풍경의 시선</b><p>구상·서양화 중심. 박수근, 이중섭, 나혜석, 오지호 등 삶과 풍경의 서사를 담은 작가를 소개합니다.</p></div>
+    <div class="walk-card"><span class="tag">ROOM 02</span><b>추상과 사유의 공간</b><p>김환기, 이우환, 박서보, 윤형근 등 한국 추상회화와 단색화의 깊이를 입체적인 전시 흐름으로 감상합니다.</p></div>
+    <div class="walk-card"><span class="tag">ROOM 03</span><b>먹과 색의 새로운 길</b><p>천경자, 이응노, 이상범, 박생광, 김병종 등 한국화와 채색화의 다채로운 흐름을 모았습니다.</p></div>
+  </div>
+</section>
+
+<section class="section" id="artists">
+  <div class="tag">THE ARTISTS</div>
+  <h2>거장 30인 전시 목록</h2>
+  <p class="lead">검색과 분야 필터로 작가를 선택해 보세요. 각 카드에는 실제 전시실 프레임을 연상시키는 썸네일 구조를 적용했습니다.</p>
+  <div class="controls">
+    <input id="search" type="search" placeholder="작가 이름, 대표작, 화풍 검색" aria-label="작가 검색" />
+    <div class="chips">
+      <button class="chip active" data-filter="전체" aria-pressed="true">전체</button>
+      <button class="chip" data-filter="구상·서양화" aria-pressed="false">구상·서양화</button>
+      <button class="chip" data-filter="추상·단색화" aria-pressed="false">추상·단색화</button>
+      <button class="chip" data-filter="한국화·채색화" aria-pressed="false">한국화·채색화</button>
+    </div>
+  </div>
+  <p class="results" id="count" aria-live="polite"></p>
+  <div class="gallery-grid" id="grid"></div>
+</section>
+
+<section class="section" id="guide">
+  <div class="tag">VISITOR GUIDE</div>
+  <h2>관람 안내</h2>
+  <div class="notice">이 페이지는 참고 전시장처럼 보이도록 구성한 웹형 3D 전시 시안입니다. 작품 이미지는 실제 원본을 직접 탑재한 전시가 아니라 전시 기획과 감상을 돕기 위한 시각적 구성입니다. 실제 작가 작품과 저작권·출처 검수 후에는 작품 이미지, 도슨트, 실내 이동형 메뉴를 추가해 더 완성도 높은 웹 전시관으로 확장할 수 있습니다.</div>
+</section>
+
+<footer class="footer">
+  <div><strong>明道齋 · 명도재</strong>한국미술 100년, 거장 30인의 빛<br>입체 전시공간형 웹 시안</div>
+  <div>기획·구성: 명도재 AI 문화예술기업<br>온라인 가상미술관 디자인 초안</div>
+</footer>
+
+<button class="topbtn" id="topbtn" aria-label="맨 위로">↑</button>
+
+<div class="overlay" id="overlay" aria-hidden="true">
+  <div class="modal">
+    <button class="close" id="close" aria-label="닫기">×</button>
+    <div class="modal-visual" id="modalVisual"><span class="cap">MUSEUM ROOM VIEW · MYEONGDO</span></div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const artists = [
+['김환기','추상·단색화','한국적 서정과 점화의 우주','어디서 무엇이 되어 다시 만나랴','한국적 자연과 기억을 점과 색면의 추상으로 확장한 작가.'],
+['이중섭','구상·서양화','소와 가족, 전쟁기의 그리움','황소','격정적인 필선과 가족을 향한 그리움으로 한국 근대미술의 강렬한 이미지를 남겼다.'],
+['박수근','구상·서양화','서민의 일상과 화강암 같은 질감','빨래터','두터운 화면과 소박한 인물상으로 일상의 존엄을 그렸다.'],
+['천경자','한국화·채색화','환상적 색채와 인물의 내면','미인도','강렬한 채색과 환상적 이미지로 독자적인 여성 인물화의 세계를 구축했다.'],
+['유영국','추상·단색화','산과 자연의 기하학적 추상','산','산과 태양의 형태를 단순화하여 강렬한 색채 추상을 개척했다.'],
+['이우환','추상·단색화','점·선·여백과 관계의 미학','점으로부터','절제된 행위와 여백으로 사물과 공간의 관계를 질문한다.'],
+['박서보','추상·단색화','묘법과 반복의 수행성','묘법','반복적 행위와 물성 탐구를 통해 단색화의 핵심 언어를 구축했다.'],
+['김창열','추상·단색화','물방울의 환영과 기억','물방울','실재와 환영의 경계에 놓인 물방울을 평생의 회화적 주제로 삼았다.'],
+['장욱진','구상·서양화','가족·나무·새의 순수한 세계','가족','단순한 형상 속에 동심과 우주적 질서를 담았다.'],
+['이응노','한국화·채색화','문자추상과 군상','군상','서예적 필획과 현대적 조형을 융합해 동서양을 잇는 언어를 만들었다.'],
+['윤형근','추상·단색화','청다색과 침묵의 화면','청다색','깊은 색면과 여백으로 절제된 정신성을 드러냈다.'],
+['정상화','추상·단색화','격자와 물성의 반복','무제','화면을 뜯고 메우는 반복 작업으로 독특한 표면을 형성했다.'],
+['나혜석','구상·서양화','근대 여성의 자의식과 풍경','자화상','한국 근대 서양화와 여성 예술가의 주체성을 상징한다.'],
+['이인성','구상·서양화','향토적 색채와 근대적 감각','가을 어느 날','대담한 색채와 구성으로 한국 근대 회화의 개성을 보여주었다.'],
+['오지호','구상·서양화','빛과 색채의 인상주의','남향집','맑은 빛과 색채로 한국적 인상주의를 전개했다.'],
+['도상봉','구상·서양화','백자와 정물의 고요','백자','절제된 정물화와 부드러운 색조로 고전적 아름다움을 추구했다.'],
+['이대원','구상·서양화','농원 풍경과 점묘적 색채','농원','생동감 넘치는 점과 색채로 자연의 리듬을 표현했다.'],
+['김종학','구상·서양화','설악의 꽃과 자연','설악산 풍경','야생적인 붓질과 풍부한 색채로 자연의 생명력을 그린다.'],
+['박래현','한국화·채색화','여성과 생활, 추상적 조형','노점','전통 채색화에서 추상과 판화로 표현 영역을 넓혔다.'],
+['김기창','한국화·채색화','전통 수묵과 현대적 실험','군마도','전통 필묵을 바탕으로 역동적인 현대 한국화를 발전시켰다.'],
+['이상범','한국화·채색화','안개 낀 산수와 한국적 서정','설경','담묵의 산수에 한국 자연의 서정성을 담았다.'],
+['변관식','한국화·채색화','힘 있는 필선과 실경산수','외금강 삼선암','산세의 기운과 현장감을 독창적인 필묵으로 구현했다.'],
+['박생광','한국화·채색화','민속·불교 이미지와 강렬한 채색','무속','한국 전통 도상과 원색의 에너지로 채색화의 가능성을 넓혔다.'],
+['이성자','추상·단색화','대지와 우주의 시적 추상','천 년의 고가','동서양의 경험을 우주와 대지의 상징적 추상으로 표현했다.'],
+['남관','추상·단색화','문자적 형상과 역사적 기억','문자추상 연작','인간의 흔적과 기억을 상형적 추상으로 전개했다.'],
+['권옥연','구상·서양화','몽환적 인물과 풍경','인물 연작','독특한 색조와 시적인 분위기로 내면의 풍경을 그렸다.'],
+['오치균','구상·서양화','두터운 마티에르와 도시 풍경','산타페 연작','질감이 강한 화면으로 도시와 자연의 빛을 포착한다.'],
+['김병종','한국화·채색화','생명의 서사와 문인화적 감성','생명의 노래','생명과 자연의 감각을 힘찬 필획과 색채로 표현한다.'],
+['이숙자','한국화·채색화','보리밭과 한국적 색채','보리밭 연작','보리밭의 풍요로운 색채를 통해 한국적 정서를 표현한다.'],
+['김흥수','구상·서양화','구상과 추상의 조화','하모니즘 연작','구상과 추상을 한 화면에서 결합하는 조형 실험을 전개했다.']
+];
+const palettes=[['#30514a','#7fa09d','#5a7669','#c9b38c'],['#6e5849','#b48d6c','#8a6e5a','#e0c7ab'],['#31546a','#7694ab','#49687b','#d7c5ab'],['#734649','#bb8775','#8f5b5d','#e2c0a0'],['#345f5d','#83aaa0','#587975','#dcc082'],['#4b5148','#9ca38e','#697062','#c9c2a7'],['#61486e','#af90bb','#7e648d','#dfbe93'],['#516646','#96aa7d','#6d825f','#e3c47f']];
+let active='전체';
+const grid=document.getElementById('grid'); const count=document.getElementById('count'); const search=document.getElementById('search');
+const overlay=document.getElementById('overlay'); const modalVisual=document.getElementById('modalVisual'); const modalBody=document.getElementById('modalBody');
+function render(){
+  const q=search.value.trim().toLowerCase();
+  const list=artists.map((a,i)=>({a,i})).filter(({a})=>(active==='전체'||a[1]===active)&&a.join(' ').toLowerCase().includes(q));
+  count.textContent=`현재 ${list.length}명 / 전체 30명 · 전시 기획 순서 기준`;
+  grid.innerHTML=list.map(({a,i})=>{
+    const p=palettes[i%palettes.length];
+    return `<button class="artist open-artist" data-id="${i}" style="--a:${p[0]};--b:${p[1]};--a2:${p[2]};--b2:${p[3]}" aria-label="${a[0]} 상세 보기"><div class="thumb"><span class="num">${String(i+1).padStart(2,'0')}</span><span class="roomlab">ROOM VIEW</span></div><div class="info"><small>${a[1]}</small><h3>${a[0]}</h3><p>${a[2]}</p><span class="more">작가 해설 보기 ↗</span></div></button>`;
+  }).join('');
+}
+function openArtist(i){
+  const a=artists[i], p=palettes[i%palettes.length];
+  modalVisual.style.setProperty('--a',p[0]); modalVisual.style.setProperty('--b',p[1]); modalVisual.style.setProperty('--a2',p[2]); modalVisual.style.setProperty('--b2',p[3]);
+  modalBody.innerHTML=`<div class="type">ARTIST ${String(i+1).padStart(2,'0')} / 30 · ${a[1]}</div><h3>${a[0]}</h3><dl><dt>전시 주제</dt><dd>${a[2]}</dd><dt>대표작 또는 주요 연작</dt><dd>${a[3]}</dd><dt>큐레이터 노트</dt><dd>${a[4]} 이 웹형 전시관에서는 실제 전시장에 걸린 작품을 감상하는 흐름을 상상하며, 화면 구성·색채 감각·조형 언어를 중심으로 작가를 이해하도록 구성했습니다.</dd></dl><p class="disc">※ 왼쪽 이미지는 실제 작품 사진이 아니라 입체 전시 공간 연출용 그래픽입니다.</p>`;
+  overlay.classList.add('open'); overlay.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; document.getElementById('close').focus();
+}
+function closeArtist(){overlay.classList.remove('open'); overlay.setAttribute('aria-hidden','true'); document.body.style.overflow='';}
+
+document.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click',()=>{active=btn.dataset.filter; document.querySelectorAll('.chip').forEach(b=>{const on=b===btn; b.classList.toggle('active',on); b.setAttribute('aria-pressed',String(on));}); render();}));
+search.addEventListener('input',render);
+document.addEventListener('click',e=>{const btn=e.target.closest('.open-artist'); if(btn) openArtist(Number(btn.dataset.id));});
+document.getElementById('close').addEventListener('click',closeArtist); overlay.addEventListener('click',e=>{if(e.target===overlay)closeArtist();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape' && overlay.classList.contains('open')) closeArtist();});
+const topbtn=document.getElementById('topbtn'); window.addEventListener('scroll',()=>{topbtn.classList.toggle('show',window.scrollY>500);}); topbtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+render();
+</script>
+</body>
+</html>
