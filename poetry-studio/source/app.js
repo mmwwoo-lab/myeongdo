@@ -1,508 +1,380 @@
-
-// 사전 기반의 투명한 휴리스틱 분석. 언어모델의 심층 문학비평과는 구분합니다.
-const WORDS={
-  wistful:['그리움','그립','그대','추억','기다','빈집','빈 벤치','떠나','어머니','고향','이별','낙엽','가을','홀로','외로','눈물','세월'],
-  hopeful:['햇살','희망','꽃','봄','새싹','기쁨','사랑','빛나','웃음','따뜻','피어나','청춘','노래','푸르','행복'],
-  serene:['고요','물결','호수','못둑','강','바다','달','별','새벽','안개','구름','바람','침묵','숲','저녁','잔잔'],
-  dramatic:['불','폭풍','전쟁','외침','분노','울부짖','뜨겁','격정','갈라','번개','폭우']
+const $ = id => document.getElementById(id);
+const els = {
+  input:$('poemInput'),paint:$('paintBtn'),compose:$('musicBtn'),play:$('playBtn'),pause:$('pauseBtn'),resume:$('resumeBtn'),stop:$('stopBtn'),
+  record:$('movieBtn'),save:$('pngBtn'),pace:$('pace'),paceValue:$('paceValue'),status:$('status'),clock:$('clock'),playState:$('playState'),track:$('track'),mood:$('mood'),canvas:$('screen')
 };
+const V={W:1280,H:720,TAU:Math.PI*2};
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+const seeded=n=>{let s=n>>>0;return()=>((s=(Math.imul(1664525,s)+1013904223)>>>0)/4294967296);};
+function hash(s){let h=2166136261;for(const ch of s){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
+const pick=(r,a)=>a[Math.floor(r()*a.length)];
+const sample=(r,a,b)=>a+(b-a)*r();
+const setStatus=txt=>{els.status.textContent=txt;};
+const fmt=s=>{s=Math.max(0,Math.floor(s||0));return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;};
+const safeName=s=>(s||'명도재_시화').replace(/[\\/:*?"<>|]/g,'_').slice(0,70);
+function download(blob,filename){const a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);}
+
+function parsePoem(raw){
+ const text=String(raw||'').replace(/\r\n?/g,'\n').trim();
+ const rows=text.split('\n');while(rows.length&&rows[0].trim()==='')rows.shift();
+ const title=(rows.shift()||'무제').replace(/^제목\s*[:：]\s*/,'').trim();
+ const author=(rows.shift()||'작가 미상').replace(/^(시인|작가|글)\s*[:：]\s*/,'').trim();
+ const body=rows.join('\n').trim();
+ const lines=body.split('\n').map(s=>s.trim()).filter(Boolean);
+ if(!title||!lines.length)throw Error('첫 줄에 제목, 둘째 줄에 작가, 그 아래에 시 본문을 입력해 주세요.');
+ return {title,author:author||'작가 미상',body,lines,raw:text};
+}
 const MOTIFS=[
-  ['pomegranate',/석류|붉은 알맹이/,'석류나무'],
-  ['cosmos',/코스모스/,'코스모스'],
-  ['bench',/벤치|의자/,'빈 벤치'],
-  ['boat',/배 한 척|돛배|나룻배|쪽배|배가 뜨/,'작은 배'],
-  ['water',/강|호수|연못|못둑|신천|물결|물비늘|바다|개울/,'물가'],
-  ['flower',/꽃|나리|동백|벚꽃|꽃잎/,'꽃'],
-  ['tree',/감나무|나무|홍시|잎|가지/,'나무'],
-  ['mountain',/산|능선|앞산|팔공산/,'산'],
-  ['moon',/달빛|보름달|초승달|달이|낮달/,'달'],
-  ['stars',/별|은하수/,'별빛'],
-  ['rain',/비|빗방울|빗물|소나기/,'비'],
-  ['snow',/눈꽃|함박눈|눈보라|설원|눈이 내/,'눈']
+ ['pomegranate',/석류|홍시/,'석류와 열매'],['cottage',/빈집|초가|고향집|돌담|담장|기왓|마당|시산방/,'오래된 집'],
+ ['water',/호수|시냇물|물결|물비늘|물가|강물|바다|강가|신천|못둑|저수지|연못/,'강과 물빛'],
+ ['boat',/돛배|나룻배|고깃배|쪽배|뱃사공|배 한 척/,'물 위의 배'],
+ ['moon',/달빛|보름달|초승달|낮달|달이|달은|달을|달이여|달무리/,'달'],
+ ['stars',/별빛|은하수|밤하늘|별이|별들|별을/,'별자리'],
+ ['flowers',/꽃|나리|코스모스|동백|민들레|진달래|매화|연꽃/,'꽃'],
+ ['rain',/빗방울|비바람|소나기|장맛비|비가|비는|비를|비에|비 갠|빗소리/,'비'],
+ ['snow',/눈꽃|함박눈|눈보라|설원|눈이 내|흰 눈/,'눈'],
+ ['birds',/까치|기러기|두루미|부엉이|갈매기|새들이|새가|새 한 마리/,'새'],
+ ['reed',/갈대|억새/,'갈대'],['bench',/벤치/,'빈 벤치'],['umbrella',/우산/,'우산'],
+ ['lantern',/등불|초롱|불빛|등잔/,'등불'],['bridge',/돌다리|징검다리|교각|육교|다리를 건너|다리 위/,'다리'],['mountain',/앞산|팔공산|산자락|산봉우리|산길|산맥/,'산'],
+ ['leaves',/낙엽|단풍|잎새|풀잎/,'나뭇잎'],['sunlight',/햇살|햇빛|태양|석양|노을/,'햇빛']
 ];
-function occurrences(str, token){return str.split(token).length-1;}
-function analyzePoem(text){
-  const source=String(text||'').replace(/\r\n?/g,'\n').trim();
-  const lines=source.split('\n').map(x=>x.trim()).filter(Boolean);
-  const score={};
-  for(const [key, words] of Object.entries(WORDS)) score[key]=words.reduce((n,w)=>n+Math.min(occurrences(source,w),4),0);
-  const ordered=Object.entries(score).sort((a,b)=>b[1]-a[1]);
-  const mood=ordered[0][1]===0?'serene':ordered[0][0];
-  const season=/겨울|눈보라|설원|얼음/.test(source)?'winter':/가을|낙엽|홍시|석류|단풍/.test(source)?'autumn':/봄|벚꽃|새싹/.test(source)?'spring':/여름|장마|뙤약볕/.test(source)?'summer':'neutral';
-  const time=/밤|달빛|별빛|은하수|자정/.test(source)?'night':/노을|석양|황혼|해질녘/.test(source)?'sunset':/새벽|동틀/.test(source)?'dawn':'day';
-  const motifs=MOTIFS.filter(([,re])=>re.test(source)).map(([key,,label])=>({key,label}));
-  const labels={wistful:'그리움·회상',hopeful:'희망·서정',serene:'명상·평온',dramatic:'긴장·격정'};
-  const bpm={wistful:66,hopeful:82,serene:70,dramatic:88}[mood];
-  const mode={wistful:'minor',hopeful:'major',serene:'major',dramatic:'minor'}[mood];
-  const palette={
-    autumn:['#f2d8b0','#cf9b78','#7f6c6c','#597786'],winter:['#e7eef6','#b7d0de','#809ab2','#617a94'],
-    spring:['#d6eadd','#b3cebb','#90b9b6','#638d91'],summer:['#c4e3ed','#b0d2cb','#688fa5','#45738b'],
-    neutral:['#e9dcca','#b9cdd3','#869cab','#697e84']
-  }[season];
-  const distinctive=motifs.map(m=>m.label);
-  const themes=distinctive.length?distinctive.join('·'):'자연 풍경과 내면의 정서';
-  const commentary=`이 작품은 ${themes}의 이미지를 통해 ${labels[mood]}의 정조를 드러냅니다. ${lines.length}개 행의 호흡을 살려, ${season==='autumn'?'가을빛':time==='night'?'밤의 청색': '은은한 자연색'} 수채화와 ${bpm} BPM의 ${mode==='minor'?'단조':'장조'} 선율로 해석합니다. 이 분석은 시어 빈도에 따른 창작용 제안이며 정밀한 문학비평이 아닙니다.`;
-  const imagePrompt=`Professional luminous traditional Korean transparent watercolor painting, wide cinematic 16:9 landscape, sophisticated wet-on-wet pigments and fine cold press paper texture, atmospheric perspective, no lettering, no typography, no frames, generous negative space in middle for later poem subtitles. Poetry imagery: ${themes}. Season: ${season}, time: ${time}, emotion: ${labels[mood]}. Specific poem lines as creative context: ${source.slice(0,900)}. Painterly, restrained elegance, natural believable composition, subtle light, detailed image that directly reflects the poem rather than a generic landscape.`;
-  return {lines,score,mood,season,time,motifs,bpm,mode,palette,commentary,imagePrompt,summary:`${labels[mood]} · ${bpm} BPM · ${season} · ${themes}`};
+function analyze(poem){
+ const t=poem.body, m=MOTIFS.filter(([,re])=>re.test(t)).map(([key,,label])=>({key,label}));
+ const has=k=>m.some(x=>x.key===k);
+ const season=/겨울|눈보라|설원|얼어붙|서리/.test(t)?'winter':/가을|석류|홍시|단풍|낙엽|시월/.test(t)?'autumn':/봄|매화|진달래|새싹|벚꽃/.test(t)?'spring':/여름|장마|뙤약볕|폭염/.test(t)?'summer':'neutral';
+ const night=has('moon')||has('stars')||/밤|자정|어둠/.test(t);const sunset=/노을|석양|황혼/.test(t);const time=night?'night':sunset?'sunset':'day';
+ const scores={longing:0,hope:0,peace:0,dramatic:0};
+ for(const x of ['그리움','기다','그립','외로','빈집','떠나','이별','눈물','쓸쓸','고향'])scores.longing+=(t.match(new RegExp(x,'g'))||[]).length;
+ for(const x of ['희망','햇살','웃음','꽃','사랑','피어나','따뜻','행복'])scores.hope+=(t.match(new RegExp(x,'g'))||[]).length;
+ for(const x of ['고요','하늘','물결','바람','평온','침묵','빛','달'])scores.peace+=(t.match(new RegExp(x,'g'))||[]).length;
+ for(const x of ['비바람','불꽃','격랑','붉','열정','아픔','뜨거'])scores.dramatic+=(t.match(new RegExp(x,'g'))||[]).length;
+ const mood=Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][1]>0?Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0]:'peace';
+ const label={longing:'그리움',hope:'희망',peace:'명상',dramatic:'열정'}[mood];
+ const themes=m.length?m.map(x=>x.label).slice(0,6).join('·'):'자연과 내면';
+ const palette={
+ autumn:{sky:['#182842','#294e72','#744666','#c57158','#eca16b','#f8d88c'],mount:['#233b5b','#395768','#6d5a75','#7c8175'],ground:['#214d60','#387866','#ba6248','#e9ae5e'],accent:['#e95848','#f7a843','#ffd76f','#bc3e55','#f9c37c']},
+ spring:{sky:['#1f456a','#356b8e','#6898ad','#ce8aa8','#f8bfd0','#fadfa2'],mount:['#31617a','#668a8a','#87b19c','#c7a0a3'],ground:['#327e75','#61a58b','#98c48f','#f3ce9a'],accent:['#f7acc4','#eab1e2','#8ae8ce','#fae18a','#e66c91']},
+ summer:{sky:['#0d385c','#176b91','#43a5c6','#6cd0cc','#f0e3aa','#f5a663'],mount:['#215d79','#3e8d93','#317769','#6bb1a1'],ground:['#246d75','#258a79','#79b48a','#d6c17b'],accent:['#ffa25b','#e3d27b','#43d4bb','#f3e9a2','#e45f5a']},
+ winter:{sky:['#172d58','#49648b','#7a9ac3','#aac5d9','#dfeef3','#e7d3dc'],mount:['#345578','#557f9d','#87a7b9','#ccd9db'],ground:['#3e6083','#80a3bd','#b8d3e0','#d0dbe1'],accent:['#e7ebfc','#acd6f7','#c8a6e5','#f8e8c9','#8dcbdc']},
+ neutral:{sky:['#192c4d','#2f5574','#678da0','#a88ca2','#e9b98b','#f3d3a0'],mount:['#244e63','#407486','#6d8c8d','#96aaa2'],ground:['#2c6176','#4e8278','#93a98a','#d4bd85'],accent:['#f3ca77','#d7a0ad','#5db1b9','#e9ae77','#f9dda5']}
+ }[season];
+ return {...poem,m,has,season,time,mood,label,themes,palette,bpm:{longing:62,hope:78,peace:68,dramatic:84}[mood],mode:['longing','dramatic'].includes(mood)?'minor':'major',seed:hash(poem.raw)};
 }
-function wrappingLines(ctx,lines,maxWidth,font='31px serif'){
-  ctx.save();ctx.font=font;
-  const out=[];
-  for(const line of lines){
-    let s='';
-    for(const ch of line){if(ctx.measureText(s+ch).width>maxWidth && s){out.push(s);s='';} s+=ch;}
-    if(s)out.push(s);
+
+const art=document.createElement('canvas');art.width=V.W;art.height=V.H;const g=art.getContext('2d');
+function polygon(points,color,alpha=1,width=2.8){
+ if(points.length<3)return;
+ const xs=points.map(x=>x[0]),ys=points.map(x=>x[1]);const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
+ const lin=g.createLinearGradient(minX,minY,maxX+3,maxY+3);lin.addColorStop(0,'#eafcff');lin.addColorStop(.08,color);lin.addColorStop(.66,color);lin.addColorStop(1,'#132332');
+ g.save();g.globalAlpha=alpha;g.beginPath();points.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.fillStyle=lin;g.fill();g.strokeStyle='rgba(12,20,30,.94)';g.lineWidth=width;g.lineJoin='round';g.stroke();
+ g.strokeStyle='rgba(250,236,205,.23)';g.lineWidth=Math.max(.4,width*.36);g.stroke();g.restore();
+}
+function irregularRect(x,y,w,h,r,cArr,j=.17,alpha=.97){
+ const a=[[x+sample(r,-j,j)*w,y+sample(r,-j,j)*h],[x+w+sample(r,-j,j)*w,y+sample(r,-j,j)*h],[x+w+sample(r,-j,j)*w,y+h+sample(r,-j,j)*h],[x+sample(r,-j,j)*w,y+h+sample(r,-j,j)*h]];
+ polygon(a,pick(r,cArr),alpha,sample(r,1.8,3.5));
+}
+function tiledArea(yTop,yBottom,pal,r,{cols=22,rows=10}={}){
+ const dx=V.W/cols,dy=(yBottom-yTop)/rows,pts=[];
+ for(let i=0;i<=rows;i++) {const a=[];for(let j=0;j<=cols;j++) a.push([j*dx+(j&&j<cols?sample(r,-dx*.23,dx*.23):0),yTop+i*dy+(i&&i<rows?sample(r,-dy*.22,dy*.22):0)]);pts.push(a);}
+ for(let i=0;i<rows;i++)for(let j=0;j<cols;j++){
+  const a=pts[i][j],b=pts[i][j+1],c=pts[i+1][j+1],d=pts[i+1][j];
+  if(r()>.48){const m=[(a[0]+b[0]+c[0]+d[0])/4+sample(r,-7,7),(a[1]+b[1]+c[1]+d[1])/4+sample(r,-7,7)];polygon([a,b,m],pick(r,pal),.94,2.1);polygon([b,c,m],pick(r,pal),.94,2.1);polygon([c,d,m],pick(r,pal),.94,2.1);polygon([d,a,m],pick(r,pal),.94,2.1);}
+  else polygon([a,b,c,d],pick(r,pal),.96,2.8);
+ }
+}
+function rays(cx,cy,r,pal,rnd){
+ g.save();g.shadowColor='#f9d489';g.shadowBlur=62;g.fillStyle='#fbdca7';g.beginPath();g.arc(cx,cy,r*.87,0,V.TAU);g.fill();g.restore();
+ for(let ring=0;ring<3;ring++){const n=ring===0?24:ring===1?48:60;const aR=[r*.41,r*.89,r*1.34][ring],bR=[r*.88,r*1.32,r*1.76][ring];
+  for(let i=0;i<n;i++){const a=i/n*V.TAU,b=(i+1)/n*V.TAU;
+   polygon([[cx+Math.cos(a)*aR,cy+Math.sin(a)*aR],[cx+Math.cos(a)*bR,cy+Math.sin(a)*bR],[cx+Math.cos(b)*bR,cy+Math.sin(b)*bR],[cx+Math.cos(b)*aR,cy+Math.sin(b)*aR]],pick(rnd,pal),ring===2?.45:.92,2.6);}}
+}
+function hillside(base,color,r,amp=90){
+ const ridge=[];for(let x=0;x<=1280;x+=68)ridge.push([x,base-amp*(.2+r()*.8)-Math.sin(x/152)*35]);
+ polygon([[0,720],...ridge,[1280,720]],color,.91,5);
+ for(let j=0;j<ridge.length-1;j++){
+  const a=ridge[j],b=ridge[j+1],m=[(a[0]+b[0])/2,Math.min(680,(a[1]+b[1])/2+80+r()*130)];polygon([a,b,m],color,.22,2.9);
+ }
+}
+function river(r,pal){
+ tiledArea(438,720,[pal.sky[0],pal.mount[1],pal.ground[0],pal.sky[2],pal.accent[3]],r,{cols:20,rows:7});
+ for(let i=0;i<90;i++){let x=r()*1280,y=450+r()*250,len=10+r()*70;polygon([[x,y],[x+len,y-3-r()*5],[x+len*.75,y+3],[x+len*.1,y+5]],pick(r,['#e8ce9a','#b1d9df','#79bccc','#466c9c']),.2+r()*.23,1.2);}
+}
+function paths(c,points,width,color){c.save();c.beginPath();c.moveTo(...points[0]);for(let i=1;i<points.length;i++)c.lineTo(...points[i]);c.strokeStyle='rgba(14,24,30,.95)';c.lineCap='round';c.lineJoin='round';c.lineWidth=width+6;c.stroke();c.strokeStyle=color;c.lineWidth=width;c.stroke();c.restore();}
+function tree(cx,base,scale,pal,r,{fruit=false}={}){
+ g.save();g.translate(cx,base);g.scale(scale,scale);
+ paths(g,[[0,15],[-5,-100],[-45,-171],[-122,-215]],14,'#87644c');paths(g,[[-3,-100],[33,-177],[101,-230]],15,'#987251');paths(g,[[0,-125],[12,-220],[-35,-294]],12,'#735e4d');
+ const leafPal=pal.accent.concat(pal.ground).concat(['#f1c66f','#a5a0c8']);
+ for(let j=0;j<45;j++){
+  const x=sample(r,-158,158),y=sample(r,-328,-140),rr=sample(r,14,39),n=5+Math.floor(r()*4),pts=[];
+  for(let k=0;k<n;k++){const a=k/n*V.TAU;pts.push([x+Math.cos(a)*rr*sample(r,.66,1.12),y+Math.sin(a)*rr*sample(r,.65,1.2)]);}
+  polygon(pts,pick(r,leafPal),.94,3.2);
+ }
+ if(fruit){for(let j=0;j<24;j++){let x=sample(r,-128,126),y=sample(r,-283,-145),rr=sample(r,5,12);const pts=[];for(let k=0;k<7;k++){let a=k/7*V.TAU;pts.push([x+rr*Math.cos(a),y+rr*Math.sin(a)]);}polygon(pts,pick(r,['#a41e42','#d52c43','#eb5d50','#e98b4f']),.97,2.8);}}
+ g.restore();
+}
+function lantern(x,y,s,r){
+ g.save();g.translate(x,y);g.scale(s,s);g.shadowColor='#ffd881';g.shadowBlur=25;
+ polygon([[-16,-19],[0,-32],[18,-18],[14,18],[0,31],[-15,18]],pick(r,['#ffda8b','#ffbe69','#ffa45b']),.96,3);
+ g.restore();
+}
+function cottage(x,y,s,r,pal){
+ g.save();g.translate(x,y);g.scale(s,s);
+ polygon([[-138,-6],[-126,-127],[112,-127],[122,-3]],'#ba9478',.98,5);
+ for(let iy=0;iy<5;iy++)for(let ix=0;ix<9;ix++)irregularRect(-117+ix*25,-113+iy*22,26,23,r,[...pal.accent,'#bba58c','#8f8998'],.1,.67);
+ polygon([[-158,-118],[-90,-210],[35,-237],[153,-132],[104,-132],[-105,-144]],'#4c4250',.97,5);
+ for(let i=0;i<14;i++)polygon([[-116+i*19,-145],[-95+i*17,-202+r()*10],[-76+i*17,-180+r()*15]],pick(r,['#8e494f','#8b6672','#a58589','#d48767']),.82,3);
+ polygon([[-20,-3],[-16,-73],[31,-73],[34,-3]],'#2c3b4b',1,4);lantern(3,-40,.35,r);
+ for(const x2 of [-88,77]){
+  polygon([[x2-18,-59],[x2-18,-103],[x2+16,-103],[x2+16,-59]],'#ffd7a2',.9,4);
+  paths(g,[[x2,-103],[x2,-59]],3,'#523b38');paths(g,[[x2-18,-81],[x2+16,-81]],3,'#523b38');
+ }
+ g.restore();
+}
+function boat(x,y,s,r){
+ g.save();g.translate(x,y);g.scale(s,s);polygon([[-85,0],[96,0],[60,33],[-62,33]],'#644c56',1,4);
+ paths(g,[[0,0],[0,-154]],5,'#ccaa7a');polygon([[0,-149],[-78,-16],[0,-16]],'#e7d6ab',.85,4);polygon([[6,-149],[69,-22],[6,-20]],'#e4a36e',.79,4);g.restore();
+}
+function person(x,y,s,r){
+ g.save();g.translate(x,y);g.scale(s,s);const col=pick(r,['#485477','#906f7c','#a66b64']);
+ const pts=[];for(let i=0;i<9;i++){let a=i/9*V.TAU;pts.push([Math.cos(a)*14,Math.sin(a)*14-86]);}polygon(pts,'#c9a89c',.95,2.8);
+ polygon([[-18,-67],[18,-67],[31,-1],[-28,-1]],col,.93,3);paths(g,[[-12,0],[-14,37]],6,'#443b45');paths(g,[[13,0],[18,37]],6,'#443b45');g.restore();
+}
+function bench(x,y,s){g.save();g.translate(x,y);g.scale(s,s);for(let i=0;i<2;i++)polygon([[-120,-43+i*23],[120,-43+i*23],[120,-30+i*23],[-120,-30+i*23]],i?'#b35d85':'#d68b9f',.9,4);polygon([[-122,7],[122,7],[120,21],[-120,21]],'#ae739a',.95,4);paths(g,[[-93,20],[-105,55]],7,'#665b64');paths(g,[[90,20],[105,55]],7,'#665b64');g.restore();}
+function flowers(x,y,r,count=38,scale=1){
+ for(let i=0;i<count;i++){
+  const fx=x+sample(r,-160,160),fy=y+sample(r,-55,60),rr=sample(r,5,13)*scale;
+  paths(g,[[fx,fy+28],[fx+sample(r,-9,9),fy]],2.5,'#618979');
+  for(let k=0;k<6;k++){
+   const a=k/6*V.TAU,pt=[[fx,fy],[fx+Math.cos(a-.31)*rr*1.9,fy+Math.sin(a-.31)*rr*1.9],[fx+Math.cos(a+.3)*rr*1.9,fy+Math.sin(a+.3)*rr*1.9]];
+   polygon(pt,pick(r,['#f0c47d','#ffc3c0','#dc86af','#ed8f6a','#e4e0bd','#8fd5c8']),.91,1.7);
   }
-  ctx.restore();return out;
+  polygon([[fx-3,fy],[fx,fy-3],[fx+3,fy],[fx,fy+3]],'#f9edb6',.99,1.4);
+ }
+}
+function reeds(r){for(let i=0;i<65;i++){
+ const x=sample(r,15,1270),y=sample(r,570,760),ht=sample(r,45,153);paths(g,[[x,y],[x+10,y-ht]],2.4,'#a9b289');
+ const tops=[];for(let k=0;k<6;k++){let a=k/6*V.TAU;tops.push([x+10+Math.cos(a)*6,y-ht+Math.sin(a)*22]);}polygon(tops,pick(r,['#d2a879','#c59e9a','#967e7a','#f0c67e']),.87,2.1);
+ }}
+function birds(r,n=16){for(let i=0;i<n;i++){
+ const x=sample(r,320,1150),y=sample(r,80,360),s=sample(r,5,18);
+ paths(g,[[x-s,y+s*.3],[x,y],[x+s,y-s*.3]],2.4,pick(r,['#283147','#384158','#5b5067']));
+ }}
+function rain(r){for(let i=0;i<125;i++){
+ const x=r()*1280,y=r()*720,h=sample(r,8,40);polygon([[x,y],[x+5,y+2],[x-10,y+h],[x-14,y+h-2]],'#bee7f4',.33,1.3);
+ }}
+function snow(r){for(let i=0;i<115;i++){
+ const x=r()*1280,y=r()*720,s=sample(r,3,8);polygon([[x-s,y],[x,y-s],[x+s,y],[x,y+s]],'#f3f7ff',.75,1.2);
+ }}
+function petals(r){for(let i=0;i<42;i++){
+ const x=r()*1280,y=r()*720,a=r()*V.TAU,s=sample(r,4,16);polygon([[x,y],[x+s*Math.cos(a),y+s*Math.sin(a)],[x+s*.8*Math.cos(a+1),y+s*.8*Math.sin(a+1)]],pick(r,['#f5c68b','#ea839a','#a9d1a0']),.38,1);
+ }}
+function umbrella(x,y,s){g.save();g.translate(x,y);g.scale(s,s);paths(g,[[0,-2],[0,-88],[11,-100]],5,'#423944');const pts=[[-70,-90],[-43,-138],[0,-153],[45,-133],[72,-88]];for(let i=0;i<4;i++)polygon([[0,-104],pts[i],pts[i+1]],i%2?'#efba98':'#c97b86',.95,3);g.restore();}
+function moonStars(r){for(let i=0;i<70;i++){const x=r()*1280,y=r()*395,s=sample(r,1,4);g.save();g.globalAlpha=.65;g.fillStyle='#f9e9ba';g.fillRect(x,y,s,s);g.restore();}}
+function frame(r,pal){
+ for(let i=0;i<18;i++){
+  irregularRect(0,i*40,26,43,r,pal.accent,.06,.85);
+  irregularRect(1254,i*40,26,43,r,pal.accent,.06,.85);
+ }
+ for(let j=0;j<28;j++){
+  irregularRect(j*46,0,48,22,r,pal.accent,.05,.82);
+  irregularRect(j*46,698,48,22,r,pal.accent,.05,.82);
+ }
+ g.strokeStyle='#18232c';g.lineWidth=12;g.strokeRect(15,15,1250,690);g.strokeStyle='#d3ae73';g.lineWidth=2.2;g.strokeRect(24,24,1232,672);
+}
+function renderStainedArt(a){
+ const r=seeded(a.seed),p=a.palette;
+ g.clearRect(0,0,V.W,V.H);g.fillStyle='#142233';g.fillRect(0,0,V.W,V.H);
+ tiledArea(0,455,p.sky,r,{cols:24,rows:9});
+ if(a.time==='night')moonStars(r);
+ g.save();g.globalCompositeOperation='screen';const light=g.createRadialGradient(992,153,4,992,153,560);light.addColorStop(0,'rgba(255,234,153,.48)');light.addColorStop(.45,'rgba(255,175,127,.17)');light.addColorStop(1,'rgba(255,233,173,0)');g.fillStyle=light;g.fillRect(0,0,V.W,V.H);g.restore();
+ rays(982,155,a.time==='night'?41:64,a.time==='night'?['#f6e3b9','#a6bde8','#dfc6d7','#ffeac9']:['#f9e0a6','#f3a46b','#e67b82','#fff1be'],r);
+ hillside(374,p.mount[0],r,145);hillside(442,p.mount[1],r,95);hillside(542,p.mount[2],r,100);
+ if(a.has('water')||a.has('boat'))river(r,p);
+ else tiledArea(512,720,p.ground.concat(p.accent),r,{cols:20,rows:5});
+ // 겹쳐진 상징: 시에 등장하는 요소를 중심으로 복수의 이야기 공간을 구성합니다.
+ if(a.has('cottage'))cottage(360,525,.77,r,p);
+ if(a.has('bridge')&&a.has('water')){
+  for(let i=0;i<7;i++)polygon([[430+i*54,532],[480+i*54,524],[476+i*54,552],[435+i*54,556]],pick(r,p.accent),.9,3);
+ }
+ if(a.has('boat'))boat(865,575,.71,r);
+ if(a.has('pomegranate')){tree(a.has('cottage')?165:245,598,1.16,p,r,{fruit:true});tree(1082,610,.85,p,r,{fruit:true});}
+ else{tree(a.has('cottage')?160:245,602,1.08,p,r);tree(1100,604,.78,p,r);}
+ if(a.has('bench'))bench(806,608,.6);
+ if(a.has('umbrella'))umbrella(924,566,.7);
+ if(a.has('birds'))birds(r,25);
+ if(a.has('reed'))reeds(r);
+ if(a.has('flowers')||a.season==='spring')flowers(750,627,r,55,1.1);
+ else flowers(644,650,r,24,.8);
+ if(a.has('lantern')){for(let i=0;i<7;i++)lantern(660+i*75,480+Math.sin(i)*40,.8,r);}
+ if(a.has('rain'))rain(r);
+ if(a.has('snow'))snow(r);
+ if(a.has('leaves')||a.season==='autumn')petals(r);
+ if(a.mood==='longing'&&a.has('cottage'))person(558,587,.7,r);
+ // 분할된 유리의 빛의 잔상 / 리드 프레임 / 모서리 소형 유리 조각
+ for(let i=0;i<85;i++){
+  const x=sample(r,35,1245),y=sample(r,28,690),sz=sample(r,3,11);
+  polygon([[x-sz,y],[x,y-sz],[x+sz,y],[x,y+sz]],pick(r,p.accent),sample(r,.18,.48),1.05);
+ }
+ frame(r,p);
+ // 은은한 광택과 입체 유리 표현
+ const vignette=g.createRadialGradient(645,340,260,645,340,840);
+ vignette.addColorStop(0,'rgba(0,0,0,0)');vignette.addColorStop(1,'rgba(2,8,16,.36)');g.fillStyle=vignette;g.fillRect(0,0,V.W,V.H);
 }
 
-
-
-const TAU=Math.PI*2;
-const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
-function makeRnd(seed){let s=seed>>>0;return()=>{s=(1664525*s+1013904223)>>>0;return s/4294967296;};}
-function hashText(s){let h=2166136261;for(const c of String(s)){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
-function blob(ctx,x,y,r,color,rand,alpha=.06){
- ctx.save();ctx.fillStyle=color;ctx.globalAlpha=alpha;
- ctx.beginPath();const n=13,wiggle=Array.from({length:n},()=>0.74+rand()*.52);
- for(let i=0;i<=n;i++){const a=(i%n)/n*TAU,rr=r*wiggle[i%n],px=x+Math.cos(a)*rr,py=y+Math.sin(a)*rr;if(i===0)ctx.moveTo(px,py);else ctx.lineTo(px,py);}
- ctx.closePath();ctx.fill();ctx.restore();
-}
-function wash(ctx,x,y,r,color,rand,layers=20){for(let i=0;i<layers;i++) blob(ctx,x+(rand()-.5)*r*.42,y+(rand()-.5)*r*.28,r*(.65+rand()*.72),color,rand,.007+rand()*.019);}
-function ridge(ctx,w,h,topY,amp,color,rand,offset=0){
- ctx.fillStyle=color;ctx.globalAlpha=.58;
- ctx.beginPath();ctx.moveTo(0,h);
- for(let x=0;x<=w+28;x+=28){const y=topY+Math.sin((x+offset)/180)*amp+Math.sin((x+offset)/67)*amp*.29+(rand()-.5)*9;ctx.lineTo(x,y);}
- ctx.lineTo(w,h);ctx.closePath();ctx.fill();ctx.globalAlpha=1;
-}
-function tree(ctx,x,y,size,analysis,rand){
- ctx.save();ctx.translate(x,y);
- for(let i=0;i<10;i++){
-  ctx.beginPath();ctx.strokeStyle=i%2?'rgba(75,67,57,.20)':'rgba(93,78,65,.14)';ctx.lineWidth=10+i%3*3;
-  ctx.moveTo((rand()-.5)*9,0);ctx.quadraticCurveTo((rand()-.5)*32,-size*.54,(rand()-.5)*size*.63,-size*.95);
-  ctx.stroke();
- }
- const autumn=analysis.season==='autumn',winter=analysis.season==='winter';
- if(!winter){
-  const tone=autumn?['#c96b52','#e1a365','#ac5e47','#d6a75d']:analysis.season==='spring'?['#d9acb7','#e2cbd1','#91ad93','#cf9eaa']:['#7c9e84','#a4b6a0','#719c8b'];
-  for(let i=0;i<145;i++){
-   const a=rand()*TAU,r=Math.sqrt(rand());
-   blob(ctx,Math.cos(a)*size*.5*r,-size*.80+Math.sin(a)*size*.25*r,10+rand()*30,tone[Math.floor(rand()*tone.length)],rand,.12);
-  }
- }
- if(analysis.motifs.some(m=>m.key==='pomegranate')){
-  for(let i=0;i<15;i++){const x=(rand()-.5)*size*.7,y=-size*(.65+rand()*.28);ctx.fillStyle='#b94d42';ctx.globalAlpha=.65;ctx.beginPath();ctx.arc(x,y,7+rand()*6,0,TAU);ctx.fill();}
- }
- ctx.restore();
-}
-function wildflower(ctx,x,y,s,c,rand){
- ctx.save();ctx.translate(x,y);ctx.strokeStyle='rgba(55,85,72,.65)';ctx.lineWidth=2;
- ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(6,-s*.5,2,-s);ctx.stroke();
- ctx.translate(2,-s);
- for(let j=0;j<7;j++){ctx.save();ctx.rotate(j*TAU/7);ctx.globalAlpha=.56;ctx.fillStyle=c;ctx.beginPath();ctx.ellipse(0,-6,4.8,9,0,0,TAU);ctx.fill();ctx.restore();}
- ctx.fillStyle='#c19e58';ctx.beginPath();ctx.arc(0,0,4,0,TAU);ctx.fill();ctx.restore();
-}
-function bench(ctx,x,y,s){
- ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.lineCap='round';
- ctx.strokeStyle='rgba(74,67,73,.7)';ctx.lineWidth=5;
- ctx.beginPath();ctx.moveTo(-60,-11);ctx.lineTo(-56,35);ctx.moveTo(60,-11);ctx.lineTo(56,35);ctx.stroke();
- ctx.fillStyle='rgba(185,120,145,.83)';ctx.fillRect(-80,-10,160,18);ctx.fillRect(-76,-61,152,15);ctx.fillRect(-76,-40,152,14);
- ctx.restore();
-}
-function boat(ctx,x,y,s){ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='rgba(85,70,65,.75)';ctx.beginPath();ctx.moveTo(-85,0);ctx.lineTo(77,0);ctx.lineTo(52,28);ctx.lineTo(-56,28);ctx.closePath();ctx.fill();ctx.strokeStyle='rgba(67,68,65,.8)';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(0,-135);ctx.lineTo(0,4);ctx.stroke();ctx.fillStyle='rgba(245,231,209,.72)';ctx.beginPath();ctx.moveTo(-4,-132);ctx.lineTo(-63,-10);ctx.lineTo(-4,-10);ctx.closePath();ctx.fill();ctx.restore();}
-function moon(ctx,x,y,r){const g=ctx.createRadialGradient(x,y,3,x,y,r*2.4);g.addColorStop(0,'rgba(254,249,225,.76)');g.addColorStop(.42,'rgba(248,240,214,.32)');g.addColorStop(1,'rgba(252,241,222,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r*2.4,0,TAU);ctx.fill();ctx.fillStyle='rgba(255,251,234,.75)';ctx.beginPath();ctx.arc(x,y,r*.72,0,TAU);ctx.fill();}
-function paintWatercolor(canvas,analysis,seed=13){
- const w=canvas.width,h=canvas.height,ctx=canvas.getContext('2d'),rand=makeRnd(seed);
- ctx.clearRect(0,0,w,h);
- const [sky,mid,mountain,water]=analysis.palette;
- const grad=ctx.createLinearGradient(0,0,0,h);grad.addColorStop(0,analysis.time==='night'?'#26394e':sky);grad.addColorStop(.62,mid);grad.addColorStop(1,water);
- ctx.fillStyle=grad;ctx.fillRect(0,0,w,h);
- // 수채 번짐·그라데이션의 비정형 안료층
- for(let i=0;i<120;i++)wash(ctx,rand()*w,rand()*h*.74,35+rand()*180,i%2?sky:mid,rand,6);
- if(analysis.time==='night'||analysis.motifs.some(m=>m.key==='moon'))moon(ctx,w*.75,h*.20,42);
- else {
-  const g=ctx.createRadialGradient(w*.76,h*.22,0,w*.76,h*.22,175);g.addColorStop(0,'rgba(255,245,207,.7)');g.addColorStop(1,'rgba(255,245,207,0)');ctx.fillStyle=g;ctx.fillRect(w*.57,0,420,380);
- }
- // 구름
- for(let i=0;i<12;i++)wash(ctx,rand()*w,55+rand()*220,55+rand()*110,'#f8f2e4',rand,8);
- ridge(ctx,w,h,h*.46,100,mountain,rand,50);ridge(ctx,w,h,h*.58,55,mid,rand,100);
- const isWater=analysis.motifs.some(m=>m.key==='water'||m.key==='boat');
- if(isWater){
-  const lake=ctx.createLinearGradient(0,h*.62,0,h);lake.addColorStop(0,'rgba(136,174,181,.73)');lake.addColorStop(1,'rgba(60,100,115,.78)');ctx.fillStyle=lake;ctx.fillRect(0,h*.65,w,h*.35);
-  for(let i=0;i<235;i++){const x=rand()*w,y=h*.67+rand()*h*.31;ctx.strokeStyle=`rgba(245,238,209,${rand()*.25})`;ctx.lineWidth=1+rand()*2;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+18+rand()*88,y);ctx.stroke();}
- }else{
-  ridge(ctx,w,h,h*.72,24,water,rand,160);
-  for(let i=0;i<65;i++)wash(ctx,rand()*w,h*.78+rand()*h*.2,35+rand()*75,mid,rand,3);
- }
- const has=(s)=>analysis.motifs.some(m=>m.key===s);
- if(has('pomegranate')||has('tree')||analysis.season==='autumn') tree(ctx,175,h*.83,230,analysis,rand);
- if(has('bench'))bench(ctx,w*.76,h*.79,1.1);
- if(has('boat'))boat(ctx,w*.76,h*.72,.72);
- if(has('cosmos')||has('flower')||analysis.season==='spring'){
-  const colors=has('cosmos')?['#d895ac','#c67eaa','#f7e2d9']:['#e4b7b4','#c8929b','#f4e1c5'];
-  for(let i=0;i<63;i++)wildflower(ctx,rand()*w,h*.87+rand()*h*.21,25+rand()*85,colors[i%colors.length],rand);
- }
- if(analysis.time==='night'||has('stars')){
-  for(let i=0;i<95;i++){ctx.fillStyle=`rgba(255,252,234,${.13+rand()*.48})`;ctx.beginPath();ctx.arc(rand()*w,rand()*h*.38,.4+rand()*1.5,0,TAU);ctx.fill();}
- }
- // 한지 종이결·마른 물감 알갱이
- const img=ctx.getImageData(0,0,w,h),pixels=img.data;
- for(let y=0;y<h;y+=2){for(let x=0;x<w;x+=2){const j=(y*w+x)*4,v=(rand()-.5)*17;pixels[j]=clamp(pixels[j]+v,0,255);pixels[j+1]=clamp(pixels[j+1]+v,0,255);pixels[j+2]=clamp(pixels[j+2]+v,0,255);}}
- ctx.putImageData(img,0,0);
- const veil=ctx.createLinearGradient(0,0,w,h);veil.addColorStop(0,'rgba(255,253,241,.06)');veil.addColorStop(1,'rgba(227,217,200,.08)');ctx.fillStyle=veil;ctx.fillRect(0,0,w,h);
-}
-class Scene {
- constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.off=document.createElement('canvas');this.off.width=1280;this.off.height=720;this.analysis=null;this.image=null;this.seed=1;this.title='';this.author='';this.lines=[];this.duration=35;}
- setPoem(title,author,analysis){this.title=title||'시의 풍경';this.author=author||'명도재';this.analysis=analysis;this.seed=hashText(analysis.lines.join('|'));this.lines=analysis.lines;paintWatercolor(this.off,analysis,this.seed);this.image=null;}
- async setImage(src){const img=new Image();img.decoding='async';img.src=src;await img.decode();this.image=img;}
- draw(now=0,progress=0,mode='ready',activeIdx=-1){
-  const ctx=this.ctx,W=this.canvas.width,H=this.canvas.height,t=now/1000;
-  ctx.clearRect(0,0,W,H);
-  const source=this.image||this.off;
-  const srcW=source.naturalWidth||source.width,srcH=source.naturalHeight||source.height;
-  const cover=Math.max(W/srcW,H/srcH),zoom=1.065+.025*Math.sin(t*.09),sw=W/(cover*zoom),sh=H/(cover*zoom);
-  const sx=(srcW-sw)/2+Math.sin(t*.045)*Math.max(0,srcW-sw)*.2,sy=(srcH-sh)/2+Math.sin(t*.035)*Math.max(0,srcH-sh)*.15;
-  ctx.drawImage(source,clamp(sx,0,srcW-sw),clamp(sy,0,srcH-sh),sw,sh,0,0,W,H);
-  // 촬영한 듯한 미세한 부유입자
-  const rand=makeRnd(this.seed);
-  ctx.save();for(let i=0;i<26;i++){
-   const x=(rand()*W + t*(3+i%5))%W,y=(rand()*H+Math.sin(t*.32+i)*9+H)%H;
-   ctx.fillStyle=`rgba(255,252,238,${.04+(i%4)*.014})`;
-   ctx.beginPath();ctx.arc(x,y,1+i%3,0,TAU);ctx.fill();
-  }ctx.restore();
-  const dark=ctx.createLinearGradient(0,0,0,H);dark.addColorStop(0,'rgba(10,15,25,.26)');dark.addColorStop(.38,'rgba(12,19,25,.47)');dark.addColorStop(.70,'rgba(13,18,24,.48)');dark.addColorStop(1,'rgba(12,18,24,.72)');ctx.fillStyle=dark;ctx.fillRect(0,0,W,H);
-  ctx.textAlign='center';ctx.textBaseline='middle';
-  if(mode==='ready'){
-   ctx.fillStyle='rgba(255,249,235,.96)';ctx.shadowColor='rgba(0,0,0,.55)';ctx.shadowBlur=20;
-   ctx.font='bold 55px "Nanum Myeongjo", Georgia, serif';ctx.fillText(this.title.slice(0,35),W/2,H*.49);
-   ctx.font='23px "Nanum Myeongjo", serif';ctx.fillText(this.author,W/2,H*.60);ctx.shadowBlur=0;
-  }else{
-   const lines=wrappingLines(ctx,this.lines,800,'34px "Nanum Myeongjo",serif');
-   const lh=62,bodyHeight=lines.length*lh;
-   // 처음에는 제목, 전체 구절은 아래에서 올라가고 끝은 위로 떠오른다.
-   const scrollY=H*.88-(H*.88-H*.48+Math.max(0,lines.length-1)*lh)*clamp(progress,0,1);
-   ctx.save();ctx.beginPath();ctx.rect(140,35,W-280,H-80);ctx.clip();
-   ctx.shadowColor='rgba(0,0,0,.75)';ctx.shadowBlur=7;
-   for(let i=0;i<lines.length;i++){
-    const y=scrollY+i*lh;
-    if(y<15||y>H-10)continue;
-    ctx.fillStyle='rgba(255,250,240,.97)';ctx.font='34px "Nanum Myeongjo", Georgia, serif';ctx.fillText(lines[i],W/2,y);
-   }
-   ctx.restore();
-   if(progress<.06){ctx.fillStyle=`rgba(255,248,228,${1-progress/.06})`;ctx.font='bold 38px "Nanum Myeongjo", serif';ctx.fillText(this.title,W/2,H*.28);}
-   if(progress>.92){ctx.fillStyle=`rgba(255,248,228,${clamp((progress-.92)/.08,0,1)})`;ctx.font='25px "Nanum Myeongjo",serif';ctx.fillText(this.author,W/2,H*.52);}
-  }
-  // 좌하단 작은 명도 낙관
-  ctx.fillStyle='rgba(151,45,40,.92)';ctx.fillRect(23,H-65,48,48);ctx.fillStyle='#fff9f0';ctx.font='bold 17px serif';ctx.fillText('명도',47,H-40);
-  return progress;
- }
-}
-
-
-
-const midiToHz=m=>440*Math.pow(2,(m-69)/12);
-const CHORDS={
-  major:[[60,64,67],[57,60,64],[53,57,60],[55,59,62]],
-  minor:[[57,60,64],[53,57,60],[60,64,67],[55,59,62]]
-};
-const SCALES={major:[0,2,4,5,7,9,11,12,14,16],minor:[0,2,3,5,7,8,10,12,14,15]};
-function seeded(seed){let s=seed>>>0;return()=>{s=(1664525*s+1013904223)>>>0;return s/4294967296;};}
-class MusicEngine {
- constructor(){this.ctx=null;this.musicBus=null;this.voiceBus=null;this.capture=null;this.oscillators=new Set();this.interval=null;this.config=null;this.nextNoteTime=0;this.step=0;this.voiceElement=null;this.voiceSource=null;this.level=.32;}
+// Music-only engine. No text-to-speech, microphone recording or voice track.
+const midiHz=n=>440*Math.pow(2,(n-69)/12);
+class MusicEngine{
+ constructor(){this.ctx=null;this.bus=null;this.master=null;this.dest=null;this.timer=null;this.notes=new Set();this.step=0;this.next=0;this.cfg=null;this.running=false;}
  async init(){
   if(!this.ctx){
    this.ctx=new (window.AudioContext||window.webkitAudioContext)();
-   this.capture=this.ctx.createMediaStreamDestination();
-   const out=this.ctx.createDynamicsCompressor();out.threshold.value=-16;out.ratio.value=2.8;out.knee.value=16;out.attack.value=.01;out.release.value=.22;
-   out.connect(this.ctx.destination);out.connect(this.capture);
-   this.musicBus=this.ctx.createGain();this.musicBus.gain.value=this.level;this.musicBus.connect(out);
-   this.voiceBus=this.ctx.createGain();this.voiceBus.gain.value=1;this.voiceBus.connect(out);
+   this.master=this.ctx.createDynamicsCompressor();this.master.threshold.value=-19;this.master.ratio.value=2.5;this.master.attack.value=.012;this.master.release.value=.22;
+   this.bus=this.ctx.createGain();this.bus.gain.value=.42;this.bus.connect(this.master);
+   this.dest=this.ctx.createMediaStreamDestination();this.master.connect(this.ctx.destination);this.master.connect(this.dest);
   }
   if(this.ctx.state==='suspended')await this.ctx.resume();
  }
- configure(analysis,poem){this.config={bpm:analysis.bpm,mode:analysis.mode,mood:analysis.mood,seed:hashText(poem),motifs:analysis.motifs.map(x=>x.label)};}
- setDucking(on){if(!this.ctx)return;const n=this.ctx.currentTime;this.musicBus.gain.cancelScheduledValues(n);this.musicBus.gain.setTargetAtTime(on?this.level*.31:this.level,n,on?.12:.50);}
- setVolume(v){this.level=Number(v);if(this.ctx)this.setDucking(false);}
- note(midi,when,duration,volume=.1,type='piano'){
+ configure(a){this.cfg=a;this.rnd=seeded(a.seed^0x4a215c7d);}
+ note(midi,time,length,amp,instrument){
   if(!this.ctx)return;
-  const ctx=this.ctx,osc=ctx.createOscillator(),g=ctx.createGain(),freq=midiToHz(midi);
-  osc.type=type==='flute'?'sine':type==='pad'?'triangle':'sine';osc.frequency.setValueAtTime(freq,when);
-  const a=type==='pad'?.55:type==='flute'?.09:.012,release=type==='pad'?1.0:type==='flute'?.29:.65;
-  const peak=volume*(type==='piano'?.9:1);
-  g.gain.setValueAtTime(.0001,when);g.gain.linearRampToValueAtTime(peak,when+a);
-  if(type==='piano')g.gain.exponentialRampToValueAtTime(Math.max(.0004,peak*.18),when+Math.max(a+.04,duration*.65));
-  else g.gain.setValueAtTime(peak*.85,when+Math.max(a+.01,duration*.68));
-  g.gain.exponentialRampToValueAtTime(.0001,when+duration+release);
-  osc.connect(g);g.connect(this.musicBus);osc.start(when);osc.stop(when+duration+release+.06);
-  this.oscillators.add(osc);osc.onended=()=>{try{osc.disconnect();g.disconnect();}catch{}this.oscillators.delete(osc);};
+  const os=this.ctx.createOscillator(),env=this.ctx.createGain();
+  os.type=instrument==='flute'?'sine':instrument==='strings'?'triangle':'sine';os.frequency.setValueAtTime(midiHz(midi),time);
+  const attack=instrument==='strings'?.5:instrument==='flute'?.07:.009,release=instrument==='strings'?1.2:.32;
+  env.gain.setValueAtTime(.0001,time);env.gain.linearRampToValueAtTime(amp,time+attack);
+  env.gain.exponentialRampToValueAtTime(Math.max(.0003,amp*.22),time+Math.max(attack+.1,length*.72));env.gain.exponentialRampToValueAtTime(.0001,time+length+release);
+  os.connect(env);env.connect(this.bus);os.start(time);os.stop(time+length+release+.05);
+  this.notes.add(os);os.onended=()=>{this.notes.delete(os);try{os.disconnect();env.disconnect();}catch{}};
  }
- scheduleBeat(beat,time){
-  const {mode,seed,mood}=this.config,rootScale=SCALES[mode],harm=CHORDS[mode],chord=harm[Math.floor(beat/4)%4];
-  const beatDur=60/this.config.bpm;
-  const r=seeded((seed^Math.imul(beat+1,2654435761))>>>0);
-  if(beat%4===0){
-    for(const note of chord)this.note(note-12,time,beatDur*3.65,.042,'pad');
-    this.note(chord[0]-24,time,beatDur*2.8,.09,'piano');
-  }
-  const degree=(Math.floor(beat*.75)+Math.floor(r()*5)+(seed%4))%rootScale.length;
-  // 동요나 반복 단일음이 아니라 4마디의 아치형 선율
-  const lift=[0,0,2,4,5,4,2,1,0,2,4,5,3,2,1,0][beat%16];
-  const note=57+rootScale[(degree+lift)%rootScale.length];
-  if(beat%4!==3 || r()>.25)this.note(note,time+.075,beatDur*.80,mood==='dramatic'?.068:.052,'flute');
-  if(beat%2===0){const a=chord[(beat/2)%3],n=a+12;this.note(n,time+beatDur*.5,beatDur*.49,.067,'piano');}
+ beat(step,t){
+  const mode=this.cfg?.mode==='minor'?'minor':'major';
+  const chords=mode==='minor'?[[57,60,64],[53,57,60],[60,64,67],[55,59,62]]:[[60,64,67],[57,60,64],[53,57,60],[55,59,62]];
+  const scale=mode==='minor'?[0,2,3,5,7,8,10,12,14,15]:[0,2,4,5,7,9,11,12,14,16];
+  const chord=chords[Math.floor(step/4)%4],dur=60/(this.cfg?.bpm||68);
+  if(step%4===0){for(const n of chord)this.note(n-12,t,dur*3.8,.055,'strings');this.note(chord[0]-24,t+.02,dur*1.4,.12,'piano');}
+  if(step%2===0)this.note(chord[(step/2)%3]+12,t+dur*.46,dur*.56,.083,'piano');
+  const arches=[0,2,4,5,6,5,3,1,0,2,3,4,5,2,1,0],idx=(arches[step%16]+Math.floor((this.cfg.seed%7))+(step>>4))%scale.length;
+  if(step%4!==3||this.rnd()>.3)this.note(57+scale[idx],t+.04,dur*.86,.061,'flute');
  }
- start(){if(!this.ctx||!this.config)throw Error('작곡 준비가 필요합니다.');this.stop(false);this.step=0;this.nextNoteTime=this.ctx.currentTime+.10;this.interval=setInterval(()=>this.tick(),65);this.tick();}
- tick(){if(!this.interval||!this.ctx||this.ctx.state!=='running')return;const sec=60/this.config.bpm;while(this.nextNoteTime<this.ctx.currentTime+.22){this.scheduleBeat(this.step++,this.nextNoteTime);this.nextNoteTime+=sec;}}
+ tick(){if(!this.running||!this.ctx||this.ctx.state!=='running')return;const d=60/(this.cfg?.bpm||68);while(this.next<this.ctx.currentTime+.20){this.beat(this.step++,this.next);this.next+=d;}}
+ start(){if(!this.ctx||!this.cfg)return;this.stop();this.running=true;this.next=this.ctx.currentTime+.08;this.step=0;this.timer=setInterval(()=>this.tick(),55);this.tick();}
+ stop(){this.running=false;if(this.timer)clearInterval(this.timer);this.timer=null;for(const n of this.notes){try{n.stop();}catch{}}this.notes.clear();}
  async pause(){if(this.ctx?.state==='running')await this.ctx.suspend();}
  async resume(){if(this.ctx?.state==='suspended')await this.ctx.resume();}
- stop(hard=true){if(this.interval){clearInterval(this.interval);this.interval=null;}if(hard){for(const osc of this.oscillators){try{osc.stop();}catch{}}this.oscillators.clear();}}
- async attachNarration(element){await this.init();if(this.voiceElement!==element){this.voiceSource?.disconnect();this.voiceElement=element;this.voiceSource=this.ctx.createMediaElementSource(element);this.voiceSource.connect(this.voiceBus);}return this.voiceSource;}
- getMixStream(){return this.capture?.stream;}
- async renderWav(seconds=30){
-  if(!this.config)throw Error('시를 먼저 분석해야 합니다.');
-  const length=Math.min(120,Math.max(5,seconds));
-  const sampleRate=44100;
-  const offline=new OfflineAudioContext(2,Math.ceil(length*sampleRate),sampleRate);
-  const bus=offline.createGain();bus.gain.value=Math.max(0.1,this.level);bus.connect(offline.destination);
-  const eng=new MusicEngine();eng.ctx=offline;eng.musicBus=bus;eng.config=this.config;
-  const beats=Math.ceil(length*this.config.bpm/60);
-  for(let i=0;i<beats;i++)eng.scheduleBeat(i,i*60/this.config.bpm);
-  const buffer=await offline.startRendering();
-  const len=buffer.length,channels=buffer.numberOfChannels,arr=new ArrayBuffer(44+len*channels*2),view=new DataView(arr);
-  const put=(off,text)=>{for(let i=0;i<text.length;i++)view.setUint8(off+i,text.charCodeAt(i));};
-  put(0,'RIFF');view.setUint32(4,36+len*channels*2,true);put(8,'WAVE');put(12,'fmt ');
-  view.setUint32(16,16,true);view.setUint16(20,1,true);view.setUint16(22,channels,true);
-  view.setUint32(24,sampleRate,true);view.setUint32(28,sampleRate*channels*2,true);
-  view.setUint16(32,channels*2,true);view.setUint16(34,16,true);
-  put(36,'data');view.setUint32(40,len*channels*2,true);
-  let pos=44;const data=Array.from({length:channels},(_,i)=>buffer.getChannelData(i));
-  for(let i=0;i<len;i++)for(let c=0;c<channels;c++){
-   const x=Math.max(-1,Math.min(1,data[c][i]));view.setInt16(pos,x<0?x*32768:x*32767,true);pos+=2;
-  }
-  return new Blob([arr],{type:'audio/wav'});
+ mixedStream(){return this.dest?.stream;}
+}
+const music=new MusicEngine(),display=els.canvas.getContext('2d');
+const studio={poem:null,artHash:0,playing:false,paused:false,line:-1,progress:0,recording:null,chunks:[],captureStream:null,startAt:0,pauseAt:0,pausedTime:0,elapsed:0,duration:0,lineSeconds:4,previewUntil:0,finished:false};
+function durationFor(a){return 4+a.lines.length*Number(els.pace.value)+3;}
+function refreshArt(force=false){
+ const poem=parsePoem(els.input.value);
+ if(force||studio.artHash!==hash(poem.raw)){
+  if(studio.playing)stopAll(true);
+  studio.poem=analyze(poem);studio.artHash=hash(poem.raw);renderStainedArt(studio.poem);music.configure(studio.poem);
+  els.mood.textContent=`${studio.poem.label} · ${studio.poem.themes} · ${studio.poem.m.length}개 상징`;
+  studio.line=-1;studio.progress=0;studio.elapsed=0;
  }
- score(){return {...this.config,instruments:['Piano','Warm strings','Flute'],tempo:'4/4',harmonicCycle:CHORDS[this.config.mode].map(ch=>ch.map(m=>midiToHz(m).toFixed(1)))};}
+ studio.lineSeconds=Number(els.pace.value);studio.duration=durationFor(studio.poem);
+ draw();return studio.poem;
 }
-
-
-
-
-
-const $=id=>document.getElementById(id);
-const scene=new Scene($('screen'));
-const music=new MusicEngine();
-let analysis=null, syncedText='', syncedTitle='', syncedAuthor='';
-let voiceElement=null, voiceUrl=null, voiceMode='browser';
-let transport='idle',startedAt=0,pausedAt=0,pausedTotal=0,lastElapsed=0,lead=2.4,outro=3.6,total=35,voiceStarted=false,voiceEnded=false;
-let speechIndex=-1,speechToken=0,speechUtterance=null,pendingNext=false,ttsDelay=null,recording=null,recordChunks=[],micRecorder=null,micStream=null,micChunks=[],animateId=0;
-const fmt=s=>{s=Math.max(0,Math.floor(Number(s)||0));return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;};
-const say=(s)=>{$('status').textContent=s;$('stateLabel').textContent=s.length>40?s.slice(0,36)+'…':s;};
-const saveBlob=(blob,name)=>{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30_000);};
-function analysisRefresh(){
- const poem=$('poemText').value.trim();
- if(!poem)throw Error('시 전문을 입력해 주세요.');
- if(poem.length>4000)throw Error('시 전문은 4,000자 이내로 입력해 주세요.');
- analysis=analyzePoem(poem);
- const title=$('poemTitle').value.trim()||'무제',author=$('poemAuthor').value.trim()||'작가 미상';
- scene.setPoem(title,author,analysis);
- syncedText=poem;syncedTitle=title;syncedAuthor=author;
- music.configure(analysis,poem);
- $('moodBadge').textContent=analysis.summary;
- $('analysisSummary').textContent=analysis.summary;
- $('analysisDetail').textContent=analysis.commentary;
- $('imagePrompt').value=analysis.imagePrompt;
- drawReady();
- return analysis;
-}
-function ensureAnalyzed(){const title=$('poemTitle').value.trim()||'무제',author=$('poemAuthor').value.trim()||'작가 미상';if(!analysis||syncedText!==$('poemText').value.trim()||syncedTitle!==title||syncedAuthor!==author)analysisRefresh();return analysis;}
-function drawReady(){scene.draw(performance.now(),0,'ready');}
-function canLiveTts(){return 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;}
-function femaleKoreanVoice(){
- const voices=window.speechSynthesis.getVoices().filter(v=>/^ko([-_]|$)/i.test(v.lang));
- const preferred=voices.find(v=>/female|여성|yuna|heami|sunhi|jiyun|sora|seoyeon|sooyeon|유나|선희|서연|google.*한국어/i.test(v.name));
- return {voice:preferred||voices[0]||null,verified:!!preferred,available:voices.length};
-}
-async function setVoice(blob,name='낭송 파일'){
- if(!blob||!blob.size)throw Error('음성 파일이 비어 있습니다.');
- if(blob.size>70_000_000)throw Error('음성 파일은 70MB 이하로 선택해 주세요.');
- stopPerformance(false);
- if(voiceUrl)URL.revokeObjectURL(voiceUrl);
- voiceUrl=URL.createObjectURL(blob);
- voiceElement=new Audio();voiceElement.preload='auto';voiceElement.src=voiceUrl;
- voiceMode='file';
- await new Promise((resolve,reject)=>{let done=false;const okay=()=>{if(done)return;done=true;resolve();};const bad=()=>{if(done)return;done=true;reject(Error('음성 파일을 읽을 수 없습니다. MP3/WAV/WebM 파일로 다시 시도하세요.'));};voiceElement.addEventListener('loadedmetadata',okay,{once:true});voiceElement.addEventListener('error',bad,{once:true});voiceElement.load();});
- say(`낭송 준비 완료: ${name} (${fmt(voiceElement.duration)}) · 이 음성은 영상에 포함됩니다.`);
-}
-async function makeImage(){if(transport!=='idle')stopPerformance(false);ensureAnalyzed();analysisRefresh();say('시어와 계절·빛을 반영한 16:9 수채화 시화를 그렸습니다.');}
-async function aiImage(){
- try{
-  stopPerformance(false);ensureAnalyzed();$('aiImageBtn').disabled=true;say('AI 수채화 시화를 생성하고 있습니다. API 사용량에 따른 비용이 발생할 수 있습니다.');
-  const response=await fetch('/api/image',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:$('imagePrompt').value})});
-  const data=await response.json();if(!response.ok)throw Error(data.error||'이미지 생성 실패');
-  await scene.setImage(data.image);drawReady();say('AI 고급 수채화 시화가 적용되었습니다. 화면은 16:9로 중앙 크롭됩니다.');
- }catch(e){say(`AI 시화 사용 불가: ${e.message} · 기본 시화 기능은 그대로 사용할 수 있습니다.`);}finally{$('aiImageBtn').disabled=false;}
-}
-async function aiVoice(){
- try{
-  ensureAnalyzed();$('generateVoiceBtn').disabled=true;say('AI 한국어 여성 낭송 음성을 생성 중입니다. API 과금이 발생할 수 있습니다.');
-  const response=await fetch('/api/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:analysis.lines.join('\n')})});
-  if(!response.ok){let data={};try{data=await response.json();}catch{}throw Error(data.error||`HTTP ${response.status}`);}
-  const blob=await response.blob();await setVoice(blob,'AI 여성 낭송 MP3');
- }catch(e){say(`AI 낭송 생성 실패: ${e.message}`);}finally{$('generateVoiceBtn').disabled=false;}
-}
-function elapsed(){if(transport==='idle')return lastElapsed;if(transport==='paused')return Math.max(0,(pausedAt-startedAt-pausedTotal)/1000);return Math.max(0,(performance.now()-startedAt-pausedTotal)/1000);}
-function updateControls(){const active=transport==='playing'||transport==='paused';$('playBtn').disabled=active;$('recordBtn').disabled=active;$('pauseBtn').disabled=!active;$('stopBtn').disabled=!active;$('pauseBtn').textContent=transport==='paused'?'▶ 이어읽기':'⏸ 일시정지';}
-function nextSpeechLine(token){
- if(token!==speechToken||transport==='idle')return;
- if(transport==='paused'){pendingNext=true;return;}
- if(++speechIndex>=analysis.lines.length){voiceEnded=true;total=elapsed()+outro;music.setDucking(false);say('낭송 완료 · 엔딩 장면');return;}
- const utter=new SpeechSynthesisUtterance(analysis.lines[speechIndex]);
- utter.lang='ko-KR';utter.rate=Number($('ttsSpeed').value);utter.pitch=1;utter.volume=1;
- const sel=femaleKoreanVoice();if(sel.voice)utter.voice=sel.voice;
- speechUtterance=utter;
- utter.onstart=()=>{if(token!==speechToken)return;music.setDucking(true);say(`낭송 중 · ${speechIndex+1}/${analysis.lines.length}행`);};
- utter.onend=()=>{if(token!==speechToken)return;music.setDucking(false);ttsDelay=setTimeout(()=>nextSpeechLine(token),300);};
- utter.onerror=(e)=>{if(token!==speechToken)return;music.setDucking(false);if(e.error==='interrupted'||e.error==='canceled')return;ttsDelay=setTimeout(()=>nextSpeechLine(token),250);};
- window.speechSynthesis.speak(utter);
-}
-function beginVoice(){
- if(voiceStarted)return;voiceStarted=true;
- if(voiceMode==='file'&&voiceElement){
-  voiceElement.currentTime=0;
-  music.setDucking(true);
-  voiceElement.onended=()=>{if(transport==='idle')return;voiceEnded=true;total=elapsed()+outro;music.setDucking(false);say('음성 낭송 완료 · 엔딩 장면');};
-  voiceElement.play().catch(e=>{music.setDucking(false);voiceEnded=true;total=elapsed()+outro;say(`음성 재생 실패: ${e.message}`);});
- }else if(canLiveTts()){
-  const sel=femaleKoreanVoice();
-  if(!sel.verified)say('브라우저에서 한국어 여성 음성을 확정할 수 없어 설치된 한국어 음성으로 낭독합니다.');
-  speechIndex=-1;speechToken++;nextSpeechLine(speechToken);
- }else{
-  voiceEnded=true;total=Math.max(16,analysis.lines.join('').length*.22)+outro;
-  say('한국어 TTS 미지원 환경: 시화·음악만 재생합니다.');
+function draw(){
+ const ctx=display,now=performance.now();ctx.clearRect(0,0,V.W,V.H);
+ if(art.width){
+  const zoom=1.012+Math.sin(now/8200)*.006,dw=V.W*zoom,dh=V.H*zoom;
+  ctx.drawImage(art,(V.W-dw)/2+Math.sin(now/10500)*3,(V.H-dh)/2+Math.cos(now/12900)*3,dw,dh);
  }
-}
-function render(){
- const t=elapsed();lastElapsed=t;
- if(transport==='playing' && !voiceStarted && t>=lead)beginVoice();
- let p=0;
- if(transport!=='idle'){
-  if(voiceMode==='file'&&voiceElement&&Number.isFinite(voiceElement.duration)&&voiceElement.duration>0){p=Math.min(1,Math.max(0,(t-lead)/voiceElement.duration));}
-  else if(canLiveTts()){p=voiceEnded?1:Math.max(0,(speechIndex+.32)/Math.max(1,analysis.lines.length));}
-  else p=Math.min(1,t/Math.max(1,total-outro));
+ const beam=(now/15000)%1,glow=ctx.createLinearGradient(-450+beam*1700,0,250+beam*1700,0);
+ glow.addColorStop(0,'rgba(255,252,211,0)');glow.addColorStop(.5,'rgba(255,249,201,.042)');glow.addColorStop(1,'rgba(255,252,211,0)');ctx.fillStyle=glow;ctx.fillRect(0,0,V.W,V.H);
+ if(!studio.poem)return;
+ ctx.save();ctx.shadowColor='rgba(0,0,0,.75)';ctx.shadowBlur=18;
+ ctx.fillStyle='rgba(6,15,23,.66)';ctx.fillRect(55,43,690,106);ctx.strokeStyle='rgba(243,207,142,.62)';ctx.lineWidth=2;ctx.strokeRect(55,43,690,106);
+ ctx.shadowBlur=0;ctx.fillStyle='#ffebc3';ctx.font='bold 40px serif';ctx.textAlign='left';ctx.fillText(studio.poem.title,77,94,620);
+ ctx.fillStyle='#f1f4ed';ctx.font='23px sans-serif';ctx.fillText(`시 · ${studio.poem.author}`,79,128,595);ctx.restore();
+ const y0=431,h=239,center=y0+113,lines=studio.poem.lines,sub=studio.line<0?0:studio.line+studio.progress;
+ ctx.fillStyle='rgba(6,12,22,.70)';ctx.fillRect(55,y0,1170,h);
+ ctx.strokeStyle='rgba(239,209,149,.51)';ctx.lineWidth=2;ctx.strokeRect(55,y0,1170,h);
+ ctx.save();ctx.beginPath();ctx.rect(58,y0+2,1164,h-4);ctx.clip();ctx.textAlign='center';
+ for(let i=0;i<lines.length;i++){
+  const yy=center+(i-sub)*45;if(yy<y0-30||yy>y0+h+25)continue;
+  const dist=Math.abs(i-sub),active=studio.playing&&i===studio.line,fade=clamp(1-dist*.21,.20,1);
+  ctx.shadowColor=active?'rgba(243,169,74,.9)':'rgba(0,0,0,.7)';ctx.shadowBlur=active?20:5;
+  ctx.fillStyle=active?`rgba(255,218,136,${fade})`:i<sub?`rgba(175,201,213,${fade*.94})`:`rgba(247,250,242,${fade})`;
+  ctx.font=active?'bold 34px sans-serif':'500 30px sans-serif';ctx.fillText(lines[i],640,yy,1070);
  }
- scene.draw(performance.now(),p,transport==='idle'?'ready':'rolling',speechIndex);
- $('progressBar').style.width=`${Math.min(100,t/Math.max(1,total)*100)}%`;
- $('clock').textContent=`${fmt(t)} / ${fmt(total)}`;
- if(transport==='playing'&&voiceEnded&&t>=total-.05){stopPerformance(true);return;}
- if(transport==='playing')animateId=requestAnimationFrame(render);
+ ctx.restore();
 }
-async function startPerformance(record=false,forceBrowser=false){
- try{
-  if(transport!=='idle')stopPerformance(false);
-  ensureAnalyzed();
-  if(record && (!voiceElement||forceBrowser))throw Error('음성 포함 영상 녹화를 위해 먼저 AI 여성 낭송을 생성하거나 낭송 음성 파일·마이크 녹음을 등록해 주세요. 브라우저 TTS 음성은 영상으로 직접 캡처할 수 없습니다.');
-  if(record && (!window.MediaRecorder||!$('screen').captureStream))throw Error('이 브라우저에서는 영상 녹화를 지원하지 않습니다. Chrome 또는 Edge를 사용하세요.');
-  await music.init();music.configure(analysis,syncedText);
-  voiceMode=(voiceElement&&!forceBrowser)?'file':'browser';
-  if(voiceMode==='file')await music.attachNarration(voiceElement);
-  if(record){
-   const preferred=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];
-   const mime=preferred.find(x=>MediaRecorder.isTypeSupported(x));if(!mime)throw Error('WebM 영상 인코더를 사용할 수 없습니다.');
-   const stream=$('screen').captureStream(30);for(const track of music.getMixStream().getAudioTracks())stream.addTrack(track);
-   recordChunks=[];recording=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:5_000_000});
-   recording.ondataavailable=e=>{if(e.data?.size)recordChunks.push(e.data);};
-   recording.onerror=e=>say(`녹화 오류: ${e.error?.message||'MediaRecorder 오류'}`);
-   recording.onstop=()=>{for(const track of stream.getTracks())track.stop();if(recordChunks.length){const blob=new Blob(recordChunks,{type:'video/webm'});saveBlob(blob,`${safeName(syncedTitle)}_명도재_시화영상.webm`);say(`영상 저장 완료 (${(blob.size/1024/1024).toFixed(1)}MB). 음악과 등록된 낭송 음원이 포함되었습니다.`);}};
-   recording.start(300);
-  }
-  speechIndex=-1;voiceStarted=false;voiceEnded=false;pendingNext=false;speechToken++;
-  total=voiceMode==='file'&&Number.isFinite(voiceElement.duration)?lead+voiceElement.duration+outro:Math.max(24,lead+analysis.lines.join('').length*.32+outro);
-  startedAt=performance.now();pausedTotal=0;pausedAt=0;transport='playing';lastElapsed=0;
-  music.setDucking(false);music.start();
-  updateControls();say(record?'● 실시간 영상 녹화 중 · 낭송과 배경음악 동시 합성':'수채화 영상 · 맞춤 음악 · 시낭송 재생 중');
-  animateId=requestAnimationFrame(render);
- }catch(e){say(`시작 실패: ${e.message}`);if(transport!=='idle')stopPerformance(false);else if(recording&&recording.state!=='inactive'){recording.stop();recording=null;}}
-}
-function safeName(s){return String(s||'시화').replace(/[\\/:*?"<>|]/g,'_').slice(0,48);}
-async function togglePause(){
- if(transport==='playing'){
-  pausedAt=performance.now();transport='paused';
-  if(recording?.state==='recording')recording.pause();
-  if(voiceMode==='file'&&voiceElement)voiceElement.pause();
-  else if(canLiveTts())window.speechSynthesis.pause();
-  await music.pause();cancelAnimationFrame(animateId);render();updateControls();say('일시정지 · [이어읽기]로 계속 감상');
- }else if(transport==='paused'){
-  pausedTotal+=performance.now()-pausedAt;transport='playing';
-  await music.resume();
-  if(recording?.state==='paused')recording.resume();
-  if(voiceMode==='file'&&voiceElement&&voiceStarted)voiceElement.play().catch(e=>say(`음성 재개 실패: ${e.message}`));
-  else if(canLiveTts())window.speechSynthesis.resume();
-  if(pendingNext){pendingNext=false;nextSpeechLine(speechToken);}
-  updateControls();say('이어읽기 재생 중');animateId=requestAnimationFrame(render);
+function tick(now){
+ if(studio.playing&&!studio.paused){
+  studio.elapsed=clamp((now-studio.startAt-studio.pausedTime)/1000,0,studio.duration);
+  const textElapsed=studio.elapsed-4;
+  if(textElapsed<0){studio.line=-1;studio.progress=0;}
+  else if(textElapsed<studio.poem.lines.length*studio.lineSeconds){
+   const pos=textElapsed/studio.lineSeconds;studio.line=Math.floor(pos);studio.progress=pos-studio.line;
+  }else{studio.line=studio.poem.lines.length-1;studio.progress=1;}
+  if(studio.elapsed>=studio.duration)finishPlayback();
+  els.track.style.width=`${Math.min(100,studio.duration?studio.elapsed/studio.duration*100:0)}%`;
  }
+ if(!studio.playing&&studio.previewUntil&&now>studio.previewUntil){music.stop();studio.previewUntil=0;}
+ els.clock.textContent=`${fmt(studio.elapsed)} / ${fmt(studio.duration)}`;
+ draw();requestAnimationFrame(tick);
 }
-function stopPerformance(finished=false){
- if(transport==='idle'&&!recording)return;
- const wasRecording=!!recording;
- transport='idle';speechToken++;pendingNext=false;clearTimeout(ttsDelay);ttsDelay=null;
- if(canLiveTts())window.speechSynthesis.cancel();
- if(voiceElement){voiceElement.pause();voiceElement.onended=null;try{voiceElement.currentTime=0;}catch{}}
- music.setDucking(false);music.stop();
- cancelAnimationFrame(animateId);animateId=0;
- if(recording){const recorder=recording;recording=null;if(recorder.state!=='inactive')recorder.stop();}
- updateControls();
- if(!wasRecording)say(finished?'시화 음악·낭송 감상 완료':'재생이 정지되었습니다.');
- drawReady();
+function updateControls(){
+ els.play.disabled=studio.playing;els.pause.disabled=!studio.playing||studio.paused;
+ els.resume.disabled=!studio.playing||!studio.paused;els.stop.disabled=!studio.playing;
+ els.record.disabled=studio.playing||!!studio.recording;els.compose.disabled=studio.playing;els.paint.disabled=studio.playing;
+ els.pace.disabled=studio.playing;
 }
-async function startMic(){
- try{
-  if(micRecorder&&micRecorder.state==='recording'){micRecorder.stop();return;}
-  if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder)throw Error('마이크 녹음 기능은 localhost·HTTPS 환경의 지원 브라우저에서 가능합니다.');
-  micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true}});
-  const options=['audio/webm;codecs=opus','audio/webm'].find(x=>MediaRecorder.isTypeSupported(x));
-  micRecorder=new MediaRecorder(micStream,options?{mimeType:options}:{});micChunks=[];
-  micRecorder.ondataavailable=e=>{if(e.data.size)micChunks.push(e.data);};
-  micRecorder.onstop=async()=>{
-   micStream.getTracks().forEach(t=>t.stop());
-   $('micBtn').textContent='🎙 마이크 낭송 녹음';
-   try{await setVoice(new Blob(micChunks,{type:micRecorder.mimeType||'audio/webm'}),'마이크 낭송 녹음');}
-   catch(e){say(e.message);}
+function stopAll(silent=false){
+ music.stop();studio.playing=false;studio.paused=false;studio.line=-1;studio.progress=0;studio.elapsed=0;
+ if(studio.recording&&studio.recording.state!=='inactive')studio.recording.stop();
+ els.playState.textContent='정지';els.track.style.width='0%';updateControls();
+ if(!silent)setStatus('영상 재생을 정지했습니다.');
+}
+function finishPlayback(){
+ if(!studio.playing)return;
+ studio.playing=false;studio.paused=false;studio.elapsed=studio.duration;studio.line=studio.poem.lines.length-1;studio.progress=1;
+ music.stop();els.playState.textContent='재생 완료';els.track.style.width='100%';updateControls();
+ if(studio.recording?.state!=='inactive'&&studio.recording)studio.recording.stop();
+ else setStatus('시화 자막과 음악 영상의 재생이 끝났습니다.');
+}
+async function perform(withRecording=false){
+ if(studio.playing)stopAll(true);
+ refreshArt();await music.init();music.configure(studio.poem);studio.previewUntil=0;
+ if(withRecording){
+  if(!window.MediaRecorder||!els.canvas.captureStream)throw Error('현재 브라우저는 영상 녹화를 지원하지 않습니다.');
+  const types=['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4;codecs=avc1.42E01E','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];
+  const mime=types.find(x=>MediaRecorder.isTypeSupported(x));if(!mime)throw Error('영상 인코더를 사용할 수 없습니다.');
+  const stream=els.canvas.captureStream(30);for(const track of music.mixedStream().getAudioTracks())stream.addTrack(track);
+  studio.captureStream=stream;studio.chunks=[];
+  const rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:6_800_000});studio.recording=rec;
+  rec.ondataavailable=e=>{if(e.data?.size)studio.chunks.push(e.data);};
+  rec.onstop=()=>{
+   const actualType=rec.mimeType||mime,ext=actualType.startsWith('video/mp4')?'mp4':'webm';
+   const blob=new Blob(studio.chunks,{type:actualType});
+   for(const t of stream.getVideoTracks())t.stop();studio.captureStream=null;studio.recording=null;updateControls();
+   if(blob.size){download(blob,`${safeName(studio.poem.title)}_명도재_음악시화.${ext}`);setStatus(`${ext.toUpperCase()} 음악 영상 저장 완료 · ${(blob.size/1048576).toFixed(1)} MB · 배경음악 포함`);}
+   else setStatus('녹화 데이터가 없어 저장에 실패했습니다.');
   };
-  micRecorder.start();$('micBtn').textContent='■ 마이크 녹음 완료';say('마이크로 시를 낭송하세요. 끝나면 [마이크 녹음 완료] 버튼을 누르세요.');
- }catch(e){say(`마이크 오류: ${e.message}`);}
+  rec.onerror=e=>setStatus(`녹화 오류: ${e.error?.message||'브라우저 인코더 오류'}`);
+  rec.start(500);
+ }
+ studio.startAt=performance.now();studio.pausedTime=0;studio.playing=true;studio.paused=false;studio.elapsed=0;studio.line=-1;studio.progress=0;
+ music.start();updateControls();els.playState.textContent=withRecording?'음악 영상 녹화 중':'시화 음악 영상 재생 중';
+ setStatus(withRecording?'복합 스테인드글라스와 자막, 음악을 영상으로 녹화합니다. 완료되면 자동 저장됩니다.':'시화 위로 시 자막이 흘러가고 배경음악이 재생됩니다.');
 }
-function exportPNG(){try{
- ensureAnalyzed();const target=document.createElement('canvas');target.width=1280;target.height=720;const c=target.getContext('2d');
- const img=scene.image||scene.off,w=img.naturalWidth||img.width,h=img.naturalHeight||img.height,scale=Math.max(1280/w,720/h),sw=1280/scale,sh=720/scale;
- c.drawImage(img,(w-sw)/2,(h-sh)/2,sw,sh,0,0,1280,720);
- target.toBlob(blob=>blob&&saveBlob(blob,`${safeName(syncedTitle)}_수채화시화.png`),'image/png');say('시 텍스트 없는 1280×720 수채화 원본 PNG 저장.');
- }catch(e){say(e.message);}}
-async function exportMusic(){try{if(transport!=='idle')throw Error('재생을 정지한 후 음악을 저장해 주세요.');ensureAnalyzed();$('musicExportBtn').disabled=true;say('30초 분량 배경음악 WAV 파일을 렌더링하는 중입니다.');const blob=await music.renderWav(30);saveBlob(blob,`${safeName(syncedTitle)}_시화배경음악.wav`);say('맞춤 작곡한 30초 WAV 음악 파일을 저장했습니다.');}catch(e){say(`음악 저장 실패: ${e.message}`);}finally{$('musicExportBtn').disabled=false;}}
-function exportProject(){try{ensureAnalyzed();const project={version:1,title:syncedTitle,author:syncedAuthor,poem:syncedText,analysis,composition:music.score(),notes:'이미지·음성 바이너리는 JSON에 포함되지 않습니다.'};saveBlob(new Blob([JSON.stringify(project,null,2)],{type:'application/json'}),`${safeName(syncedTitle)}_명도재_프로젝트.json`);say('시 전문·분석·악곡 구조가 JSON으로 저장되었습니다.');}catch(e){say(e.message);}}
-$('analyzeBtn').addEventListener('click',()=>{try{if(transport!=='idle')stopPerformance(false);analysisRefresh();say('시의 정서·계절·대표 시어와 수채화 구도, 곡의 기본 조성을 분석했습니다.');}catch(e){say(e.message);}});
-$('drawBtn').addEventListener('click',()=>makeImage().catch(e=>say(e.message)));
-$('aiImageBtn').addEventListener('click',aiImage);
-$('composeBtn').addEventListener('click',()=>{try{ensureAnalyzed();say(`${analysis.bpm} BPM · ${analysis.mode==='major'?'장조':'단조'} · 피아노·현악·플루트로 맞춤 작곡 완료. [영상 감상]에서 음악이 재생됩니다.`);}catch(e){say(e.message);}});
-$('generateVoiceBtn').addEventListener('click',aiVoice);
-$('imageFile').addEventListener('change',async e=>{try{const f=e.target.files?.[0];if(!f)return;if(f.size>30_000_000)throw Error('이미지는 30MB 이하로 선택해 주세요.');ensureAnalyzed();await scene.setImage(URL.createObjectURL(f));drawReady();say(`사용자 수채화 이미지 적용: ${f.name}`);}catch(err){say(err.message);}});
-$('voiceFile').addEventListener('change',async e=>{try{const f=e.target.files?.[0];if(f)await setVoice(f,f.name);}catch(err){say(err.message);}});
-$('micBtn').addEventListener('click',startMic);
-$('ttsBtn').addEventListener('click',()=>startPerformance(false,true));
-$('musicVolume').addEventListener('input',e=>music.setVolume(e.target.value));
-$('playBtn').addEventListener('click',()=>startPerformance());
-$('recordBtn').addEventListener('click',()=>startPerformance(true));
-$('pauseBtn').addEventListener('click',()=>togglePause().catch(e=>say(`일시정지 오류: ${e.message}`)));
-$('stopBtn').addEventListener('click',()=>stopPerformance(false));
-$('pngBtn').addEventListener('click',exportPNG);
-$('musicExportBtn').addEventListener('click',exportMusic);
-$('projectBtn').addEventListener('click',exportProject);
-window.addEventListener('beforeunload',()=>{if(voiceUrl)URL.revokeObjectURL(voiceUrl);});
-try{analysisRefresh();}catch(e){say(e.message);}
-if(window.location.protocol==='file:'){
- $('apiStatus').textContent='설치 없는 기본 창작 모드';
- $('aiImageBtn').disabled=true;$('aiImageBtn').title='서버 실행 버전에서만 사용할 수 있습니다.';
- $('generateVoiceBtn').disabled=true;$('generateVoiceBtn').title='서버 실행 버전에서만 사용할 수 있습니다.';
-}else{
- fetch('/api/status').then(r=>r.json()).then(info=>{$('apiStatus').textContent=info.configured?'AI 이미지·낭송 API 연동 가능':'무료 기본 창작 모드 · AI API 미설정';}).catch(()=>{$('apiStatus').textContent='기본 창작 모드';});
+function pause(){
+ if(!studio.playing||studio.paused)return;studio.paused=true;studio.pauseAt=performance.now();
+ music.pause();if(studio.recording?.state==='recording')studio.recording.pause();updateControls();els.playState.textContent='일시정지';
 }
-
+async function resume(){
+ if(!studio.playing||!studio.paused)return;
+ studio.pausedTime+=performance.now()-studio.pauseAt;studio.paused=false;await music.resume();
+ if(studio.recording?.state==='paused')studio.recording.resume();updateControls();els.playState.textContent='이어보기 중';
+}
+els.paint.onclick=()=>{try{refreshArt(true);setStatus(`복합 스테인드글라스 미디어아트 완성 · ${studio.poem.m.length}개 시적 상징 · 다층 유리 조각과 투과광을 표현했습니다.`);}catch(e){setStatus(e.message);}};
+els.compose.onclick=async()=>{try{refreshArt();await music.init();music.configure(studio.poem);music.start();studio.previewUntil=performance.now()+7500;setStatus(`${studio.poem.label} 정서에 맞춰 ${studio.poem.bpm} BPM · ${studio.poem.mode==='minor'?'단조':'장조'} · 피아노·플루트·현악 배경음악을 만들었습니다. 영상 감상 시 자동 연주됩니다.`);}catch(e){setStatus(e.message);}};
+els.play.onclick=async()=>{try{await perform(false);}catch(e){stopAll(true);setStatus(`영상 재생 오류: ${e.message}`);}};
+els.pause.onclick=pause;els.resume.onclick=()=>resume().catch(e=>setStatus(e.message));els.stop.onclick=()=>stopAll();
+els.pace.oninput=()=>{els.paceValue.textContent=`${Number(els.pace.value).toFixed(1)}초`;if(!studio.playing)refreshArt();};
+els.record.onclick=async()=>{try{await perform(true);}catch(e){stopAll(true);setStatus(`영상 저장 준비 실패: ${e.message}`);}};
+els.save.onclick=()=>{try{refreshArt();els.canvas.toBlob(b=>{if(b){download(b,`${safeName(studio.poem.title)}_스테인드글라스.png`);setStatus('16:9 스테인드글라스 시화를 PNG로 저장했습니다.');}},'image/png');}catch(e){setStatus(e.message);}};
+try{refreshArt(true);}catch(e){setStatus(e.message);}updateControls();requestAnimationFrame(tick);
