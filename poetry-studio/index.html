@@ -5,6 +5,8 @@
  <style>
 :root{font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:#f5f4ef;background:#0d1518;font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 77% 0,#243b39 0,transparent 42%),#0c1315}.top{max-width:1660px;margin:auto;padding:24px 30px;display:flex;justify-content:space-between;gap:16px;align-items:center;border-bottom:1px solid #2b4041}.brand{display:flex;gap:15px;align-items:center}.brandmark{font-family:serif;writing-mode:vertical-rl;border:1px solid #b99b6b;color:#e9c993;border-radius:3px;padding:6px 2px;font-size:24px}.top h1{font-size:22px;letter-spacing:-.04em;margin:0 0 6px}.top p{color:#a3bcb8;font-size:13px;margin:0}.api,.chip{border:1px solid #47625e;padding:9px 13px;border-radius:100px;color:#bddad0;font-size:12px}.layout{display:grid;grid-template-columns:minmax(340px,460px) minmax(0,1fr);max-width:1660px;margin:auto;padding:25px 30px 60px;gap:24px;align-items:start}.editor{display:flex;flex-direction:column;gap:17px}.panel,.screenPanel{background:#142024;border:1px solid #2b4040;border-radius:18px;padding:23px;box-shadow:0 22px 50px #0004}.panel h2,.exportPanel h2{font-size:17px;font-weight:600;margin:0 0 17px}.panel h2 span{display:inline-flex;font:12px monospace;color:#e2c79c;padding:7px;border:1px solid #716448;margin-right:10px;border-radius:6px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;font-size:12px;color:#b8c9c8;margin-bottom:14px}input:not([type=range]):not([type=file]),textarea{width:100%;font:15px/1.75 inherit;color:#f7f7f1;background:#0c181a;border:1px solid #345052;border-radius:9px;padding:11px;outline:0;margin-top:8px}input:focus,textarea:focus{border-color:#dbbd83}textarea{height:240px;resize:vertical;line-height:1.72}.prompt{min-height:140px;height:140px;font:12px/1.6 monospace}input[type=range]{display:block;width:100%;margin-top:7px;accent-color:#d7b77d}.row-buttons{display:flex;flex-wrap:wrap;gap:9px}.btn{border:1px solid transparent;border-radius:9px;padding:12px 16px;white-space:normal;text-align:center;font:600 13px inherit;cursor:pointer;transition:filter .15s;background:#304345;color:#eef4ef}.btn:hover:not(:disabled){filter:brightness(1.15)}.btn:disabled{opacity:.42;cursor:not-allowed}.primary{background:#c2a06f;color:#11191a}.secondary{background:#263639;border-color:#42585a;color:#e0ebe8}.ghost{border-color:#8d7858;background:#1e2b2d;color:#e5cb9a}.action{background:#cb9275;color:#10181b}.full{width:100%}.hint{font-size:12px;line-height:1.7;color:#9cb1ae;margin:11px 0 0}.description{color:#cedbd4;line-height:1.75;font-size:13px}details{margin-top:11px;border-top:1px solid #344547;padding-top:9px}summary{cursor:pointer;color:#d0b78b;font-size:13px}.upload{display:block;padding:10px 0;color:#b5c7c0}.upload input{display:none}.upload span{padding:6px 9px;border-radius:5px;border:1px dashed #6c8582;display:inline-block;cursor:pointer;color:#deebe0;margin-left:9px}.screenPanel{position:sticky;top:12px}.screenTitle{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}.screenTitle h2{font-family:serif;font-size:24px;font-weight:500;margin:5px 0}.eyebrow{color:#c5ac84;letter-spacing:.19em;font-size:10px}.cinema{width:100%;position:relative;border-radius:10px;overflow:hidden;box-shadow:0 15px 30px #0008;border:1px solid #4f6460;aspect-ratio:16/9}.cinema canvas{width:100%;height:100%;display:block}.badge16{position:absolute;right:12px;top:11px;background:#101b1caf;padding:5px 9px;font-size:10px;border-radius:4px;color:#f1e4cf;pointer-events:none}.playback{padding:20px 0;border-bottom:1px solid #2b4041}.progress{background:#263b3b;border-radius:3px;height:4px;overflow:hidden;margin:18px 0 8px}.progress>div{width:0;height:100%;background:linear-gradient(90deg,#dfba7c,#be7958)}.row-info{display:flex;justify-content:space-between;color:#9db2b0;font-size:12px}.exportPanel{padding-top:22px}.status{padding:13px 15px;border-radius:9px;background:#0d191b;color:#f2d5a1;border:1px solid #344949;font-size:13px;line-height:1.65}footer{padding:20px;color:#718b86;text-align:center;font-size:12px}@media(max-width:1050px){.layout{grid-template-columns:1fr}.screenPanel{position:static}.top{padding:17px}.layout{padding:15px}.panel,.screenPanel{padding:16px}}@media(max-width:540px){.top{flex-direction:column;align-items:flex-start}.top h1{font-size:18px}.fields{grid-template-columns:1fr}.btn{flex:1 0 40%;padding:12px 8px;font-size:12px}.screenTitle h2{font-size:19px}}
 
+.timingPanel{margin-top:16px;padding:12px;border:1px solid #43635d;border-radius:12px;background:#192a2d}.timingPanel summary{cursor:pointer;color:#e3d3ad;font-size:13px}.timingPanel label{margin-top:13px}.timingPanel textarea{min-height:96px}.syncState{margin:10px 0 8px;color:#d8d4c4;font-size:12px;text-align:right}.timingPanel output{float:right;color:#f2e2ba}
+
 </style>
 </head><body>
 <header class="top"><div class="brand"><span class="brandmark">明道</span><div><h1>명도재 시화·작곡·낭송 스튜디오</h1><p>한 편의 시가 수채화와 음악, 목소리로 흐르는 16:9 시네마</p></div></div><div id="apiStatus" class="api">기본 창작 모드</div></header>
@@ -42,6 +44,13 @@
    <div class="row-buttons"><button id="micBtn" class="btn secondary">🎙 마이크 낭송 녹음</button><button id="ttsBtn" class="btn secondary">🔊 브라우저 여성 낭송 미리듣기</button></div>
    <label>음악 볼륨 <input type="range" id="musicVolume" min="0" max="0.7" step="0.01" value="0.32"></label>
    <label>브라우저 낭송 속도 <input type="range" id="ttsSpeed" min="0.65" max="1.1" step="0.05" value="0.85"></label>
+   <details class="timingPanel"><summary>⏱ 자막과 낭송 시간 맞춤 · 정밀 보정</summary>
+     <p class="hint">브라우저 TTS는 실제 행 낭송 시작·끝과 단어 경계에 따라 움직입니다. 등록된 낭송 파일은 음절 길이별 자동 분배를 사용하며, 아래에서 행별 시작 시간을 정확히 맞출 수 있습니다.</p>
+     <label>낭송 파일 자막 이동 보정 <output id="subtitleOffsetValue">0.0초</output><input type="range" id="subtitleOffset" min="-5" max="5" step="0.1" value="0"></label>
+     <label>행별 시작 시각 (선택: 한 줄에 하나, 초 또는 분:초)<textarea id="cueTimes" rows="4" spellcheck="false" placeholder="예: 00:00.0&#10;00:03.4&#10;00:08.2"></textarea></label>
+     <button id="estimateCuesBtn" class="btn secondary">현재 낭송 파일로 예상 타임코드 만들기</button>
+     <p class="hint">녹음 파일의 정확한 행별 시점은 음성 정렬 API가 없으면 자동 판별할 수 없습니다. 직접 입력한 타임코드가 추정값보다 우선합니다.</p>
+   </details>
    <p class="hint">영상에 낭송 소리를 넣으려면 AI 낭송을 생성하거나 낭송 파일을 등록하거나 마이크로 녹음하세요. 브라우저 TTS만으로는 음성이 영상 파일에 포함되지 않습니다.</p>
   </section>
  </aside>
@@ -50,7 +59,7 @@
   <div class="cinema"><canvas id="screen" width="1280" height="720" aria-label="16대9 수채화 시화 영상 화면"></canvas><div class="badge16">16:9 · 1280×720</div></div>
   <div class="playback">
    <div class="row-buttons"><button id="playBtn" class="btn action">▶ 영상 감상</button><button id="pauseBtn" class="btn secondary" disabled>⏸ 일시정지</button><button id="stopBtn" class="btn secondary" disabled>■ 정지</button></div>
-   <div class="progress"><div id="progressBar"></div></div><div class="row-info"><output id="clock">00:00 / 00:00</output><span id="stateLabel">준비</span></div>
+   <p id="syncState" class="syncState">낭송 시작·종료 및 음원 타임코드 기반 동기화</p><div class="progress"><div id="progressBar"></div></div><div class="row-info"><output id="clock">00:00 / 00:00</output><span id="stateLabel">준비</span></div>
   </div>
   <section class="exportPanel"><h2>04 &nbsp;영상·작품 내보내기</h2>
    <div class="row-buttons"><button id="recordBtn" class="btn primary">⏺ 음성 포함 영상 녹화</button><button id="pngBtn" class="btn secondary">🖼 PNG 저장</button><button id="musicExportBtn" class="btn secondary">♫ 음악 WAV 저장</button><button id="projectBtn" class="btn secondary">⇩ 프로젝트 JSON</button></div>
@@ -60,8 +69,8 @@
  </section>
 </main>
 <footer>명도재 © 2026 · 실험적 시각화 및 음악 작곡은 브라우저에서 실행됩니다. AI 기능은 선택적 유료 API 연동입니다.</footer>
-
-<script>
+<script type="module">
+// src/analysis.js
 // 사전 기반의 투명한 휴리스틱 분석. 언어모델의 심층 문학비평과는 구분합니다.
 const WORDS={
   wistful:['그리움','그립','그대','추억','기다','빈집','빈 벤치','떠나','어머니','고향','이별','낙엽','가을','홀로','외로','눈물','세월'],
@@ -81,7 +90,9 @@ const MOTIFS=[
   ['moon',/달빛|보름달|초승달|달이|낮달/,'달'],
   ['stars',/별|은하수/,'별빛'],
   ['rain',/비|빗방울|빗물|소나기/,'비'],
-  ['snow',/눈꽃|함박눈|눈보라|설원|눈이 내/,'눈']
+  ['snow',/눈꽃|함박눈|눈보라|설원|눈이 내/,'눈'],
+  ['umbrella',/우산/,'우산'],
+  ['reed',/갈대|억새/,'갈대와 억새']
 ];
 function occurrences(str, token){return str.split(token).length-1;}
 function analyzePoem(text){
@@ -120,6 +131,7 @@ function wrappingLines(ctx,lines,maxWidth,font='31px serif'){
 }
 
 
+// src/art.js
 
 const TAU=Math.PI*2;
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
@@ -174,6 +186,38 @@ function bench(ctx,x,y,s){
 }
 function boat(ctx,x,y,s){ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.fillStyle='rgba(85,70,65,.75)';ctx.beginPath();ctx.moveTo(-85,0);ctx.lineTo(77,0);ctx.lineTo(52,28);ctx.lineTo(-56,28);ctx.closePath();ctx.fill();ctx.strokeStyle='rgba(67,68,65,.8)';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(0,-135);ctx.lineTo(0,4);ctx.stroke();ctx.fillStyle='rgba(245,231,209,.72)';ctx.beginPath();ctx.moveTo(-4,-132);ctx.lineTo(-63,-10);ctx.lineTo(-4,-10);ctx.closePath();ctx.fill();ctx.restore();}
 function moon(ctx,x,y,r){const g=ctx.createRadialGradient(x,y,3,x,y,r*2.4);g.addColorStop(0,'rgba(254,249,225,.76)');g.addColorStop(.42,'rgba(248,240,214,.32)');g.addColorStop(1,'rgba(252,241,222,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r*2.4,0,TAU);ctx.fill();ctx.fillStyle='rgba(255,251,234,.75)';ctx.beginPath();ctx.arc(x,y,r*.72,0,TAU);ctx.fill();}
+
+function weatherMotifs(ctx,w,h,analysis,rand){
+ const has=key=>analysis.motifs.some(m=>m.key===key);
+ if(has('rain')){
+   ctx.save();ctx.lineCap='round';
+   for(let i=0;i<165;i++){
+     const x=rand()*w,y=rand()*h*.91,hh=7+rand()*24;
+     ctx.strokeStyle=`rgba(218,232,238,${.07+rand()*.18})`;
+     ctx.lineWidth=.6+rand()*1.1;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-4,y+hh);ctx.stroke();
+   }
+   ctx.restore();
+ }
+ if(has('snow')){
+   ctx.save();for(let i=0;i<135;i++){
+     ctx.fillStyle=`rgba(255,253,250,${.16+rand()*.49})`;
+     ctx.beginPath();ctx.arc(rand()*w,rand()*h,1+rand()*3.8,0,TAU);ctx.fill();
+   }ctx.restore();
+ }
+ if(has('umbrella')){
+   const x=w*.71,y=h*.85,r=55;
+   ctx.save();ctx.strokeStyle='rgba(68,80,86,.72)';ctx.lineWidth=3;
+   ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y-r*2);ctx.quadraticCurveTo(x-5,y+8,x+15,y+10);ctx.stroke();
+   ctx.fillStyle='rgba(171,108,104,.62)';ctx.beginPath();ctx.moveTo(x-r*1.15,y-r*1.84);ctx.quadraticCurveTo(x,y-r*3.0,x+r*1.15,y-r*1.84);ctx.lineTo(x-r*1.15,y-r*1.84);ctx.fill();ctx.restore();
+ }
+ if(has('reed')){
+  ctx.save();ctx.strokeStyle='rgba(92,94,69,.34)';ctx.lineWidth=2;
+  for(let i=0;i<75;i++){const x=rand()*w,y=h*(.86+rand()*.19),size=32+rand()*100;
+    ctx.beginPath();ctx.moveTo(x,y);ctx.quadraticCurveTo(x+8,y-size*.5,x+15,y-size);ctx.stroke();
+    ctx.fillStyle='rgba(143,112,83,.43)';ctx.beginPath();ctx.ellipse(x+15,y-size,3+rand()*2,9+rand()*8,.2,0,TAU);ctx.fill();
+  }ctx.restore();
+ }
+}
 function paintWatercolor(canvas,analysis,seed=13){
  const w=canvas.width,h=canvas.height,ctx=canvas.getContext('2d'),rand=makeRnd(seed);
  ctx.clearRect(0,0,w,h);
@@ -205,6 +249,7 @@ function paintWatercolor(canvas,analysis,seed=13){
   const colors=has('cosmos')?['#d895ac','#c67eaa','#f7e2d9']:['#e4b7b4','#c8929b','#f4e1c5'];
   for(let i=0;i<63;i++)wildflower(ctx,rand()*w,h*.87+rand()*h*.21,25+rand()*85,colors[i%colors.length],rand);
  }
+ weatherMotifs(ctx,w,h,analysis,rand);
  if(analysis.time==='night'||has('stars')){
   for(let i=0;i<95;i++){ctx.fillStyle=`rgba(255,252,234,${.13+rand()*.48})`;ctx.beginPath();ctx.arc(rand()*w,rand()*h*.38,.4+rand()*1.5,0,TAU);ctx.fill();}
  }
@@ -215,8 +260,8 @@ function paintWatercolor(canvas,analysis,seed=13){
  const veil=ctx.createLinearGradient(0,0,w,h);veil.addColorStop(0,'rgba(255,253,241,.06)');veil.addColorStop(1,'rgba(227,217,200,.08)');ctx.fillStyle=veil;ctx.fillRect(0,0,w,h);
 }
 class Scene {
- constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.off=document.createElement('canvas');this.off.width=1280;this.off.height=720;this.analysis=null;this.image=null;this.seed=1;this.title='';this.author='';this.lines=[];this.duration=35;}
- setPoem(title,author,analysis){this.title=title||'시의 풍경';this.author=author||'명도재';this.analysis=analysis;this.seed=hashText(analysis.lines.join('|'));this.lines=analysis.lines;paintWatercolor(this.off,analysis,this.seed);this.image=null;}
+ constructor(canvas){this.canvas=canvas;this.ctx=canvas.getContext('2d');this.off=document.createElement('canvas');this.off.width=1280;this.off.height=720;this.analysis=null;this.image=null;this.seed=1;this.title='';this.author='';this.lines=[];this.duration=35;this.scrollPx=0;this.lastRenderTime=0;}
+ setPoem(title,author,analysis){this.title=title||'시의 풍경';this.author=author||'명도재';this.analysis=analysis;this.seed=hashText(analysis.lines.join('|'));this.lines=analysis.lines;this.scrollPx=0;this.lastRenderTime=0;paintWatercolor(this.off,analysis,this.seed);this.image=null;}
  async setImage(src){const img=new Image();img.decoding='async';img.src=src;await img.decode();this.image=img;}
  draw(now=0,progress=0,mode='ready',activeIdx=-1){
   const ctx=this.ctx,W=this.canvas.width,H=this.canvas.height,t=now/1000;
@@ -240,20 +285,34 @@ class Scene {
    ctx.font='bold 55px "Nanum Myeongjo", Georgia, serif';ctx.fillText(this.title.slice(0,35),W/2,H*.49);
    ctx.font='23px "Nanum Myeongjo", serif';ctx.fillText(this.author,W/2,H*.60);ctx.shadowBlur=0;
   }else{
-   const lines=wrappingLines(ctx,this.lines,800,'34px "Nanum Myeongjo",serif');
-   const lh=62,bodyHeight=lines.length*lh;
-   // 처음에는 제목, 전체 구절은 아래에서 올라가고 끝은 위로 떠오른다.
-   const scrollY=H*.88-(H*.88-H*.48+Math.max(0,lines.length-1)*lh)*clamp(progress,0,1);
-   ctx.save();ctx.beginPath();ctx.rect(140,35,W-280,H-80);ctx.clip();
-   ctx.shadowColor='rgba(0,0,0,.75)';ctx.shadowBlur=7;
-   for(let i=0;i<lines.length;i++){
-    const y=scrollY+i*lh;
-    if(y<15||y>H-10)continue;
-    ctx.fillStyle='rgba(255,250,240,.97)';ctx.font='34px "Nanum Myeongjo", Georgia, serif';ctx.fillText(lines[i],W/2,y);
-   }
+   const font='34px "Nanum Myeongjo", Georgia, serif',lh=61;
+   const wrapped=this.lines.map((line,idx)=>wrappingLines(ctx,[line],820,font).map(text=>({text,idx})));
+   const counts=wrapped.map(parts=>Math.max(1,parts.length));
+   const visual=wrapped.flat();
+   const pos=clamp(progress,0,this.lines.length),idx=Math.min(this.lines.length-1,Math.floor(pos));
+   const base=counts.slice(0,idx).reduce((sum,n)=>sum+n,0);
+   const visualPosition=pos>=this.lines.length?visual.length:base+(pos-idx)*counts[idx];
+   const target=visualPosition*lh;
+   const dt=this.lastRenderTime?Math.max(0,Math.min(.15,(now-this.lastRenderTime)/1000)):.016;
+   const smooth=1-Math.exp(-dt/.24);
+   this.scrollPx+=(target-this.scrollPx)*smooth;
+   this.lastRenderTime=now;
+   const active=activeIdx>=0?activeIdx:Math.min(this.lines.length-1,Math.floor(pos));
+   ctx.save();ctx.beginPath();ctx.rect(145,50,W-290,H-100);ctx.clip();
+   ctx.shadowColor='rgba(0,0,0,.78)';ctx.shadowBlur=8;
+   visual.forEach(({text,idx:sourceIdx},i)=>{
+    const y=H*.67+i*lh-this.scrollPx;
+    if(y<35||y>H-30)return;
+    const distance=Math.abs(sourceIdx-active);
+    const emphasis=sourceIdx===active?1:sourceIdx<active?.50:.66;
+    const fade=clamp(Math.min((y-36)/65,(H-32-y)/65),0,1);
+    ctx.fillStyle=`rgba(255,252,240,${emphasis*fade})`;
+    ctx.font=sourceIdx===active?'bold 35px "Nanum Myeongjo", Georgia, serif':font;
+    ctx.fillText(text,W/2,y);
+   });
    ctx.restore();
-   if(progress<.06){ctx.fillStyle=`rgba(255,248,228,${1-progress/.06})`;ctx.font='bold 38px "Nanum Myeongjo", serif';ctx.fillText(this.title,W/2,H*.28);}
-   if(progress>.92){ctx.fillStyle=`rgba(255,248,228,${clamp((progress-.92)/.08,0,1)})`;ctx.font='25px "Nanum Myeongjo",serif';ctx.fillText(this.author,W/2,H*.52);}
+   if(pos<.4){ctx.fillStyle=`rgba(255,248,228,${1-pos/.4})`;ctx.font='bold 38px "Nanum Myeongjo",serif';ctx.fillText(this.title,W/2,H*.23);}
+   if(pos>=this.lines.length-.05){ctx.fillStyle='rgba(255,248,228,.94)';ctx.font='25px "Nanum Myeongjo",serif';ctx.fillText(this.author,W/2,H*.52);}
   }
   // 좌하단 작은 명도 낙관
   ctx.fillStyle='rgba(151,45,40,.92)';ctx.fillRect(23,H-65,48,48);ctx.fillStyle='#fff9f0';ctx.font='bold 17px serif';ctx.fillText('명도',47,H-40);
@@ -262,6 +321,64 @@ class Scene {
 }
 
 
+// src/subtitles.js
+// 낭송 음원에 대한 행별 자막 시간표. 자동 구간은 음절·구두점 기반 추정입니다.
+// 명시한 타임코드는 사용자가 실제 음원에 맞춰 조정하는 정확한 기준입니다.
+function lineWeight(text) {
+  const line = String(text || '').trim();
+  const chars = Array.from(line.replace(/\s/g, '')).length;
+  return Math.max(1, chars) + (line.match(/[,.!?…，。！？:;—–]/g)?.length || 0) * 2.1 + 2.4;
+}
+function formatCueTime(seconds) {
+  const s = Math.max(0, Number(seconds) || 0);
+  return `${String(Math.floor(s / 60)).padStart(2, '0')}:${(s % 60).toFixed(1).padStart(4, '0')}`;
+}
+function parseCueTimes(text, count, duration) {
+  const input = String(text || '').trim();
+  if (!input) return null;
+  const parts = input.split(/[\n,;]+/).map(s => s.trim()).filter(Boolean);
+  if (parts.length !== count) throw new Error(`행별 시작시각이 ${count}개 필요합니다. 현재 ${parts.length}개입니다.`);
+  const times = parts.map((part, i) => {
+    const fields = part.split(':').map(s => s.trim());
+    if (fields.length > 2 || fields.some(s => !/^\d+(?:\.\d+)?$/.test(s))) throw new Error(`${i + 1}행의 시간 형식이 올바르지 않습니다.`);
+    const value = fields.length === 2 ? Number(fields[0]) * 60 + Number(fields[1]) : Number(fields[0]);
+    if (!Number.isFinite(value) || value < 0 || value >= duration) throw new Error(`${i + 1}행 시작시각은 음원 길이(${duration.toFixed(1)}초)보다 짧아야 합니다.`);
+    return value;
+  });
+  for (let i = 1; i < times.length; i++) if (times[i] <= times[i - 1]) throw new Error('자막 시작시각은 행 순서대로 증가해야 합니다.');
+  return times;
+}
+function makeCueTimeline(lines, duration, manualText = '') {
+  const poemLines = Array.isArray(lines) ? lines : [];
+  const d = Number(duration);
+  if (!poemLines.length || !Number.isFinite(d) || d <= 0) return [];
+  let starts = parseCueTimes(manualText, poemLines.length, d);
+  if (!starts) {
+    const weights = poemLines.map(lineWeight);
+    const sum = weights.reduce((a, b) => a + b, 0);
+    let acc = 0;
+    starts = weights.map(w => { const t = acc / sum * d; acc += w; return t; });
+  }
+  return poemLines.map((text, i) => ({index: i, text, start: starts[i], end: i + 1 < starts.length ? starts[i + 1] : d}));
+}
+function positionAtTime(cues, seconds) {
+  if (!cues?.length) return {position: 0, activeIndex: -1, fraction: 0};
+  const t = Math.max(0, Number(seconds) || 0);
+  if (t < cues[0].start) return {position: 0, activeIndex: -1, fraction: 0};
+  if (t >= cues[cues.length - 1].end) return {position: cues.length, activeIndex: cues.length - 1, fraction: 1};
+  let lo = 0, hi = cues.length - 1;
+  while (lo < hi) {
+    const mid = Math.ceil((lo + hi) / 2);
+    if (cues[mid].start <= t) lo = mid;
+    else hi = mid - 1;
+  }
+  const cue = cues[lo];
+  const fraction = Math.max(0, Math.min(0.985, (t - cue.start) / Math.max(.001, cue.end - cue.start)));
+  return {position: lo + fraction, activeIndex: lo, fraction};
+}
+
+
+// src/music.js
 
 const midiToHz=m=>440*Math.pow(2,(m-69)/12);
 const CHORDS={
@@ -348,6 +465,8 @@ class MusicEngine {
 }
 
 
+// src/main.js
+
 
 
 
@@ -358,6 +477,7 @@ let analysis=null, syncedText='', syncedTitle='', syncedAuthor='';
 let voiceElement=null, voiceUrl=null, voiceMode='browser';
 let transport='idle',startedAt=0,pausedAt=0,pausedTotal=0,lastElapsed=0,lead=2.4,outro=3.6,total=35,voiceStarted=false,voiceEnded=false;
 let speechIndex=-1,speechToken=0,speechUtterance=null,pendingNext=false,ttsDelay=null,recording=null,recordChunks=[],micRecorder=null,micStream=null,micChunks=[],animateId=0;
+let browserPosition=0,speechLineState=null,cueTimeline=[];
 const fmt=s=>{s=Math.max(0,Math.floor(Number(s)||0));return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;};
 const say=(s)=>{$('status').textContent=s;$('stateLabel').textContent=s.length>40?s.slice(0,36)+'…':s;};
 const saveBlob=(blob,name)=>{const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30_000);};
@@ -365,10 +485,13 @@ function analysisRefresh(){
  const poem=$('poemText').value.trim();
  if(!poem)throw Error('시 전문을 입력해 주세요.');
  if(poem.length>4000)throw Error('시 전문은 4,000자 이내로 입력해 주세요.');
- analysis=analyzePoem(poem);
  const title=$('poemTitle').value.trim()||'무제',author=$('poemAuthor').value.trim()||'작가 미상';
+ const poemChanged=!!syncedText && syncedText!==poem;
+ if(poemChanged){if(voiceUrl)URL.revokeObjectURL(voiceUrl);voiceUrl=null;voiceElement=null;voiceMode='browser';$('cueTimes').value='';}
+ analysis=analyzePoem(poem);
  scene.setPoem(title,author,analysis);
  syncedText=poem;syncedTitle=title;syncedAuthor=author;
+ cueTimeline=[]; // 사용자가 교정한 타임코드는 동일한 시의 재분석 시 유지합니다.
  music.configure(analysis,poem);
  $('moodBadge').textContent=analysis.summary;
  $('analysisSummary').textContent=analysis.summary;
@@ -394,7 +517,8 @@ async function setVoice(blob,name='낭송 파일'){
  voiceElement=new Audio();voiceElement.preload='auto';voiceElement.src=voiceUrl;
  voiceMode='file';
  await new Promise((resolve,reject)=>{let done=false;const okay=()=>{if(done)return;done=true;resolve();};const bad=()=>{if(done)return;done=true;reject(Error('음성 파일을 읽을 수 없습니다. MP3/WAV/WebM 파일로 다시 시도하세요.'));};voiceElement.addEventListener('loadedmetadata',okay,{once:true});voiceElement.addEventListener('error',bad,{once:true});voiceElement.load();});
- say(`낭송 준비 완료: ${name} (${fmt(voiceElement.duration)}) · 이 음성은 영상에 포함됩니다.`);
+ cueTimeline=makeCueTimeline(analysis?.lines||[],voiceElement.duration,$('cueTimes').value);
+ say(`낭송 준비 완료: ${name} (${fmt(voiceElement.duration)}) · 자막은 음원 시간에 따라 이동합니다.`);
 }
 async function makeImage(){if(transport!=='idle')stopPerformance(false);ensureAnalyzed();analysisRefresh();say('시어와 계절·빛을 반영한 16:9 수채화 시화를 그렸습니다.');}
 async function aiImage(){
@@ -418,13 +542,14 @@ function updateControls(){const active=transport==='playing'||transport==='pause
 function nextSpeechLine(token){
  if(token!==speechToken||transport==='idle')return;
  if(transport==='paused'){pendingNext=true;return;}
- if(++speechIndex>=analysis.lines.length){voiceEnded=true;total=elapsed()+outro;music.setDucking(false);say('낭송 완료 · 엔딩 장면');return;}
+ if(++speechIndex>=analysis.lines.length){voiceEnded=true;browserPosition=analysis.lines.length;speechLineState=null;total=elapsed()+outro;music.setDucking(false);say('낭송 완료 · 엔딩 장면');return;}
  const utter=new SpeechSynthesisUtterance(analysis.lines[speechIndex]);
  utter.lang='ko-KR';utter.rate=Number($('ttsSpeed').value);utter.pitch=1;utter.volume=1;
  const sel=femaleKoreanVoice();if(sel.voice)utter.voice=sel.voice;
  speechUtterance=utter;
- utter.onstart=()=>{if(token!==speechToken)return;music.setDucking(true);say(`낭송 중 · ${speechIndex+1}/${analysis.lines.length}행`);};
- utter.onend=()=>{if(token!==speechToken)return;music.setDucking(false);ttsDelay=setTimeout(()=>nextSpeechLine(token),300);};
+ utter.onstart=()=>{if(token!==speechToken)return;const idx=speechIndex;browserPosition=idx;speechLineState={index:idx,started:elapsed(),boundaryAt:0,boundaryFraction:0,duration:Math.max(1.0,lineWeight(analysis.lines[idx])/(5.2*Number($('ttsSpeed').value)))};music.setDucking(true);say(`실제 낭송 속도에 맞춰 자막 이동 · ${idx+1}/${analysis.lines.length}행`);};
+ utter.onboundary=(e)=>{if(token!==speechToken||!speechLineState||speechLineState.index!==speechIndex)return;const fraction=Math.max(0,Math.min(.95,(e.charIndex||0)/Math.max(1,utter.text.length)));speechLineState.boundaryFraction=fraction;speechLineState.boundaryAt=elapsed();};
+ utter.onend=()=>{if(token!==speechToken)return;browserPosition=speechIndex+1;speechLineState=null;music.setDucking(false);ttsDelay=setTimeout(()=>nextSpeechLine(token),300);};
  utter.onerror=(e)=>{if(token!==speechToken)return;music.setDucking(false);if(e.error==='interrupted'||e.error==='canceled')return;ttsDelay=setTimeout(()=>nextSpeechLine(token),250);};
  window.speechSynthesis.speak(utter);
 }
@@ -438,7 +563,7 @@ function beginVoice(){
  }else if(canLiveTts()){
   const sel=femaleKoreanVoice();
   if(!sel.verified)say('브라우저에서 한국어 여성 음성을 확정할 수 없어 설치된 한국어 음성으로 낭독합니다.');
-  speechIndex=-1;speechToken++;nextSpeechLine(speechToken);
+  speechIndex=-1;browserPosition=0;speechLineState=null;speechToken++;nextSpeechLine(speechToken);
  }else{
   voiceEnded=true;total=Math.max(16,analysis.lines.join('').length*.22)+outro;
   say('한국어 TTS 미지원 환경: 시화·음악만 재생합니다.');
@@ -447,13 +572,29 @@ function beginVoice(){
 function render(){
  const t=elapsed();lastElapsed=t;
  if(transport==='playing' && !voiceStarted && t>=lead)beginVoice();
- let p=0;
+ let position=0, activeIdx=-1;
  if(transport!=='idle'){
-  if(voiceMode==='file'&&voiceElement&&Number.isFinite(voiceElement.duration)&&voiceElement.duration>0){p=Math.min(1,Math.max(0,(t-lead)/voiceElement.duration));}
-  else if(canLiveTts()){p=voiceEnded?1:Math.max(0,(speechIndex+.32)/Math.max(1,analysis.lines.length));}
-  else p=Math.min(1,t/Math.max(1,total-outro));
+  if(voiceMode==='file'&&voiceElement&&Number.isFinite(voiceElement.duration)&&voiceElement.duration>0){
+   const shiftedTime=voiceElement.currentTime+Number($('subtitleOffset').value);
+   const cue=positionAtTime(cueTimeline,shiftedTime);
+   position=voiceEnded?analysis.lines.length:cue.position;activeIdx=cue.activeIndex;
+  } else if(canLiveTts()){
+   position=browserPosition;
+   if(speechLineState){
+    const st=speechLineState,elapsedLine=Math.max(0,t-st.started);
+    // 낭송 시작·단어 경계 이벤트와 현재 재생 시간을 함께 사용.
+    // 'onend' 전에는 다음 행으로 진입하지 않도록 0.96까지만 이동.
+    let fraction=Math.min(.96,elapsedLine/st.duration);
+    if(st.boundaryAt>0) fraction=Math.min(.96,Math.max(st.boundaryFraction,st.boundaryFraction+(t-st.boundaryAt)/st.duration));
+    position=st.index+Math.max(0,fraction);activeIdx=st.index;
+   } else activeIdx=Math.min(analysis.lines.length-1,Math.floor(position));
+  }else{
+   position=Math.min(analysis.lines.length,(t-lead)/Math.max(1,total-lead-outro)*analysis.lines.length);
+   activeIdx=Math.min(analysis.lines.length-1,Math.max(0,Math.floor(position)));
+  }
  }
- scene.draw(performance.now(),p,transport==='idle'?'ready':'rolling',speechIndex);
+ scene.draw(performance.now(),Math.max(0,position),transport==='idle'?'ready':'rolling',activeIdx);
+ if(transport==='playing'&&voiceStarted){$('syncState').textContent=`자막 ${Math.min(analysis.lines.length,Math.max(1,activeIdx+1))} / ${analysis.lines.length}행 · ${voiceMode==='browser'?'실제 TTS 행 이벤트':'음원 재생 시간'}`;}
  $('progressBar').style.width=`${Math.min(100,t/Math.max(1,total)*100)}%`;
  $('clock').textContent=`${fmt(t)} / ${fmt(total)}`;
  if(transport==='playing'&&voiceEnded&&t>=total-.05){stopPerformance(true);return;}
@@ -467,7 +608,10 @@ async function startPerformance(record=false,forceBrowser=false){
   if(record && (!window.MediaRecorder||!$('screen').captureStream))throw Error('이 브라우저에서는 영상 녹화를 지원하지 않습니다. Chrome 또는 Edge를 사용하세요.');
   await music.init();music.configure(analysis,syncedText);
   voiceMode=(voiceElement&&!forceBrowser)?'file':'browser';
-  if(voiceMode==='file')await music.attachNarration(voiceElement);
+  if(voiceMode==='file'){
+   cueTimeline=makeCueTimeline(analysis.lines,voiceElement.duration,$('cueTimes').value);
+   await music.attachNarration(voiceElement);
+  }
   if(record){
    const preferred=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];
    const mime=preferred.find(x=>MediaRecorder.isTypeSupported(x));if(!mime)throw Error('WebM 영상 인코더를 사용할 수 없습니다.');
@@ -478,7 +622,7 @@ async function startPerformance(record=false,forceBrowser=false){
    recording.onstop=()=>{for(const track of stream.getTracks())track.stop();if(recordChunks.length){const blob=new Blob(recordChunks,{type:'video/webm'});saveBlob(blob,`${safeName(syncedTitle)}_명도재_시화영상.webm`);say(`영상 저장 완료 (${(blob.size/1024/1024).toFixed(1)}MB). 음악과 등록된 낭송 음원이 포함되었습니다.`);}};
    recording.start(300);
   }
-  speechIndex=-1;voiceStarted=false;voiceEnded=false;pendingNext=false;speechToken++;
+  speechIndex=-1;browserPosition=0;speechLineState=null;voiceStarted=false;voiceEnded=false;pendingNext=false;speechToken++;
   total=voiceMode==='file'&&Number.isFinite(voiceElement.duration)?lead+voiceElement.duration+outro:Math.max(24,lead+analysis.lines.join('').length*.32+outro);
   startedAt=performance.now();pausedTotal=0;pausedAt=0;transport='playing';lastElapsed=0;
   music.setDucking(false);music.start();
@@ -507,7 +651,7 @@ async function togglePause(){
 function stopPerformance(finished=false){
  if(transport==='idle'&&!recording)return;
  const wasRecording=!!recording;
- transport='idle';speechToken++;pendingNext=false;clearTimeout(ttsDelay);ttsDelay=null;
+ transport='idle';speechToken++;pendingNext=false;clearTimeout(ttsDelay);ttsDelay=null;speechLineState=null;browserPosition=0;
  if(canLiveTts())window.speechSynthesis.cancel();
  if(voiceElement){voiceElement.pause();voiceElement.onended=null;try{voiceElement.currentTime=0;}catch{}}
  music.setDucking(false);music.stop();
@@ -515,6 +659,7 @@ function stopPerformance(finished=false){
  if(recording){const recorder=recording;recording=null;if(recorder.state!=='inactive')recorder.stop();}
  updateControls();
  if(!wasRecording)say(finished?'시화 음악·낭송 감상 완료':'재생이 정지되었습니다.');
+ $('syncState').textContent='낭송 시작·종료 및 음원 타임코드 기반 동기화';
  drawReady();
 }
 async function startMic(){
@@ -541,7 +686,7 @@ function exportPNG(){try{
  target.toBlob(blob=>blob&&saveBlob(blob,`${safeName(syncedTitle)}_수채화시화.png`),'image/png');say('시 텍스트 없는 1280×720 수채화 원본 PNG 저장.');
  }catch(e){say(e.message);}}
 async function exportMusic(){try{if(transport!=='idle')throw Error('재생을 정지한 후 음악을 저장해 주세요.');ensureAnalyzed();$('musicExportBtn').disabled=true;say('30초 분량 배경음악 WAV 파일을 렌더링하는 중입니다.');const blob=await music.renderWav(30);saveBlob(blob,`${safeName(syncedTitle)}_시화배경음악.wav`);say('맞춤 작곡한 30초 WAV 음악 파일을 저장했습니다.');}catch(e){say(`음악 저장 실패: ${e.message}`);}finally{$('musicExportBtn').disabled=false;}}
-function exportProject(){try{ensureAnalyzed();const project={version:1,title:syncedTitle,author:syncedAuthor,poem:syncedText,analysis,composition:music.score(),notes:'이미지·음성 바이너리는 JSON에 포함되지 않습니다.'};saveBlob(new Blob([JSON.stringify(project,null,2)],{type:'application/json'}),`${safeName(syncedTitle)}_명도재_프로젝트.json`);say('시 전문·분석·악곡 구조가 JSON으로 저장되었습니다.');}catch(e){say(e.message);}}
+function exportProject(){try{ensureAnalyzed();const project={version:2,title:syncedTitle,author:syncedAuthor,poem:syncedText,analysis,composition:music.score(),subtitleStartTimes:$('cueTimes').value,subtitleOffset:Number($('subtitleOffset').value),notes:'이미지·음성 바이너리는 JSON에 포함되지 않습니다.'};saveBlob(new Blob([JSON.stringify(project,null,2)],{type:'application/json'}),`${safeName(syncedTitle)}_명도재_프로젝트.json`);say('시 전문·분석·악곡 구조가 JSON으로 저장되었습니다.');}catch(e){say(e.message);}}
 $('analyzeBtn').addEventListener('click',()=>{try{if(transport!=='idle')stopPerformance(false);analysisRefresh();say('시의 정서·계절·대표 시어와 수채화 구도, 곡의 기본 조성을 분석했습니다.');}catch(e){say(e.message);}});
 $('drawBtn').addEventListener('click',()=>makeImage().catch(e=>say(e.message)));
 $('aiImageBtn').addEventListener('click',aiImage);
@@ -552,6 +697,10 @@ $('voiceFile').addEventListener('change',async e=>{try{const f=e.target.files?.[
 $('micBtn').addEventListener('click',startMic);
 $('ttsBtn').addEventListener('click',()=>startPerformance(false,true));
 $('musicVolume').addEventListener('input',e=>music.setVolume(e.target.value));
+$('subtitleOffset').addEventListener('input',e=>{$('subtitleOffsetValue').textContent=`${Number(e.target.value)>0?'+':''}${Number(e.target.value).toFixed(1)}초`;});
+$('estimateCuesBtn').addEventListener('click',()=>{try{ensureAnalyzed();if(!voiceElement||!Number.isFinite(voiceElement.duration))throw Error('먼저 낭송 음원 파일을 등록해 주세요.');const auto=makeCueTimeline(analysis.lines,voiceElement.duration);$('cueTimes').value=auto.map(c=>formatCueTime(c.start)).join('\n');cueTimeline=makeCueTimeline(analysis.lines,voiceElement.duration,$('cueTimes').value);say('음절 길이로 예상한 행별 시작시각을 생성했습니다. 낭송 소리를 들으며 정확한 시각으로 수정할 수 있습니다.');}catch(e){say(e.message);}});
+$('cueTimes').addEventListener('change',()=>{try{if(!voiceElement)return;cueTimeline=makeCueTimeline(analysis.lines,voiceElement.duration,$('cueTimes').value);say('행별 자막 시작시각을 적용했습니다.');}catch(e){say(e.message);}});
+
 $('playBtn').addEventListener('click',()=>startPerformance());
 $('recordBtn').addEventListener('click',()=>startPerformance(true));
 $('pauseBtn').addEventListener('click',()=>togglePause().catch(e=>say(`일시정지 오류: ${e.message}`)));
@@ -566,7 +715,8 @@ if(window.location.protocol==='file:'){
  $('aiImageBtn').disabled=true;$('aiImageBtn').title='서버 실행 버전에서만 사용할 수 있습니다.';
  $('generateVoiceBtn').disabled=true;$('generateVoiceBtn').title='서버 실행 버전에서만 사용할 수 있습니다.';
 }else{
- fetch('/api/status').then(r=>r.json()).then(info=>{$('apiStatus').textContent=info.configured?'AI 이미지·낭송 API 연동 가능':'무료 기본 창작 모드 · AI API 미설정';}).catch(()=>{$('apiStatus').textContent='기본 창작 모드';});
+ fetch('/api/status').then(r=>{if(!r.ok)throw Error('API 미연결');return r.json();}).then(info=>{$('apiStatus').textContent=info.configured?'AI 이미지·낭송 API 연동 가능':'무료 기본 창작 모드 · AI API 미설정';if(!info.image){$('aiImageBtn').disabled=true;$('aiImageBtn').title='이미지 API 키를 설정한 서버에서만 작동합니다.';}if(!info.tts){$('generateVoiceBtn').disabled=true;$('generateVoiceBtn').title='낭송 API 키를 설정한 서버에서만 작동합니다.';}}).catch(()=>{$('apiStatus').textContent='기본 창작 모드 · 외부 API 미연결';$('aiImageBtn').disabled=true;$('generateVoiceBtn').disabled=true;});
 }
 
-</script></body></html>
+</script>
+</body></html>
