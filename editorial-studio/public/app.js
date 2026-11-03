@@ -46,7 +46,7 @@ function updateCartoonLabel(){e.cartoonStyleLabel.textContent=cartStyles[e.carto
 function drawCartoon(){
  if(state.cartoonImage){const ctx=e.cartoon.getContext('2d'),img=state.cartoonImage;ctx.clearRect(0,0,640,480);ctx.fillStyle='#e9e2d3';ctx.fillRect(0,0,640,480);const k=Math.max(640/img.width,480/img.height),w=img.width*k,h=img.height*k;ctx.drawImage(img,(640-w)/2,(480-h)/2,w,h);}
  else renderEditorialCartoon(e.cartoon,{article:e.article.value,title:e.sourceTitle.value,style:e.cartoonStyle.value});
- updateCartoonLabel();e.cartoonCaption.textContent=state.cartoonImage?'AI 생성 원본 만평 · 사실 확인 후 공개':`기사의 쟁점: ${inferComicTopic(e.article.value,e.sourceTitle.value).name} · 독창적 풍자 시안`;
+ updateCartoonLabel();e.cartoonCaption.textContent=state.cartoonImage?'이미지 만평 · 사실 확인 후 공개':`기사의 쟁점: ${inferComicTopic(e.article.value,e.sourceTitle.value).name} · 독창적 풍자 시안`;
  scheduleCanvas();
 }
 function updateControls(){e.air.classList.toggle('on',state.reading&&!state.paused);e.air.classList.toggle('paused',state.reading&&state.paused);
@@ -161,7 +161,7 @@ e.generate.onclick=async()=>{
   e.columnTitle.value=col.headline||'';e.column.value=col.body||'';
   state.summary=Array.isArray(col.summary)?col.summary.slice(0,3):[];
   state.theme=col.theme||guessTopic(article);state.mode=col.mode;
-  e.model.textContent=col.mode==='ai'?'AI 논설 작성':'기본 초안 · AI 키 미설정';
+  e.model.textContent='API 키 불필요 · 기사 기반 초안';
   refreshParts();updateCounts();updatePreview();
   setStatus(`기사 핵심 ${state.summary.length}문장, 시사칼럼 ${[...e.column.value].length}자 작성 완료. ${col.notice||''}`);
  }catch(err){setStatus(`기사 정리·칼럼 작성 실패: ${err.message}`);}finally{setBusy(false);}
@@ -172,13 +172,12 @@ e.resume.onclick=()=>{columnReader.resume();};
 e.stop.onclick=()=>stopSpeech();
 e.rate.oninput=()=>e.rateValue.textContent=`${Number(e.rate.value).toFixed(2)}×`;
 e.cartoonStyle.onchange=()=>{state.cartoonImage=null;drawCartoon();e.cartoonMode.textContent=`${cartStyles[e.cartoonStyle.value]} 연출로 전환했습니다. 기사 내용에 맞는 오리지널 만평 시안을 표시합니다.`;};
-e.cartoonButton.onclick=async()=>{if(e.article.value.trim().length<80)return setStatus('시사만평을 만들려면 기사 내용을 80자 이상 입력하세요.');setBusy(true);setStatus('기사 핵심 쟁점을 분석해 만평을 생성합니다.');try{
- const r=await requestAPI('/api/cartoon',{article:e.article.value,headline:e.sourceTitle.value,style:e.cartoonStyle.value});
- state.cartoonImage=null;
- if(r.mode==='ai'&&r.image){const img=new Image();img.src=r.image;await img.decode();state.cartoonImage=img;state.cartoonMode='ai';}
- else{state.cartoonMode='vector';}
- drawCartoon();e.cartoonMode.textContent=r.notice||'기사를 바탕으로 만평을 작성했습니다.';setStatus(r.notice||'기사 기반 시사만평 시안을 완성했습니다.');
- }catch(err){state.cartoonImage=null;state.cartoonMode='vector';drawCartoon();e.cartoonMode.textContent='자동 벡터 만평 시안을 표시했습니다.';setStatus(`전문 이미지 생성 미사용: ${err.message} · 기본 만평으로 대체했습니다.`);}finally{setBusy(false);}};
+e.cartoonButton.onclick=()=>{
+ if(e.article.value.trim().length<80)return setStatus('시사만평을 만들려면 기사 내용을 80자 이상 입력하세요.');
+ state.cartoonImage=null;state.cartoonMode='vector';drawCartoon();
+ e.cartoonMode.textContent='API 키 없이 기사 소재와 선택한 연출 유형으로 오리지널 벡터 만평 시안을 그렸습니다.';
+ setStatus('기사 기반 시사만평 시안을 완성했습니다. 사실관계와 풍자 표현을 확인해 주세요.');
+};
 e.png.onclick=()=>{drawPrintPage();e.canvas.toBlob(b=>{if(b)download(b,`${safeName(e.columnTitle.value)}_시사컬럼_특집호.png`);else setStatus('신문 이미지 저장에 실패했습니다.');},'image/png');};
 e.cartoonPng.onclick=()=>{e.cartoon.toBlob(b=>{if(b)download(b,`${safeName(e.sourceTitle.value)}_시사만평.png`);else setStatus('만평 저장에 실패했습니다.');},'image/png');};
 e.copy.onclick=async()=>{if(!e.column.value.trim())return setStatus('복사할 칼럼이 없습니다.');const content=[e.columnTitle.value,e.column.value,'명도재 AI 시사평론',`참조: ${e.sourceName.value} ${e.url.value}`].filter(Boolean).join('\n\n');try{await navigator.clipboard.writeText(content);setStatus('칼럼과 출처를 복사했습니다.');}catch{setStatus('복사 권한이 제한됐습니다. 본문 입력창을 선택해 직접 복사하세요.');}};
