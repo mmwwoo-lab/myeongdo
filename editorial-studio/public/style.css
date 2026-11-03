@@ -211,6 +211,5 @@ footer{background:#141618;border-top:1px solid #505458;color:#b7b5b1;padding-top
 @media(max-width:1320px){.layout{grid-template-columns:minmax(350px,465px) minmax(0,1fr)}.article-preview-grid{grid-template-columns:1fr}.article-preview-text{max-height:215px;min-height:145px}}
 @media(max-width:1120px){.layout{grid-template-columns:1fr}.preview-pane{max-height:none}.article-preview-grid{grid-template-columns:minmax(0,1fr) minmax(205px,35%)}}
 @media(max-width:690px){.layout{padding:13px}.ribbon-inner{gap:12px;padding:0 13px}.ribbon-inner span:nth-child(n+3){display:none}.ribbon-inner strong{display:none}.edition-chip,.clock{display:none}.topbar{padding:17px}.desk-heading{padding:12px}.card,.preview-pane{padding:14px}.article-preview-grid{grid-template-columns:1fr}.press-topline{font-size:9px}.press-topline span:last-child{display:none}.newspaper-page{padding:16px 13px}.paper-masthead{flex-wrap:wrap}.paper-edition{font-size:26px}.four-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
-
-/* Keep whole special edition visible in the newsroom desk. */
+/* Page-layout invariant: paper preview begins at the top of the desk, not mid-page after sticky capture. */
 .preview-pane{position:relative;top:auto;max-height:none;overflow:visible;align-self:start}
