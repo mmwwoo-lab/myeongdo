@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="명도재 시사컬럼 신문 특집호. 기사 URL 또는 본문으로 약 600자 시사칼럼을 작성하고, 만평을 그리며, 칼럼을 한국어로 낭독하는 독립 편집 스튜디오.">
+<title>명도재 시사컬럼 | 신문 특집호 편집 스튜디오</title>
+<link rel="stylesheet" href="/style.css">
+</head><body>
+<header class="mast-console">
+ <div class="brand"><div class="brand-mark">明道</div><div><div class="overline">MYEONGDO MEDIA ART · EDITORIAL STUDIO</div><h1>명도재 시사컬럼 <span class="edition-pill">신문 특집호</span></h1><p>방송국형 편집 데스크 · 기사 분석 · 시사평론 · 만평 · 칼럼 낭독</p></div></div>
+ <div class="header-status"><span id="onAir" class="on-air"><i id="signalDot"></i><span id="signalText">EDITORIAL READY</span></span><span class="header-tag">KEYLESS · NEWSROOM</span><a href="https://myeongdo-poetry-studio.vercel.app/" target="_blank" rel="noopener noreferrer">기존 시화 스튜디오 ↗</a></div>
+</header>
+<div class="desk-ribbon"><span>NEWSROOM · DESK 01</span><span>기사 원문 확인</span><i></i><span>논설 작성</span><i></i><span>기사 만평</span><i></i><span>칼럼 낭독</span><b>MYEONGDO · SPECIAL EDITION</b></div>
+<main class="workspace">
+<aside class="editor card" aria-label="신문 편집국 조작 패널">
+ <section class="module"><div class="section-heading"><b class="step">01</b><div><small>SOURCE DESK</small><h2>기사 자료 입력</h2></div></div>
+  <p class="guide">신문 기사 <strong>주소 또는 본문 중 하나만</strong> 넣으세요. 기사 제목·출처·내용은 한 입력창에 적을 수 있습니다.</p>
+  <label for="articleUrl" class="field-label">기사 URL</label><input id="articleUrl" type="url" placeholder="https://언론사주소/기사" autocomplete="url" spellcheck="false">
+  <div class="or-separator"><span>또는 · 기사 전문 붙여넣기</span></div>
+  <label for="articleBundle" class="field-label">제목 · 출처 · 본문 통합 입력</label><textarea id="articleBundle" rows="12" spellcheck="false" placeholder="제목: 기사 제목
+출처: 언론사 · 기자 · 발행일
+내용:
+기사 본문을 붙여넣으세요.
+
+※ 본문만 붙여넣어도 됩니다."></textarea>
+  <p class="tip">기사 본문은 100자 이상 입력하세요. 접근 제한이 있는 기사 URL은 원문을 직접 붙여넣어 주세요.</p>
+  <button id="generateBtn" type="button" class="primary-action"><span>✦</span><span>기사 정리 · 600자 칼럼 작성</span></button>
+  <div class="button-row"><button type="button" id="sampleBtn">예시 기사</button><button type="button" id="clearBtn">전체 초기화</button></div>
+ </section>
+ <section class="module"><div class="section-heading"><b class="step">02</b><div><small>EDITORIAL CARTOON</small><h2>기사 기반 시사만평</h2></div></div>
+  <label class="field-label" for="cartoonStyle">만평 구성 5종</label>
+  <select id="cartoonStyle" aria-label="시사만평 구성 선택"><option value="kim">고전 4컷 · 이야기 전개</option><option value="park">현장 관찰 · 인물 중심</option><option value="yong" selected>상징·은유 · 핵심 쟁점</option><option value="jang">인물·대사 · 풍자</option><option value="soon">원인과 결과 · 연속 만평</option></select>
+  <p class="tip">신문만화의 일반적인 구성 방식에서 착안한 <strong>독창적 벡터 만평</strong>입니다. 특정 만화가의 원작이나 고유 화풍을 복제하지 않습니다.</p>
+  <button id="cartoonBtn" type="button" class="console-button full">▧ 기사 내용으로 시사만평 그리기</button>
+  <div class="button-row"><button id="cartoonSaveBtn" type="button">만평 PNG 저장</button><button id="pageSaveBtn" type="button">신문 지면 PNG 저장</button></div>
+ </section>
+ <section class="module small-module"><div class="section-heading"><b class="step">03</b><div><small>EDITORIAL AUDIO</small><h2>칼럼 낭독실</h2></div></div><p class="guide">칼럼은 오른쪽 지면 하단에서 직접 편집하고, <strong>읽기·일시정지·이어읽기·정지</strong>로 낭독할 수 있습니다.</p><div class="audio-console-indicator"><span class="dot" id="audioConsoleDot"></span><span id="consoleAudioState">STANDBY · VOICE</span><span class="console-frequency">KO / TTS</span></div></section>
+ <section class="module small-module"><div class="section-heading"><b class="step">04</b><div><small>EDITORIAL POLICY</small><h2>발행 전 검수</h2></div></div><p class="tip">초안은 API 키 없이 생성합니다. 기사 속 <strong>사실·주장·평론</strong>을 구분하고 원자료·반론·출처를 검증한 뒤 발행하세요. 기사 전문은 자동으로 저장하거나 공개 게시하지 않습니다.</p></section>
+</aside>
+<section class="preview" aria-label="신문 특집호 미리보기">
+ <div class="preview-top"><div><div class="overline">PROGRAM MONITOR · EDITORIAL SPECIAL</div><h2>신문 특집호 지면 미리보기</h2></div><span class="edition-label">01 · ARTICLE / CARTOON / OPINION</span></div>
+ <article class="newspaper" id="printNewspaper">
+  <div class="masthead"><div class="mast-meta"><span>명도재 독립 논설 편집실</span><span id="todayLabel">2026</span><span>ISSUE · SPECIAL REPORT</span></div><div class="paper-name">명도재 시사컬럼 <span>特輯</span></div><div class="paper-under"><b>MYEONGDO EDITORIAL JOURNAL</b><span>사실에서 질문으로, 질문에서 칼럼으로</span></div></div>
+  <section class="page-section article-section" aria-labelledby="articleHeading"><div class="strip"><span>01 / ARTICLE</span><strong>기사 원문 · 출처</strong></div><h3 id="articleHeading">기사 제목이 표시됩니다</h3><p class="byline" id="articleSource">신문 기사 원문을 기다립니다.</p><div id="articleBody" class="article-body">왼쪽 기사 입력창에 기사 주소 또는 기사 본문을 넣고 작성 버튼을 누르면 이곳에 원문이 표시됩니다.</div><div class="report-note"><strong>기사 핵심 정리</strong><p id="articleSummary">기사에 담긴 주요 사실과 쟁점이 이곳에 간결하게 정리됩니다.</p></div><p class="copyright-note">기사 원문은 개인 편집 미리보기용입니다. 외부 배포 시 원문 재게시 권한을 확인하세요.</p></section>
+  <section class="page-section cartoon-section" aria-labelledby="cartoonHeading"><div class="strip"><span>02 / EDITORIAL CARTOON</span><strong>기사 내용의 시사만평</strong></div><div class="cartoon-heading"><h3 id="cartoonHeading">오늘의 기사, 한 장의 풍자</h3><span id="cartoonLabel">상징·은유형</span></div><div class="cartoon-frame"><canvas id="cartoonCanvas" width="1200" height="740" aria-label="기사의 핵심 쟁점을 시각화하는 독창적인 시사만평">이 브라우저는 캔버스 기능을 지원하지 않습니다.</canvas></div><p class="copyright-note">기사 소재의 창작 만평 · 작품 안의 인물은 상징적 가상 인물입니다.</p></section>
+  <section class="page-section column-section" aria-labelledby="columnHeading"><div class="strip"><span>03 / OPINION</span><strong>600자 시사칼럼 · 논설</strong></div><h3 id="columnHeading">시사칼럼</h3><p class="byline">명도재 독립 시사평론 초안 <span id="charCount">0자</span></p><div id="columnBody" class="column-text" contenteditable="true" spellcheck="false" role="textbox" aria-multiline="true" aria-label="시사칼럼 편집">기사를 입력하면 약 600자 시사칼럼이 이곳에 작성됩니다. 칼럼 본문을 클릭하면 문장을 직접 고칠 수 있습니다.</div>
+   <div class="audio-panel"><div class="audio-heading"><span class="audio-status-dot" id="audioDot"></span><strong>🎙 칼럼 낭독</strong><span id="audioState">STANDBY · 한국어 음성</span></div><div class="audio-controls"><button id="readBtn" type="button">▶ 칼럼 읽기</button><button id="pauseBtn" type="button" disabled>Ⅱ 일시정지</button><button id="resumeBtn" type="button" disabled>↻ 이어읽기</button><button id="stopBtn" type="button" disabled>■ 정지</button></div><div class="audio-settings"><label for="rate">읽기 속도</label><input id="rate" type="range" min="0.65" max="1.2" step="0.05" value="0.9"><output id="rateValue">0.90×</output></div><div class="progress-rail"><div id="readingProgress"></div></div><div class="progress-caption"><span id="readStatus">낭독 대기</span><span id="readCounter">0 / 0 문단</span></div></div>
+  </section><footer class="paper-footer"><span>MYEONGDO · EDITORIAL STUDIO</span><span>기사 출처 확인 · 논평 검수 후 발행</span></footer>
+ </article>
+ <div class="preview-actions"><button id="copyBtn" type="button">칼럼·출처 복사</button><button id="printBtn" type="button">특집호 인쇄 / PDF 저장</button></div>
+ <p id="status" class="notice" role="status" aria-live="polite">READY · 기사 내용 또는 기사 URL을 입력한 후 작성 버튼을 누르세요.</p>
+</section>
+</main><footer class="site-footer">명도재 © 2026 · 신문 특집호 편집 · 독립 시사칼럼 · 기사 기반 창작 만평</footer>
+<script type="module" src="/app.js"></script>
+</body></html>
