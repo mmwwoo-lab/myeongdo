@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>명도재 | 스테인드글라스 시화·음악영상 스튜디오</title>
+<style>
+:root{color-scheme:dark;--bg:#090f16;--card:#12212b;--line:#2e4754;--gold:#f1d298;--cream:#eef5ed;--muted:#b2c6c9;font-family:'Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse 85% 70% at 80% -15%,#2b3450 0,transparent 72%),#091016;color:var(--cream)}header{max-width:1570px;margin:auto;padding:25px 30px 20px;border-bottom:1px solid #263c49;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:15px}.seal{display:grid;place-items:center;width:60px;height:60px;border:1px solid #be9a64;background:#27303c;color:#f0c889;font:23px serif;letter-spacing:-.05em;border-radius:7px}h1{margin:0 0 4px;font-size:25px;letter-spacing:-.04em}header p{font-size:13px;color:var(--muted);margin:0}.tag{font-size:11px;color:#f2d5a1;border:1px solid #6e665b;border-radius:99px;padding:10px 13px;white-space:nowrap}.wrap{display:grid;grid-template-columns:minmax(315px,420px) minmax(0,1fr);max-width:1570px;margin:auto;padding:26px 30px 50px;gap:23px;align-items:start}.panel,.stage{border:1px solid #2b4653;background:linear-gradient(160deg,#142631,#101d28);border-radius:18px;box-shadow:0 16px 36px #0006}.panel{padding:23px}.stage{padding:23px;position:sticky;top:10px}.block{margin-bottom:24px}.block:last-child{margin-bottom:0}.labelRow{display:flex;gap:9px;align-items:center;margin-bottom:13px}.step{border:1px solid #786d56;color:#f4d1a0;font-size:12px;padding:6px 9px;border-radius:7px}.labelRow h2{font-size:16px;margin:0}.sub{color:#aac2c9;font-size:12px;line-height:1.7;margin:10px 0 0}.poem{width:100%;min-height:305px;resize:vertical;border-radius:11px;outline:0;border:1px solid #395764;background:#0a1721;color:#f6f5ed;padding:15px;font:16px/1.76 'Malgun Gothic',sans-serif}.poem:focus{border-color:#d7b581}.actions{display:flex;gap:9px;flex-wrap:wrap}button{border:1px solid #3b5462;border-radius:9px;padding:11px 14px;cursor:pointer;font-size:13px;font-weight:700;color:#f1f5f1;background:#263b45}button:hover:not(:disabled){filter:brightness(1.14)}button:disabled{opacity:.48;cursor:not-allowed}.primary{color:#181d23;border:0;background:linear-gradient(135deg,#ffe0a6,#c18b58)}.secondary{background:#263944}.danger{background:#503536}.file{display:inline-flex;align-items:center;font-size:12px;border:1px dashed #5e7e8b;border-radius:8px;padding:8px 10px;color:#d6e3e1;cursor:pointer;margin-top:12px}.file input{display:none}.speed{font-size:12px;color:#bed1d1;margin-top:15px}.speed input{width:100%;accent-color:#e6bb7e;margin-top:5px}.screenHeading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}.eyebrow{font-size:11px;letter-spacing:.17em;color:#ddb984}.screenHeading h2{font-size:24px;margin:5px 0 0;font-family:serif;font-weight:500}.mood{border:1px solid #426171;border-radius:30px;color:#bbd6d9;padding:8px 12px;font-size:11px;text-align:right;max-width:55%}.screen{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid #637381;box-shadow:0 20px 34px #030809bb;background:#15232f}.screen canvas{width:100%;height:100%;display:block}.ratio{position:absolute;top:11px;right:12px;font-size:10px;padding:5px 8px;background:#081019cc;border:1px solid #9b835f88;color:#ffe7bc;border-radius:5px;pointer-events:none}.track{height:5px;background:#29404b;border-radius:10px;margin:16px 0 8px;overflow:hidden}.track div{height:100%;background:linear-gradient(90deg,#e4b06c,#fbde9c);width:0}.time{display:flex;justify-content:space-between;font-size:12px;color:#a9bdc3}.notice{font-size:12px;line-height:1.75;margin-top:16px;padding:13px;border:1px solid #41575a;border-radius:10px;background:#0c1921;color:#f8dbaf}.hint{margin:8px 0;font-size:11px;color:#9db1b5;line-height:1.65}.download{border-top:1px solid #2c4753;margin-top:20px;padding-top:20px}.download h3{font-size:15px;margin:0 0 11px}.statusHelp{font-size:11px;color:#90aab2;margin-top:8px;line-height:1.6}.pill{color:#c3e1e4;background:#1c3442;border-radius:5px;padding:3px 7px;font-size:11px}.mp4Warning{color:#e9ba99}.busy{opacity:.6;pointer-events:none}footer{text-align:center;color:#728a92;font-size:11px;padding:15px 15px 35px}@media(max-width:1130px){.wrap{grid-template-columns:1fr}.stage{position:static}}@media(max-width:620px){header{padding:18px;align-items:flex-start}.tag{display:none}.wrap{padding:14px}.stage,.panel{padding:16px}.screenHeading h2{font-size:19px}h1{font-size:20px}.actions button{flex:1 1 42%;padding:11px 8px}}
+
+/* 2026.11 — 방송국 음향 조정실 디자인: 실제 동작하는 VU 미터와 프리뷰 신호등 */
+:root{--bg:#070d15;--card:#121d2b;--line:#384a5c;--gold:#f5c777;--cream:#eef5fc;--muted:#b8c4d7;--studio-cyan:#5dd9ef;--studio-green:#65efb7;--studio-red:#f15c68;--studio-amber:#f7ca6e}
+body{background:radial-gradient(ellipse 65% 50% at 80% -5%,#182d43 0,transparent 80%),repeating-linear-gradient(90deg,#0b131f 0,#0b131f 46px,#0a111c 47px,#0a111c 48px);color:var(--cream)}
+header{border-bottom:2px solid #2e4762;box-shadow:0 10px 26px #0005;background:linear-gradient(90deg,#0c1724,#152838 60%,#0d1725)}
+.seal{background:linear-gradient(135deg,#263f58,#0c1a29);box-shadow:inset 0 1px 0 #66788b,0 0 18px #db9d5233;border-color:#ab8959}
+header h1{font-weight:780;letter-spacing:-.055em}header p{color:#b2cce0}
+.tag{border:1px solid #516c81;background:#102034;color:#b6d6e5;font:11px/1.35 ui-monospace,Consolas,monospace;box-shadow:inset 0 1px #ffffff15}
+.panel,.stage{background:linear-gradient(150deg,#1a2a3a 0%,#111d2a 58%,#0f1823 100%);border:1px solid #455568;box-shadow:0 22px 40px #0008,inset 0 1px 0 #ffffff13;border-radius:15px}
+.panel{border-left:5px solid #42627e}.stage{border:1px solid #576b80}
+.labelRow{border-bottom:1px solid #354b5c;padding-bottom:10px}.labelRow h2{color:#e2eefa;letter-spacing:-.025em}
+.step{background:#172d3f;border-color:#537286;color:var(--studio-cyan);font:700 12px ui-monospace,Consolas,monospace;box-shadow:inset 0 1px #ffffff18}
+.poem{background:linear-gradient(180deg,#07121c,#0d1824);border:1px solid #45647b;color:#edf4fc;box-shadow:inset 0 4px 14px #0007}
+.poem:focus{border-color:#69d5e7;box-shadow:0 0 0 2px #4db9d22c}
+button{border:1px solid #506579;background:linear-gradient(180deg,#355167,#24394c);box-shadow:inset 0 1px #ffffff32,0 3px 0 #0b1521;color:#edf6fb;letter-spacing:-.015em}
+button:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 1px #ffffff25,0 1px 0 #0b1521}
+button:focus-visible{outline:2px solid var(--studio-cyan);outline-offset:3px}
+.primary{background:linear-gradient(180deg,#ffd991,#c9964e);color:#152332;border:1px solid #f4d395}
+.danger{background:linear-gradient(180deg,#8b4353,#5c2d3a);border-color:#a4606b}
+.speed input{accent-color:#57d9e9}.sub{color:#b9c8d6}.download{border-top:2px solid #42586b}
+.eyebrow{color:var(--studio-cyan);font:700 11px ui-monospace,Consolas,monospace;letter-spacing:.14em}
+.screenHeading h2{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-weight:700;font-size:23px}
+.mood{border-color:#4f7589;background:#102a38;color:#aee9eb}
+.notice{background:#0b1723;border:1px solid #3c586c;color:#f2d49d;border-left:4px solid #dbad67}
+.track{background:#0a151f;border:1px solid #263a4a;height:9px;box-shadow:inset 0 1px 4px #0009}
+.track div{background:linear-gradient(90deg,var(--studio-cyan),var(--studio-green),var(--studio-amber))}
+.time{font:12px ui-monospace,Consolas,monospace;letter-spacing:.03em}
+.time #clock{color:var(--studio-cyan)}
+/* 방송 콘솔 상단의 신호등 */
+.broadcast-ident{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.signalLamp{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid #496070;border-radius:7px;background:#0b1520;color:#b7c7d4;font:800 12px ui-monospace,Consolas,monospace;letter-spacing:.10em;transition:all .2s}
+.signalDot{width:10px;height:10px;border-radius:50%;background:#6b7884;box-shadow:0 0 0 3px #ffffff0b}
+.signalLamp.on{color:#ffe4e7;border-color:#d75861;background:#5f202e;box-shadow:0 0 24px #ed435140,inset 0 1px #ffb1b142}
+.signalLamp.on .signalDot{background:#ff6b74;box-shadow:0 0 11px #ff657b,0 0 0 3px #ff657b35}
+.signalLamp.pause{color:#fbd998;border-color:#ae8451;background:#4b341e}
+.signalLamp.pause .signalDot{background:#f6c16a;box-shadow:0 0 10px #f6c16a8a}
+.consoleNote{font:700 10px ui-monospace,Consolas,monospace;color:#86a2b7;letter-spacing:.10em}
+/* 영상 시화 자체에는 장비 테두리를 그리지 않고, UI에서만 프레임을 적용 */
+.monitorShell{background:linear-gradient(135deg,#243749,#101b28);border:1px solid #6b8091;border-radius:16px;padding:13px;box-shadow:inset 0 1px #c9d0d241,inset 0 -6px 13px #0008,0 15px 28px #0007}
+.monitorTop{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#a9c1d1;font:700 10px ui-monospace,Consolas,monospace;letter-spacing:.11em;padding:0 5px 11px}
+.monitorModel{color:#5ed3e7}.monitorSerial{color:#8d9cad}
+.monitorFoot{display:flex;justify-content:space-between;gap:10px;align-items:center;font:700 10px ui-monospace,Consolas,monospace;color:#8da7b8;letter-spacing:.08em;padding:11px 5px 0}
+.monitorFoot .recIndicator{color:#ee7b83;display:inline-flex;gap:6px;align-items:center}
+.monitorFoot .recIndicator:before{content:'';width:6px;height:6px;border-radius:50%;background:#f26470;box-shadow:0 0 8px #f26470}
+.screen{border-radius:6px;border:3px solid #0b141d;box-shadow:0 0 0 1px #71839570,0 18px 28px #000a}
+/* 실제 Web Audio 샘플에 연동되는 좌우 LED 음량계 */
+.audioRack{margin:18px 0 10px;border-radius:11px;border:1px solid #526578;background:linear-gradient(180deg,#0b141e,#111e2b);box-shadow:inset 0 4px 12px #000a,inset 0 1px #ffffff15;padding:15px 17px 13px}
+.rackHead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}
+.rackHead strong{color:#c7e9ed;font:800 12px ui-monospace,Consolas,monospace;letter-spacing:.11em}
+.rackHead span{color:#92a7b9;font:11px ui-monospace,Consolas,monospace}
+.audioChannels{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}
+.meterRow{display:grid;grid-template-columns:22px minmax(0,1fr);gap:9px;align-items:center;margin-bottom:8px}
+.channelLetter{color:#96aec2;font:700 12px ui-monospace,Consolas,monospace}
+.leds{height:17px;display:flex;gap:3px;align-items:stretch}
+.leds .led{flex:1;min-width:4px;background:#1c2d37;border:1px solid #284552;border-radius:2px;transition:background .09s,box-shadow .09s}
+.leds .led.active.lo{background:#45d5b3;border-color:#7af8d2;box-shadow:0 0 8px #3ddca35c}
+.leds .led.active.mid{background:#f4c661;border-color:#ffe69a;box-shadow:0 0 8px #f5c66760}
+.leds .led.active.hi{background:#f36d70;border-color:#ffa5a7;box-shadow:0 0 8px #ff627a70}
+.rackReadout{text-align:right;min-width:70px;color:#8df0ce;font:700 14px ui-monospace,Consolas,monospace}
+.rackReadout small{display:block;color:#7796a6;font-size:10px;margin-top:4px}
+.rackFoot{display:flex;justify-content:space-between;gap:8px;font:10px ui-monospace,Consolas,monospace;color:#607c8c;letter-spacing:.10em;padding-top:5px}
+.rackFoot span:last-child{color:#9aaeb9}
+/* 리드 텍스트와 작품 이미지 자체는 투명, 원작 그림이 전면 노출되는 상태 유지 */
+@media(max-width:620px){.broadcast-ident{width:100%;justify-content:flex-start}.monitorShell{padding:9px}.audioRack{padding:12px}.leds{gap:2px}.rackReadout{min-width:49px;font-size:11px}.monitorSerial{display:none}}
+
+</style>
+</head>
+<body>
+<header><div class="brand"><span class="seal">明道</span><div><h1>명도재 스테인드글라스 미디어아트 스튜디오</h1><p>방송국 스타일의 영상·음향 조정실 · 시화 · 음악 · 시 낭송 · 자막</p></div></div><div class="broadcast-ident"><span id="onAirSignal" class="signalLamp" aria-live="polite"><span class="signalDot" aria-hidden="true"></span><span id="onAirText">STANDBY</span></span><span class="tag">STUDIO A · 16:9 HD · AUDIO MIX</span></div></header>
+<main class="wrap">
+<aside class="panel">
+<section class="block"><div class="labelRow"><span class="step">01</span><h2>시 한 칸 입력</h2></div><textarea id="poemInput" class="poem" spellcheck="false" aria-label="제목, 작가, 시 본문을 한 칸에 입력">대일리 석류야
+이명우
+
+가창골 굽이굽이 돌담길 돌아
+사람 떠난 빈집 뜨락에
+석류나무 한 그루
+붉은 가슴을 열고 서 있다
+
+한여름 뙤약볕도 견디고
+모진 비바람도 품어 안으며
+꼭꼭 챙겨 둔 사랑의 밀어
+가슴 깊이 붉게 여물었구나
+
+누구를 그리다 저리 붉어졌을까
+누구를 기다리다 가슴이 터졌을까
+알알이 맺힌 붉은 사연마다
+떠나간 사람의 온기가 남아 있다</textarea><p class="sub">첫 줄 <b>제목</b>, 둘째 줄 <b>작가</b>, 셋째 줄부터 <b>시 본문</b>. 빈 줄은 자유롭게 넣으세요.</p></section>
+<section class="block"><div class="labelRow"><span class="step">02</span><h2>시화·배경음악 만들기</h2></div><div class="actions"><button id="musicBtn" class="primary">🎼 배경음악 만들기</button><button id="paintBtn">🎨 스테인드글라스 시화 그리기</button></div><p class="sub">음악 만들기는 작품에 어울리는 악곡을 준비만 합니다. 시화 그리기는 스테인드글라스 이미지 생성만 실행하며, 두 기능은 독립적으로 작동합니다.</p></section>
+<section class="block"><div class="labelRow"><span class="step">03</span><h2>시 낭송 · 음악과 자막 영상</h2></div>
+<div class="actions"><button id="readBtn" class="primary">🎙 시 낭송</button><button id="playBtn">▶ 음악 영상 감상</button><button id="pauseBtn" disabled>Ⅱ 일시정지</button><button id="resumeBtn" disabled>↻ 이어보기</button><button id="stopBtn" disabled class="danger">■ 정지</button></div>
+<label class="speed">음악 감상용 자막 속도 <output id="paceValue">4.0초</output><input id="pace" type="range" min="2.5" max="7" step="0.5" value="4"></label>
+<label class="speed">시 낭송 속도 · 자막 자동 동기화 <output id="readRateValue">0.95×</output><input id="readRate" type="range" min="0.75" max="1.15" step="0.05" value="0.95"></label>
+<p class="sub">시 낭송은 한국어 음성으로 시를 읽으며 자막을 실제 낭송에 맞춰 스크롤합니다. 음악 만들기는 작곡만 수행하고, 음악 영상 감상은 배경음악과 자막만 재생합니다. 읽는 문장은 화면 중앙에서 금빛으로 강조됩니다.</p><p class="hint">※ 브라우저 기본 음성 읽기는 감상 기능입니다. 별도 오디오 파일 저장은 외부 TTS API 연동이 있어야 완전하게 지원됩니다.</p></section>
+<section class="download"><div class="labelRow"><span class="step">04</span><h2>작품 저장</h2></div>
+<div class="actions"><button id="movieBtn" class="primary">🎬 음악 영상 저장 (MP4 우선)</button><button id="pngBtn">🖼 시화 PNG 저장</button></div>
+<p class="sub">화면과 음악을 실시간으로 녹화합니다. 브라우저가 MP4를 지원하면 MP4로, 그렇지 않으면 WebM으로 다운로드합니다.</p></section>
+</aside>
+<section class="stage">
+<div class="screenHeading"><div><div class="eyebrow">BROADCAST CONTROL ROOM · VISUAL MONITOR</div><h2>STUDIO A · 빛으로 읽는 시</h2></div><div id="mood" class="mood">빛의 유리 조각 · 시화 미리보기</div></div>
+<div class="monitorShell"><div class="monitorTop"><span class="monitorModel">MDJ · PROGRAM MONITOR 01</span><span class="monitorSerial">HD/16:9 · 1280 × 720</span></div>
+<div class="screen"><canvas id="screen" width="1280" height="720" aria-label="스테인드글라스 미디어아트 시화와 실시간 자막"></canvas><div class="ratio">PROGRAM · HD</div></div>
+<div class="monitorFoot"><span>PGM / PREVIEW</span><span class="recIndicator">VIDEO SIGNAL</span></div></div>
+<div class="audioRack" aria-label="배경음악 실시간 레벨 모니터"><div class="rackHead"><strong>◉ AUDIO LEVELS · LIVE METER</strong><span>CH 01 / CH 02</span></div>
+<div class="audioChannels"><div><div class="meterRow"><span class="channelLetter">L</span><div class="leds" id="meterL" role="meter" aria-label="왼쪽 오디오 레벨" aria-valuemin="-60" aria-valuemax="0" aria-valuenow="-60"></div></div><div class="meterRow"><span class="channelLetter">R</span><div class="leds" id="meterR" role="meter" aria-label="오른쪽 오디오 레벨" aria-valuemin="-60" aria-valuemax="0" aria-valuenow="-60"></div></div></div><div class="rackReadout"><span id="dbReadout">−∞ dB</span><small>PEAK / dBFS</small></div></div>
+<div class="rackFoot"><span>−60 &nbsp;&nbsp; −36 &nbsp;&nbsp; −24 &nbsp;&nbsp; −12 &nbsp;&nbsp; −6 &nbsp;&nbsp; 0</span><span>STEREO MONITOR</span></div></div>
+<div class="track"><div id="track"></div></div><div class="time"><span id="clock">00:00 / 00:00</span><span id="playState">준비</span></div><div id="status" class="notice" role="status" aria-live="polite">시를 입력한 다음 ‘스테인드글라스 시화 그리기’를 누르세요.</div></section>
+</main><footer>명도재 © 2026 · 시를 스테인드글라스 미디어아트와 음악으로 표현하는 영상 스튜디오</footer>
+<script type="module">
+const $ = id => document.getElementById(id);
+const els = {
+  input:$('poemInput'),paint:$('paintBtn'),compose:$('musicBtn'),play:$('playBtn'),read:$('readBtn'),pause:$('pauseBtn'),resume:$('resumeBtn'),stop:$('stopBtn'),
+  record:$('movieBtn'),save:$('pngBtn'),pace:$('pace'),paceValue:$('paceValue'),readRate:$('readRate'),readRateValue:$('readRateValue'),status:$('status'),clock:$('clock'),playState:$('playState'),track:$('track'),mood:$('mood'),canvas:$('screen'),onAir:$('onAirSignal'),onAirText:$('onAirText'),meterL:$('meterL'),meterR:$('meterR'),dbReadout:$('dbReadout')
+};
+const V={W:1280,H:720,TAU:Math.PI*2};
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+const seeded=n=>{let s=n>>>0;return()=>((s=(Math.imul(1664525,s)+1013904223)>>>0)/4294967296);};
+function hash(s){let h=2166136261;for(const ch of s){h^=ch.charCodeAt(0);h=Math.imul(h,16777619);}return h>>>0;}
+const pick=(r,a)=>a[Math.floor(r()*a.length)];
+const sample=(r,a,b)=>a+(b-a)*r();
+const setStatus=txt=>{els.status.textContent=txt;};
+const fmt=s=>{s=Math.max(0,Math.floor(s||0));return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;};
+const safeName=s=>(s||'명도재_시화').replace(/[\\/:*?"<>|]/g,'_').slice(0,70);
+function download(blob,filename){const a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);}
+
+function parsePoem(raw){
+ const text=String(raw||'').replace(/\r\n?/g,'\n').trim();
+ const rows=text.split('\n');while(rows.length&&rows[0].trim()==='')rows.shift();
+ const title=(rows.shift()||'무제').replace(/^제목\s*[:：]\s*/,'').trim();
+ const author=(rows.shift()||'작가 미상').replace(/^(시인|작가|글)\s*[:：]\s*/,'').trim();
+ const body=rows.join('\n').trim();
+ const lines=body.split('\n').map(s=>s.trim()).filter(Boolean);
+ if(!title||!lines.length)throw Error('첫 줄에 제목, 둘째 줄에 작가, 그 아래에 시 본문을 입력해 주세요.');
+ return {title,author:author||'작가 미상',body,lines,raw:text};
+}
+const MOTIFS=[
+ ['pomegranate',/석류|홍시/,'석류와 열매'],['cottage',/빈집|초가|고향집|돌담|담장|기왓|마당|시산방/,'오래된 집'],
+ ['water',/호수|시냇물|물결|물비늘|물가|강물|바다|강가|신천|못둑|저수지|연못/,'강과 물빛'],
+ ['boat',/돛배|나룻배|고깃배|쪽배|뱃사공|배 한 척/,'물 위의 배'],
+ ['moon',/달빛|보름달|초승달|낮달|달이|달은|달을|달이여|달무리/,'달'],
+ ['stars',/별빛|은하수|밤하늘|별이|별들|별을/,'별자리'],
+ ['flowers',/꽃|나리|코스모스|동백|민들레|진달래|매화|연꽃/,'꽃'],
+ ['rain',/빗방울|비바람|소나기|장맛비|비가|비는|비를|비에|비 갠|빗소리/,'비'],
+ ['snow',/눈꽃|함박눈|눈보라|설원|눈이 내|흰 눈/,'눈'],
+ ['birds',/까치|기러기|두루미|부엉이|갈매기|새들이|새가|새 한 마리/,'새'],
+ ['reed',/갈대|억새/,'갈대'],['bench',/벤치/,'빈 벤치'],['umbrella',/우산/,'우산'],
+ ['lantern',/등불|초롱|불빛|등잔/,'등불'],['bridge',/돌다리|징검다리|교각|육교|다리를 건너|다리 위/,'다리'],['mountain',/앞산|팔공산|산자락|산봉우리|산길|산맥/,'산'],
+ ['leaves',/낙엽|단풍|잎새|풀잎/,'나뭇잎'],['sunlight',/햇살|햇빛|태양|석양|노을/,'햇빛']
+];
+function analyze(poem){
+ const t=poem.body, m=MOTIFS.filter(([,re])=>re.test(t)).map(([key,,label])=>({key,label}));
+ const has=k=>m.some(x=>x.key===k);
+ const season=/겨울|눈보라|설원|얼어붙|서리/.test(t)?'winter':/가을|석류|홍시|단풍|낙엽|시월/.test(t)?'autumn':/봄|매화|진달래|새싹|벚꽃/.test(t)?'spring':/여름|장마|뙤약볕|폭염/.test(t)?'summer':'neutral';
+ const night=has('moon')||has('stars')||/밤|자정|어둠/.test(t);const sunset=/노을|석양|황혼/.test(t);const time=night?'night':sunset?'sunset':'day';
+ const scores={longing:0,hope:0,peace:0,dramatic:0};
+ for(const x of ['그리움','기다','그립','외로','빈집','떠나','이별','눈물','쓸쓸','고향'])scores.longing+=(t.match(new RegExp(x,'g'))||[]).length;
+ for(const x of ['희망','햇살','웃음','꽃','사랑','피어나','따뜻','행복'])scores.hope+=(t.match(new RegExp(x,'g'))||[]).length;
+ for(const x of ['고요','하늘','물결','바람','평온','침묵','빛','달'])scores.peace+=(t.match(new RegExp(x,'g'))||[]).length;
+ for(const x of ['비바람','불꽃','격랑','붉','열정','아픔','뜨거'])scores.dramatic+=(t.match(new RegExp(x,'g'))||[]).length;
+ const mood=Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][1]>0?Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0]:'peace';
+ const label={longing:'그리움',hope:'희망',peace:'명상',dramatic:'열정'}[mood];
+ const themes=m.length?m.map(x=>x.label).slice(0,6).join('·'):'자연과 내면';
+ const palette={
+ autumn:{sky:['#182842','#294e72','#744666','#c57158','#eca16b','#f8d88c'],mount:['#233b5b','#395768','#6d5a75','#7c8175'],ground:['#214d60','#387866','#ba6248','#e9ae5e'],accent:['#e95848','#f7a843','#ffd76f','#bc3e55','#f9c37c']},
+ spring:{sky:['#1f456a','#356b8e','#6898ad','#ce8aa8','#f8bfd0','#fadfa2'],mount:['#31617a','#668a8a','#87b19c','#c7a0a3'],ground:['#327e75','#61a58b','#98c48f','#f3ce9a'],accent:['#f7acc4','#eab1e2','#8ae8ce','#fae18a','#e66c91']},
+ summer:{sky:['#0d385c','#176b91','#43a5c6','#6cd0cc','#f0e3aa','#f5a663'],mount:['#215d79','#3e8d93','#317769','#6bb1a1'],ground:['#246d75','#258a79','#79b48a','#d6c17b'],accent:['#ffa25b','#e3d27b','#43d4bb','#f3e9a2','#e45f5a']},
+ winter:{sky:['#172d58','#49648b','#7a9ac3','#aac5d9','#dfeef3','#e7d3dc'],mount:['#345578','#557f9d','#87a7b9','#ccd9db'],ground:['#3e6083','#80a3bd','#b8d3e0','#d0dbe1'],accent:['#e7ebfc','#acd6f7','#c8a6e5','#f8e8c9','#8dcbdc']},
+ neutral:{sky:['#192c4d','#2f5574','#678da0','#a88ca2','#e9b98b','#f3d3a0'],mount:['#244e63','#407486','#6d8c8d','#96aaa2'],ground:['#2c6176','#4e8278','#93a98a','#d4bd85'],accent:['#f3ca77','#d7a0ad','#5db1b9','#e9ae77','#f9dda5']}
+ }[season];
+ return {...poem,m,has,season,time,mood,label,themes,palette,bpm:{longing:62,hope:78,peace:68,dramatic:84}[mood],mode:['longing','dramatic'].includes(mood)?'minor':'major',seed:hash(poem.raw)};
+}
+
+const art=document.createElement('canvas');art.width=V.W;art.height=V.H;const g=art.getContext('2d');
+function polygon(points,color,alpha=1,width=2.8){
+ if(points.length<3)return;
+ const xs=points.map(x=>x[0]),ys=points.map(x=>x[1]);const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
+ const lin=g.createLinearGradient(minX,minY,maxX+3,maxY+3);lin.addColorStop(0,'#eafcff');lin.addColorStop(.08,color);lin.addColorStop(.66,color);lin.addColorStop(1,'#132332');
+ g.save();g.globalAlpha=alpha;g.beginPath();points.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.fillStyle=lin;g.fill();g.strokeStyle='rgba(12,20,30,.94)';g.lineWidth=width;g.lineJoin='round';g.stroke();
+ g.strokeStyle='rgba(250,236,205,.23)';g.lineWidth=Math.max(.4,width*.36);g.stroke();g.restore();
+}
+function irregularRect(x,y,w,h,r,cArr,j=.17,alpha=.97){
+ const a=[[x+sample(r,-j,j)*w,y+sample(r,-j,j)*h],[x+w+sample(r,-j,j)*w,y+sample(r,-j,j)*h],[x+w+sample(r,-j,j)*w,y+h+sample(r,-j,j)*h],[x+sample(r,-j,j)*w,y+h+sample(r,-j,j)*h]];
+ polygon(a,pick(r,cArr),alpha,sample(r,1.8,3.5));
+}
+function tiledArea(yTop,yBottom,pal,r,{cols=22,rows=10}={}){
+ const dx=V.W/cols,dy=(yBottom-yTop)/rows,pts=[];
+ for(let i=0;i<=rows;i++) {const a=[];for(let j=0;j<=cols;j++) a.push([j*dx+(j&&j<cols?sample(r,-dx*.23,dx*.23):0),yTop+i*dy+(i&&i<rows?sample(r,-dy*.22,dy*.22):0)]);pts.push(a);}
+ for(let i=0;i<rows;i++)for(let j=0;j<cols;j++){
+  const a=pts[i][j],b=pts[i][j+1],c=pts[i+1][j+1],d=pts[i+1][j];
+  if(r()>.48){const m=[(a[0]+b[0]+c[0]+d[0])/4+sample(r,-7,7),(a[1]+b[1]+c[1]+d[1])/4+sample(r,-7,7)];polygon([a,b,m],pick(r,pal),.94,2.1);polygon([b,c,m],pick(r,pal),.94,2.1);polygon([c,d,m],pick(r,pal),.94,2.1);polygon([d,a,m],pick(r,pal),.94,2.1);}
+  else polygon([a,b,c,d],pick(r,pal),.96,2.8);
+ }
+}
+function rays(cx,cy,r,pal,rnd){
+ g.save();g.shadowColor='#f9d489';g.shadowBlur=62;g.fillStyle='#fbdca7';g.beginPath();g.arc(cx,cy,r*.87,0,V.TAU);g.fill();g.restore();
+ for(let ring=0;ring<3;ring++){const n=ring===0?24:ring===1?48:60;const aR=[r*.41,r*.89,r*1.34][ring],bR=[r*.88,r*1.32,r*1.76][ring];
+  for(let i=0;i<n;i++){const a=i/n*V.TAU,b=(i+1)/n*V.TAU;
+   polygon([[cx+Math.cos(a)*aR,cy+Math.sin(a)*aR],[cx+Math.cos(a)*bR,cy+Math.sin(a)*bR],[cx+Math.cos(b)*bR,cy+Math.sin(b)*bR],[cx+Math.cos(b)*aR,cy+Math.sin(b)*aR]],pick(rnd,pal),ring===2?.45:.92,2.6);}}
+}
+function hillside(base,color,r,amp=90){
+ const ridge=[];for(let x=0;x<=1280;x+=68)ridge.push([x,base-amp*(.2+r()*.8)-Math.sin(x/152)*35]);
+ polygon([[0,720],...ridge,[1280,720]],color,.91,5);
+ for(let j=0;j<ridge.length-1;j++){
+  const a=ridge[j],b=ridge[j+1],m=[(a[0]+b[0])/2,Math.min(680,(a[1]+b[1])/2+80+r()*130)];polygon([a,b,m],color,.22,2.9);
+ }
+}
+function river(r,pal){
+ tiledArea(438,720,[pal.sky[0],pal.mount[1],pal.ground[0],pal.sky[2],pal.accent[3]],r,{cols:20,rows:7});
+ for(let i=0;i<90;i++){let x=r()*1280,y=450+r()*250,len=10+r()*70;polygon([[x,y],[x+len,y-3-r()*5],[x+len*.75,y+3],[x+len*.1,y+5]],pick(r,['#e8ce9a','#b1d9df','#79bccc','#466c9c']),.2+r()*.23,1.2);}
+}
+function paths(c,points,width,color){c.save();c.beginPath();c.moveTo(...points[0]);for(let i=1;i<points.length;i++)c.lineTo(...points[i]);c.strokeStyle='rgba(14,24,30,.95)';c.lineCap='round';c.lineJoin='round';c.lineWidth=width+6;c.stroke();c.strokeStyle=color;c.lineWidth=width;c.stroke();c.restore();}
+function tree(cx,base,scale,pal,r,{fruit=false}={}){
+ g.save();g.translate(cx,base);g.scale(scale,scale);
+ paths(g,[[0,15],[-5,-100],[-45,-171],[-122,-215]],14,'#87644c');paths(g,[[-3,-100],[33,-177],[101,-230]],15,'#987251');paths(g,[[0,-125],[12,-220],[-35,-294]],12,'#735e4d');
+ const leafPal=pal.accent.concat(pal.ground).concat(['#f1c66f','#a5a0c8']);
+ for(let j=0;j<45;j++){
+  const x=sample(r,-158,158),y=sample(r,-328,-140),rr=sample(r,14,39),n=5+Math.floor(r()*4),pts=[];
+  for(let k=0;k<n;k++){const a=k/n*V.TAU;pts.push([x+Math.cos(a)*rr*sample(r,.66,1.12),y+Math.sin(a)*rr*sample(r,.65,1.2)]);}
+  polygon(pts,pick(r,leafPal),.94,3.2);
+ }
+ if(fruit){for(let j=0;j<24;j++){let x=sample(r,-128,126),y=sample(r,-283,-145),rr=sample(r,5,12);const pts=[];for(let k=0;k<7;k++){let a=k/7*V.TAU;pts.push([x+rr*Math.cos(a),y+rr*Math.sin(a)]);}polygon(pts,pick(r,['#a41e42','#d52c43','#eb5d50','#e98b4f']),.97,2.8);}}
+ g.restore();
+}
+function lantern(x,y,s,r){
+ g.save();g.translate(x,y);g.scale(s,s);g.shadowColor='#ffd881';g.shadowBlur=25;
+ polygon([[-16,-19],[0,-32],[18,-18],[14,18],[0,31],[-15,18]],pick(r,['#ffda8b','#ffbe69','#ffa45b']),.96,3);
+ g.restore();
+}
+function cottage(x,y,s,r,pal){
+ g.save();g.translate(x,y);g.scale(s,s);
+ polygon([[-138,-6],[-126,-127],[112,-127],[122,-3]],'#ba9478',.98,5);
+ for(let iy=0;iy<5;iy++)for(let ix=0;ix<9;ix++)irregularRect(-117+ix*25,-113+iy*22,26,23,r,[...pal.accent,'#bba58c','#8f8998'],.1,.67);
+ polygon([[-158,-118],[-90,-210],[35,-237],[153,-132],[104,-132],[-105,-144]],'#4c4250',.97,5);
+ for(let i=0;i<14;i++)polygon([[-116+i*19,-145],[-95+i*17,-202+r()*10],[-76+i*17,-180+r()*15]],pick(r,['#8e494f','#8b6672','#a58589','#d48767']),.82,3);
+ polygon([[-20,-3],[-16,-73],[31,-73],[34,-3]],'#2c3b4b',1,4);lantern(3,-40,.35,r);
+ for(const x2 of [-88,77]){
+  polygon([[x2-18,-59],[x2-18,-103],[x2+16,-103],[x2+16,-59]],'#ffd7a2',.9,4);
+  paths(g,[[x2,-103],[x2,-59]],3,'#523b38');paths(g,[[x2-18,-81],[x2+16,-81]],3,'#523b38');
+ }
+ g.restore();
+}
+function boat(x,y,s,r){
+ g.save();g.translate(x,y);g.scale(s,s);polygon([[-85,0],[96,0],[60,33],[-62,33]],'#644c56',1,4);
+ paths(g,[[0,0],[0,-154]],5,'#ccaa7a');polygon([[0,-149],[-78,-16],[0,-16]],'#e7d6ab',.85,4);polygon([[6,-149],[69,-22],[6,-20]],'#e4a36e',.79,4);g.restore();
+}
+function person(x,y,s,r){
+ g.save();g.translate(x,y);g.scale(s,s);const col=pick(r,['#485477','#906f7c','#a66b64']);
+ const pts=[];for(let i=0;i<9;i++){let a=i/9*V.TAU;pts.push([Math.cos(a)*14,Math.sin(a)*14-86]);}polygon(pts,'#c9a89c',.95,2.8);
+ polygon([[-18,-67],[18,-67],[31,-1],[-28,-1]],col,.93,3);paths(g,[[-12,0],[-14,37]],6,'#443b45');paths(g,[[13,0],[18,37]],6,'#443b45');g.restore();
+}
+function bench(x,y,s){g.save();g.translate(x,y);g.scale(s,s);for(let i=0;i<2;i++)polygon([[-120,-43+i*23],[120,-43+i*23],[120,-30+i*23],[-120,-30+i*23]],i?'#b35d85':'#d68b9f',.9,4);polygon([[-122,7],[122,7],[120,21],[-120,21]],'#ae739a',.95,4);paths(g,[[-93,20],[-105,55]],7,'#665b64');paths(g,[[90,20],[105,55]],7,'#665b64');g.restore();}
+function flowers(x,y,r,count=38,scale=1){
+ for(let i=0;i<count;i++){
+  const fx=x+sample(r,-160,160),fy=y+sample(r,-55,60),rr=sample(r,5,13)*scale;
+  paths(g,[[fx,fy+28],[fx+sample(r,-9,9),fy]],2.5,'#618979');
+  for(let k=0;k<6;k++){
+   const a=k/6*V.TAU,pt=[[fx,fy],[fx+Math.cos(a-.31)*rr*1.9,fy+Math.sin(a-.31)*rr*1.9],[fx+Math.cos(a+.3)*rr*1.9,fy+Math.sin(a+.3)*rr*1.9]];
+   polygon(pt,pick(r,['#f0c47d','#ffc3c0','#dc86af','#ed8f6a','#e4e0bd','#8fd5c8']),.91,1.7);
+  }
+  polygon([[fx-3,fy],[fx,fy-3],[fx+3,fy],[fx,fy+3]],'#f9edb6',.99,1.4);
+ }
+}
+function reeds(r){for(let i=0;i<65;i++){
+ const x=sample(r,15,1270),y=sample(r,570,760),ht=sample(r,45,153);paths(g,[[x,y],[x+10,y-ht]],2.4,'#a9b289');
+ const tops=[];for(let k=0;k<6;k++){let a=k/6*V.TAU;tops.push([x+10+Math.cos(a)*6,y-ht+Math.sin(a)*22]);}polygon(tops,pick(r,['#d2a879','#c59e9a','#967e7a','#f0c67e']),.87,2.1);
+ }}
+function birds(r,n=16){for(let i=0;i<n;i++){
+ const x=sample(r,320,1150),y=sample(r,80,360),s=sample(r,5,18);
+ paths(g,[[x-s,y+s*.3],[x,y],[x+s,y-s*.3]],2.4,pick(r,['#283147','#384158','#5b5067']));
+ }}
+function rain(r){for(let i=0;i<125;i++){
+ const x=r()*1280,y=r()*720,h=sample(r,8,40);polygon([[x,y],[x+5,y+2],[x-10,y+h],[x-14,y+h-2]],'#bee7f4',.33,1.3);
+ }}
+function snow(r){for(let i=0;i<115;i++){
+ const x=r()*1280,y=r()*720,s=sample(r,3,8);polygon([[x-s,y],[x,y-s],[x+s,y],[x,y+s]],'#f3f7ff',.75,1.2);
+ }}
+function petals(r){for(let i=0;i<42;i++){
+ const x=r()*1280,y=r()*720,a=r()*V.TAU,s=sample(r,4,16);polygon([[x,y],[x+s*Math.cos(a),y+s*Math.sin(a)],[x+s*.8*Math.cos(a+1),y+s*.8*Math.sin(a+1)]],pick(r,['#f5c68b','#ea839a','#a9d1a0']),.38,1);
+ }}
+function umbrella(x,y,s){g.save();g.translate(x,y);g.scale(s,s);paths(g,[[0,-2],[0,-88],[11,-100]],5,'#423944');const pts=[[-70,-90],[-43,-138],[0,-153],[45,-133],[72,-88]];for(let i=0;i<4;i++)polygon([[0,-104],pts[i],pts[i+1]],i%2?'#efba98':'#c97b86',.95,3);g.restore();}
+function moonStars(r){for(let i=0;i<70;i++){const x=r()*1280,y=r()*395,s=sample(r,1,4);g.save();g.globalAlpha=.65;g.fillStyle='#f9e9ba';g.fillRect(x,y,s,s);g.restore();}}
+function frame(r,pal){
+ for(let i=0;i<18;i++){
+  irregularRect(0,i*40,26,43,r,pal.accent,.06,.85);
+  irregularRect(1254,i*40,26,43,r,pal.accent,.06,.85);
+ }
+ for(let j=0;j<28;j++){
+  irregularRect(j*46,0,48,22,r,pal.accent,.05,.82);
+  irregularRect(j*46,698,48,22,r,pal.accent,.05,.82);
+ }
+ g.strokeStyle='#18232c';g.lineWidth=12;g.strokeRect(15,15,1250,690);g.strokeStyle='#d3ae73';g.lineWidth=2.2;g.strokeRect(24,24,1232,672);
+}
+function renderStainedArt(a){
+ const r=seeded(a.seed),p=a.palette;
+ g.clearRect(0,0,V.W,V.H);g.fillStyle='#142233';g.fillRect(0,0,V.W,V.H);
+ tiledArea(0,455,p.sky,r,{cols:24,rows:9});
+ if(a.time==='night')moonStars(r);
+ g.save();g.globalCompositeOperation='screen';const light=g.createRadialGradient(992,153,4,992,153,560);light.addColorStop(0,'rgba(255,234,153,.48)');light.addColorStop(.45,'rgba(255,175,127,.17)');light.addColorStop(1,'rgba(255,233,173,0)');g.fillStyle=light;g.fillRect(0,0,V.W,V.H);g.restore();
+ rays(982,155,a.time==='night'?41:64,a.time==='night'?['#f6e3b9','#a6bde8','#dfc6d7','#ffeac9']:['#f9e0a6','#f3a46b','#e67b82','#fff1be'],r);
+ hillside(374,p.mount[0],r,145);hillside(442,p.mount[1],r,95);hillside(542,p.mount[2],r,100);
+ if(a.has('water')||a.has('boat'))river(r,p);
+ else tiledArea(512,720,p.ground.concat(p.accent),r,{cols:20,rows:5});
+ // 겹쳐진 상징: 시에 등장하는 요소를 중심으로 복수의 이야기 공간을 구성합니다.
+ if(a.has('cottage'))cottage(360,525,.77,r,p);
+ if(a.has('bridge')&&a.has('water')){
+  for(let i=0;i<7;i++)polygon([[430+i*54,532],[480+i*54,524],[476+i*54,552],[435+i*54,556]],pick(r,p.accent),.9,3);
+ }
+ if(a.has('boat'))boat(865,575,.71,r);
+ if(a.has('pomegranate')){tree(a.has('cottage')?165:245,598,1.16,p,r,{fruit:true});tree(1082,610,.85,p,r,{fruit:true});}
+ else{tree(a.has('cottage')?160:245,602,1.08,p,r);tree(1100,604,.78,p,r);}
+ if(a.has('bench'))bench(806,608,.6);
+ if(a.has('umbrella'))umbrella(924,566,.7);
+ if(a.has('birds'))birds(r,25);
+ if(a.has('reed'))reeds(r);
+ if(a.has('flowers')||a.season==='spring')flowers(750,627,r,55,1.1);
+ else flowers(644,650,r,24,.8);
+ if(a.has('lantern')){for(let i=0;i<7;i++)lantern(660+i*75,480+Math.sin(i)*40,.8,r);}
+ if(a.has('rain'))rain(r);
+ if(a.has('snow'))snow(r);
+ if(a.has('leaves')||a.season==='autumn')petals(r);
+ if(a.mood==='longing'&&a.has('cottage'))person(558,587,.7,r);
+ // 분할된 유리의 빛의 잔상 / 리드 프레임 / 모서리 소형 유리 조각
+ for(let i=0;i<85;i++){
+  const x=sample(r,35,1245),y=sample(r,28,690),sz=sample(r,3,11);
+  polygon([[x-sz,y],[x,y-sz],[x+sz,y],[x,y+sz]],pick(r,p.accent),sample(r,.18,.48),1.05);
+ }
+ frame(r,p);
+ // 은은한 광택과 입체 유리 표현
+ const vignette=g.createRadialGradient(645,340,260,645,340,840);
+ vignette.addColorStop(0,'rgba(0,0,0,0)');vignette.addColorStop(1,'rgba(2,8,16,.36)');g.fillStyle=vignette;g.fillRect(0,0,V.W,V.H);
+}
+
+// 음악 합성 엔진. 브라우저 TTS와는 별도 음향 경로이며, VU는 음악 신호만 표시합니다.
+const midiHz=n=>440*Math.pow(2,(n-69)/12);
+class MusicEngine{
+ constructor(){this.ctx=null;this.bus=null;this.master=null;this.dest=null;this.analyser=null;this.meterData=null;this.timer=null;this.notes=new Set();this.step=0;this.next=0;this.cfg=null;this.running=false;}
+ async init(){
+  if(!this.ctx){
+   this.ctx=new (window.AudioContext||window.webkitAudioContext)();
+   this.master=this.ctx.createDynamicsCompressor();this.master.threshold.value=-19;this.master.ratio.value=2.5;this.master.attack.value=.012;this.master.release.value=.22;
+   this.bus=this.ctx.createGain();this.bus.gain.value=.42;this.bus.connect(this.master);
+   this.analyser=this.ctx.createAnalyser();this.analyser.fftSize=512;this.analyser.smoothingTimeConstant=.75;this.meterData=new Uint8Array(this.analyser.fftSize);this.master.connect(this.analyser);
+   this.dest=this.ctx.createMediaStreamDestination();this.master.connect(this.ctx.destination);this.master.connect(this.dest);
+  }
+  if(this.ctx.state==='suspended')await this.ctx.resume();
+ }
+ configure(a){this.cfg=a;this.rnd=seeded(a.seed^0x4a215c7d);}
+ note(midi,time,length,amp,instrument){
+  if(!this.ctx)return;
+  const os=this.ctx.createOscillator(),env=this.ctx.createGain();
+  os.type=instrument==='flute'?'sine':instrument==='strings'?'triangle':'sine';os.frequency.setValueAtTime(midiHz(midi),time);
+  const attack=instrument==='strings'?.5:instrument==='flute'?.07:.009,release=instrument==='strings'?1.2:.32;
+  env.gain.setValueAtTime(.0001,time);env.gain.linearRampToValueAtTime(amp,time+attack);
+  env.gain.exponentialRampToValueAtTime(Math.max(.0003,amp*.22),time+Math.max(attack+.1,length*.72));env.gain.exponentialRampToValueAtTime(.0001,time+length+release);
+  os.connect(env);env.connect(this.bus);os.start(time);os.stop(time+length+release+.05);
+  this.notes.add(os);os.onended=()=>{this.notes.delete(os);try{os.disconnect();env.disconnect();}catch{}};
+ }
+ beat(step,t){
+  const mode=this.cfg?.mode==='minor'?'minor':'major';
+  const chords=mode==='minor'?[[57,60,64],[53,57,60],[60,64,67],[55,59,62]]:[[60,64,67],[57,60,64],[53,57,60],[55,59,62]];
+  const scale=mode==='minor'?[0,2,3,5,7,8,10,12,14,15]:[0,2,4,5,7,9,11,12,14,16];
+  const chord=chords[Math.floor(step/4)%4],dur=60/(this.cfg?.bpm||68);
+  if(step%4===0){for(const n of chord)this.note(n-12,t,dur*3.8,.055,'strings');this.note(chord[0]-24,t+.02,dur*1.4,.12,'piano');}
+  if(step%2===0)this.note(chord[(step/2)%3]+12,t+dur*.46,dur*.56,.083,'piano');
+  const arches=[0,2,4,5,6,5,3,1,0,2,3,4,5,2,1,0],idx=(arches[step%16]+Math.floor((this.cfg.seed%7))+(step>>4))%scale.length;
+  if(step%4!==3||this.rnd()>.3)this.note(57+scale[idx],t+.04,dur*.86,.061,'flute');
+ }
+ tick(){if(!this.running||!this.ctx||this.ctx.state!=='running')return;const d=60/(this.cfg?.bpm||68);while(this.next<this.ctx.currentTime+.20){this.beat(this.step++,this.next);this.next+=d;}}
+ start(){if(!this.ctx||!this.cfg)return;this.stop();this.running=true;this.next=this.ctx.currentTime+.08;this.step=0;this.timer=setInterval(()=>this.tick(),55);this.tick();}
+ stop(){this.running=false;if(this.timer)clearInterval(this.timer);this.timer=null;for(const n of this.notes){try{n.stop();}catch{}}this.notes.clear();}
+ async pause(){if(this.ctx?.state==='running')await this.ctx.suspend();}
+ async resume(){if(this.ctx?.state==='suspended')await this.ctx.resume();}
+ mixedStream(){return this.dest?.stream;}
+}
+const music=new MusicEngine(),display=els.canvas.getContext('2d');
+const studio={poem:null,artHash:0,playing:false,paused:false,line:-1,progress:0,recording:null,chunks:[],captureStream:null,startAt:0,pauseAt:0,pausedTime:0,elapsed:0,duration:0,lineSeconds:4,previewUntil:0,finished:false,mode:'music',speechRate:.95,speechPlan:[],speechActive:false,musicKey:0,speechSession:0};
+// 실제 음악 Web Audio 분석값으로 방송 장비 스타일 LED를 표시합니다.
+const ledCount=24;
+for(const holder of [els.meterL,els.meterR]){
+  const fragment=document.createDocumentFragment();
+  for(let i=0;i<ledCount;i++){
+    const led=document.createElement('span');
+    led.className='led '+(i<16?'lo':i<21?'mid':'hi');
+    fragment.appendChild(led);
+  }
+  holder.append(fragment);
+}
+let meterFrame=0;
+function refreshAudioMeters(){
+  if((meterFrame++%4)!==0)return;
+  let db=-60;
+  if(music.analyser && music.ctx?.state==='running' && (studio.playing||studio.previewUntil>performance.now())){
+    const buffer=music.meterData;
+    music.analyser.getByteTimeDomainData(buffer);
+    let power=0;
+    for(const x of buffer){const v=(x-128)/128;power+=v*v;}
+    const rms=Math.sqrt(power/buffer.length);
+    db=Math.max(-60,Math.min(0,20*Math.log10(Math.max(rms,0.00001))));
+  }
+  const lit=clamp(Math.round((db+60)/60*ledCount),0,ledCount);
+  for(const holder of [els.meterL,els.meterR]){
+    const cells=holder.children;
+    for(let i=0;i<cells.length;i++)cells[i].classList.toggle('active',i<lit);
+    holder.setAttribute('aria-valuenow',String(Math.round(db)));
+  }
+  els.dbReadout.textContent=db<=-59?'−∞ dB':`${db.toFixed(0)} dB`;
+}
+function refreshOnAir(){
+  const active=studio.playing&&!studio.paused;
+  const paused=studio.playing&&studio.paused;
+  els.onAir.classList.toggle('on',active);
+  els.onAir.classList.toggle('pause',paused);
+  els.onAirText.textContent=active?'ON AIR':paused?'PAUSED':'STANDBY';
+}
+
+function durationFor(a,mode='music'){
+ const lead = 4, tail = 3;
+ if(mode==='speech'){
+   const rate = Number(els.readRate?.value || 0.95);
+   const plan = a.lines.map(line=>{
+     const chars = Math.max(4, line.replace(/\s+/g,'').length);
+     return clamp(chars * (0.22 / rate), 1.5, 6.2);
+   });
+   studio.speechPlan = plan;
+   return lead + plan.reduce((sum,v)=>sum+v,0) + tail;
+ }
+ return lead+a.lines.length*Number(els.pace.value)+tail;
+}
+function refreshArt(force=false){
+ const poem=parsePoem(els.input.value);
+ if(force||studio.artHash!==hash(poem.raw)){
+  if(studio.playing)stopAll(true);
+  studio.poem=analyze(poem);studio.artHash=hash(poem.raw);renderStainedArt(studio.poem);
+  els.mood.textContent=`${studio.poem.label} · ${studio.poem.themes} · ${studio.poem.m.length}개 상징`;
+  studio.line=-1;studio.progress=0;studio.elapsed=0;
+ }
+ studio.lineSeconds=Number(els.pace.value);studio.duration=durationFor(studio.poem, studio.mode||'music');
+ draw();return studio.poem;
+}
+function draw(){
+ const ctx=display,now=performance.now();ctx.clearRect(0,0,V.W,V.H);
+ if(art.width){
+  const zoom=1.012+Math.sin(now/8200)*.006,dw=V.W*zoom,dh=V.H*zoom;
+  ctx.drawImage(art,(V.W-dw)/2+Math.sin(now/10500)*3,(V.H-dh)/2+Math.cos(now/12900)*3,dw,dh);
+ }
+ const beam=(now/15000)%1,glow=ctx.createLinearGradient(-450+beam*1700,0,250+beam*1700,0);
+ glow.addColorStop(0,'rgba(255,252,211,0)');glow.addColorStop(.5,'rgba(255,249,201,.042)');glow.addColorStop(1,'rgba(255,252,211,0)');ctx.fillStyle=glow;ctx.fillRect(0,0,V.W,V.H);
+ if(!studio.poem)return;
+ ctx.save();
+ ctx.shadowColor='rgba(0,0,0,.82)';ctx.shadowBlur=24;
+ ctx.fillStyle='#ffebc3';ctx.font='bold 40px serif';ctx.textAlign='left';ctx.fillText(studio.poem.title,77,94,620);
+ ctx.fillStyle='#f1f4ed';ctx.font='23px sans-serif';ctx.fillText(`시 · ${studio.poem.author}`,79,128,595);ctx.restore();
+ const y0=194,h=492,center=371,lines=studio.poem.lines,sub=studio.line<0?0:studio.line+studio.progress;
+ ctx.save();ctx.beginPath();ctx.rect(58,y0+2,1164,h-4);ctx.clip();ctx.textAlign='center';
+ for(let i=0;i<lines.length;i++){
+  const yy=center+(i-sub)*45;if(yy<y0-30||yy>y0+h+25)continue;
+  const dist=Math.abs(i-sub),active=studio.playing&&i===studio.line,fade=clamp(1-dist*.21,.20,1);
+  ctx.shadowColor=active?'rgba(243,169,74,.95)':'rgba(0,0,0,.88)';ctx.shadowBlur=active?22:12;
+  ctx.fillStyle=active?`rgba(255,218,136,${fade})`:i<sub?`rgba(175,201,213,${fade*.94})`:`rgba(247,250,242,${fade})`;
+  ctx.font=active?'bold 34px sans-serif':'500 30px sans-serif';ctx.fillText(lines[i],640,yy,1070);
+ }
+ ctx.restore();
+}
+function tick(now){
+ refreshAudioMeters();refreshOnAir();
+ if(studio.playing&&!studio.paused){
+  studio.elapsed=clamp((now-studio.startAt-studio.pausedTime)/1000,0,studio.duration);
+  if(studio.mode!=='speech'){
+    const textElapsed=studio.elapsed-4;
+    if(textElapsed<0){studio.line=-1;studio.progress=0;}
+    else if(textElapsed<studio.poem.lines.length*studio.lineSeconds){
+      const pos=textElapsed/studio.lineSeconds;studio.line=Math.floor(pos);studio.progress=pos-studio.line;
+    }else{studio.line=studio.poem.lines.length-1;studio.progress=1;}
+    if(studio.elapsed>=studio.duration)finishPlayback();
+  } else {
+    if(studio.elapsed>=studio.duration && !studio.speechActive) finishPlayback();
+  }
+  els.track.style.width=`${Math.min(100,studio.duration?studio.elapsed/studio.duration*100:0)}%`;
+ }
+ if(!studio.playing&&studio.previewUntil&&now>studio.previewUntil){music.stop();studio.previewUntil=0;}
+ els.clock.textContent=`${fmt(studio.elapsed)} / ${fmt(studio.duration)}`;
+ draw();requestAnimationFrame(tick);
+}
+function updateControls(){
+ els.play.disabled=studio.playing; if(els.read) els.read.disabled=studio.playing; els.pause.disabled=!studio.playing||studio.paused;
+ els.resume.disabled=!studio.playing||!studio.paused;els.stop.disabled=!studio.playing;
+ els.record.disabled=studio.playing||!!studio.recording;els.compose.disabled=studio.playing;els.paint.disabled=studio.playing;
+ els.pace.disabled=studio.playing; if(els.readRate) els.readRate.disabled=studio.playing;
+}
+function stopAll(silent=false){
+ music.stop(); studio.speechSession++; if('speechSynthesis' in window) speechSynthesis.cancel(); studio.speechActive=false; studio.mode='music';
+ studio.playing=false;studio.paused=false;studio.line=-1;studio.progress=0;studio.elapsed=0;
+ if(studio.recording&&studio.recording.state!=='inactive')studio.recording.stop();
+ els.playState.textContent='정지';els.track.style.width='0%';updateControls();
+ if(!silent)setStatus('영상 재생을 정지했습니다.');
+}
+function finishPlayback(){
+ if(!studio.playing)return;
+ studio.playing=false;studio.paused=false;studio.elapsed=studio.duration;studio.line=studio.poem.lines.length-1;studio.progress=1; studio.speechActive=false;
+ music.stop(); if('speechSynthesis' in window) speechSynthesis.cancel(); els.playState.textContent='재생 완료';els.track.style.width='100%';updateControls();
+ if(studio.recording?.state!=='inactive'&&studio.recording)studio.recording.stop();
+ else setStatus(studio.mode==='speech' ? '시 낭송이 끝났습니다.' : '시화 자막과 음악 영상의 재생이 끝났습니다.');
+}
+function startSpeechReading(){
+ if(!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) throw Error('현재 브라우저는 시 읽기 기능을 지원하지 않습니다.');
+ const voices = speechSynthesis.getVoices().filter(v=>/^ko([-_]|$)/i.test(v.lang));
+ const voice = voices.find(v=>/female|여성|yuna|heami|sunhi|jiyun|sora|seoyeon|유나|선희|서연|google.*한국어/i.test(v.name)) || voices[0] || null;
+ studio.speechActive = true;
+ const session=++studio.speechSession;
+ const lines = studio.poem.lines;
+ let finishedCount = 0;
+ lines.forEach((line, idx)=>{
+   const u = new SpeechSynthesisUtterance(line);
+   u.lang = 'ko-KR'; if(voice) u.voice = voice; u.rate = Number(els.readRate.value); u.pitch = 1.0;
+   u.onstart = ()=>{if(session!==studio.speechSession)return;studio.line=idx;studio.progress=0;els.playState.textContent=`시 낭송 ${idx+1}/${lines.length}`;};
+   u.onboundary = e=>{if(session!==studio.speechSession)return;if(typeof e.charIndex==='number'){studio.progress=clamp(e.charIndex/Math.max(1,line.length),0,.98);}};
+   u.onend = ()=>{if(session!==studio.speechSession)return;studio.line=idx;studio.progress=1;finishedCount++;if(finishedCount>=lines.length){studio.speechActive=false;finishPlayback();}};
+   u.onerror = e=>{if(session!==studio.speechSession||!studio.playing)return;stopAll(true);setStatus(`시 낭송 음성 오류: ${e.error||'음성 재생 실패'}`);};
+   speechSynthesis.speak(u);
+ });
+}
+
+async function perform(withRecording=false, withSpeech=false){
+ if(studio.playing)stopAll(true);
+ studio.mode = withSpeech ? 'speech' : 'music';
+ refreshArt();studio.previewUntil=0;
+ if(!withSpeech){await music.init();if(studio.musicKey!==hash(studio.poem.raw)){music.configure(studio.poem);studio.musicKey=hash(studio.poem.raw);}}
+ if(withRecording){
+  if(!window.MediaRecorder||!els.canvas.captureStream)throw Error('현재 브라우저는 영상 녹화를 지원하지 않습니다.');
+  const types=['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4;codecs=avc1.42E01E','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];
+  const mime=types.find(x=>MediaRecorder.isTypeSupported(x));if(!mime)throw Error('영상 인코더를 사용할 수 없습니다.');
+  const stream=els.canvas.captureStream(30);for(const track of music.mixedStream().getAudioTracks())stream.addTrack(track);
+  studio.captureStream=stream;studio.chunks=[];
+  const rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:6_800_000});studio.recording=rec;
+  rec.ondataavailable=e=>{if(e.data?.size)studio.chunks.push(e.data);};
+  rec.onstop=()=>{
+   const actualType=rec.mimeType||mime,ext=actualType.startsWith('video/mp4')?'mp4':'webm';
+   const blob=new Blob(studio.chunks,{type:actualType});
+   for(const t of stream.getVideoTracks())t.stop();studio.captureStream=null;studio.recording=null;updateControls();
+   if(blob.size){download(blob,`${safeName(studio.poem.title)}_명도재_음악시화.${ext}`);setStatus(`${ext.toUpperCase()} 음악 영상 저장 완료 · ${(blob.size/1048576).toFixed(1)} MB · 배경음악 포함`);}
+   else setStatus('녹화 데이터가 없어 저장에 실패했습니다.');
+  };
+  rec.onerror=e=>setStatus(`녹화 오류: ${e.error?.message||'브라우저 인코더 오류'}`);
+  rec.start(500);
+ }
+ studio.startAt=performance.now();studio.pausedTime=0;studio.playing=true;studio.paused=false;studio.elapsed=0;studio.line=-1;studio.progress=0;
+ if(withSpeech){
+   music.stop();
+   studio.duration = durationFor(studio.poem, 'speech');
+   startSpeechReading();
+ } else {
+   music.bus.gain.setTargetAtTime(0.42,music.ctx.currentTime,.09);
+   studio.duration = durationFor(studio.poem, 'music');
+   music.start();
+ }
+ updateControls();
+ els.playState.textContent = withRecording ? '음악 영상 녹화 중' : (withSpeech ? '시 낭송 중' : '시화 음악 영상 재생 중');
+ setStatus(withRecording ? '복합 스테인드글라스와 자막, 음악을 영상으로 녹화합니다. 완료되면 자동 저장됩니다.' : (withSpeech ? '시 낭송만 실행합니다. 자막은 읽는 속도에 맞춰 그림 화면의 중앙으로 올라옵니다.' : '시화 위로 자막이 화면 중앙을 지나며 배경음악이 재생됩니다.'));
+}
+function pause(){
+ if(!studio.playing||studio.paused)return;studio.paused=true;studio.pauseAt=performance.now();
+ if(studio.mode==='speech' && 'speechSynthesis' in window) speechSynthesis.pause(); else music.pause(); if(studio.recording?.state==='recording')studio.recording.pause();updateControls();els.playState.textContent='일시정지';
+}
+async function resume(){
+ if(!studio.playing||!studio.paused)return;
+ studio.pausedTime+=performance.now()-studio.pauseAt;studio.paused=false;
+ if(studio.mode==='speech' && 'speechSynthesis' in window) speechSynthesis.resume(); else await music.resume(); if(studio.recording?.state==='paused')studio.recording.resume();updateControls();els.playState.textContent='이어보기 중';
+}
+els.paint.onclick=()=>{try{refreshArt(true);setStatus(`복합 스테인드글라스 미디어아트 완성 · ${studio.poem.m.length}개 시적 상징 · 다층 유리 조각과 투과광을 표현했습니다.`);}catch(e){setStatus(e.message);}};
+els.compose.onclick=()=>{try{const poem=parsePoem(els.input.value),analysis=analyze(poem);music.stop();studio.previewUntil=0;music.configure(analysis);studio.musicKey=hash(poem.raw);setStatus(`${analysis.label} 정서에 맞춘 ${analysis.bpm} BPM · ${analysis.mode==='minor'?'단조':'장조'} 악곡을 준비했습니다. 실제 음악은 [음악 영상 감상] 버튼에서 재생됩니다. 시화는 변경되지 않았습니다.`);}catch(e){setStatus(e.message);}};
+els.play.onclick=async()=>{try{await perform(false,false);}catch(e){stopAll(true);setStatus(`영상 재생 오류: ${e.message}`);}};
+els.read.onclick=async()=>{try{await perform(false,true);}catch(e){stopAll(true);setStatus(`시 낭송 오류: ${e.message}`);}};
+els.pause.onclick=pause;els.resume.onclick=()=>resume().catch(e=>setStatus(e.message));els.stop.onclick=()=>stopAll();
+els.pace.oninput=()=>{els.paceValue.textContent=`${Number(els.pace.value).toFixed(1)}초`;if(!studio.playing)refreshArt();};
+els.readRate.oninput=()=>{els.readRateValue.textContent=`${Number(els.readRate.value).toFixed(2)}×`; if(!studio.playing && studio.poem){studio.duration = durationFor(studio.poem,'speech');}};
+els.record.onclick=async()=>{try{await perform(true);}catch(e){stopAll(true);setStatus(`영상 저장 준비 실패: ${e.message}`);}};
+els.save.onclick=()=>{try{refreshArt();els.canvas.toBlob(b=>{if(b){download(b,`${safeName(studio.poem.title)}_스테인드글라스.png`);setStatus('16:9 스테인드글라스 시화를 PNG로 저장했습니다.');}},'image/png');}catch(e){setStatus(e.message);}};
+try{refreshArt(true);}catch(e){setStatus(e.message);} els.readRateValue.textContent=`${Number(els.readRate.value).toFixed(2)}×`; updateControls(); requestAnimationFrame(tick);
+</script>
+</body></html>
