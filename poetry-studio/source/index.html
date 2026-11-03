@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko"><head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <title>명도재 | AI 시화·작곡·낭송 스튜디오</title>
+ <link rel="stylesheet" href="./styles.css">
+</head><body>
+<header class="top"><div class="brand"><span class="brandmark">明道</span><div><h1>명도재 시화·작곡·낭송 스튜디오</h1><p>한 편의 시가 수채화와 음악, 목소리로 흐르는 16:9 시네마</p></div></div><div id="apiStatus" class="api">기본 창작 모드</div></header>
+<main class="layout">
+ <aside class="editor">
+  <section class="panel">
+   <h2><span>01</span> 시 원문</h2>
+   <div class="fields"><label>작품 제목<input id="poemTitle" value="대일리 석류야" maxlength="80"></label><label>작가<input id="poemAuthor" value="이명우" maxlength="60"></label></div>
+   <label>시 내용<textarea id="poemText" spellcheck="false">가창골 굽이굽이 돌담길 돌아
+사람 떠난 빈집 뜨락에
+석류나무 한 그루
+붉은 가슴을 열고 서 있다
+
+한여름 뙤약볕도 견디고
+모진 비바람도 품어 안으며
+꼭꼭 챙겨 둔 사랑의 밀어
+가슴 깊이 붉게 여물었구나
+
+누구를 그리다 저리 붉어졌을까
+누구를 기다리다 가슴이 터졌을까
+알알이 맺힌 붉은 사연마다
+떠나간 사람의 온기가 남아 있다</textarea></label>
+   <button id="analyzeBtn" class="btn secondary full">시 분석 · 시화와 음악 기획</button>
+   <p id="analysisSummary" class="hint">시를 분석하면 작품의 정서·장면·악곡 구성이 표시됩니다.</p>
+   <details><summary>분석 해설 · 이미지 프롬프트 확인</summary><p id="analysisDetail" class="description"></p><textarea id="imagePrompt" class="prompt" aria-label="AI 이미지 생성 프롬프트"></textarea></details>
+  </section>
+  <section class="panel"><h2><span>02</span> 수채화 시화</h2>
+   <div class="row-buttons"><button id="drawBtn" class="btn primary">🎨 수채화 시화 그리기</button><button id="aiImageBtn" class="btn ghost">AI 고급 시화 생성</button></div>
+   <label class="upload">직접 제작한 그림을 사용하려면 <input type="file" id="imageFile" accept="image/*"><span>이미지 파일 선택</span></label>
+   <p class="hint">기본: 시어 기반의 수채화 장면을 JavaScript Canvas로 직접 묘사. AI 옵션: 실제 고품질 생성이미지(서버 API 키 필요).</p>
+  </section>
+  <section class="panel"><h2><span>03</span> 맞춤 음악 · 낭송</h2>
+   <div class="row-buttons"><button id="composeBtn" class="btn primary">🎼 시에 맞춰 작곡</button><button id="generateVoiceBtn" class="btn ghost">AI 여성 낭송 만들기</button></div>
+   <label class="upload">내 목소리·낭송 파일 사용 <input type="file" id="voiceFile" accept="audio/*"><span>낭송 MP3·WAV 선택</span></label>
+   <div class="row-buttons"><button id="micBtn" class="btn secondary">🎙 마이크 낭송 녹음</button><button id="ttsBtn" class="btn secondary">🔊 브라우저 여성 낭송 미리듣기</button></div>
+   <label>음악 볼륨 <input type="range" id="musicVolume" min="0" max="0.7" step="0.01" value="0.32"></label>
+   <label>브라우저 낭송 속도 <input type="range" id="ttsSpeed" min="0.65" max="1.1" step="0.05" value="0.85"></label>
+   <p class="hint">영상에 낭송 소리를 넣으려면 AI 낭송을 생성하거나 낭송 파일을 등록하거나 마이크로 녹음하세요. 브라우저 TTS만으로는 음성이 영상 파일에 포함되지 않습니다.</p>
+  </section>
+ </aside>
+ <section class="screenPanel">
+  <div class="screenTitle"><div><span class="eyebrow">POETRY CINEMA · 16:9</span><h2>시화 영상 미리보기</h2></div><span id="moodBadge" class="chip">수채화 풍경</span></div>
+  <div class="cinema"><canvas id="screen" width="1280" height="720" aria-label="16대9 수채화 시화 영상 화면"></canvas><div class="badge16">16:9 · 1280×720</div></div>
+  <div class="playback">
+   <div class="row-buttons"><button id="playBtn" class="btn action">▶ 영상 감상</button><button id="pauseBtn" class="btn secondary" disabled>⏸ 일시정지</button><button id="stopBtn" class="btn secondary" disabled>■ 정지</button></div>
+   <div class="progress"><div id="progressBar"></div></div><div class="row-info"><output id="clock">00:00 / 00:00</output><span id="stateLabel">준비</span></div>
+  </div>
+  <section class="exportPanel"><h2>04 &nbsp;영상·작품 내보내기</h2>
+   <div class="row-buttons"><button id="recordBtn" class="btn primary">⏺ 음성 포함 영상 녹화</button><button id="pngBtn" class="btn secondary">🖼 PNG 저장</button><button id="musicExportBtn" class="btn secondary">♫ 음악 WAV 저장</button><button id="projectBtn" class="btn secondary">⇩ 프로젝트 JSON</button></div>
+   <p id="status" class="status" role="status" aria-live="polite">시를 입력하고 [수채화 시화 그리기]를 누르세요.</p>
+   <p class="hint">브라우저가 지원하는 경우 WebM 영상으로 저장됩니다. 녹화는 실시간으로 진행되고 완료 시 다운로드됩니다. MP4 변환은 별도 편집 도구가 필요합니다.</p>
+  </section>
+ </section>
+</main>
+<footer>명도재 © 2026 · 실험적 시각화 및 음악 작곡은 브라우저에서 실행됩니다. AI 기능은 선택적 유료 API 연동입니다.</footer>
+
+<script src="./app.js" defer></script></body></html>
