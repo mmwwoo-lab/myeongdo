@@ -74,7 +74,7 @@ button:focus-visible{outline:2px solid var(--studio-cyan);outline-offset:3px}
 </style>
 </head>
 <body>
-<header><div class="brand"><span class="seal">明道</span><div><h1>명도재 스테인드글라스 미디어아트 스튜디오</h1><p>방송국 스타일의 영상·음향 조정실 · 시화 · 음악 · 시 읽기 · 자막</p></div></div><div class="broadcast-ident"><span id="onAirSignal" class="signalLamp" aria-live="polite"><span class="signalDot" aria-hidden="true"></span><span id="onAirText">STANDBY</span></span><span class="tag">STUDIO A · 16:9 HD · AUDIO MIX</span></div></header>
+<header><div class="brand"><span class="seal">明道</span><div><h1>명도재 스테인드글라스 미디어아트 스튜디오</h1><p>방송국 스타일의 영상·음향 조정실 · 시화 · 음악 · 시 낭송 · 자막</p></div></div><div class="broadcast-ident"><span id="onAirSignal" class="signalLamp" aria-live="polite"><span class="signalDot" aria-hidden="true"></span><span id="onAirText">STANDBY</span></span><span class="tag">STUDIO A · 16:9 HD · AUDIO MIX</span></div></header>
 <main class="wrap">
 <aside class="panel">
 <section class="block"><div class="labelRow"><span class="step">01</span><h2>시 한 칸 입력</h2></div><textarea id="poemInput" class="poem" spellcheck="false" aria-label="제목, 작가, 시 본문을 한 칸에 입력">대일리 석류야
@@ -94,12 +94,12 @@ button:focus-visible{outline:2px solid var(--studio-cyan);outline-offset:3px}
 누구를 기다리다 가슴이 터졌을까
 알알이 맺힌 붉은 사연마다
 떠나간 사람의 온기가 남아 있다</textarea><p class="sub">첫 줄 <b>제목</b>, 둘째 줄 <b>작가</b>, 셋째 줄부터 <b>시 본문</b>. 빈 줄은 자유롭게 넣으세요.</p></section>
-<section class="block"><div class="labelRow"><span class="step">02</span><h2>시화·배경음악 만들기</h2></div><div class="actions"><button id="paintBtn" class="primary">🎨 스테인드글라스 시화 그리기</button><button id="musicBtn">🎼 배경음악 만들기</button></div><p class="sub">시의 소재를 여러 장면으로 구성하고, 다채로운 유리 조각과 금빛 투과광을 더합니다. 배경음악은 시의 정서에 맞춰 브라우저에서 작곡됩니다.</p></section>
-<section class="block"><div class="labelRow"><span class="step">03</span><h2>시 읽기 · 음악과 자막 영상</h2></div>
-<div class="actions"><button id="playBtn" class="primary">▶ 음악 영상 감상</button><button id="readBtn" class="primary">🗣 시 읽기 포함 감상</button><button id="pauseBtn" disabled>Ⅱ 일시정지</button><button id="resumeBtn" disabled>↻ 이어보기</button><button id="stopBtn" disabled class="danger">■ 정지</button></div>
+<section class="block"><div class="labelRow"><span class="step">02</span><h2>시화·배경음악 만들기</h2></div><div class="actions"><button id="musicBtn" class="primary">🎼 배경음악 만들기</button><button id="paintBtn">🎨 스테인드글라스 시화 그리기</button></div><p class="sub">음악 만들기는 작품에 어울리는 악곡을 준비만 합니다. 시화 그리기는 스테인드글라스 이미지 생성만 실행하며, 두 기능은 독립적으로 작동합니다.</p></section>
+<section class="block"><div class="labelRow"><span class="step">03</span><h2>시 낭송 · 음악과 자막 영상</h2></div>
+<div class="actions"><button id="readBtn" class="primary">🎙 시 낭송</button><button id="playBtn">▶ 음악 영상 감상</button><button id="pauseBtn" disabled>Ⅱ 일시정지</button><button id="resumeBtn" disabled>↻ 이어보기</button><button id="stopBtn" disabled class="danger">■ 정지</button></div>
 <label class="speed">음악 감상용 자막 속도 <output id="paceValue">4.0초</output><input id="pace" type="range" min="2.5" max="7" step="0.5" value="4"></label>
-<label class="speed">시 읽기 속도 · 자막 자동 동기화 <output id="readRateValue">0.95×</output><input id="readRate" type="range" min="0.75" max="1.15" step="0.05" value="0.95"></label>
-<p class="sub">시 읽기 포함 감상에서는 브라우저 한국어 음성이 시를 읽고, 자막 스크롤은 읽기 속도에 맞춰 자동으로 움직입니다. 현재 읽는 구절은 금빛, 지나간 구절은 청회색, 다음 구절은 밝은 흰색으로 표시됩니다. 읽는 위치는 화면의 중앙 아래 영역입니다.</p><p class="hint">※ 브라우저 기본 음성 읽기는 감상 기능입니다. 별도 오디오 파일 저장은 외부 TTS API 연동이 있어야 완전하게 지원됩니다.</p></section>
+<label class="speed">시 낭송 속도 · 자막 자동 동기화 <output id="readRateValue">0.95×</output><input id="readRate" type="range" min="0.75" max="1.15" step="0.05" value="0.95"></label>
+<p class="sub">시 낭송은 한국어 음성으로 시를 읽으며 자막을 실제 낭송에 맞춰 스크롤합니다. 음악 만들기는 작곡만 수행하고, 음악 영상 감상은 배경음악과 자막만 재생합니다. 읽는 문장은 화면 중앙에서 금빛으로 강조됩니다.</p><p class="hint">※ 브라우저 기본 음성 읽기는 감상 기능입니다. 별도 오디오 파일 저장은 외부 TTS API 연동이 있어야 완전하게 지원됩니다.</p></section>
 <section class="download"><div class="labelRow"><span class="step">04</span><h2>작품 저장</h2></div>
 <div class="actions"><button id="movieBtn" class="primary">🎬 음악 영상 저장 (MP4 우선)</button><button id="pngBtn">🖼 시화 PNG 저장</button></div>
 <p class="sub">화면과 음악을 실시간으로 녹화합니다. 브라우저가 MP4를 지원하면 MP4로, 그렇지 않으면 WebM으로 다운로드합니다.</p></section>
@@ -381,7 +381,7 @@ class MusicEngine{
  mixedStream(){return this.dest?.stream;}
 }
 const music=new MusicEngine(),display=els.canvas.getContext('2d');
-const studio={poem:null,artHash:0,playing:false,paused:false,line:-1,progress:0,recording:null,chunks:[],captureStream:null,startAt:0,pauseAt:0,pausedTime:0,elapsed:0,duration:0,lineSeconds:4,previewUntil:0,finished:false,mode:'music',speechRate:.95,speechPlan:[],speechActive:false};
+const studio={poem:null,artHash:0,playing:false,paused:false,line:-1,progress:0,recording:null,chunks:[],captureStream:null,startAt:0,pauseAt:0,pausedTime:0,elapsed:0,duration:0,lineSeconds:4,previewUntil:0,finished:false,mode:'music',speechRate:.95,speechPlan:[],speechActive:false,musicKey:0,speechSession:0};
 // 실제 음악 Web Audio 분석값으로 방송 장비 스타일 LED를 표시합니다.
 const ledCount=24;
 for(const holder of [els.meterL,els.meterR]){
@@ -438,7 +438,7 @@ function refreshArt(force=false){
  const poem=parsePoem(els.input.value);
  if(force||studio.artHash!==hash(poem.raw)){
   if(studio.playing)stopAll(true);
-  studio.poem=analyze(poem);studio.artHash=hash(poem.raw);renderStainedArt(studio.poem);music.configure(studio.poem);
+  studio.poem=analyze(poem);studio.artHash=hash(poem.raw);renderStainedArt(studio.poem);
   els.mood.textContent=`${studio.poem.label} · ${studio.poem.themes} · ${studio.poem.m.length}개 상징`;
   studio.line=-1;studio.progress=0;studio.elapsed=0;
  }
@@ -458,7 +458,7 @@ function draw(){
  ctx.shadowColor='rgba(0,0,0,.82)';ctx.shadowBlur=24;
  ctx.fillStyle='#ffebc3';ctx.font='bold 40px serif';ctx.textAlign='left';ctx.fillText(studio.poem.title,77,94,620);
  ctx.fillStyle='#f1f4ed';ctx.font='23px sans-serif';ctx.fillText(`시 · ${studio.poem.author}`,79,128,595);ctx.restore();
- const y0=448,h=212,center=y0+120,lines=studio.poem.lines,sub=studio.line<0?0:studio.line+studio.progress;
+ const y0=194,h=492,center=371,lines=studio.poem.lines,sub=studio.line<0?0:studio.line+studio.progress;
  ctx.save();ctx.beginPath();ctx.rect(58,y0+2,1164,h-4);ctx.clip();ctx.textAlign='center';
  for(let i=0;i<lines.length;i++){
   const yy=center+(i-sub)*45;if(yy<y0-30||yy>y0+h+25)continue;
@@ -496,7 +496,7 @@ function updateControls(){
  els.pace.disabled=studio.playing; if(els.readRate) els.readRate.disabled=studio.playing;
 }
 function stopAll(silent=false){
- music.stop(); if('speechSynthesis' in window) speechSynthesis.cancel(); studio.speechActive=false; studio.mode='music';
+ music.stop(); studio.speechSession++; if('speechSynthesis' in window) speechSynthesis.cancel(); studio.speechActive=false; studio.mode='music';
  studio.playing=false;studio.paused=false;studio.line=-1;studio.progress=0;studio.elapsed=0;
  if(studio.recording&&studio.recording.state!=='inactive')studio.recording.stop();
  els.playState.textContent='정지';els.track.style.width='0%';updateControls();
@@ -507,21 +507,23 @@ function finishPlayback(){
  studio.playing=false;studio.paused=false;studio.elapsed=studio.duration;studio.line=studio.poem.lines.length-1;studio.progress=1; studio.speechActive=false;
  music.stop(); if('speechSynthesis' in window) speechSynthesis.cancel(); els.playState.textContent='재생 완료';els.track.style.width='100%';updateControls();
  if(studio.recording?.state!=='inactive'&&studio.recording)studio.recording.stop();
- else setStatus(studio.mode==='speech' ? '시 읽기와 자막 영상의 재생이 끝났습니다.' : '시화 자막과 음악 영상의 재생이 끝났습니다.');
+ else setStatus(studio.mode==='speech' ? '시 낭송이 끝났습니다.' : '시화 자막과 음악 영상의 재생이 끝났습니다.');
 }
 function startSpeechReading(){
  if(!('speechSynthesis' in window) || !('SpeechSynthesisUtterance' in window)) throw Error('현재 브라우저는 시 읽기 기능을 지원하지 않습니다.');
  const voices = speechSynthesis.getVoices().filter(v=>/^ko([-_]|$)/i.test(v.lang));
  const voice = voices.find(v=>/female|여성|yuna|heami|sunhi|jiyun|sora|seoyeon|유나|선희|서연|google.*한국어/i.test(v.name)) || voices[0] || null;
  studio.speechActive = true;
+ const session=++studio.speechSession;
  const lines = studio.poem.lines;
  let finishedCount = 0;
  lines.forEach((line, idx)=>{
    const u = new SpeechSynthesisUtterance(line);
    u.lang = 'ko-KR'; if(voice) u.voice = voice; u.rate = Number(els.readRate.value); u.pitch = 1.0;
-   u.onstart = ()=>{ studio.line = idx; studio.progress = 0; els.playState.textContent = `시 읽기 ${idx+1}/${lines.length}`; };
-   u.onboundary = (e)=>{ if(typeof e.charIndex === 'number'){ const len = Math.max(1, line.length); studio.progress = clamp(e.charIndex / len, 0, .98); } };
-   u.onend = ()=>{ studio.line = idx; studio.progress = 1; finishedCount += 1; if(finishedCount >= lines.length){ studio.speechActive = false; finishPlayback(); } };
+   u.onstart = ()=>{if(session!==studio.speechSession)return;studio.line=idx;studio.progress=0;els.playState.textContent=`시 낭송 ${idx+1}/${lines.length}`;};
+   u.onboundary = e=>{if(session!==studio.speechSession)return;if(typeof e.charIndex==='number'){studio.progress=clamp(e.charIndex/Math.max(1,line.length),0,.98);}};
+   u.onend = ()=>{if(session!==studio.speechSession)return;studio.line=idx;studio.progress=1;finishedCount++;if(finishedCount>=lines.length){studio.speechActive=false;finishPlayback();}};
+   u.onerror = e=>{if(session!==studio.speechSession||!studio.playing)return;stopAll(true);setStatus(`시 낭송 음성 오류: ${e.error||'음성 재생 실패'}`);};
    speechSynthesis.speak(u);
  });
 }
@@ -529,7 +531,8 @@ function startSpeechReading(){
 async function perform(withRecording=false, withSpeech=false){
  if(studio.playing)stopAll(true);
  studio.mode = withSpeech ? 'speech' : 'music';
- refreshArt();await music.init();music.configure(studio.poem);studio.previewUntil=0;
+ refreshArt();studio.previewUntil=0;
+ if(!withSpeech){await music.init();if(studio.musicKey!==hash(studio.poem.raw)){music.configure(studio.poem);studio.musicKey=hash(studio.poem.raw);}}
  if(withRecording){
   if(!window.MediaRecorder||!els.canvas.captureStream)throw Error('현재 브라우저는 영상 녹화를 지원하지 않습니다.');
   const types=['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4;codecs=avc1.42E01E','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];
@@ -549,32 +552,32 @@ async function perform(withRecording=false, withSpeech=false){
   rec.start(500);
  }
  studio.startAt=performance.now();studio.pausedTime=0;studio.playing=true;studio.paused=false;studio.elapsed=0;studio.line=-1;studio.progress=0;
- music.start();
  if(withSpeech){
-   music.bus.gain.setTargetAtTime(0.24,music.ctx.currentTime,.09);
+   music.stop();
    studio.duration = durationFor(studio.poem, 'speech');
    startSpeechReading();
  } else {
    music.bus.gain.setTargetAtTime(0.42,music.ctx.currentTime,.09);
    studio.duration = durationFor(studio.poem, 'music');
+   music.start();
  }
  updateControls();
- els.playState.textContent = withRecording ? '음악 영상 녹화 중' : (withSpeech ? '시 읽기와 음악 재생 중' : '시화 음악 영상 재생 중');
- setStatus(withRecording ? '복합 스테인드글라스와 자막, 음악을 영상으로 녹화합니다. 완료되면 자동 저장됩니다.' : (withSpeech ? '시 읽기 오디오와 배경음악을 함께 재생합니다. 자막은 읽는 속도에 맞추어 중앙 아래 영역에서 자동 스크롤됩니다.' : '시화 위로 시 자막이 흘러가고 배경음악이 재생됩니다.'));
+ els.playState.textContent = withRecording ? '음악 영상 녹화 중' : (withSpeech ? '시 낭송 중' : '시화 음악 영상 재생 중');
+ setStatus(withRecording ? '복합 스테인드글라스와 자막, 음악을 영상으로 녹화합니다. 완료되면 자동 저장됩니다.' : (withSpeech ? '시 낭송만 실행합니다. 자막은 읽는 속도에 맞춰 그림 화면의 중앙으로 올라옵니다.' : '시화 위로 자막이 화면 중앙을 지나며 배경음악이 재생됩니다.'));
 }
 function pause(){
  if(!studio.playing||studio.paused)return;studio.paused=true;studio.pauseAt=performance.now();
- music.pause(); if(studio.mode==='speech' && 'speechSynthesis' in window) speechSynthesis.pause(); if(studio.recording?.state==='recording')studio.recording.pause();updateControls();els.playState.textContent='일시정지';
+ if(studio.mode==='speech' && 'speechSynthesis' in window) speechSynthesis.pause(); else music.pause(); if(studio.recording?.state==='recording')studio.recording.pause();updateControls();els.playState.textContent='일시정지';
 }
 async function resume(){
  if(!studio.playing||!studio.paused)return;
- studio.pausedTime+=performance.now()-studio.pauseAt;studio.paused=false;await music.resume();
- if(studio.mode==='speech' && 'speechSynthesis' in window) speechSynthesis.resume(); if(studio.recording?.state==='paused')studio.recording.resume();updateControls();els.playState.textContent='이어보기 중';
+ studio.pausedTime+=performance.now()-studio.pauseAt;studio.paused=false;
+ if(studio.mode==='speech' && 'speechSynthesis' in window) speechSynthesis.resume(); else await music.resume(); if(studio.recording?.state==='paused')studio.recording.resume();updateControls();els.playState.textContent='이어보기 중';
 }
 els.paint.onclick=()=>{try{refreshArt(true);setStatus(`복합 스테인드글라스 미디어아트 완성 · ${studio.poem.m.length}개 시적 상징 · 다층 유리 조각과 투과광을 표현했습니다.`);}catch(e){setStatus(e.message);}};
-els.compose.onclick=async()=>{try{refreshArt();await music.init();music.configure(studio.poem);music.start();studio.previewUntil=performance.now()+7500;setStatus(`${studio.poem.label} 정서에 맞춰 ${studio.poem.bpm} BPM · ${studio.poem.mode==='minor'?'단조':'장조'} · 피아노·플루트·현악 배경음악을 만들었습니다. 영상 감상 시 자동 연주됩니다.`);}catch(e){setStatus(e.message);}};
+els.compose.onclick=()=>{try{const poem=parsePoem(els.input.value),analysis=analyze(poem);music.stop();studio.previewUntil=0;music.configure(analysis);studio.musicKey=hash(poem.raw);setStatus(`${analysis.label} 정서에 맞춘 ${analysis.bpm} BPM · ${analysis.mode==='minor'?'단조':'장조'} 악곡을 준비했습니다. 실제 음악은 [음악 영상 감상] 버튼에서 재생됩니다. 시화는 변경되지 않았습니다.`);}catch(e){setStatus(e.message);}};
 els.play.onclick=async()=>{try{await perform(false,false);}catch(e){stopAll(true);setStatus(`영상 재생 오류: ${e.message}`);}};
-els.read.onclick=async()=>{try{await perform(false,true);}catch(e){stopAll(true);setStatus(`시 읽기 오류: ${e.message}`);}};
+els.read.onclick=async()=>{try{await perform(false,true);}catch(e){stopAll(true);setStatus(`시 낭송 오류: ${e.message}`);}};
 els.pause.onclick=pause;els.resume.onclick=()=>resume().catch(e=>setStatus(e.message));els.stop.onclick=()=>stopAll();
 els.pace.oninput=()=>{els.paceValue.textContent=`${Number(els.pace.value).toFixed(1)}초`;if(!studio.playing)refreshArt();};
 els.readRate.oninput=()=>{els.readRateValue.textContent=`${Number(els.readRate.value).toFixed(2)}×`; if(!studio.playing && studio.poem){studio.duration = durationFor(studio.poem,'speech');}};
