@@ -18,3 +18,12 @@ test('HTML extract reads JSON-LD article',()=>{
 test('article importer rejects loopback and port injection',()=>{
  for(const url of ['http://example.com/abc','https://localhost/s','https://127.0.0.1/path','https://example.com:3000/test','https://user:pass@example.com'])assert.throws(()=>validateArticleURL(url));
 });
+
+
+test('article summary excerpts must be exact parts of user-supplied text', async()=>{
+ const {extractArticlePoints}=await import('../lib/column.mjs');
+ const s='위원회는 자료를 검토 중이라고 발표했다. 지역 상인회는 정책 결정이 늦어질 수 있다고 우려했다. 담당 기관은 추가 설명회를 열겠다고 밝혔다.';
+ const points=extractArticlePoints(s);
+ assert.equal(points.length,3);
+ for(const p of points)assert.ok(s.includes(p));
+});

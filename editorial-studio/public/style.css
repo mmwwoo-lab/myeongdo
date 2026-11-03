@@ -213,3 +213,14 @@ footer{background:#141618;border-top:1px solid #505458;color:#b7b5b1;padding-top
 @media(max-width:690px){.layout{padding:13px}.ribbon-inner{gap:12px;padding:0 13px}.ribbon-inner span:nth-child(n+3){display:none}.ribbon-inner strong{display:none}.edition-chip,.clock{display:none}.topbar{padding:17px}.desk-heading{padding:12px}.card,.preview-pane{padding:14px}.article-preview-grid{grid-template-columns:1fr}.press-topline{font-size:9px}.press-topline span:last-child{display:none}.newspaper-page{padding:16px 13px}.paper-masthead{flex-wrap:wrap}.paper-edition{font-size:26px}.four-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
 /* Page-layout invariant: paper preview begins at the top of the desk, not mid-page after sticky capture. */
 .preview-pane{position:relative;top:auto;max-height:none;overflow:visible;align-self:start}
+
+/* 기사 원문과 AI 논설 사이에 기사 핵심 3문장 안내 */
+.summary-panel{border:1px solid #b5a78d;background:#f4efe5;color:#24343e;border-radius:8px;padding:13px 15px;margin:12px 0 15px}
+.summary-title{display:flex;align-items:center;gap:9px;border-bottom:1px solid #d2c9ba;padding-bottom:6px;margin-bottom:7px}
+.summary-title span{font:700 10px ui-monospace,monospace;color:#a34a3e;letter-spacing:.09em}
+.summary-title strong{font-size:14px}.summary-list{padding-left:22px;margin:7px 0 5px;font-size:13px;line-height:1.7}
+.summary-list li+li{margin-top:5px}.summary-notice{font-size:11px;color:#77746c;line-height:1.5;margin:8px 0 0}
+.article-text-wrap{min-width:0}.paper-summary{border-top:1px solid #b3a995;margin:13px 0 0;padding:8px 0 0;color:#29383d}
+.paper-summary strong{font:700 12px Georgia,serif;letter-spacing:.02em;color:#923c35}
+.paper-summary ol{margin:5px 0 0;padding-left:20px;font-size:12px;line-height:1.55}
+.paper-summary li+li{margin-top:3px}
