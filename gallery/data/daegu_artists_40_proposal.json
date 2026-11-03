@@ -1,0 +1,377 @@
+{
+  "exhibition": "대구미술 40인 거장전",
+  "museum": "NEXORA ART MUSEUM",
+  "status": "40인 선정 기획안 — 작품 이미지 및 사용권 검증 후 정식 전시",
+  "selection_rule": "대구 출생, 대구를 중심으로 한 활동·교육, 대구 지역 미술사 또는 대구현대미술제의 실질적 관련성",
+  "caution": "40인 기획명단은 후보 확정안이며 실제 온라인 작품 전시와 다릅니다. 전국 작가 30인 구 전시 이미지를 새 작가에게 재사용 금지. 개별 작품의 출처와 사용권 확인 필수.",
+  "rooms": [
+    {
+      "room": "01",
+      "title": "대구 근대미술의 개척자",
+      "count": 12
+    },
+    {
+      "room": "02",
+      "title": "대구 현대미술의 성장과 확장",
+      "count": 9
+    },
+    {
+      "room": "03",
+      "title": "대구 현대·실험미술의 선구자",
+      "count": 9
+    },
+    {
+      "room": "04",
+      "title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "count": 10
+    }
+  ],
+  "artists": [
+    {
+      "order": 1,
+      "name": "이인성",
+      "theme": "향토적 색채와 근대적 감각",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 2,
+      "name": "이쾌대",
+      "theme": "역사와 인간, 민족적 군상",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 3,
+      "name": "서동진",
+      "theme": "대구 수채화와 근대 풍경",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 4,
+      "name": "박명조",
+      "theme": "대구 초기 서양화의 개척",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 5,
+      "name": "김용조",
+      "theme": "근대 인물화와 사실적 시선",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 6,
+      "name": "서진달",
+      "theme": "인물 표현과 근대 미술교육",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 7,
+      "name": "서석규",
+      "theme": "인물화와 시대의 기록",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 8,
+      "name": "손일봉",
+      "theme": "풍경과 인물의 조형 언어",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 9,
+      "name": "장석수",
+      "theme": "근대 인물화의 표현",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 10,
+      "name": "주경",
+      "theme": "근대 회화와 인물 연구",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 11,
+      "name": "최화수",
+      "theme": "향토회와 초기 서양화 운동",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 12,
+      "name": "황술조",
+      "theme": "근대적 조형 실험",
+      "room": "01",
+      "room_title": "대구 근대미술의 개척자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 13,
+      "name": "정점식",
+      "theme": "대구 추상회화와 미술교육",
+      "room": "02",
+      "room_title": "대구 현대미술의 성장과 확장",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 14,
+      "name": "변종하",
+      "theme": "우화적 형상과 서정",
+      "room": "02",
+      "room_title": "대구 현대미술의 성장과 확장",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 15,
+      "name": "곽인식",
+      "theme": "물질과 표면의 실험",
+      "room": "02",
+      "room_title": "대구 현대미술의 성장과 확장",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 16,
+      "name": "김우조",
+      "theme": "판화와 근대 도시 풍경",
+      "room": "02",
+      "room_title": "대구 현대미술의 성장과 확장",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 17,
+      "name": "김종복",
+      "theme": "풍경의 색채와 서정",
+      "room": "02",
+      "room_title": "대구 현대미술의 성장과 확장",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 18,
+      "name": "전선택",
+      "theme": "인간과 생활의 표현",
+      "room": "02",
+      "room_title": "대구 현대미술의 성장과 확장",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 19,
+      "name": "이영륭",
+      "theme": "전후 추상회화의 전개",
+      "room": "02",
+      "room_title": "대구 현대미술의 성장과 확장",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 20,
+      "name": "김호득",
+      "theme": "수묵의 현대적 확장",
+      "room": "02",
+      "room_title": "대구 현대미술의 성장과 확장",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 21,
+      "name": "권정호",
+      "theme": "현대적 상징과 인간의 문제",
+      "room": "02",
+      "room_title": "대구 현대미술의 성장과 확장",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 22,
+      "name": "이강소",
+      "theme": "개념·행위와 회화의 경계",
+      "room": "03",
+      "room_title": "대구 현대·실험미술의 선구자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 23,
+      "name": "최병소",
+      "theme": "신문 지우기와 물질의 변형",
+      "room": "03",
+      "room_title": "대구 현대·실험미술의 선구자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 24,
+      "name": "이명미",
+      "theme": "색채와 놀이의 미학",
+      "room": "03",
+      "room_title": "대구 현대·실험미술의 선구자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 25,
+      "name": "박현기",
+      "theme": "비디오아트와 매체 실험",
+      "room": "03",
+      "room_title": "대구 현대·실험미술의 선구자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 26,
+      "name": "곽훈",
+      "theme": "몸짓과 물질, 대형 회화",
+      "room": "03",
+      "room_title": "대구 현대·실험미술의 선구자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 27,
+      "name": "황현욱",
+      "theme": "사물과 공간의 관계",
+      "room": "03",
+      "room_title": "대구 현대·실험미술의 선구자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 28,
+      "name": "김영진",
+      "theme": "대구현대미술제의 실험 정신",
+      "room": "03",
+      "room_title": "대구 현대·실험미술의 선구자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 29,
+      "name": "이향미",
+      "theme": "색채 자체와 추상",
+      "room": "03",
+      "room_title": "대구 현대·실험미술의 선구자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 30,
+      "name": "김기동",
+      "theme": "전위미술과 실험적 구성",
+      "room": "03",
+      "room_title": "대구 현대·실험미술의 선구자",
+      "status": "선정 후보 — 작품 실물·권리·정확한 소속 검증 전"
+    },
+    {
+      "order": 31,
+      "name": "이장우",
+      "theme": "자연 풍경과 점묘적 색채",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://www.artko.kr/~jwlee/board?article_id=20904&menu_id=1592&p=1&pm=view",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    },
+    {
+      "order": 32,
+      "name": "조홍근",
+      "theme": "산수와 수묵의 여백",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://www.hidomin.com/news/articleView.html?idxno=727817",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    },
+    {
+      "order": 33,
+      "name": "이영철",
+      "theme": "일상 서정과 공공미술 벽화",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://store.kyobobook.co.kr/person/detail/1000259907",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    },
+    {
+      "order": 34,
+      "name": "장이규",
+      "theme": "소나무 풍경과 상상의 자연",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://www.hankyung.com/article/2022061531851",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    },
+    {
+      "order": 35,
+      "name": "김일해",
+      "theme": "구상회화와 색채 표현",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://www.hanaartgallery.com/board/bbs/board.php?bo_table=engraving&page=30&wr_id=165",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    },
+    {
+      "order": 36,
+      "name": "김일환",
+      "theme": "자연과 나무의 조형적 표현",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://www.artko.kr/~ilhwan/doc?menu_id=236",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    },
+    {
+      "order": 37,
+      "name": "민병도",
+      "theme": "현대적 실경산수와 수묵",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://kbmaeil.com/article/201407020103656",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    },
+    {
+      "order": 38,
+      "name": "도병재",
+      "theme": "영남 수묵담채 산수",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://www.artko.kr/~yeongnamiip/board?article_id=9359&menu_id=1393&pm=view",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    },
+    {
+      "order": 39,
+      "name": "남충모",
+      "theme": "구상회화와 지역 미술교육",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://www.insaauction.com/service/author_view.html?idx=3426",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    },
+    {
+      "order": 40,
+      "name": "노인식",
+      "theme": "대구 미술계 활동과 지역 전시",
+      "room": "04",
+      "room_title": "대구미술의 현재와 원로·중견의 조형 세계",
+      "source_url": "https://www.imaeil.com/page/view/2025042115210604128",
+      "status": "신규 선정 — 대표작·권리·약력 개별 검수 전"
+    }
+  ],
+  "reference_urls": [
+    "https://daeguartmuseum.or.kr/DATA/pub/20120608095004_2284.pdf",
+    "https://www.mmca.go.kr/upload/artInfo/2017/02/2017020302370253518994.pdf",
+    "https://www.fnnews.com/news/202203311027508534",
+    "https://www.artko.kr/~jwlee/board?article_id=20904&menu_id=1592&p=1&pm=view",
+    "https://www.hidomin.com/news/articleView.html?idxno=727817",
+    "https://store.kyobobook.co.kr/person/detail/1000259907",
+    "https://www.hankyung.com/article/2022061531851",
+    "https://www.hanaartgallery.com/board/bbs/board.php?bo_table=engraving&page=30&wr_id=165",
+    "https://www.artko.kr/~ilhwan/doc?menu_id=236",
+    "https://kbmaeil.com/article/201407020103656",
+    "https://www.artko.kr/~yeongnamiip/board?article_id=9359&menu_id=1393&pm=view",
+    "https://www.insaauction.com/service/author_view.html?idx=3426",
+    "https://www.imaeil.com/page/view/2025042115210604128"
+  ],
+  "total_artists": 40
+}
