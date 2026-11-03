@@ -71,6 +71,189 @@ button:focus-visible{outline:2px solid var(--studio-cyan);outline-offset:3px}
 /* 리드 텍스트와 작품 이미지 자체는 투명, 원작 그림이 전면 노출되는 상태 유지 */
 @media(max-width:620px){.broadcast-ident{width:100%;justify-content:flex-start}.monitorShell{padding:9px}.audioRack{padding:12px}.leds{gap:2px}.rackReadout{min-width:49px;font-size:11px}.monitorSerial{display:none}}
 
+
+
+/* MDJ BROADCAST 2026 — 방송국 장비 패널: GRAPHITE / BLACK / BRUSHED SILVER
+   프로그램 패널과 버튼만 중성색으로 교체하며, Canvas 시화는 원래 작품색 유지. */
+:root {
+  --bg:#0d0e10; --card:#1d1f22; --line:#50555b; --gold:#e0e2e3;
+  --cream:#eff0f1; --muted:#b5b7ba;
+  --studio-cyan:#d1d4d7; --studio-green:#dce1e4;
+  --studio-red:#e7ebee; --studio-amber:#c5c9cc;
+}
+body {
+  background: radial-gradient(ellipse 64% 48% at 78% -12%,#303236 0%,transparent 75%),
+    repeating-linear-gradient(90deg,#111214 0px,#111214 54px,#121315 55px,#121315 56px);
+  color:#ebecee;
+}
+header {
+  max-width:1600px;
+  padding:19px 29px;
+  background:linear-gradient(180deg,#34363a 0%,#242629 9%,#18191b 100%);
+  border-bottom:2px solid #676b70;
+  box-shadow:0 9px 28px #0009,inset 0 1px #ffffff2b;
+}
+.seal {
+  background:linear-gradient(140deg,#858a8d 0%,#343639 28%,#1b1d1f 75%);
+  border:1px solid #9ea2a5;
+  color:#edf0f0;
+  box-shadow:inset 0 1px #ffffff65,inset 0 -3px 8px #000a,0 2px 12px #0008;
+}
+header h1{color:#f3f4f5;letter-spacing:-.048em}
+header p{color:#b1b3b6}
+.tag {
+  border:1px solid #757a7e;background:linear-gradient(#36393e,#1b1d21);
+  color:#e2e5e8;box-shadow:inset 0 1px #ffffff2b;
+}
+.broadcast-ident{gap:12px}
+.signalLamp {
+  background:linear-gradient(180deg,#2d3034,#1a1c1e);
+  color:#d1d5d7;border:1px solid #72777c;
+  box-shadow:inset 0 1px #ffffff29,0 2px 8px #0007;
+}
+.signalDot {background:#777d82;box-shadow:0 0 0 3px #ffffff0d}
+.signalLamp.on {
+  background:linear-gradient(180deg,#565d62,#2c3033);color:#fff;
+  border-color:#aeb6ba;box-shadow:0 0 14px #ffffff15,inset 0 1px #ffffff32;
+}
+.signalLamp.on .signalDot{background:#f9f9f9;box-shadow:0 0 11px #ffffffbb,0 0 0 3px #ffffff31}
+.signalLamp.pause{
+  background:linear-gradient(180deg,#4b4d50,#292b2e);
+  color:#e3e4e5;border-color:#8b8f93;
+}
+.signalLamp.pause .signalDot{background:#cbd1d5;box-shadow:0 0 9px #dadfe675}
+.wrap {
+  max-width:1600px;grid-template-columns:minmax(370px,430px) minmax(0,1fr);
+  gap:21px;padding:24px 28px 45px;
+}
+.panel,.stage{
+  background:linear-gradient(156deg,#33363a 0%,#222427 18%,#191b1e 68%,#1f2023 100%);
+  border:1px solid #62666b;
+  border-radius:13px;
+  box-shadow:inset 0 1px #ffffff22,inset 0 -4px 15px #0004,0 18px 40px #000b;
+}
+.panel{padding:17px;border-left:1px solid #666b6f}
+.stage{padding:19px;border:1px solid #777b80}
+.block {
+  padding:14px 15px 16px;
+  margin:0 0 12px;
+  border:1px solid #4e5156;
+  border-radius:9px;
+  background:linear-gradient(180deg,#292b2f,#202225);
+  box-shadow:inset 0 1px #ffffff12,0 3px 9px #0005;
+}
+.block:last-child{margin-bottom:0}
+.labelRow{margin-bottom:12px;border-bottom:1px solid #4f5257;padding-bottom:9px}
+.labelRow h2{color:#ecedef;font-size:15px;font-weight:720}
+.step{
+  border:1px solid #92979b;border-radius:5px;
+  background:linear-gradient(150deg,#555a5f,#2d3033);color:#f4f4f4;
+  font:700 12px ui-monospace,Consolas,monospace;box-shadow:inset 0 1px #ffffff30;
+}
+.poem {
+  min-height:248px;
+  background:linear-gradient(180deg,#101114,#161719);
+  border:1px solid #63686d;color:#f2f2f2;resize:vertical;
+  box-shadow:inset 0 3px 10px #000a;
+}
+.poem:focus{border-color:#ced1d3;box-shadow:0 0 0 2px #ffffff21,inset 0 3px 10px #0008}
+.sub{color:#bdbfc2}.hint,.statusHelp{color:#abadb0}
+.download{
+  padding:14px 15px 16px;margin-top:0;
+  border:1px solid #4e5156;border-radius:9px;
+  background:linear-gradient(180deg,#292b2f,#202225);box-shadow:inset 0 1px #ffffff12;
+}
+/* 모든 버튼: 똑같은 은색 재질, 크기, 보더, 상태. */
+.actions.consoleButtons {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:9px;align-items:stretch;
+}
+.actions.consoleButtons button,
+.actions.consoleButtons button.primary,
+.actions.consoleButtons button.danger {
+  width:100%;min-height:48px;margin:0;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  white-space:normal;line-height:1.45;
+  padding:9px 8px;
+  border:1px solid #969ca1;border-radius:7px;
+  background:linear-gradient(180deg,#858b90 0%,#696e73 12%,#55595e 48%,#45494e 100%);
+  color:#fbfbfb;font-size:12.5px;font-weight:760;
+  text-shadow:0 1px 2px #17191d;
+  box-shadow:inset 0 1px #ffffff6a,inset 0 -2px #15171970,0 3px 0 #101113,0 5px 8px #0006;
+  transition:filter .12s ease,transform .12s ease,box-shadow .12s ease;
+}
+.actions.consoleButtons button:hover:not(:disabled){filter:brightness(1.20)}
+.actions.consoleButtons button:active:not(:disabled){
+  transform:translateY(2px);
+  background:linear-gradient(180deg,#666a6f,#4a4d51);
+  box-shadow:inset 0 2px 6px #0006,0 1px 0 #0f1011;
+}
+.actions.consoleButtons button:disabled{
+  opacity:.38;
+  filter:grayscale(1);
+  box-shadow:inset 0 1px #ffffff14,0 2px 0 #141515;
+}
+.actions.consoleButtons button:focus-visible{outline:2px solid #f3f5f6;outline-offset:2px}
+.actions.transportButtons #stopBtn{grid-column:1/-1;min-height:41px}
+.keyGlyph{font-family:ui-monospace,Consolas,monospace;font-size:18px;font-weight:700;color:#f4f4f4;line-height:1}
+.speed{color:#c4c6c8;margin-top:14px}
+.speed input{accent-color:#c5c9cd}
+.eyebrow{color:#d0d3d6}
+.screenHeading h2{color:#f3f4f5;font-weight:750}
+.mood{border-color:#808589;background:linear-gradient(#33373a,#242629);color:#e1e5e5}
+.monitorShell{
+  background:linear-gradient(150deg,#767b80 0%,#464a4f 9%,#26282c 31%,#33363a 100%);
+  border:1px solid #a2a7ab;
+  box-shadow:inset 0 1px #ffffff70,inset 0 -8px 12px #0007,0 13px 26px #0008;
+}
+.monitorTop,.monitorFoot{color:#bec2c6}
+.monitorModel{color:#dce1e2}.monitorSerial{color:#aeb3b6}
+.monitorFoot .recIndicator{color:#c5c8cc}
+.monitorFoot .recIndicator:before{background:#c6cbd0;box-shadow:0 0 8px #ffffff47}
+.screen{border-color:#0b0c0d;box-shadow:0 0 0 1px #b9bec176,0 18px 28px #000a}
+.ratio{background:#151618df;border-color:#8a8c8f8a;color:#e6e9eb}
+.audioRack{
+  border-color:#8e9397;
+  background:linear-gradient(180deg,#2d3033,#191b1f);
+  box-shadow:inset 0 3px 10px #000b,inset 0 1px #ffffff33;
+}
+.rackHead strong{color:#e4e6e8}
+.rackHead span,.channelLetter{color:#b9bec2}
+.leds .led{background:#2a2d31;border:1px solid #4c5156}
+.leds .led.active.lo{background:#98a0a6;border-color:#aeb7bd;box-shadow:0 0 5px #c3c8cc55}
+.leds .led.active.mid{background:#c7cdd1;border-color:#e0e5e8;box-shadow:0 0 7px #d9dee277}
+.leds .led.active.hi{background:#f2f3f4;border-color:#fff;box-shadow:0 0 9px #ffffff99}
+.rackReadout{color:#e6eaed}
+.rackReadout small{color:#a5aaaf}
+.rackFoot{color:#a0a5a9}
+.rackFoot span:last-child{color:#c8cdd1}
+.track{background:#111214;border:1px solid #55585b}
+.track div{background:linear-gradient(90deg,#757b80,#d5dadd,#f4f5f5)}
+.time{color:#bcbfc2}.time #clock{color:#dee1e3}
+.notice{
+  background:#17191b;border:1px solid #666a6e;border-left:4px solid #c6cbce;
+  color:#dce0e2;box-shadow:inset 0 1px #ffffff12;
+}
+.pill{color:#e6e9eb;background:#34383b}
+.mp4Warning{color:#cdd0d4}
+footer{color:#a5a8ab}
+@media(max-width:1130px){
+  .wrap{grid-template-columns:1fr}
+  .panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .block,.download{margin:0}
+  .stage{position:static}
+}
+@media(max-width:680px){
+  header{padding:17px 14px;flex-wrap:wrap}
+  .wrap{padding:14px;gap:14px}
+  .panel{grid-template-columns:1fr;padding:12px}
+  .stage{padding:13px}
+  .block,.download{padding:13px}
+  .screenHeading{align-items:flex-start}
+  .mood{max-width:48%}
+  .actions.consoleButtons button{font-size:12px}
+}
+
 </style>
 </head>
 <body>
@@ -94,14 +277,14 @@ button:focus-visible{outline:2px solid var(--studio-cyan);outline-offset:3px}
 누구를 기다리다 가슴이 터졌을까
 알알이 맺힌 붉은 사연마다
 떠나간 사람의 온기가 남아 있다</textarea><p class="sub">첫 줄 <b>제목</b>, 둘째 줄 <b>작가</b>, 셋째 줄부터 <b>시 본문</b>. 빈 줄은 자유롭게 넣으세요.</p></section>
-<section class="block"><div class="labelRow"><span class="step">02</span><h2>시화·배경음악 만들기</h2></div><div class="actions"><button id="musicBtn" class="primary">🎼 배경음악 만들기</button><button id="paintBtn">🎨 스테인드글라스 시화 그리기</button></div><p class="sub">음악 만들기는 작품에 어울리는 악곡을 준비만 합니다. 시화 그리기는 스테인드글라스 이미지 생성만 실행하며, 두 기능은 독립적으로 작동합니다.</p></section>
+<section class="block"><div class="labelRow"><span class="step">02</span><h2>시화·배경음악 만들기</h2></div><div class="actions consoleButtons"><button id="musicBtn" class="primary"><span class="keyGlyph">♫</span> 배경음악 만들기</button><button id="paintBtn"><span class="keyGlyph">▦</span> 시화 그리기</button></div><p class="sub">음악 만들기는 작품에 어울리는 악곡을 준비만 합니다. 시화 그리기는 스테인드글라스 이미지 생성만 실행하며, 두 기능은 독립적으로 작동합니다.</p></section>
 <section class="block"><div class="labelRow"><span class="step">03</span><h2>시 낭송 · 음악과 자막 영상</h2></div>
-<div class="actions"><button id="readBtn" class="primary">🎙 시 낭송</button><button id="playBtn">▶ 음악 영상 감상</button><button id="pauseBtn" disabled>Ⅱ 일시정지</button><button id="resumeBtn" disabled>↻ 이어보기</button><button id="stopBtn" disabled class="danger">■ 정지</button></div>
+<div class="actions consoleButtons transportButtons"><button id="readBtn" class="primary"><span class="keyGlyph">◉</span> 시 낭송</button><button id="playBtn"><span class="keyGlyph">▶</span> 음악 영상 감상</button><button id="pauseBtn" disabled><span class="keyGlyph">Ⅱ</span> 일시정지</button><button id="resumeBtn" disabled><span class="keyGlyph">↻</span> 이어보기</button><button id="stopBtn" disabled class="danger"><span class="keyGlyph">■</span> 정지</button></div>
 <label class="speed">음악 감상용 자막 속도 <output id="paceValue">4.0초</output><input id="pace" type="range" min="2.5" max="7" step="0.5" value="4"></label>
 <label class="speed">시 낭송 속도 · 자막 자동 동기화 <output id="readRateValue">0.95×</output><input id="readRate" type="range" min="0.75" max="1.15" step="0.05" value="0.95"></label>
 <p class="sub">시 낭송은 한국어 음성으로 시를 읽으며 자막을 실제 낭송에 맞춰 스크롤합니다. 음악 만들기는 작곡만 수행하고, 음악 영상 감상은 배경음악과 자막만 재생합니다. 읽는 문장은 화면 중앙에서 금빛으로 강조됩니다.</p><p class="hint">※ 브라우저 기본 음성 읽기는 감상 기능입니다. 별도 오디오 파일 저장은 외부 TTS API 연동이 있어야 완전하게 지원됩니다.</p></section>
 <section class="download"><div class="labelRow"><span class="step">04</span><h2>작품 저장</h2></div>
-<div class="actions"><button id="movieBtn" class="primary">🎬 음악 영상 저장 (MP4 우선)</button><button id="pngBtn">🖼 시화 PNG 저장</button></div>
+<div class="actions consoleButtons"><button id="movieBtn" class="primary"><span class="keyGlyph">●</span> 영상 저장 (MP4 우선)</button><button id="pngBtn"><span class="keyGlyph">▧</span> 시화 PNG 저장</button></div>
 <p class="sub">화면과 음악을 실시간으로 녹화합니다. 브라우저가 MP4를 지원하면 MP4로, 그렇지 않으면 WebM으로 다운로드합니다.</p></section>
 </aside>
 <section class="stage">
@@ -344,7 +527,9 @@ class MusicEngine{
  constructor(){this.ctx=null;this.bus=null;this.master=null;this.dest=null;this.analyser=null;this.meterData=null;this.timer=null;this.notes=new Set();this.step=0;this.next=0;this.cfg=null;this.running=false;}
  async init(){
   if(!this.ctx){
-   this.ctx=new (window.AudioContext||window.webkitAudioContext)();
+   const AudioContextImpl=window.AudioContext||window.webkitAudioContext;
+   if(!AudioContextImpl)throw Error('이 브라우저에서는 배경음악 생성 기능이 지원되지 않습니다. 최신 Chrome 또는 Edge에서 열어주세요.');
+   this.ctx=new AudioContextImpl();
    this.master=this.ctx.createDynamicsCompressor();this.master.threshold.value=-19;this.master.ratio.value=2.5;this.master.attack.value=.012;this.master.release.value=.22;
    this.bus=this.ctx.createGain();this.bus.gain.value=.42;this.bus.connect(this.master);
    this.analyser=this.ctx.createAnalyser();this.analyser.fftSize=512;this.analyser.smoothingTimeConstant=.75;this.meterData=new Uint8Array(this.analyser.fftSize);this.master.connect(this.analyser);
@@ -499,12 +684,12 @@ function stopAll(silent=false){
  music.stop(); studio.speechSession++; if('speechSynthesis' in window) speechSynthesis.cancel(); studio.speechActive=false; studio.mode='music';
  studio.playing=false;studio.paused=false;studio.line=-1;studio.progress=0;studio.elapsed=0;
  if(studio.recording&&studio.recording.state!=='inactive')studio.recording.stop();
- els.playState.textContent='정지';els.track.style.width='0%';updateControls();
+ els.playState.textContent='정지';els.track.style.width='0%';updateControls();refreshOnAir();
  if(!silent)setStatus('영상 재생을 정지했습니다.');
 }
 function finishPlayback(){
  if(!studio.playing)return;
- studio.playing=false;studio.paused=false;studio.elapsed=studio.duration;studio.line=studio.poem.lines.length-1;studio.progress=1; studio.speechActive=false;
+ studio.playing=false;studio.paused=false;studio.elapsed=studio.duration;studio.line=studio.poem.lines.length-1;studio.progress=1; studio.speechActive=false;studio.speechSession++;
  music.stop(); if('speechSynthesis' in window) speechSynthesis.cancel(); els.playState.textContent='재생 완료';els.track.style.width='100%';updateControls();
  if(studio.recording?.state!=='inactive'&&studio.recording)studio.recording.stop();
  else setStatus(studio.mode==='speech' ? '시 낭송이 끝났습니다.' : '시화 자막과 음악 영상의 재생이 끝났습니다.');
@@ -537,7 +722,11 @@ async function perform(withRecording=false, withSpeech=false){
   if(!window.MediaRecorder||!els.canvas.captureStream)throw Error('현재 브라우저는 영상 녹화를 지원하지 않습니다.');
   const types=['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4;codecs=avc1.42E01E','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];
   const mime=types.find(x=>MediaRecorder.isTypeSupported(x));if(!mime)throw Error('영상 인코더를 사용할 수 없습니다.');
-  const stream=els.canvas.captureStream(30);for(const track of music.mixedStream().getAudioTracks())stream.addTrack(track);
+  const stream=els.canvas.captureStream(30);
+  const audioStream=music.mixedStream();
+  if(!audioStream?.getAudioTracks().length){stream.getTracks().forEach(t=>t.stop());throw Error('음악 오디오 트랙을 연결하지 못했습니다. 다시 감상 버튼으로 음악을 확인해 주세요.');}
+  for(const track of audioStream.getAudioTracks())stream.addTrack(track);
+  const recordingTitle=studio.poem.title;
   studio.captureStream=stream;studio.chunks=[];
   const rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:6_800_000});studio.recording=rec;
   rec.ondataavailable=e=>{if(e.data?.size)studio.chunks.push(e.data);};
@@ -545,7 +734,11 @@ async function perform(withRecording=false, withSpeech=false){
    const actualType=rec.mimeType||mime,ext=actualType.startsWith('video/mp4')?'mp4':'webm';
    const blob=new Blob(studio.chunks,{type:actualType});
    for(const t of stream.getVideoTracks())t.stop();studio.captureStream=null;studio.recording=null;updateControls();
-   if(blob.size){download(blob,`${safeName(studio.poem.title)}_명도재_음악시화.${ext}`);setStatus(`${ext.toUpperCase()} 음악 영상 저장 완료 · ${(blob.size/1048576).toFixed(1)} MB · 배경음악 포함`);}
+   if(blob.size){
+     download(blob,`${safeName(recordingTitle)}_명도재_음악시화.${ext}`);
+     const compatibility=ext==='mp4'?' · 일부 브라우저는 MP4 안에 Opus 오디오를 사용하므로 편집기 호환성을 확인해 주세요.':'';
+     setStatus(`${ext.toUpperCase()} 음악 영상 저장 완료 · ${(blob.size/1048576).toFixed(1)} MB · 배경음악 포함${compatibility}`);
+   }
    else setStatus('녹화 데이터가 없어 저장에 실패했습니다.');
   };
   rec.onerror=e=>setStatus(`녹화 오류: ${e.error?.message||'브라우저 인코더 오류'}`);
