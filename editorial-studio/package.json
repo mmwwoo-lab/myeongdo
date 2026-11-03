@@ -1,0 +1,12 @@
+{
+  "name": "myeongdo-editorial-studio",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "신문기사 입력·사설 칼럼·신문형 시각화·한국어 낭독 스튜디오",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {"node": ">=20"}
+}

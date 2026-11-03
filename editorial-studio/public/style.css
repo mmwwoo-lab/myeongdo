@@ -1,0 +1,216 @@
+:root{color-scheme:dark;--bg:#080e16;--panel:#14212c;--edge:#304756;--txt:#e9f3f2;--soft:#adc5c8;--cyan:#55d5d0;--red:#ed674f;--gold:#edbd79;font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;color:var(--txt);background:radial-gradient(circle at 70% -20%,#253e50 0,transparent 42%),linear-gradient(#080d14,#0b131c)}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 32px;border-bottom:1px solid #29424e;max-width:1820px;margin:auto}.brand{display:flex;align-items:center;gap:14px}.brandmark{display:flex;justify-content:center;align-items:center;border:1px solid #bb8950;width:62px;height:62px;font:27px serif;letter-spacing:-.06em;color:#fed9a0;background:linear-gradient(#2d3b45,#111d25);border-radius:9px;box-shadow:inset 0 0 16px #19242d}.eyebrow{font-size:10px;color:#84c5c6;letter-spacing:.18em;font-weight:700}.topbar h1{font-size:24px;margin:5px 0 4px;letter-spacing:-.045em}.topbar p{color:#a1babf;font-size:12px;margin:0}.head-right{display:flex;align-items:center;gap:15px}.clock{font:15px monospace;color:#91b9bc}.badge{display:flex;align-items:center;gap:8px;padding:9px 15px;background:#14242d;border:1px solid #566a66;color:#b8c9c8;border-radius:99px;font-size:11px;font-weight:800;letter-spacing:.1em}.badge.on{background:#452222;color:#ffb6a3;border-color:#bc5143}.led,.live-led{display:inline-block;height:8px;width:8px;border-radius:50%;background:#7c8c8c;box-shadow:0 0 8px #617070}.badge.on .led,.live-led{background:#ff644e;box-shadow:0 0 10px #e93e35}.layout{max-width:1820px;margin:auto;display:grid;grid-template-columns:minmax(380px,550px) minmax(0,1fr);gap:25px;padding:25px 32px}.workspace{display:flex;flex-direction:column;gap:18px}.card,.preview-pane{background:linear-gradient(160deg,#172833,#101d28);border:1px solid #304653;border-radius:16px;box-shadow:0 16px 34px #0004;padding:22px}.card-top{display:flex;align-items:center;gap:10px;margin-bottom:17px}.card h2{font-size:17px;margin:0;flex:1}.step{display:inline-grid;place-items:center;background:#2c3e43;color:#edbf86;border:1px solid #796146;border-radius:6px;padding:7px;font:12px monospace}.chip{font-size:10px;letter-spacing:.08em;color:#92bcc3;border:1px solid #3b5665;border-radius:6px;padding:6px 8px}.card label:not(.slider-row){display:block;color:#b7ced0;font-size:12px;margin:11px 0 5px}input:not([type=range]),textarea{background:#09151e;border:1px solid #365461;color:#edf1e9;border-radius:9px;padding:11px 12px;width:100%;font:14px/1.65 inherit;resize:vertical;outline:none}input:focus,textarea:focus{border-color:#72cfd1;box-shadow:0 0 0 2px #267d8355}textarea{line-height:1.75}.input-row{display:flex;align-items:stretch;gap:9px}.input-row input{min-width:0;flex:1}.actions{display:flex;gap:9px;flex-wrap:wrap}.button{display:inline-flex;justify-content:center;align-items:center;gap:7px;border:1px solid #3b5966;border-radius:9px;background:#273e49;color:#ecf4ef;padding:11px 13px;font:700 12px inherit;cursor:pointer}.button:hover:not(:disabled){filter:brightness(1.18)}.button:disabled{opacity:.44;cursor:not-allowed}.button.primary{background:linear-gradient(120deg,#ead4a0,#cf9157);color:#111e24;border-color:#dfb77e}.button.neutral{background:#24424e}.button.subtle{background:#192c38;color:#bed0d3}.button.stop{background:#5b3237;border-color:#7b4846}.wide{flex:1}.help,.sub{color:#a9c0c2;font-size:11px;line-height:1.65;margin:9px 0 0}.credit,.meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:11px;color:#9cb7bd;margin:12px 0}.model{color:#e9bc7d}.meta strong{color:#f0d9a7}.slider-row{display:flex;justify-content:space-between;font-size:12px;color:#c6d4d4;margin-top:15px}input[type=range]{width:100%;accent-color:#51d3d4}.mixing{display:flex;align-items:center;gap:12px;background:#09141a;border:1px solid #27434e;padding:12px;border-radius:10px;margin:13px 0}.micro{font-size:10px;letter-spacing:.08em;color:#84aeb7;white-space:nowrap}.meters{display:flex;align-items:flex-end;gap:3px;flex:1;height:34px}.meter{flex:1;height:19%;background:#264e52;border-radius:2px;transition:height .07s}.meter.active{background:linear-gradient(#e1b65f,#44b88c)}.meter.hot{background:linear-gradient(#f06756,#e7b26d)}.compact{padding-bottom:18px}.preview-pane{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow-y:auto}.preview-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:15px}.preview-head h2{font-family:serif;font-size:24px;font-weight:500;margin:7px 0 0}.camera-id{border:1px solid #45616a;background:#1a303a;color:#90b7bd;padding:7px;font:10px monospace;border-radius:5px}.broadcast-screen{border:7px solid #263743;background:#080f14;border-radius:13px;box-shadow:0 0 0 1px #62747b,0 20px 40px #0007;padding:9px}.monitor-top,.monitor-bottom{display:flex;justify-content:space-between;gap:5px;color:#a3b9bd;font:10px monospace;letter-spacing:.1em;padding:4px 6px 9px}.monitor-bottom{padding:9px 6px 4px}.monitor-top span:first-child{display:flex;align-items:center;gap:8px}.canvas-holder{display:flex;justify-content:center;align-items:flex-start;max-height:min(69vh,850px);overflow:auto;background:#16252d;padding:11px}.canvas-holder canvas{width:min(100%,680px);height:auto;display:block;background:#f6f1e6;box-shadow:0 12px 22px #0007}.progress{height:5px;border-radius:5px;background:#1b3b45;overflow:hidden;margin:15px 0 8px}.progress div{width:0;height:100%;background:linear-gradient(90deg,#57c2be,#e8b66d)}.timeline{display:flex;justify-content:space-between;font-size:11px;color:#abc5c5}.status{border:1px solid #45626d;background:#11242e;border-radius:10px;color:#efd3a8;padding:13px;font-size:12px;margin-top:15px;line-height:1.7}.ethics{color:#90adb3;font-size:11px;line-height:1.7;margin-top:12px}.ethics strong{color:#cfba98}footer{text-align:center;font-size:11px;color:#7896a2;padding:15px 15px 30px}@media(max-width:1120px){.layout{grid-template-columns:1fr}.preview-pane{position:static;max-height:none}.canvas-holder{max-height:none}}@media(max-width:650px){.topbar{padding:17px}.topbar h1{font-size:17px}.topbar p{font-size:10px}.clock,.camera-id{display:none}.layout{padding:13px}.card,.preview-pane{padding:15px}.brandmark{width:45px;height:45px;font-size:19px}.button{flex:1 1 36%}.input-row{flex-direction:column}}
+
+/* Sister studio navigation */
+.sibling-link{font:700 11px inherit;text-decoration:none;color:#d8e1e2;border:1px solid #58707a;padding:9px 12px;border-radius:7px;background:#1e313d;white-space:nowrap}.sibling-link:hover{background:#344f5d}.topbar h1{font-size:28px}.button{transition:filter .15s ease,transform .15s ease}.button:active:not(:disabled){transform:translateY(1px)}@media(max-width:700px){.sibling-link{display:none}}
+
+/* 2026 · ARTICLE ABOVE / COLUMN BELOW / ORIGINAL CARTOON INSIDE THE ARTICLE DESK */
+select {background:#0a1721;border:1px solid #405d68;border-radius:9px;color:#edf1e9;
+ padding:11px 12px;font:14px/1.6 'Malgun Gothic',sans-serif;width:100%;outline:none}
+select:focus {border-color:#72cfd1}
+.four-controls {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.four-controls .button{min-width:0;padding:11px 5px;font-size:12px;white-space:normal}
+.four-controls .button.stop{background:#42343a;border-color:#7c6065}
+.newspaper-page{background:#faf8f2;color:#242d36;border:1px solid #c2b7a7;
+ box-shadow:inset 0 0 0 7px #f2ede4,0 12px 26px #0009;padding:25px 27px 20px;min-height:800px}
+.paper-masthead{display:flex;align-items:center;justify-content:space-between;gap:10px;
+ border-bottom:5px double #202c35;padding:4px 2px 16px;margin-bottom:19px}
+.paper-edition{font:700 clamp(22px,2.4vw,39px)/1.22 Georgia,'Nanum Myeongjo',serif;letter-spacing:-.055em;color:#132d38}
+.paper-date{font-size:11px;color:#53636b;white-space:nowrap}
+.paper-article,.paper-column{padding:4px 0 25px}
+.paper-article{border-bottom:5px double #b6a78c}
+.paper-column{padding-top:19px}
+.paper-kicker{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid #aeb4b3;
+ font-size:11px;font-weight:800;color:#8f3f39;padding:5px 0 9px;letter-spacing:.05em}
+.paper-kicker span:last-child{font-size:10px;color:#70828b}
+.paper-article h3,.paper-column h3{font:700 clamp(21px,2.1vw,34px)/1.35 Georgia,'Nanum Myeongjo',serif;
+ letter-spacing:-.04em;color:#132e39;margin:14px 0 7px;word-break:keep-all}
+.paper-provenance,.paper-byline{color:#788186;font-size:11px;padding:0 0 11px;line-height:1.5}
+.article-preview-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(215px,40%);align-items:stretch;gap:17px}
+.article-preview-text{max-height:320px;min-height:278px;overflow-y:auto;white-space:pre-wrap;word-break:break-word;
+ padding:12px 14px;background:#f2f0e8;border:1px solid #d5cfbf;color:#34434b;font-size:14px;line-height:1.93;
+ box-shadow:inset 0 1px 6px #7669431c}
+.cartoon-inset{background:#ebeadf;padding:9px;border:1px solid #c9c3b6;min-width:0}
+.cartoon-label{display:flex;justify-content:space-between;gap:8px;font:700 10px/1.35 ui-monospace,monospace;color:#4c5458;padding:0 0 7px}
+.cartoon-inset canvas{display:block;width:100%;height:auto;aspect-ratio:4/3;border:3px solid #121f2b;background:#f3eadd}
+.cartoon-caption{font-size:11px;line-height:1.5;color:#47565f;margin:8px 0 0;text-align:center;word-break:keep-all}
+.paper-column-text{font:15.2px/2 'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+ white-space:pre-wrap;word-break:keep-all;min-height:150px;color:#2b3740}
+.paper-column-text .sentence{border-radius:3px;transition:background .13s,color .13s,padding .13s}
+.paper-column-text .sentence.past{color:#7f898c}
+.paper-column-text .sentence.speaking{background:#fff0be;color:#9c3032;font-weight:760;box-shadow:0 2px 0 #daae57}
+.paper-footer{border-top:1px solid #b4af9f;font-size:10px;color:#77776b;padding-top:12px;line-height:1.5}
+.broadcast-screen{border-color:#424c54;background:#111315}
+.monitor-top,.monitor-bottom{color:#bcc3c5}
+.preview-pane{max-height:calc(100vh - 24px);overflow-y:auto}
+.canvas-holder{display:none}
+.button.primary{background:linear-gradient(#d5c2a1,#ad8e66);border-color:#ac9677;color:#192029}
+@media(max-width:1340px){.layout{grid-template-columns:minmax(335px,510px) minmax(0,1fr)}.article-preview-grid{grid-template-columns:1fr}.article-preview-text{max-height:190px;min-height:150px}.cartoon-inset{max-width:470px;margin:auto;width:100%}}
+@media(max-width:1120px){.layout{grid-template-columns:1fr}.preview-pane{max-height:none}}
+@media(max-width:650px){.newspaper-page{padding:14px 13px 15px}.article-preview-grid{grid-template-columns:1fr}.four-controls{grid-template-columns:repeat(2, minmax(0,1fr))}.paper-masthead{flex-wrap:wrap}.paper-kicker span:last-child{font-size:8px}.paper-column-text{font-size:14px}}
+
+/* ================================================
+   MDJ NEWSROOM EDITORIAL DESIGN · 2026
+   신문사 편집국 + 독립 신문 특집호
+   ================================================ */
+:root{
+  --bg:#101113;--panel:#26282b;--edge:#696a69;--txt:#f0efe9;--soft:#c5c4bd;
+  --cyan:#bcc3c4;--red:#b7473f;--gold:#d5c3a5;
+}
+body{
+  background:linear-gradient(135deg,#2c2d2e 0,#141516 38%,#101113 72%,#1c1e1e 100%);
+  color:#ebebe8;
+}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.26;
+  background:repeating-linear-gradient(90deg,transparent 0 128px,#ffffff07 129px 130px),
+             radial-gradient(ellipse 45% 25% at 72% -8%,#91979428,transparent 80%);}
+.topbar{
+  max-width:none;background:linear-gradient(180deg,#363739 0%,#252728 48%,#1a1b1d 100%);
+  border-bottom:1px solid #9c9c96;box-shadow:0 5px 24px #0009,inset 0 1px #ffffff30;
+  padding:19px clamp(18px,3.3vw,60px);position:relative;z-index:2;
+}
+.brandmark{
+  width:64px;height:64px;border-radius:2px;border:2px solid #d6ccc0;
+  background:linear-gradient(150deg,#e4d8c3,#867c72);color:#252627;
+  box-shadow:inset 0 0 0 4px #2c2c2a,0 3px 16px #000a;
+}
+.eyebrow{color:#c6c5c0;letter-spacing:.2em;font-family:ui-monospace,Consolas,monospace}
+.topbar h1{color:#f6f4ee;font-size:clamp(23px,2vw,34px);letter-spacing:-.065em;font-family:Georgia,'Nanum Myeongjo','Malgun Gothic',serif}
+.edition-tag{font:700 12px 'Malgun Gothic',sans-serif;letter-spacing:.06em;background:#aa433e;color:#fff8f2;border:1px solid #c47971;border-radius:2px;padding:5px 8px;vertical-align:middle;margin-left:10px}
+.topbar p{color:#c5c4bf;font-size:12px}
+.clock{color:#d8d5cd;font-variant-numeric:tabular-nums}
+.sibling-link{border:1px solid #929390;color:#ededeb;background:linear-gradient(#444649,#26282a);border-radius:4px}
+.sibling-link:hover{background:#555759}
+.badge{border-radius:3px;background:#2b2d2f;border:1px solid #777a79;color:#f1efeb}
+.badge.on{border-color:#b94b46;background:#542c2b;color:#fce6d6}
+.badge.paused{border-color:#baa18a;color:#eadcc9;background:#53483e}
+.news-strip{border-bottom:3px solid #8b3732;background:linear-gradient(180deg,#e3dfd4,#cdc8bc);color:#252c30;position:relative;z-index:1}
+.news-strip-inner{max-width:1900px;margin:auto;display:flex;align-items:center;gap:16px;padding:7px clamp(18px,3.3vw,60px);font-size:11px;font-weight:700;letter-spacing:.09em}
+.news-strip i{height:12px;width:1px;background:#a89c8c}.edition-stamp{background:#a83833;color:#fff4ed;font-size:10px;padding:5px 9px}
+.strip-end{margin-left:auto;color:#7d655b;font-family:ui-monospace,monospace;font-size:10px}
+.layout{max-width:1900px;grid-template-columns:minmax(365px,520px) minmax(0,1fr);gap:19px;padding:20px clamp(16px,2.4vw,40px);position:relative}
+.card,.preview-pane{
+  border-radius:8px;background:linear-gradient(149deg,#3b3c3e,#27292b 32%,#222426 85%);
+  border:1px solid #787975;box-shadow:inset 0 1px #ffffff26,0 14px 28px #0007;
+  padding:20px;
+}
+.card{border-left:4px solid #88898a}
+.card-top{border-bottom:1px solid #666763;padding-bottom:12px}
+.card-top h2{font-family:'Malgun Gothic',sans-serif;color:#efeee9}
+.step{background:linear-gradient(#666969,#313335);border:1px solid #a8a9a4;color:#f4f1e9;border-radius:2px;font-family:ui-monospace,Consolas,monospace}
+.chip{border:1px solid #797b78;border-radius:2px;color:#d3d3ce;background:#2d2e30;font-family:ui-monospace,monospace}
+.card label:not(.slider-row),.slider-row{color:#d0cfca}
+input:not([type=range]),textarea,select{
+  background:#17191b;border:1px solid #737673;border-radius:4px;color:#f6f3e9;
+  box-shadow:inset 0 2px 10px #0008;
+}
+input:focus,textarea:focus,select:focus{border-color:#e7dfc9;box-shadow:0 0 0 2px #c8c9bf50}
+.button,.button.primary,.button.neutral,.button.subtle,.button.stop{
+  border:1px solid #a3a5a1;border-radius:4px;color:#f5f6f3;
+  background:linear-gradient(180deg,#737679 0%,#505357 14%,#3c3f42 80%,#333639 100%);
+  box-shadow:inset 0 1px #ffffff70,inset 0 -2px #0d0e0e80,0 3px 0 #141515,0 6px 9px #0006;
+  font-size:12.5px;text-shadow:0 1px #111;
+}
+.button:hover:not(:disabled){filter:brightness(1.17)}
+.button:disabled{opacity:.38;box-shadow:inset 0 1px #ffffff1b,0 2px 0 #111}
+.button:focus-visible{outline:2px solid white;outline-offset:3px}
+.button:active:not(:disabled){transform:translateY(2px);box-shadow:inset 0 1px 4px #0008,0 1px 0 #151515}
+.credit,.meta,.help{color:#c3c3bd}.model,.meta strong{color:#f1ede2}
+.mixing{border:1px solid #7f817f;background:#151719;border-radius:3px;box-shadow:inset 0 2px 8px #000b}
+.micro{color:#dad9d3}.meter{background:#343839}.meter.active{background:linear-gradient(#f0e7db,#969b9e)}.meter.hot{background:linear-gradient(#d9a7a0,#e4d8c5)}
+input[type=range]{accent-color:#b3b5b4}
+.preview-pane{border:1px solid #979690;background:linear-gradient(135deg,#393b3d,#202224);padding:20px}
+.preview-head h2{color:#f5f1e9;font-family:Georgia,'Nanum Myeongjo',serif;font-weight:700}
+.camera-id{color:#dedbd1;background:#333538;border-color:#858680;border-radius:3px}
+.broadcast-screen{border:9px solid #343536;border-radius:4px;padding:10px;background:#101112;box-shadow:inset 0 0 0 2px #92948e,0 18px 32px #0009}
+.monitor-top,.monitor-bottom{color:#d0d1cd;letter-spacing:.11em}
+.newspaper-page{
+  background:repeating-linear-gradient(0deg,#f9f5ea 0px,#f9f5ea 4px,#f8f2e7 5px,#f8f2e7 6px);
+  color:#25323a;padding:22px clamp(14px,2.5vw,36px) 24px;
+  border:1px solid #b5a999;box-shadow:inset 0 0 0 7px #ede5d6,0 10px 25px #0008;
+}
+.paper-prelude{display:flex;justify-content:space-between;align-items:center;gap:9px;font-size:10px;color:#69665d;letter-spacing:.14em;
+  border-top:3px solid #293b40;border-bottom:1px solid #a49b8e;padding:7px 2px;margin-bottom:7px;font-weight:700}
+.paper-masthead{border-bottom:5px double #22272b;margin-bottom:17px;align-items:center;gap:20px}
+.paper-edition{display:block;font-family:Georgia,'Nanum Myeongjo','Malgun Gothic',serif;font-weight:800;font-size:clamp(28px,3.3vw,54px);color:#152630;letter-spacing:-.07em}
+.paper-en{display:block;color:#8e5247;font:700 10px ui-monospace,Consolas,monospace;letter-spacing:.15em;margin-top:8px}
+.paper-side{display:flex;flex-direction:column;align-items:flex-end;gap:9px;flex-shrink:0}
+.paper-special{border:3px solid #a53a31;color:#a53a31;transform:rotate(-6deg);padding:7px 12px;font:800 16px 'Malgun Gothic',sans-serif;white-space:nowrap}
+.paper-date{color:#74726c}
+.paper-kicker{border-top:3px solid #aa4841;border-bottom:1px solid #a49c91;color:#a34139;padding:9px 0}
+.paper-article h3,.paper-column h3{font-family:Georgia,'Nanum Myeongjo','Malgun Gothic',serif;color:#192f39;font-weight:800}
+.paper-provenance{color:#6d6e6a;overflow-wrap:anywhere}
+.article-preview-text{
+  background:#f1ede3;border:1px solid #c9bcaa;color:#29343c;max-height:350px;
+  font-size:14px;line-height:2.05;padding:15px;white-space:pre-wrap;
+  box-shadow:inset 2px 2px 7px #6e553519;
+}
+.cartoon-inset{background:#e4dfd3;border:1px solid #b8aa95;box-shadow:inset 0 0 0 3px #f4f0e4}
+.cartoon-inset canvas{border:4px solid #222b30;box-shadow:0 4px 9px #0002}
+.cartoon-label{color:#8c453b;letter-spacing:.08em}
+.paper-column{padding-top:22px}
+.paper-column-text{font-family:'Apple SD Gothic Neo','Malgun Gothic',sans-serif;font-size:15.4px;line-height:2.04;color:#27343b;min-height:190px}
+.paper-column-text .sentence.speaking{color:#9a302d;background:#f4dfaa;font-weight:800;box-shadow:0 2px #bb6354}
+.paper-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:4px double #3f484a;padding-top:10px;color:#68685f}
+.paper-footer strong{color:#a03d37}
+.progress{background:#101112;border:1px solid #5f6565}.progress div{background:linear-gradient(90deg,#7f8b8e,#b2b9b6,#e1d9c7)}
+.status{background:#242526;color:#f1e3ce;border:1px solid #85817b;border-left:4px solid #b35a52;border-radius:3px}
+.ethics{color:#c2c2bf}.ethics strong{color:#e6dfcb}
+footer{color:#b1b1ad}
+@media(max-width:1350px){.layout{grid-template-columns:minmax(335px,480px) minmax(0,1fr)}}
+@media(max-width:1130px){.layout{grid-template-columns:1fr}.preview-pane{position:static;max-height:none}}
+@media(max-width:680px){.news-strip-inner{gap:7px;padding:7px 14px;font-size:9px;flex-wrap:wrap}.strip-end{display:none}.topbar{padding:14px}.head-right .clock{display:none}.topbar h1{font-size:22px}.paper-edition{font-size:31px}.paper-special{font-size:12px}.paper-prelude span:nth-child(2){display:none}.preview-pane{padding:12px}.broadcast-screen{padding:5px;border-width:6px}.newspaper-page{padding:15px 13px 16px}.paper-masthead{gap:8px}.paper-side{gap:4px}.paper-date{font-size:9px}.four-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* 2026-11-03 · MYEONGDO NEWSROOM SPECIAL EDITION — newsroom, printing press, newspaper desk */
+:root{--bg:#101214;--panel:#232528;--edge:#5b6166;--txt:#edecea;--soft:#c6c2bb;--cyan:#d5d0c6;--red:#a54a43;--gold:#c9b48f}
+body{background:radial-gradient(ellipse 64% 36% at 12% -8%,#353739 0%,transparent 70%),linear-gradient(135deg,#131517 0%,#191b1e 42%,#101214 100%);color:var(--txt)}
+.topbar{max-width:none;padding:15px max(24px,calc((100vw - 1740px)/2));background:linear-gradient(180deg,#33363a 0,#222427 13%,#181b1e 100%);border-bottom:1px solid #6d7476;box-shadow:inset 0 1px #ffffff29,0 8px 26px #0008}
+.brandmark{border:2px solid #adaaa3;background:linear-gradient(135deg,#888987,#303338 55%,#161819 100%);color:#f4f0e6;box-shadow:inset 0 1px #ffffff5b,inset 0 -3px 6px #0009}
+.topbar h1{font:700 30px/1.25 Georgia,'Nanum Myeongjo',serif;letter-spacing:-.045em;color:#f1eee7}
+.topbar p{color:#bebfbe;font-size:12px}.eyebrow{color:#cac6bd;letter-spacing:.16em}
+.edition-chip{border:1px double #b6ab97;background:#222326;color:#e5d7bd;padding:8px 13px;display:flex;flex-direction:column;text-align:center;gap:2px;font-size:11px;white-space:nowrap;letter-spacing:.04em}
+.edition-chip b{font:700 9px ui-monospace,monospace;letter-spacing:.13em;color:#b3b7b6}
+.sibling-link{background:#303236;color:#e5e6e6;border-color:#7f8589;border-radius:4px}
+.clock{color:#bdc1c2}.badge{background:#272a2d;border-color:#646b6e;color:#e2e4e5;border-radius:5px}.badge.on{background:#51302d;color:#ffe2d8;border-color:#b5685c}
+.press-ribbon{background:#181b1f;border-bottom:2px solid #6f7375;box-shadow:inset 0 1px #ffffff19}
+.ribbon-inner{max-width:1750px;margin:auto;min-height:32px;padding:0 24px;display:flex;gap:33px;align-items:center;font:700 10px ui-monospace,monospace;letter-spacing:.08em;color:#aaaeb0}
+.ribbon-inner span:first-child{color:#e4e2de}.ribbon-inner strong{margin-left:auto;color:#cdc0a8;letter-spacing:0;font-size:11px;white-space:nowrap}
+.press-dot,.press-topline i{display:inline-block;width:7px;height:7px;border-radius:100%;background:#b75047;box-shadow:0 0 8px #cc6757;margin-right:7px}
+.layout{max-width:1770px;grid-template-columns:minmax(380px,510px) minmax(0,1fr);gap:22px;padding:20px 28px 45px}
+.desk-heading{display:flex;align-items:center;gap:13px;background:linear-gradient(140deg,#3a3e40,#25282b);padding:13px 18px;border:1px solid #6f7274;box-shadow:inset 0 1px #ffffff2c,0 7px 20px #0005}
+.desk-heading .desk-index{font:700 10px ui-monospace,monospace;color:#dbd2bf;writing-mode:vertical-rl;letter-spacing:.07em}
+.desk-heading h2{margin:0;font:700 20px Georgia,'Nanum Myeongjo',serif;color:#f1efe9}
+.desk-heading p{color:#b9bcbd;font-size:11px;margin:4px 0 0}.desk-icon{margin-left:auto;font-size:32px;color:#989e9e}
+.workspace{gap:13px}.card,.preview-pane{border:1px solid #666b6e;background:linear-gradient(160deg,#2c2e31,#202225 35%,#1a1c1e);border-radius:9px;box-shadow:inset 0 1px #ffffff22,0 13px 32px #0008;padding:20px}
+.card-top{border-bottom:1px solid #65696a;padding:0 0 11px;margin-bottom:14px}
+.card h2{font:700 16px Georgia,'Nanum Myeongjo',serif;color:#f1eee9}.step{border:1px solid #b2b3b2;background:linear-gradient(#6d7174,#393e42);color:#f9f6ee;border-radius:3px;padding:5px 8px}
+.chip{background:#303336;border:1px solid #74797a;color:#d4d6d5;border-radius:3px;letter-spacing:.09em}
+.card label{color:#d9dad9}.card input:not([type=range]),.card textarea,.card select{background:#111315;color:#f3f2ee;border:1px solid #696d70;border-radius:4px;box-shadow:inset 0 3px 8px #0007}
+.card input:focus,.card textarea:focus,.card select:focus{outline:2px solid #bbbdbb;outline-offset:0;border-color:#eff0ed}
+.card .help{color:#bdc0be}.credit{border:1px solid #6a6963;background:#27282a;color:#d1cbc1}.meta{color:#d5d0c5}
+.button,.button.primary,.button.neutral,.button.stop,.button.subtle{
+ background:linear-gradient(180deg,#8c8d8d 0%,#6c7072 12%,#515559 70%,#404449 100%);color:#f7f7f7;
+ border:1px solid #a9aeae;border-radius:5px;box-shadow:inset 0 1px #ffffff5c,inset 0 -2px #101214,0 2px 0 #141517,0 5px 10px #0006;
+ font-weight:700;text-shadow:0 1px 2px #151718;transition:filter .14s,transform .14s;min-height:40px;
+}
+.button:hover:not(:disabled){filter:brightness(1.16)}.button:active:not(:disabled){transform:translateY(2px)}.button:focus-visible{outline:2px solid #f1eee7;outline-offset:2px}.button:disabled{opacity:.4;filter:grayscale(1)}
+.four-controls .button.stop{background:linear-gradient(180deg,#8c8d8d,#4e5356);border-color:#a9aeae}
+.slider-row{color:#dedddb}input[type=range]{accent-color:#b9bdbf}
+.mixing{background:#101214;border-color:#686b6b;border-radius:5px;box-shadow:inset 0 3px 12px #0008}.micro{color:#c1c4c5}.meter{background:#35383b}.meter.active{background:linear-gradient(#d6d9d8,#757b7a)}.meter.hot{background:linear-gradient(#edbf8d,#e5e1d7)}
+.preview-pane{background:linear-gradient(135deg,#34373a,#212326 15%,#1c1e20 75%,#282b2d);border-radius:12px}
+.preview-head{padding-bottom:12px;border-bottom:1px solid #666c6c}.preview-head h2{font-size:26px;color:#e8e7e2}
+.camera-id{background:#34373a;color:#e3e5e5;border-color:#7c8384}
+.press-topline{padding:8px 12px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:#151719;border:1px solid #777c7d;color:#bfc2c2;font:700 10px ui-monospace,monospace;letter-spacing:.06em}
+.press-topline span:last-child{color:#ded8ca}.broadcast-screen{border:7px solid #44474a;background:#111214;box-shadow:0 0 0 1px #999c9d,0 15px 38px #000b;border-radius:5px}
+.monitor-top,.monitor-bottom{color:#b8babb}.newspaper-page{background:linear-gradient(95deg,#f2efe7,#fffdf7 28%,#f7f4eb);border:1px solid #b0aaa1;box-shadow:inset 0 0 0 6px #eee9df,0 14px 28px #0008}
+.paper-masthead{border-bottom:6px double #303034}.paper-edition{color:#142630;letter-spacing:-.055em}
+.paper-kicker{border-bottom-color:#a8a39c;color:#953c39}.paper-article{border-bottom:5px double #b3a99a}
+.paper-article h3,.paper-column h3{color:#1e303a}.paper-column-text .sentence.speaking{background:#f9e4b8;color:#9d2e31}
+.paper-column{background:linear-gradient(180deg,#fffefb22,#fffefb00)}.article-preview-text{background:#f7f4e9;border-color:#d3cbba}.cartoon-inset{background:#f1eade;border-color:#c9bda9}.cartoon-inset canvas{border-color:#353535}
+.paper-footer{border-top-color:#bbb5a8}.progress{background:#26292b}.progress div{background:linear-gradient(90deg,#868e92,#e3e5e4)}.status{background:#252729;border:1px solid #7c7a70;color:#e5d2ba}.ethics{color:#b8bbb9}.ethics strong{color:#e1d8c6}
+footer{background:#141618;border-top:1px solid #505458;color:#b7b5b1;padding-top:20px}
+@media(max-width:1320px){.layout{grid-template-columns:minmax(350px,465px) minmax(0,1fr)}.article-preview-grid{grid-template-columns:1fr}.article-preview-text{max-height:215px;min-height:145px}}
+@media(max-width:1120px){.layout{grid-template-columns:1fr}.preview-pane{max-height:none}.article-preview-grid{grid-template-columns:minmax(0,1fr) minmax(205px,35%)}}
+@media(max-width:690px){.layout{padding:13px}.ribbon-inner{gap:12px;padding:0 13px}.ribbon-inner span:nth-child(n+3){display:none}.ribbon-inner strong{display:none}.edition-chip,.clock{display:none}.topbar{padding:17px}.desk-heading{padding:12px}.card,.preview-pane{padding:14px}.article-preview-grid{grid-template-columns:1fr}.press-topline{font-size:9px}.press-topline span:last-child{display:none}.newspaper-page{padding:16px 13px}.paper-masthead{flex-wrap:wrap}.paper-edition{font-size:26px}.four-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Keep whole special edition visible in the newsroom desk. */
+.preview-pane{position:relative;top:auto;max-height:none;overflow:visible;align-self:start}

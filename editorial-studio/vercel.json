@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "framework": null,
+  "functions": { "api/*.js": { "maxDuration": 60 } }
+}
