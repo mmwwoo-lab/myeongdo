@@ -1,11 +1,11 @@
-// 명도재(明道齋) 이명우 디지털 문학관 - 전체 작품 및 아카이브 데이터
+﻿// 명도재(明道齋) 이명우 디지털 문학관 - 전체 작품 및 아카이브 데이터
 const MUSEUM_DATA = {
   author: {
     name: "이명우",
     penName: "명도재 (明道齋) · 호 명도(明道)",
     title: "시인 · 화가 · AI 예술창작 연구가",
-    portrait: "assets/images/portrait_leemyungwoo.png",
-    studioPhoto: "assets/images/seminar_image13.jpg",
+    portrait: "assets/portrait_leemyungwoo.png",
+    studioPhoto: "assets/seminar_image13.jpg",
     bioSummary: "오랜 세월 미술교사로 교육 현장에서 제자들을 길러내고, 정년퇴임 후 순수회화와 서정시 창작, 그리고 생성형 AI를 결합한 예술 세계를 펼치고 있다. 대구 앞산과 신천, 가창 주리못의 서정과 어머님의 그리움을 맑은 시어와 수묵담채의 여백으로 담아내고 있다.",
     career: [
       "인공지능(AI) 명도재 대표",
@@ -1888,9 +1888,9 @@ const MUSEUM_DATA = {
       author: "이명우 (인공지능 AI 명도재 대표)",
       date: "2026. 09",
       images: [
-        "assets/images/magazine_p36.jpg",
-        "assets/images/magazine_p40.jpg",
-        "assets/images/magazine_p41.jpg"
+        "assets/magazine_p36.jpg",
+        "assets/magazine_p40.jpg",
+        "assets/magazine_p41.jpg"
       ],
       summary: "『대구예술』 2026년 가을호(36~41면)에 수록된 특별기고문. AI가 창작자를 대체하는 것이 아니라 인간의 감성과 상상력을 증폭시키는 새로운 붓임을 역설하고 현대미술이 나아갈 인문적 방향을 제시한다.",
       content: `<h4>AI 시대, 예술은 끝나는가, 새롭게 시작되는가</h4>
@@ -1914,8 +1914,8 @@ const MUSEUM_DATA = {
       author: "이명우 (발표자 · 명도재 대표 / 주관: 수성구미술가협회)",
       date: "2026. 06. 17",
       images: [
-        "assets/images/lecture_poster.png",
-        "assets/images/seminar_image13.jpg"
+        "assets/lecture_poster.png",
+        "assets/seminar_image13.jpg"
       ],
       summary: "수성구미술가협회 세미나에서 발표한 핵심 원고. 프롬프트 엔지니어링과 ‘메타프롬프트’의 6대 작성 원리를 정립하고, 수묵담채·초현실·합죽선 등 실제 창작 사례를 심층 해부한다.",
       content: `<h4>1. 정년퇴임 후 다시 그림 앞에 서다</h4>
@@ -1944,7 +1944,7 @@ const MUSEUM_DATA = {
       author: "서지월 (시인 · 문학평론)",
       date: "2026. 10",
       images: [
-        "assets/images/portrait_leemyungwoo.png"
+        "assets/portrait_leemyungwoo.png"
       ],
       summary: "서지월 시인이 분석한 이명우 시인의 작품 세계. 〈재봉틀 앞의 시간〉, 〈연꽃을 바라보며〉, 〈마지막 버스가 지나간 뒤〉, 〈우뭇가사리 한 그릇이 바다를 품다〉 등 주요 완성시의 미학적 성취를 조명한다.",
       content: `<h4>1. 사물에 생명을 불어넣는 추상어와 구체화의 조화</h4>
@@ -1965,7 +1965,7 @@ const MUSEUM_DATA = {
       author: "명도재 편집실",
       date: "2026. 11",
       images: [
-        "assets/images/daeguart_image1.png"
+        "assets/daeguart_image1.png"
       ],
       summary: "시 창작에 그치지 않고 한시(漢詩)와 서예, 수묵담채 시화, 그리고 AI 오디오 시낭송을 결합해 온 명도재 이명우의 융합 예술 실험을 소개한다.",
       content: `<h4>문자에서 소리와 빛으로 확장되는 시문학</h4>
@@ -1983,7 +1983,7 @@ const MUSEUM_DATA = {
       category: "전통수묵·진경산수",
       year: "2026",
       medium: "화선지에 수묵담채 (전통 진경산수 임모 연구)",
-      image: "assets/images/geumgangjeondo_complete.jpg",
+      image: "assets/geumgangjeondo_complete.jpg",
       meaning: "겸재 정선의 진경산수 정신을 이어받아 일만 이천 봉우리의 기상과 수직 준법, 부드러운 토산의 조화를 대형 화폭에 담아낸 수묵 작품입니다.",
       prompt: "전통 수묵산수 실기 작품 — 겸재 정선의 금강전도 구도와 피마준·수직준의 필법을 현대적 호흡으로 재해석한 수묵 임모작."
     },
@@ -1993,7 +1993,7 @@ const MUSEUM_DATA = {
       category: "전통수묵·진경산수",
       year: "2026",
       medium: "화선지에 수묵 (진경산수 필묵 연구)",
-      image: "assets/images/inwangjesaekdo_study.jpg",
+      image: "assets/inwangjesaekdo_study.jpg",
       meaning: "비 갠 뒤 안개가 피어오르는 인왕산의 웅장한 암벽을 짙은 농묵으로 쓸어내리며, 시 〈앞산제색도〉와 〈앞산을 바라보며〉의 모티프가 된 작품입니다.",
       prompt: "전통 수묵산수 실기 작품 — 비 온 뒤 젖은 바위의 중량감과 골짜기를 휘감는 흰 구름의 대비를 농묵과 여백으로 표현."
     },
@@ -2003,7 +2003,7 @@ const MUSEUM_DATA = {
       category: "전통수묵·진경산수",
       year: "2026",
       medium: "화선지에 수묵담채",
-      image: "assets/images/manpokdong_study.jpg",
+      image: "assets/manpokdong_study.jpg",
       meaning: "기암괴석 사이로 쏟아져 내리는 계곡물과 소나무의 기개를 담백한 필선과 농담 조절로 그려낸 전통 산수 연구작입니다.",
       prompt: "전통 수묵산수 실기 작품 — 금강산 만폭동의 계곡물과 암봉의 리듬을 수묵의 농담으로 형상화."
     },
@@ -2013,7 +2013,7 @@ const MUSEUM_DATA = {
       category: "전통수묵·진경산수",
       year: "2026",
       medium: "대형 한지 화폭에 수묵 · 작가 작업 전경",
-      image: "assets/images/seminar_image13.jpg",
+      image: "assets/seminar_image13.jpg",
       meaning: "눈 내린 소나무숲의 고요와 수행적 사색을 담은 대형 설경 작업입니다. AI 시대에도 화면 앞에서의 집중과 손의 노동이 예술가의 본질임을 보여줍니다.",
       prompt: "눈 내리는 겨울 소나무숲을 한국 수묵채색화 또는 담채 산수화 분위기로 생성하라. 휘어진 소나무 줄기, 눈 덮인 가지, 안개 낀 숲의 깊이, 차가운 공기와 고요한 분위기를 표현하고, 청회색과 먹색 중심으로 수행적이고 명상적인 정서가 흐르도록 살려라."
     },
@@ -2025,7 +2025,7 @@ const MUSEUM_DATA = {
       category: "수묵담채·한국적서정",
       year: "2026",
       medium: "디지털 수묵담채 (AI 프롬프트 설계 · 明道)",
-      image: "assets/images/seminar_image1.jpeg",
+      image: "assets/seminar_image1.jpeg",
       meaning: "재래시장 좌판에 앉은 할머니들과 오가는 사람들의 생활 현장을 간결한 먹선과 절제된 담채로 담아내어 서민의 삶과 소박한 인간미를 기록한 작품입니다.",
       prompt: "한국의 전통 재래시장 풍경을 수묵담채화 스타일로 표현하라. 좌판에 앉아 채소를 파는 노인 여성들, 장을 보는 중년 남성, 파와 고추, 감자, 생선이 놓인 생활 현장을 포함하되, 간결한 먹선과 옅은 담채, 넓은 여백 속에 한국적 인간미와 따뜻한 정감이 느껴지도록 설계하라."
     },
@@ -2035,7 +2035,7 @@ const MUSEUM_DATA = {
       category: "수묵담채·한국적서정",
       year: "2026",
       medium: "디지털 수묵담채 · 문인화풍",
-      image: "assets/images/seminar_image9.png",
+      image: "assets/seminar_image9.png",
       meaning: "거친 갈필과 비백이 살아 있는 매화 줄기 위에 은은한 홍매화가 피어나고 파랑새 두 마리가 마주 앉아 봄의 기운과 절제된 동양화의 정신을 전합니다.",
       prompt: "거친 먹선으로 그린 매화나무 가지 위에 파란 새 두 마리가 앉아 있는 수묵담채화를 생성하라. 줄기와 가지는 먹의 번짐과 갈필, 비백이 살아 있어야 하며, 꽃은 옅은 분홍과 흰색의 섬세한 담채로, 새는 푸른색과 연한 황갈색이 어우러진 작은 새로 묘사하여 봄의 맑고 고요한 정서가 흐르도록 구성하라."
     },
@@ -2045,7 +2045,7 @@ const MUSEUM_DATA = {
       category: "수묵담채·한국적서정",
       year: "2026",
       medium: "디지털 수묵담채 · 문인화풍",
-      image: "assets/images/seminar_image5.png",
+      image: "assets/seminar_image5.png",
       meaning: "넓게 비워 둔 화선지 여백 위에 각기 다른 자세의 닭 세 마리를 먹의 농담과 붉은 벼슬의 대비로 경쾌하게 포착하여 해학과 생명력을 살린 작품입니다.",
       prompt: "넓은 여백 위에 수묵담채 방식으로 닭 세 마리를 표현하라. 닭은 부드러운 먹 번짐과 간결한 선으로 묘사하고 벼슬과 얼굴 부분에는 붉은 담채를 넣는다. 한 마리는 모이를 쪼고, 한 마리는 앉아 쉬며, 다른 한 마리는 서 있는 자세를 취해 익살스럽고 따뜻한 한국화 분위기를 담아라."
     },
@@ -2055,7 +2055,7 @@ const MUSEUM_DATA = {
       category: "수묵담채·한국적서정",
       year: "2026",
       medium: "디지털 수묵담채 · 명도(明道) 인장",
-      image: "assets/images/seminar_image11.png",
+      image: "assets/seminar_image11.png",
       meaning: "강한 먹 번짐의 전통 수묵산수 계곡 속에 밝은 원색 수영복을 입은 현대 아이들의 물놀이를 결합하여, 전통의 공간감 속에 유년의 생동감을 불러일으킨 작품입니다.",
       prompt: "전통 수묵산수화 공간 속에서 현대의 어린아이들이 계곡에서 물놀이하는 장면을 작성하라. 배경은 먹의 강한 번짐과 산수적 공간감을 지닌 계곡과 바위, 흐르는 물로 구성하고, 아이들은 밝은 원색 수영복을 입어 동심과 여름의 활기가 느껴지도록 하라."
     },
@@ -2065,7 +2065,7 @@ const MUSEUM_DATA = {
       category: "수묵담채·한국적서정",
       year: "2026",
       medium: "디지털 수묵담채 · 명도(明道) 인장",
-      image: "assets/images/seminar_image12.png",
+      image: "assets/seminar_image12.png",
       meaning: "버드나무와 봄꽃이 핀 산수화 개울가에서 뜰채와 채집통을 들고 작은 생물을 관찰하는 아이들의 호기심 어린 순간을 수묵담채로 따뜻하게 풀어냈습니다.",
       prompt: "전통 수묵담채 산수 공간의 봄 개울가에서 세 명의 어린 소년이 뜰채와 관찰통을 들고 올챙이와 물고기를 관찰하는 장면을 구성하라. 버드나무 가지와 분홍 봄꽃, 잔잔한 물결의 여백 속에 동심과 자연의 교육적 즐거움이 어우러지도록 표현하라."
     },
@@ -2075,7 +2075,7 @@ const MUSEUM_DATA = {
       category: "수묵담채·한국적서정",
       year: "2026",
       medium: "디지털 수채·담채 풍경",
-      image: "assets/images/seminar_image4.jpeg",
+      image: "assets/seminar_image4.jpeg",
       meaning: "안개 서린 먼 암봉과 단풍이 물든 가을 계곡의 맑은 물소리를 차분한 색조와 대기 원근감으로 담아내어 한 계절의 깊은 호흡을 전합니다.",
       prompt: "한국의 가을 계곡 풍경을 사실적이면서도 동양적 정취가 스며든 회화 이미지로 생성하라. 맑은 계곡물, 바위, 단풍나무, 안개 낀 암봉을 포함하고, 지나친 선명함보다 은은한 대기감과 서정적 여운을 살려라."
     },
@@ -2087,7 +2087,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "초현실주의 미니어처 회화 · AI 창작",
-      image: "assets/images/seminar_image2.png",
+      image: "assets/seminar_image2.png",
       meaning: "옥빛 도는 분청사기 사발 안에 작은 풀밭과 버드나무, 그 아래 쉬고 있는 연인을 배치하여 일상의 그릇을 마음속 평온한 소우주(안식처)로 전환한 대표작입니다.",
       prompt: "연한 청자빛 또는 분청사기 느낌의 그릇 안에 푸른 잔디가 깔린 작은 섬 같은 공간을 만들고, 중앙에 가지가 늘어진 버드나무 한 그루와 그 아래 돗자리에서 쉬는 연인을 배치하라. 배경은 노을빛 산 능선과 부드러운 안개로 처리하여 따뜻하고 꿈결 같은 미니어처 세계로 구성하라."
     },
@@ -2097,7 +2097,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "초현실 유화 질감 · 명도(明道) 인장",
-      image: "assets/images/seminar_image7.jpg",
+      image: "assets/seminar_image7.jpg",
       meaning: "두꺼운 물감 덩어리와 붓, 나이프가 놓인 팔레트 위로 실제 호수와 나무, 언덕이 솟아나는 구성을 통해 ‘재료 속에서 세계를 발견하는 창작의 본질’을 상징화했습니다.",
       prompt: "화가의 팔레트 위에서 작은 자연 풍경이 실제처럼 펼쳐지는 초현실적 이미지를 생성하라. 두껍게 올라온 물감과 붓, 나이프 위로 작은 호수와 나무, 언덕, 반사되는 물빛이 하나의 세계처럼 형성되어 창작 도구가 곧 우주가 되는 장면을 구성하라."
     },
@@ -2107,7 +2107,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "수채 일러스트레이션 · 환상 회화",
-      image: "assets/images/seminar_image6.png",
+      image: "assets/seminar_image6.png",
       meaning: "고요한 바다 부두 끝에 선 작은 소년이 구름과 종이배 사이를 유영하는 거대한 청회색 고래를 올려다보는 장면으로, 동심과 미지의 세계를 향한 경이감을 담았습니다.",
       prompt: "고요한 바다 부두 위에 선 한 소년이 하늘을 떠다니는 거대한 고래를 바라보는 환상적 장면을 작성하라. 고래는 청회색 수채 톤으로 부드럽게 표현하고 구름 주변에는 종이배 상징을 더하여 동심과 경이감이 느껴지는 시적인 수채 스타일로 구성하라."
     },
@@ -2117,7 +2117,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "흑백 수묵·수채 이중노출",
-      image: "assets/images/seminar_image3.jpeg",
+      image: "assets/seminar_image3.jpeg",
       meaning: "여성의 옆모습 실루엣 안에 앙상한 나뭇가지와 도시의 파편, 황폐한 풍경을 겹쳐 넣어 생태 환경의 상처가 곧 현대인의 내면 균열임을 시적으로 경고하는 작품입니다.",
       prompt: "환경오염과 인간 존재의 내면적 불안을 상징하는 흑백 이중노출 이미지를 생성하라. 여성의 옆모습 실루엣 안에 오래된 건물, 앙상한 나뭇가지, 도시의 균열된 풍경이 겹쳐 보이도록 하며, 배경은 번진 수채 얼룩과 먹물 자국이 있는 종이 질감으로 구성하라."
     },
@@ -2127,7 +2127,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "전통 부채 조형 위에 수채·색연필 기법",
-      image: "assets/images/seminar_image14.png",
+      image: "assets/seminar_image14.png",
       meaning: "한국 전통 접이식 부채(합죽선)의 곡선 화면 위에 다채로운 강가의 조약돌과 투명한 날개의 잠자리 두 마리를 맑은 수채 톤으로 담아낸 작품입니다.",
       prompt: "전통 합죽선 부채 화면 위에 강가의 매끄럽고 다채로운 조약돌들과 그 위에 내려앉은 주황빛·푸른빛 잠자리 두 마리를 섬세한 수채화와 색연필 질감으로 표현하라."
     },
@@ -2137,7 +2137,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "전통 부채 조형 위에 수묵·수채·금박 기법",
-      image: "assets/images/seminar_image15.png",
+      image: "assets/seminar_image15.png",
       meaning: "부채의 유려한 살 위에 인간 실루엣과 겨울 나뭇가지, 그리고 번지는 청록·주홍빛 수채 물감과 금박의 파편을 결합하여 전통 공예와 현대 추상의 조화를 실험했습니다.",
       prompt: "펼쳐진 전통 부채(합죽선) 위에 수묵 번짐과 현대적 수채 물감 튀김, 금박 질감을 결합하라. 인물 실루엣 내부에 겨울 나뭇가지가 비치는 이중적 이미지를 배치하여 전통과 현대가 교차하는 예술적 부채 작품을 완성하라."
     },
@@ -2147,7 +2147,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "초현실 채색 회화",
-      image: "assets/images/seminar_image10.png",
+      image: "assets/seminar_image10.png",
       meaning: "끝없이 펼쳐진 흰 데이지 꽃밭과 분홍빛 우주 하늘 아래 서 있는 두 광대 인형을 통해 동화적 상상력과 순수한 생명의 에너지를 화사한 색채 대비로 풀어냈습니다.",
       prompt: "끝없이 펼쳐진 흰 데이지 꽃밭 위에 두 명의 화려한 광대 인형이 서 있는 초현실적 회화 이미지를 생성하라. 하늘은 강렬한 분홍색이며 노란 태양과 별자리 선이 함께 떠 있고, 동화적이고 환상적인 분위기를 지니도록 구성하라."
     },
@@ -2157,7 +2157,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "디지털 혼합매체 · 『대구예술』 수록작",
-      image: "assets/images/daeguart_image1.png",
+      image: "assets/daeguart_image1.png",
       meaning: "『대구예술』 기고문에 수록된 작품으로, 먹의 역동적인 필선과 금빛·적색·청색의 색면 추상이 한지 위에서 충돌하고 융합하는 에너지를 보여줍니다.",
       prompt: "동양의 서예적 필선과 서구 현대 색면 추상이 결합된 역동적인 현대미술 작품을 구성하라. 짙은 먹의 흔적과 붉은색, 푸른색, 황금빛 물감의 질감이 한지 위에서 조화를 이루도록 표현하라."
     },
@@ -2167,7 +2167,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "디지털 초현실 아트 · 『대구예술』 수록작",
-      image: "assets/images/daeguart_image2.png",
+      image: "assets/daeguart_image2.png",
       meaning: "인간의 따뜻한 사유와 디지털 신경망이 꽃과 별빛으로 피어나는 장면을 형상화하여, 기술 시대에도 예술의 중심은 인간의 감성임을 상징합니다.",
       prompt: "인간의 내면과 AI 기술의 창조적 공명을 상징하는 초현실적 예술 이미지를 구성하라. 따뜻한 황금빛과 푸른 빛의 흐름 속에서 꽃과 별빛이 피어나는 서정적 화면을 연출하라."
     },
@@ -2177,7 +2177,7 @@ const MUSEUM_DATA = {
       category: "초현실·현대조형·부채",
       year: "2026",
       medium: "몰입형 미디어아트 공간 시뮬레이션 · 『대구예술』 수록작",
-      image: "assets/images/daeguart_image3.png",
+      image: "assets/daeguart_image3.png",
       meaning: "빛과 영상, 데이터와 관람객의 발걸음이 하나의 우주적 물결로 연결되는 미래형 전시 공간을 설계한 작품으로, 감상에서 참여로 확장되는 현대미술의 미래를 제시합니다.",
       prompt: "빛, 영상, 데이터, 관객의 움직임이 하나로 연결되는 몰입형 미디어아트 전시관을 생성하라. 거대한 파동과 우주의 별빛이 바닥과 벽면을 감싸며 관람객이 작품의 일부가 되는 미래 미술을 표현하라."
     }
