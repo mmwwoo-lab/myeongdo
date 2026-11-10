@@ -1,3 +1,6 @@
-myeongdo-1028/audio-originals/
-myeongdo-1028/audio-v2/
-**/.vercel/
+# Local development server & temporary files
+server.ps1
+.keep
+Thumbs.db
+.DS_Store
+desktop.ini

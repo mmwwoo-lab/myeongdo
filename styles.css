@@ -1,0 +1,2475 @@
+/* ==========================================================================
+   명도재 디지털 문학관 — 한국적 수묵담채(水墨淡彩) 화풍 · 스마트폰 고가독성 반응형 스타일시트
+   ========================================================================== */
+
+:root {
+  /* 한국 전통 화선지(닥종이) & 수묵담채(水墨淡彩) 색상 팔레트 */
+  --bg-hanji: #f5f0e6;
+  --bg-hanji-card: #fffdf8;
+  --bg-hanji-warm: #ece4d5;
+  --bg-sumie-mist: #e5ece9;
+  --bg-sumie-plum: #f3e5e6;
+  --bg-sumie-ochre: #f2e9d8;
+
+  /* 수묵(水墨) 4단계 농담 타이포그래피 색상 — 스마트폰 가독성을 위한 선명한 대비 */
+  --ink-deep: #111416;    /* 농묵(濃墨): 제목 및 시·수필 본문 핵심 텍스트 */
+  --ink-body: #1c2124;    /* 중묵(中墨): 일반 본문 텍스트 */
+  --ink-muted: #454d52;   /* 담묵(淡墨): 보조 설명 및 캡션 (충분한 명도 대비 확보) */
+  --ink-light: #687177;   /* 청담묵: 부가 날짜 및 번호 */
+
+  /* 담채(淡彩) 포인트 색상: 인주(낙관), 송연(솔잎 먹빛), 청묵(남색 먹빛), 홍매(매화 담채) */
+  --seal-red: #a6261e;
+  --seal-red-soft: rgba(166, 38, 30, 0.1);
+  --celadon-teal: #234f46;
+  --celadon-soft: rgba(35, 79, 70, 0.11);
+  --pine-indigo: #1f3647;
+  --plum-pink: #b35260;
+  --gold-ochre: #825d22;
+
+  /* 수묵 필선 테두리 및 화첩 그림자 */
+  --border-subtle: rgba(45, 40, 32, 0.16);
+  --border-strong: rgba(35, 30, 24, 0.32);
+  --border-ink: rgba(25, 28, 30, 0.45);
+  --shadow-soft: 0 10px 28px rgba(25, 22, 18, 0.07), 0 2px 6px rgba(25, 22, 18, 0.05);
+  --shadow-hover: 0 16px 36px rgba(25, 22, 18, 0.13), 0 4px 12px rgba(25, 22, 18, 0.07);
+
+  /* 가독성 높은 한국어 명조 및 고딕 글꼴 */
+  --font-serif: 'Noto Serif KR', 'Gowun Batang', Georgia, serif;
+  --font-sans: 'Gowun Dodum', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+
+  /* 기본 글자 크기 스케일 (PC 및 스마트폰 모두 또렷하게) */
+  --poem-font-size: 1.24rem;
+  --poem-line-height: 2.15;
+  --essay-font-size: 1.16rem;
+  --essay-line-height: 2.05;
+}
+
+/* 글자 크기 조절 클래스 (가- / 가 / 가+ / 특대) */
+body.font-size-small {
+  --poem-font-size: 1.08rem;
+  --essay-font-size: 1.02rem;
+}
+body.font-size-normal {
+  --poem-font-size: 1.24rem;
+  --essay-font-size: 1.16rem;
+}
+body.font-size-large {
+  --poem-font-size: 1.42rem;
+  --poem-line-height: 2.22;
+  --essay-font-size: 1.32rem;
+  --essay-line-height: 2.12;
+}
+body.font-size-xlarge {
+  --poem-font-size: 1.64rem;
+  --poem-line-height: 2.28;
+  --essay-font-size: 1.5rem;
+  --essay-line-height: 2.2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-hanji);
+  color: var(--ink-body);
+  font-family: var(--font-serif);
+  line-height: 1.8;
+  min-height: 100vh;
+  padding-bottom: 120px;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* ==========================================================================
+   한국적 수묵담채(水墨淡彩) 화선지 & 원산(遠山) 배경 레이어
+   ========================================================================== */
+.sumie-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  /* 닥종이(한지) 결 느낌과 수묵 번짐(발묵·파묵) 그라데이션 */
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(45, 62, 70, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 88% 14%, rgba(179, 82, 96, 0.09) 0%, transparent 45%),
+    radial-gradient(ellipse at 80% 75%, rgba(35, 79, 70, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 12% 82%, rgba(130, 93, 34, 0.07) 0%, transparent 50%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 2px,
+      transparent 2px,
+      transparent 6px
+    ),
+    linear-gradient(180deg, #f8f4ec 0%, #f2ece0 52%, #f5f0e6 100%);
+}
+
+.sumie-wash-top {
+  position: absolute;
+  top: -140px;
+  left: -80px;
+  width: 620px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(31, 54, 71, 0.12) 0%, transparent 70%);
+  filter: blur(55px);
+}
+
+.sumie-wash-plum {
+  position: absolute;
+  top: 60px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(179, 82, 96, 0.13) 0%, transparent 70%);
+  filter: blur(65px);
+}
+
+.sumie-wash-celadon {
+  position: absolute;
+  bottom: 8%;
+  left: 10%;
+  width: 560px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(35, 79, 70, 0.11) 0%, transparent 70%);
+  filter: blur(65px);
+}
+
+.sumie-mountains-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 290px;
+  opacity: 0.85;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ==========================================================================
+   상단 헤더 & 네비게이션 (수묵 서화첩 품격)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(248, 244, 236, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--border-strong);
+  box-shadow: 0 3px 16px rgba(20, 18, 15, 0.06);
+}
+
+.header-inner {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--ink-deep);
+}
+
+.seal-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--seal-red);
+  color: #fffaf5;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.96rem;
+  line-height: 1.1;
+  border-radius: 4px;
+  border: 2px solid #7d1812;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 3px 8px rgba(166, 38, 30, 0.25);
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.site-title {
+  font-size: 1.44rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink-deep);
+}
+
+.site-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  margin-top: 2px;
+}
+
+/* 메인 5대 메뉴 — 수묵 필선 버튼 */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-deep);
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  font-weight: 700;
+  padding: 0.56rem 1.05rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+.nav-link:hover {
+  background: rgba(31, 54, 71, 0.08);
+  border-color: var(--border-subtle);
+}
+
+.nav-link.active {
+  background: var(--pine-indigo);
+  color: #ffffff;
+  border-color: var(--pine-indigo);
+  box-shadow: 0 4px 12px rgba(31, 54, 71, 0.24);
+}
+
+.nav-icon {
+  font-size: 0.96rem;
+}
+
+/* 헤더 검색 및 글자 크기 도구 */
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.quick-search-box {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 0.22rem 0.28rem 0.22rem 0.85rem;
+}
+
+.quick-search-box input {
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--ink-deep);
+  width: 145px;
+  outline: none;
+}
+
+.toc-trigger-btn {
+  appearance: none;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-hanji-warm);
+  color: var(--ink-deep);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 0.42rem 0.82rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.toc-trigger-btn:hover {
+  background: #dfd5c3;
+}
+
+.font-controls {
+  display: flex;
+  align-items: center;
+  background: var(--bg-hanji-warm);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: 2px;
+}
+
+.font-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.36rem 0.62rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.font-btn.active {
+  background: var(--ink-deep);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   히어로 배너 (수묵담채 화첩 표지 스타일)
+   ========================================================================== */
+.hero-banner {
+  max-width: 1340px;
+  margin: 1.4rem auto 0.5rem;
+  padding: 0 1.5rem;
+}
+
+.hero-container {
+  background:
+    radial-gradient(circle at 88% 15%, rgba(179, 82, 96, 0.14), transparent 42%),
+    radial-gradient(circle at 12% 85%, rgba(35, 79, 70, 0.14), transparent 48%),
+    linear-gradient(135deg, #fffdf9 0%, #f4ede0 100%);
+  border: 1.5px solid var(--border-strong);
+  border-top: 4px solid var(--pine-indigo);
+  border-radius: 18px;
+  padding: 2.3rem 2.6rem;
+  display: grid;
+  grid-template-columns: 1.45fr 0.75fr;
+  gap: 2.2rem;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 수묵 여백 장식선 */
+.hero-container::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(35, 30, 24, 0.1);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  border: 1px solid var(--border-strong);
+  padding: 0.38rem 0.95rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--pine-indigo);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--seal-red);
+}
+
+.hero-heading {
+  font-size: 1.95rem;
+  line-height: 1.48;
+  color: var(--ink-deep);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-quote {
+  font-size: 1.06rem;
+  color: var(--ink-body);
+  line-height: 1.85;
+  margin-bottom: 1.5rem;
+  padding: 0.65rem 1.1rem;
+  background: rgba(236, 228, 213, 0.45);
+  border-left: 4px solid var(--seal-red);
+  border-radius: 0 8px 8px 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+  appearance: none;
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  font-weight: 700;
+  padding: 0.76rem 1.35rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 46px;
+}
+
+.btn-primary {
+  background: var(--seal-red);
+  color: #ffffff;
+  border: 1px solid var(--seal-red);
+  box-shadow: 0 5px 14px rgba(166, 38, 30, 0.25);
+}
+.btn-primary:hover {
+  background: #8c1e17;
+}
+
+.btn-secondary {
+  background: var(--pine-indigo);
+  color: #ffffff;
+  border: 1px solid var(--pine-indigo);
+  box-shadow: 0 5px 14px rgba(31, 54, 71, 0.22);
+}
+.btn-secondary:hover {
+  background: #162836;
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--ink-deep);
+  border: 1.5px solid var(--border-strong);
+}
+.btn-outline:hover {
+  border-color: var(--pine-indigo);
+  color: var(--pine-indigo);
+}
+
+.hero-visual-col {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-portrait-card {
+  background: #fffdf9;
+  padding: 1rem 1rem 1.15rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--border-strong);
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+  max-width: 265px;
+  width: 100%;
+}
+
+.portrait-frame {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4 / 4.3;
+  background: var(--bg-hanji-warm);
+  border: 1px solid var(--border-subtle);
+}
+
+.portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portrait-seal {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--seal-red);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.portrait-caption {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.portrait-caption strong {
+  font-size: 1.08rem;
+  color: var(--ink-deep);
+}
+.portrait-caption span {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   메인 콘텐츠 공통 섹션 레이아웃
+   ========================================================================== */
+.main-content {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+}
+
+.view-section {
+  display: none;
+  animation: fadeSection 0.3s ease;
+}
+
+.view-section.active {
+  display: block;
+}
+
+@keyframes fadeSection {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.7rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 2px solid var(--border-strong);
+}
+
+.section-kicker {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  color: var(--celadon-teal);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  color: var(--ink-deep);
+  font-weight: 700;
+}
+
+.section-desc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--ink-muted);
+  margin-top: 0.35rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   1. 오늘의 시 & 수묵담채 화선지 시 카드 스타일
+   ========================================================================== */
+.today-selector-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.watercolor-select {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 1.05rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--ink-deep);
+  cursor: pointer;
+  min-height: 46px;
+}
+
+.btn-pill {
+  appearance: none;
+  border: 1.5px solid var(--celadon-teal);
+  background: #ffffff;
+  color: var(--celadon-teal);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.6rem 1.05rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 46px;
+}
+.btn-pill:hover {
+  background: var(--celadon-teal);
+  color: #ffffff;
+}
+
+.today-poem-stage {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* 수묵담채 서화첩 카드 디자인 */
+.hanji-poem-card {
+  background:
+    radial-gradient(circle at 95% 6%, rgba(179, 82, 96, 0.11), transparent 32%),
+    radial-gradient(circle at 6% 94%, rgba(35, 79, 70, 0.1), transparent 36%),
+    var(--bg-hanji-card);
+  border: 1.5px solid var(--border-strong);
+  border-top: 4px solid var(--ink-deep);
+  border-radius: 16px;
+  padding: 2.5rem 2.8rem;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.poem-card-ornament-top {
+  height: 4px;
+  width: 90px;
+  background: linear-gradient(90deg, var(--ink-deep) 0%, var(--pine-indigo) 55%, var(--seal-red) 100%);
+  border-radius: 2px;
+  margin-bottom: 1.35rem;
+}
+
+.poem-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+}
+
+.poem-chapter-badge {
+  background: var(--celadon-soft);
+  color: var(--celadon-teal);
+  border: 1px solid rgba(35, 79, 70, 0.25);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 700;
+  padding: 0.28rem 0.8rem;
+  border-radius: 999px;
+}
+
+.poem-date-badge {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+}
+
+.poem-main-title {
+  font-size: 2.05rem;
+  font-weight: 700;
+  color: var(--ink-deep);
+  line-height: 1.35;
+}
+
+.poem-subtitle {
+  font-size: 1.1rem;
+  color: var(--ink-muted);
+  margin-top: 0.3rem;
+}
+
+.poem-author-sign {
+  margin-top: 0.9rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px dashed var(--border-strong);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--ink-body);
+}
+
+.mini-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--seal-red);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* 인라인 음성 낭송(읽어주기/일시정지/이어 읽기) 툴바 */
+.inline-tts-toolbar {
+  margin: 1.3rem 0 1.6rem;
+  padding: 0.9rem 1.1rem;
+  background: #f2ece0;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tts-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.tts-ctrl-btn {
+  appearance: none;
+  border: 1.5px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--ink-deep);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.52rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 42px;
+}
+
+.tts-ctrl-btn.play {
+  background: var(--seal-red);
+  color: #ffffff;
+  border-color: var(--seal-red);
+}
+.tts-ctrl-btn.play:hover:not(:disabled) {
+  background: #881d16;
+}
+
+.tts-ctrl-btn.pause:hover:not(:disabled) {
+  background: #fef3c7;
+  border-color: #b7791f;
+}
+
+.tts-ctrl-btn.resume {
+  background: var(--celadon-teal);
+  color: #ffffff;
+  border-color: var(--celadon-teal);
+}
+.tts-ctrl-btn.resume:hover:not(:disabled) {
+  background: #1a3c35;
+}
+
+.tts-ctrl-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tts-status-pill {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  color: var(--pine-indigo);
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+}
+
+/* 시 본문 및 연(Stanza) — 농묵(濃墨) 색상으로 스마트폰 가독성 극대화 */
+.poem-body-text {
+  font-family: var(--font-serif);
+  font-size: var(--poem-font-size);
+  line-height: var(--poem-line-height);
+  color: var(--ink-deep);
+  font-weight: 500;
+  padding: 0.4rem 0 1.4rem;
+}
+
+.poem-stanza {
+  margin-bottom: 1.45rem;
+  padding: 0.65rem 0.95rem;
+  border-radius: 10px;
+  border-left: 3.5px solid transparent;
+  transition: all 0.22s ease;
+  white-space: pre-line;
+}
+
+.poem-stanza:hover {
+  background: rgba(236, 228, 213, 0.5);
+}
+
+.poem-stanza.tts-active-chunk {
+  background: linear-gradient(90deg, rgba(243, 229, 230, 0.92) 0%, rgba(229, 236, 233, 0.75) 100%);
+  border-left-color: var(--seal-red);
+  box-shadow: 0 2px 10px rgba(166, 38, 30, 0.1);
+  font-weight: 700;
+}
+
+.poem-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tag-chip {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink-body);
+  background: var(--bg-hanji-warm);
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.tag-chip:hover {
+  background: var(--celadon-soft);
+  color: var(--celadon-teal);
+}
+
+/* 오늘의 시 우측 패널 (시화 + 서지월 시평) */
+.today-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.companion-art-card {
+  background: var(--bg-hanji-card);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.companion-art-img-wrap {
+  aspect-ratio: 16 / 10.5;
+  overflow: hidden;
+  background: var(--bg-hanji-warm);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.companion-art-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.companion-art-card:hover .companion-art-img-wrap img {
+  transform: scale(1.03);
+}
+
+.companion-art-info {
+  padding: 1.3rem 1.45rem;
+}
+
+.kicker-tag {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--seal-red);
+  font-weight: 700;
+}
+
+.companion-art-info h4 {
+  font-size: 1.2rem;
+  color: var(--ink-deep);
+  margin: 0.28rem 0 0.4rem;
+}
+
+.companion-art-info p {
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  color: var(--ink-body);
+  line-height: 1.65;
+  margin-bottom: 0.8rem;
+}
+
+.text-link-btn {
+  appearance: none;
+  border: none;
+  background: none;
+  color: var(--celadon-teal);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+.text-link-btn:hover {
+  text-decoration: underline;
+}
+
+.critique-box {
+  background: linear-gradient(145deg, #f9f4ea 0%, #efe7d8 100%);
+  border: 1.5px solid var(--border-strong);
+  border-left: 4px solid var(--pine-indigo);
+  border-radius: 14px;
+  padding: 1.45rem 1.6rem;
+  margin-top: 1.2rem;
+}
+
+.critique-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.critique-badge {
+  background: var(--pine-indigo);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.72rem;
+  border-radius: 999px;
+}
+
+.critique-content {
+  font-size: 1.04rem;
+  line-height: 1.92;
+  color: var(--ink-deep);
+}
+
+/* ==========================================================================
+   2. 디지털 시집 (목차 사이드바 + 리더 + 그리드)
+   ========================================================================== */
+.poetry-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.chapter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chapter-tab {
+  appearance: none;
+  border: 1.5px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--ink-deep);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.54rem 1.05rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 42px;
+}
+
+.chapter-tab:hover {
+  border-color: var(--pine-indigo);
+  color: var(--pine-indigo);
+}
+
+.chapter-tab.active {
+  background: var(--pine-indigo);
+  color: #ffffff;
+  border-color: var(--pine-indigo);
+}
+
+.section-search-wrap input {
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  padding: 0.6rem 1.05rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--ink-deep);
+  width: 260px;
+  outline: none;
+  min-height: 44px;
+}
+.section-search-wrap input:focus {
+  border-color: var(--pine-indigo);
+  box-shadow: 0 0 0 3px var(--celadon-soft);
+}
+
+.poetry-workspace {
+  display: grid;
+  grid-template-columns: 315px 1fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+
+.toc-sidebar {
+  background: var(--bg-hanji-card);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 86px;
+  max-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+}
+
+.toc-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1.5px solid var(--border-subtle);
+}
+
+.toc-sidebar-header h3 {
+  font-size: 1.15rem;
+  color: var(--ink-deep);
+}
+
+.count-pill {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: var(--bg-hanji-warm);
+  color: var(--ink-deep);
+  padding: 0.22rem 0.7rem;
+  border-radius: 999px;
+}
+
+.toc-scroll-list {
+  overflow-y: auto;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.toc-chapter-group-title {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--celadon-teal);
+  margin: 0.8rem 0 0.35rem;
+  padding: 0 0.4rem;
+}
+
+.toc-item-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink-deep);
+  cursor: pointer;
+  transition: all 0.16s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 44px;
+}
+
+.toc-item-btn:hover {
+  background: var(--bg-hanji-warm);
+}
+
+.toc-item-btn.active {
+  background: var(--pine-indigo);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.toc-item-num {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.book-nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.book-page-btn {
+  appearance: none;
+  border: 1.5px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--ink-deep);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.5rem 1.05rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 42px;
+}
+.book-page-btn:hover {
+  background: var(--pine-indigo);
+  color: #ffffff;
+  border-color: var(--pine-indigo);
+}
+
+.book-page-indicator {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+  font-weight: 700;
+}
+
+.sub-grid-header {
+  margin: 2.2rem 0 1rem;
+}
+.sub-grid-header h3 {
+  font-size: 1.25rem;
+  color: var(--ink-deep);
+}
+
+.poem-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  gap: 1.15rem;
+}
+
+.poem-mini-card {
+  background: var(--bg-hanji-card);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.3rem;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.poem-mini-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--pine-indigo);
+}
+
+.poem-mini-card.active {
+  border: 2px solid var(--seal-red);
+  background: #fffdf9;
+}
+
+.poem-mini-card h4 {
+  font-size: 1.18rem;
+  color: var(--ink-deep);
+  margin: 0.4rem 0 0.55rem;
+}
+
+.poem-mini-excerpt {
+  font-size: 0.96rem;
+  color: var(--ink-body);
+  line-height: 1.72;
+  margin-bottom: 0.95rem;
+}
+
+.poem-mini-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--celadon-teal);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   3. 생활수필 스타일
+   ========================================================================== */
+.essays-layout {
+  display: grid;
+  grid-template-columns: 345px 1fr;
+  gap: 1.8rem;
+  align-items: start;
+}
+
+.essay-toc-panel {
+  background: var(--bg-hanji-card);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.essay-list-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.essay-nav-card {
+  appearance: none;
+  border: 1.5px solid var(--border-subtle);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.05rem 1.15rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.essay-nav-card:hover {
+  border-color: var(--pine-indigo);
+}
+
+.essay-nav-card.active {
+  background: linear-gradient(135deg, #ecf2f0 0%, #ffffff 100%);
+  border: 2px solid var(--pine-indigo);
+}
+
+.essay-nav-card .cat {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--celadon-teal);
+  font-weight: 700;
+}
+
+.essay-nav-card h4 {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  color: var(--ink-deep);
+  margin: 0.28rem 0 0.4rem;
+}
+
+.essay-nav-card p {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--ink-body);
+  line-height: 1.58;
+}
+
+.hanji-essay-reader {
+  background: var(--bg-hanji-card);
+  border: 1.5px solid var(--border-strong);
+  border-top: 4px solid var(--ink-deep);
+  border-radius: 16px;
+  padding: 2.5rem 2.8rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.essay-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.essay-cat-badge {
+  background: var(--bg-sumie-ochre);
+  color: var(--gold-ochre);
+  font-weight: 700;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+}
+
+.essay-reader-title {
+  font-size: 1.95rem;
+  color: var(--ink-deep);
+  line-height: 1.38;
+  margin-bottom: 0.65rem;
+}
+
+.essay-reader-summary {
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  color: var(--ink-body);
+  line-height: 1.7;
+}
+
+.essay-body-content {
+  font-family: var(--font-serif);
+  font-size: var(--essay-font-size);
+  line-height: var(--essay-line-height);
+  color: var(--ink-deep);
+  font-weight: 500;
+  margin: 1.5rem 0 2rem;
+}
+
+.essay-paragraph {
+  margin-bottom: 1.4rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  border-left: 3.5px solid transparent;
+  transition: all 0.22s;
+}
+
+.essay-paragraph.tts-active-chunk {
+  background: rgba(242, 233, 216, 0.92);
+  border-left-color: var(--seal-red);
+  font-weight: 700;
+}
+
+.essay-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ==========================================================================
+   4. 문예신문 (명도재 문예신보 수묵 정론지 디자인)
+   ========================================================================== */
+.newspaper-masthead {
+  background: #fbf8f1;
+  border-top: 4px double var(--ink-deep);
+  border-bottom: 3px double var(--ink-deep);
+  padding: 1.5rem 2rem 1.25rem;
+  text-align: center;
+  margin-bottom: 1.8rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.masthead-top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border-strong);
+  margin-bottom: 0.9rem;
+}
+
+.masthead-hanja {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--ink-deep);
+}
+
+.masthead-title {
+  font-size: 2.35rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ink-deep);
+}
+
+.masthead-sub {
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  color: var(--ink-body);
+  margin-top: 0.38rem;
+}
+
+.news-issue-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.news-tab-btn {
+  appearance: none;
+  border: 1.5px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--ink-deep);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.54rem 1.1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 42px;
+}
+
+.news-tab-btn.active {
+  background: var(--ink-deep);
+  color: #ffffff;
+  border-color: var(--ink-deep);
+}
+
+.newspaper-broadsheet {
+  background: var(--bg-hanji-card);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 16px;
+  padding: 2.4rem 2.8rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.news-kicker-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+}
+
+.news-issue-badge {
+  background: var(--seal-red);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.24rem 0.75rem;
+  border-radius: 4px;
+}
+
+.news-cat-badge {
+  color: var(--celadon-teal);
+  font-weight: 700;
+}
+
+.news-headline {
+  font-size: 2.05rem;
+  color: var(--ink-deep);
+  line-height: 1.36;
+}
+
+.news-subheadline {
+  font-size: 1.16rem;
+  color: var(--ink-body);
+  margin-top: 0.38rem;
+}
+
+.news-byline {
+  margin-top: 0.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--ink-deep);
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  color: var(--ink-body);
+  font-weight: 700;
+}
+
+.news-lead-summary {
+  background: var(--bg-hanji-warm);
+  border-left: 4px solid var(--pine-indigo);
+  padding: 1.05rem 1.35rem;
+  font-size: 1.06rem;
+  line-height: 1.8;
+  color: var(--ink-deep);
+  margin-bottom: 1.8rem;
+  border-radius: 0 10px 10px 0;
+}
+
+.news-columns-body {
+  font-size: var(--essay-font-size);
+  line-height: var(--essay-line-height);
+  color: var(--ink-deep);
+  font-weight: 500;
+  column-count: 2;
+  column-gap: 2.6rem;
+  column-rule: 1px solid var(--border-subtle);
+}
+
+.news-columns-body h4 {
+  font-size: 1.26rem;
+  color: var(--pine-indigo);
+  margin: 1.25rem 0 0.6rem;
+  break-after: avoid;
+}
+.news-columns-body h4:first-child {
+  margin-top: 0;
+}
+
+.news-columns-body p,
+.news-columns-body ul {
+  margin-bottom: 1.15rem;
+}
+
+.news-columns-body ul {
+  padding-left: 1.35rem;
+}
+
+.news-columns-body blockquote {
+  background: var(--bg-sumie-mist);
+  border-left: 4px solid var(--celadon-teal);
+  padding: 0.9rem 1.15rem;
+  margin: 1.05rem 0;
+  font-weight: 700;
+  color: var(--ink-deep);
+  border-radius: 0 8px 8px 0;
+  break-inside: avoid;
+}
+
+.news-archive-photos {
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+  border-top: 1.5px solid var(--border-strong);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.news-photo-card {
+  background: var(--bg-hanji);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.news-photo-card:hover {
+  transform: translateY(-3px);
+}
+.news-photo-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  background: #ede6d8;
+  display: block;
+}
+.news-photo-card span {
+  display: block;
+  padding: 0.7rem 0.95rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink-deep);
+  text-align: center;
+}
+
+/* ==========================================================================
+   5. 미술 작품 갤러리 (수묵담채 화첩 프레임)
+   ========================================================================== */
+.art-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.art-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.art-card {
+  background: var(--bg-hanji-card);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.art-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--pine-indigo);
+}
+
+.art-thumb-wrap {
+  aspect-ratio: 4 / 3.1;
+  background: #eae2d3;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.art-thumb-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.art-card:hover .art-thumb-wrap img {
+  transform: scale(1.04);
+}
+
+.art-cat-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(17, 20, 22, 0.84);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+}
+
+.art-card-body {
+  padding: 1.3rem 1.4rem 1.45rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.art-card-title {
+  font-size: 1.22rem;
+  color: var(--ink-deep);
+  margin-bottom: 0.35rem;
+}
+
+.art-card-medium {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  color: var(--celadon-teal);
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.art-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--ink-body);
+  line-height: 1.68;
+  margin-bottom: 1.05rem;
+  flex: 1;
+}
+
+.art-card-btn {
+  align-self: flex-start;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--seal-red);
+  background: var(--seal-red-soft);
+  padding: 0.42rem 0.92rem;
+  border-radius: 999px;
+}
+
+/* ==========================================================================
+   하단 고정 전역 오디오 낭송 바
+   ========================================================================== */
+.global-tts-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 150;
+  background: rgba(20, 25, 28, 0.96);
+  backdrop-filter: blur(12px);
+  color: #f8f5ef;
+  border-top: 2.5px solid var(--seal-red);
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.22);
+}
+
+.tts-bar-inner {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0.72rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tts-now-playing {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 240px;
+  flex: 1;
+}
+
+.tts-wave-indicator {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 20px;
+  width: 22px;
+  flex-shrink: 0;
+}
+.tts-wave-indicator i {
+  display: block;
+  width: 4px;
+  height: 6px;
+  background: #e57368;
+  border-radius: 2px;
+  transition: height 0.2s;
+}
+.tts-wave-indicator.playing i:nth-child(1) {
+  animation: soundWave 0.7s infinite ease-in-out 0s;
+}
+.tts-wave-indicator.playing i:nth-child(2) {
+  animation: soundWave 0.7s infinite ease-in-out 0.18s;
+}
+.tts-wave-indicator.playing i:nth-child(3) {
+  animation: soundWave 0.7s infinite ease-in-out 0.35s;
+}
+.tts-wave-indicator.playing i:nth-child(4) {
+  animation: soundWave 0.7s infinite ease-in-out 0.5s;
+}
+
+@keyframes soundWave {
+  0%, 100% { height: 5px; }
+  50% { height: 20px; }
+}
+
+.tts-track-info {
+  display: flex;
+  flex-direction: column;
+}
+.tts-track-badge {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  color: #f29b91;
+  font-weight: 700;
+}
+.tts-track-title {
+  font-size: 1rem;
+  color: #ffffff;
+}
+.tts-track-progress {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: #cfd8dc;
+}
+
+.tts-main-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.global-tts-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.5rem 0.98rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s;
+  min-height: 40px;
+}
+
+.global-tts-btn.play {
+  background: var(--seal-red);
+  border-color: var(--seal-red);
+}
+.global-tts-btn.resume {
+  background: var(--celadon-teal);
+  border-color: var(--celadon-teal);
+}
+.global-tts-btn:hover:not(:disabled) {
+  filter: brightness(1.12);
+}
+.global-tts-btn:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.tts-extra-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.tts-speed-label {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: #d7e0e4;
+}
+
+.tts-rate-select {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  padding: 0.38rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.tts-rate-select option {
+  color: #111416;
+  background: #ffffff;
+}
+
+.bgm-toggle-btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #eef2f5;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0.44rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.bgm-toggle-btn[aria-pressed="true"] {
+  background: #d69e2e;
+  color: #111416;
+  border-color: #d69e2e;
+}
+
+/* ==========================================================================
+   모달 (통합 검색·목차 / 미술 상세 라이트박스 / 작가 소개)
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: rgba(15, 18, 20, 0.68);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-backdrop[hidden] {
+  display: none !important;
+}
+
+.modal-dialog {
+  background: var(--bg-hanji);
+  border: 1.5px solid var(--border-strong);
+  border-radius: 18px;
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 1.15rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h3 {
+  font-size: 1.35rem;
+  color: var(--ink-deep);
+}
+
+.modal-close-btn {
+  appearance: none;
+  border: 1.5px solid var(--border-strong);
+  background: var(--bg-hanji-warm);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modal-search-bar {
+  padding: 1rem 1.5rem;
+  background: var(--bg-hanji-warm);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+}
+
+.modal-search-bar input {
+  flex: 1;
+  min-width: 220px;
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  padding: 0.72rem 1.1rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--ink-deep);
+  outline: none;
+}
+
+.search-result-count {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--celadon-teal);
+  white-space: nowrap;
+}
+
+.modal-toc-body {
+  padding: 1.4rem 1.5rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.toc-modal-section h4 {
+  font-size: 1.15rem;
+  color: var(--pine-indigo);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1.5px solid var(--border-subtle);
+}
+
+.toc-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.65rem;
+}
+
+.toc-jump-card {
+  appearance: none;
+  border: 1.5px solid var(--border-subtle);
+  background: #ffffff;
+  padding: 0.82rem 1rem;
+  border-radius: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.toc-jump-card:hover {
+  border-color: var(--seal-red);
+  background: #fffaf8;
+}
+.toc-jump-card strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  color: var(--ink-deep);
+}
+.toc-jump-card span {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 미술 작품 상세 모달 */
+.art-modal-dialog {
+  max-width: 1060px;
+}
+
+.art-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.art-modal-img-col {
+  background: #ebe4d6;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.art-modal-img-col img {
+  width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  display: block;
+}
+
+.art-meta-item {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.15rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.art-meta-item strong {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--celadon-teal);
+  margin-bottom: 0.45rem;
+}
+
+.art-meta-item p {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--ink-deep);
+}
+
+.prompt-showcase {
+  background: linear-gradient(135deg, #f8f3e8 0%, #eaf2ef 100%);
+  border-color: var(--celadon-teal);
+}
+
+/* 작가 소개 모달 */
+.author-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.author-bio-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.author-bio-photos img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 0.9rem;
+}
+
+.author-career-list {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  line-height: 1.95;
+  color: var(--ink-deep);
+}
+
+/* ==========================================================================
+   푸터
+   ========================================================================== */
+.site-footer {
+  border-top: 2px solid var(--border-strong);
+  background: rgba(236, 228, 213, 0.85);
+  padding: 2.2rem 1.5rem 2.8rem;
+}
+
+.footer-inner {
+  max-width: 1340px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.footer-brand p {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--ink-body);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.footer-nav-btn {
+  appearance: none;
+  border: 1px solid var(--border-strong);
+  background: #ffffff;
+  color: var(--ink-deep);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.48rem 0.98rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.footer-copy {
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   스마트폰 & 태블릿 가독성 특화 반응형 미디어 쿼리
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    padding: 1.8rem;
+  }
+  .today-poem-stage,
+  .poetry-workspace,
+  .essays-layout,
+  .art-modal-body,
+  .author-bio-grid {
+    grid-template-columns: 1fr;
+  }
+  /* 태블릿·스마트폰에서는 시·수필 본문 감상실이 목차 아래에 묻히지 않고 먼저 보이도록 배치 */
+  .poetry-workspace .poetry-reader-column {
+    order: 1;
+  }
+  .poetry-workspace .toc-sidebar {
+    order: 2;
+    position: static;
+    max-height: 360px;
+  }
+  .essays-layout .hanji-essay-reader {
+    order: 1;
+  }
+  .essays-layout .essay-toc-panel {
+    order: 2;
+  }
+  .news-columns-body {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 680px) {
+  /* 스마트폰에서 글자가 시원하고 선명하게 읽히도록 크기 및 행간 최적화 */
+  body.font-size-normal {
+    --poem-font-size: 1.25rem;   /* 약 20px — 어르신과 모바일 독자 모두 편안한 크기 */
+    --poem-line-height: 2.18;
+    --essay-font-size: 1.18rem;  /* 약 19px */
+    --essay-line-height: 2.08;
+  }
+  body.font-size-large {
+    --poem-font-size: 1.44rem;
+    --essay-font-size: 1.34rem;
+  }
+  body.font-size-xlarge {
+    --poem-font-size: 1.65rem;
+    --essay-font-size: 1.52rem;
+  }
+
+  body {
+    padding-bottom: 185px;
+  }
+
+  .header-inner {
+    padding: 0.65rem 0.95rem;
+    gap: 0.6rem;
+  }
+
+  .seal-stamp {
+    width: 38px;
+    height: 38px;
+    font-size: 0.86rem;
+  }
+
+  .site-title {
+    font-size: 1.24rem;
+  }
+
+  .site-subtitle {
+    font-size: 0.78rem;
+  }
+
+  /* 스마트폰 5대 메뉴: 가로 스크롤 없이도 한눈에 들어오거나 터치하기 쉬운 큼직한 버튼 */
+  .main-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.28rem;
+    padding-bottom: 2px;
+  }
+
+  .nav-link {
+    font-size: 0.88rem;
+    padding: 0.5rem 0.2rem;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .nav-icon {
+    font-size: 1.05rem;
+  }
+
+  .header-tools {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.45rem;
+  }
+
+  .quick-search-box {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .quick-search-box input {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .font-btn {
+    font-size: 0.85rem;
+    padding: 0.38rem 0.58rem;
+  }
+
+  .hero-banner {
+    margin-top: 0.9rem;
+    padding: 0 0.9rem;
+  }
+
+  .hero-container {
+    padding: 1.4rem 1.25rem;
+    gap: 1.4rem;
+  }
+
+  .hero-heading {
+    font-size: 1.46rem;
+    line-height: 1.48;
+  }
+
+  .hero-quote {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .main-content {
+    padding: 1.15rem 0.9rem 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.58rem;
+  }
+
+  .section-desc {
+    font-size: 0.98rem;
+  }
+
+  .today-selector-wrap,
+  .watercolor-select,
+  .btn-pill,
+  .section-search-wrap,
+  .section-search-wrap input {
+    width: 100%;
+  }
+
+  /* 스마트폰 시·수필·신문 본문 카드 여백 및 대비 최적화 */
+  .hanji-poem-card,
+  .hanji-essay-reader,
+  .newspaper-broadsheet {
+    padding: 1.55rem 1.25rem;
+    border-radius: 14px;
+    background: #fffefa;
+  }
+
+  .poem-main-title,
+  .essay-reader-title,
+  .news-headline {
+    font-size: 1.62rem;
+    line-height: 1.38;
+  }
+
+  .poem-stanza {
+    padding: 0.55rem 0.65rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .essay-paragraph {
+    padding: 0.45rem 0.5rem;
+    text-align: left;
+  }
+
+  .critique-box {
+    padding: 1.2rem 1.15rem;
+  }
+
+  .critique-content {
+    font-size: 1.04rem;
+    line-height: 1.88;
+  }
+
+  .inline-tts-toolbar {
+    padding: 0.75rem;
+  }
+
+  .tts-btn-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.45rem;
+  }
+
+  .tts-ctrl-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.58rem 0.5rem;
+  }
+
+  .tts-status-pill {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* 하단 고정 오디오 바 스마트폰 레이아웃 */
+  .tts-bar-inner {
+    padding: 0.65rem 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .tts-now-playing {
+    width: 100%;
+  }
+
+  .tts-main-controls {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.35rem;
+  }
+
+  .global-tts-btn {
+    padding: 0.48rem 0.25rem;
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
+  .tts-extra-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================================================
+   버튼 확장 및 오디오 일시정지/이어 읽기 시각 하이라이트 보강
+   ========================================================================== */
+.companion-art-img-wrap {
+  cursor: pointer;
+}
+.companion-art-img-wrap:hover img {
+  transform: scale(1.03);
+}
+.companion-art-img-wrap img {
+  transition: transform 0.35s ease;
+}
+
+.companion-art-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.modal-filter-tabs {
+  padding: 0.75rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.art-modal-tts-bar {
+  margin-bottom: 1rem;
+}
+
+.art-modal-nav {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+}
+
+.news-tts-block {
+  cursor: pointer;
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.news-tts-block:hover {
+  background: rgba(235, 226, 211, 0.45);
+}
+
+.news-lead-summary.tts-active-chunk,
+.news-tts-block.tts-active-chunk,
+.art-meta-item p.tts-active-chunk {
+  background: linear-gradient(90deg, rgba(168, 46, 36, 0.13) 0%, rgba(246, 238, 224, 0.85) 100%);
+  border-left: 4px solid var(--seal-red);
+  padding-left: 0.85rem;
+  border-radius: 6px;
+}
+
+.poem-stanza.tts-paused-chunk,
+.essay-paragraph.tts-paused-chunk,
+.news-lead-summary.tts-paused-chunk,
+.news-tts-block.tts-paused-chunk,
+.art-meta-item p.tts-paused-chunk {
+  border-left-style: dashed;
+  border-left-color: var(--celadon-teal);
+  background: linear-gradient(90deg, rgba(45, 92, 87, 0.13) 0%, rgba(246, 238, 224, 0.75) 100%);
+}
