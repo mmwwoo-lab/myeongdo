@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>시의 빛 — 인상파 시화실</title><link rel="stylesheet" href="style.css"></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>시의 빛 — 다섯 가지 화풍 시화실</title><link rel="stylesheet" href="style.css"></head>
 <body>
 <header><a class="brand" href="./">시의 빛<span>POETRY ATELIER</span></a><span class="tag">글에서 풍경으로, 나만의 시화실</span></header>
 <main>
-<section class="intro"><span class="eyebrow">A LITTLE POEM, A LITTLE LIGHT</span><h1>당신의 시에<br>빛과 색을 입히세요.</h1><p>흐르는 붓결 위에 마음을 담은 한 편.<br>시의 계절과 풍경을 읽어, 인상파풍 시화로 그려드립니다.</p></section>
+<section class="intro"><span class="eyebrow">A LITTLE POEM, A LITTLE LIGHT</span><h1>당신의 시에<br>빛과 색을 입히세요.</h1><p>흐르는 붓결 위에 마음을 담은 한 편.<br>시의 계절과 풍경을 읽어, 다섯 가지 화풍으로 그려드립니다.</p></section>
 <div class="workspace">
 <form id="editor" class="panel">
 <div class="panel-heading"><h2><span>01</span> 시를 담다</h2><button type="button" id="example" class="text-button">예시 불러오기 ↗</button></div>
 <label for="title">시 제목</label><input id="title" maxlength="80" value="빛이 머무는 자리" placeholder="제목을 입력하세요">
 <label for="author">지은이 <small>선택</small></label><input id="author" maxlength="40" placeholder="이름 또는 필명">
 <div class="label-row"><label for="poem">시 본문</label><span id="count">0 / 1,500</span></div><textarea id="poem" maxlength="1500" rows="9" required placeholder="여기에 당신의 시를 적어주세요.&#10;줄바꿈도 그림에 함께 담깁니다."></textarea>
+<div class="style-control"><label id="style-label">시화 그리기 종류</label><button type="button" id="style-toggle" aria-expanded="false" aria-controls="style-picker">화풍 선택 · 인상파 ▾</button><div id="style-picker" role="group" aria-labelledby="style-label" hidden><button type="button" data-style="pop" aria-pressed="false">팝아트 <small>선명한 색과 만화 같은 점무늬</small></button><button type="button" data-style="impression" aria-pressed="true">인상파 <small>부드러운 빛과 섬세한 붓결</small></button><button type="button" data-style="abstract" aria-pressed="false">추상파 <small>자유로운 선과 기하학적 색면</small></button><button type="button" data-style="illustration" aria-pressed="false">일러스트 <small>깔끔한 선과 동화 같은 풍경</small></button><button type="button" data-style="renaissance" aria-pressed="false">르네상스 <small>고전 건축과 따뜻한 명암</small></button></div></div>
 <div class="options"><div><label for="scene">풍경</label><select id="scene"><option value="auto">시에서 자동 선택</option><option value="garden">꽃이 피는 정원</option><option value="water">빛나는 호수</option><option value="sunset">노을 진 들판</option><option value="winter">고요한 겨울</option></select></div><div><label for="position">글씨 위치</label><select id="position"><option value="right">오른쪽</option><option value="left">왼쪽</option><option value="center">가운데</option></select></div></div>
 <button class="primary" type="submit" id="generate">시화 그리기 <span>↗</span></button><p class="privacy">시 입력 내용은 서버로 전송되지 않습니다.</p>
 </form>
