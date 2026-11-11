@@ -189,3 +189,110 @@ textarea.manual-prompt{margin-top:12px;min-height:110px;font-size:11px}
   .preview .paint-selected-style{min-height:44px;flex:1}
   .preview .style-action{align-items:stretch}
 }
+
+/* Site-wide compact layout: keep the poem editor and artwork tools closer together. */
+header{height:68px;padding-left:32px;padding-right:32px}
+.brand{font-size:34px;gap:14px}
+main{padding:24px 32px 26px}
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:26px;align-items:end;margin-bottom:19px}
+.intro>.eyebrow{grid-column:1/-1;font-size:9px;letter-spacing:2.4px}
+.intro h1{grid-column:1;font-size:32px;line-height:1.21;margin:7px 0 0}
+.intro>p{position:static;grid-column:2;font-size:11px;line-height:1.55;margin:0 0 3px}
+.workspace{grid-template-columns:320px minmax(0,1fr);gap:22px;align-items:start}
+.workspace>.panel{padding:17px 18px}
+.panel-heading,.preview-heading{margin-bottom:13px}
+.preview-heading{height:21px}
+.workspace>.panel label{margin-bottom:5px}
+.workspace>.panel input:not([type=range]):not([type=checkbox]),
+.workspace>.panel textarea{padding:9px 10px;margin-bottom:11px;font-size:12px}
+.workspace>.panel textarea#poem{line-height:1.6;min-height:167px;resize:vertical}
+.poem-commands{gap:6px;margin:-1px 0 11px}
+.poem-commands button{min-height:35px;padding:8px 9px}
+.privacy{margin:7px 0 0;line-height:1.45}
+.preview{padding-top:0}
+.preview .canvas-frame{padding:8px;box-shadow:0 8px 24px #344d3010}
+.preview .design-panel{margin-top:10px;margin-bottom:11px;padding:12px 14px}
+.preview .design-heading{margin-bottom:7px}
+.preview .design-heading h3{font-size:14px}
+.preview .design-heading p{font-size:10px}
+.preview .style-help{margin:3px 0 6px;line-height:1.4}
+.preview .design-panel .style-control{margin-bottom:7px}
+.preview .design-panel .style-grid{gap:5px}
+.preview .design-panel .style-grid button,
+.preview .design-panel .style-grid button:last-child{min-height:58px;padding:4px}
+.preview .design-panel .style-grid button[aria-pressed=true],
+.preview .design-panel .style-grid button:last-child[aria-pressed=true]{padding:3px}
+.preview .design-panel .style-grid .style-swatch,
+.preview .design-panel .style-grid button:last-child .style-swatch{height:24px;margin-bottom:3px}
+.preview .design-panel .style-text{font-size:10.5px}
+.preview .design-panel .style-text small{font-size:9px;margin-top:1px}
+.preview .style-action{margin-top:7px;gap:6px}
+.preview .paint-selected-style{min-height:35px;padding:7px 11px;font-size:11px}
+.preview .poem-type-panel{margin:8px 0;padding:10px}
+.preview .type-heading{margin-bottom:6px}
+.preview .font-choices{gap:5px}
+.preview .font-choices button{min-height:60px;padding:4px 3px;gap:1px}
+.preview .font-choices button[aria-pressed=true]{padding:3px 2px}
+.preview .font-example{font-size:15px}
+.preview .sample-brush,.preview .sample-pen{font-size:20px}
+.preview .bold-option{margin:8px 0;font-size:11px}
+.preview .font-size-panel{padding:8px 10px}
+.preview .font-size-panel .label-row{margin-bottom:2px}
+.preview .size-control-row{gap:6px}
+.preview .size-control-row button{min-width:38px;height:35px;padding:3px}
+.preview .size-control-row input[type=range]{height:22px}
+.preview .size-ticks{margin:0 45px 6px}
+.preview .apply-size{min-height:35px;padding:6px 9px}
+.preview .font-size-panel .font-hint{margin-top:5px;font-size:10px;line-height:1.45}
+.preview .design-panel .options{gap:8px}
+.preview .design-panel .options label{margin-bottom:4px}
+.preview .design-panel .options select{height:33px;padding:5px 8px;margin-bottom:7px}
+.preview .design-actions{gap:7px;margin-top:0}
+.preview .design-actions button{min-height:37px;padding:7px 11px}
+.preview .design-hint{margin:5px 0 0;font-size:9px;line-height:1.4}
+.preview-footer{margin-top:11px;gap:10px}
+.preview-footer p{margin:0;line-height:1.45}
+.preview-footer .actions{gap:6px}
+.preview-footer .actions button{padding:8px 11px;font-size:11px}
+.note{margin-top:14px;padding-top:12px;gap:11px}
+.note>span{font-size:20px}
+.note p{font-size:11px;line-height:1.55}
+.note small{font-size:10px}
+footer{padding:13px 0 17px;font-size:22px}
+@media(min-width:1600px){
+ main{padding-top:29px}
+ .workspace{grid-template-columns:340px minmax(0,1fr);gap:25px}
+}
+@media(max-width:950px){
+ header,main{padding-left:18px;padding-right:18px}
+ .workspace{grid-template-columns:290px minmax(0,1fr);gap:15px}
+ .workspace>.panel{padding:14px}
+ .intro{column-gap:15px}
+ .intro h1{font-size:29px}
+ .preview .design-panel{padding:11px}
+}
+@media(max-width:700px){
+ header{height:60px}
+ .brand{font-size:30px}
+ main{padding-top:13px;padding-bottom:18px}
+ .intro{grid-template-columns:1fr;row-gap:0;margin-bottom:12px}
+ .intro>.eyebrow{grid-column:1}
+ .intro h1{grid-column:1;font-size:27px;line-height:1.16;margin:5px 0 0}
+ .intro>p{grid-column:1;font-size:10.5px;line-height:1.45;margin:7px 0 0}
+ .workspace{grid-template-columns:1fr;gap:12px}
+ .workspace>.panel{padding:14px}
+ .workspace>.preview{grid-row:auto}
+ .preview .design-panel{padding:11px 10px;margin-top:9px}
+ .preview .design-panel .style-grid button,
+ .preview .design-panel .style-grid button:last-child{min-height:61px}
+ .preview .font-choices button{min-height:61px}
+ .preview .style-action .paint-selected-style{min-height:44px}
+ .preview .size-control-row button{height:44px;min-width:44px}
+ .preview .apply-size,.preview .design-actions button{min-height:44px}
+ .preview .design-panel .options{grid-template-columns:1fr 1fr}
+ .preview .design-actions{grid-template-columns:1fr;gap:7px}
+ .preview-footer{flex-direction:column;align-items:stretch}
+ .preview-footer p{max-width:none}
+ .preview-footer .actions{justify-content:flex-end}
+ footer{margin:0 18px;padding:11px 0 15px}
+}
