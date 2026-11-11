@@ -3,7 +3,7 @@ import {revisePoem,buildExpertPrompt} from './revision.js';
 const $=id=>document.getElementById(id);
 const canvas=$('art'),ctx=canvas.getContext('2d');
 const W=1920,H=1080;
-let seed=Date.now()>>>0, artwork=null, busy=false, selectedStyle='impression', previousPoem=null;
+let seed=Date.now()>>>0, artwork=null, busy=false, finalized=false, selectedStyle='impression', previousPoem=null;
 const fonts={brush:'PoetryBrush',myeongjo:'"Nanum Myeongjo"',gowun:'"Gowun Batang"',sans:'"Noto Sans KR"',gungsuh:'"Gungsuh", "궁서"'};
 const familyFor=data=>fonts[data.font]||fonts.brush;
 const example={title:'빛이 머무는 자리',author:'',poem:'바람이 지나간 자리마다\n작은 꽃들이 고개를 든다\n\n호수에 내려앉은 오후의 빛\n물결은 말없이 하늘을 안고\n\n나는 잠시 걸음을 멈추어\n너의 이름을 봄이라 부른다'};
@@ -59,30 +59,36 @@ function lettering(data,l){
   ctx.fillText('— '+data.author,x,y);
  }
 }
-async function render(data){if(busy)return;busy=true;$('generate').disabled=true;$('variation').disabled=true;$('download').disabled=true;$('status').textContent='빛과 붓결을 담고 있습니다…';try{await document.fonts.load('60px '+familyFor(data));const l=layout(data);if(!l)throw Error('시의 줄 수가 너무 많습니다. 빈 줄을 줄이거나 시를 나누어 입력해 주세요.');await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));if(data.style==='impression')paint(data.scene);else paintStyle(ctx,data.style,data.scene,random,W,H);lettering(data,l);artwork=data;$('status').textContent=`${{garden:'꽃 정원',water:'빛나는 호수',sunset:'노을 들판',winter:'겨울 풍경',autumn:'단풍 숲길'}[data.scene]}에 시를 담았습니다. · ${styleNames[data.style]} · ${l.size}px${l.adjusted?' (화면 맞춤)':''}`;canvas.setAttribute('aria-label',`${styleNames[data.style]} 화풍 시화 미리보기`);}catch(error){$('status').textContent=error.message;}finally{busy=false;$('generate').disabled=false;$('variation').disabled=!artwork;$('download').disabled=!artwork;}}
+async function render(data,{finalize=false}={}){if(busy)return;busy=true;$('apply-design').disabled=true;$('final-create').disabled=true;$('variation').disabled=true;$('download').disabled=true;$('status').textContent=finalize?'최종 시화를 제작하고 있습니다…':'시화 미리보기에 설정을 적용하고 있습니다…';try{await document.fonts.load('60px '+familyFor(data));const l=layout(data);if(!l)throw Error('시의 줄 수가 너무 많습니다. 빈 줄을 줄이거나 시를 나누어 입력해 주세요.');await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));if(data.style==='impression')paint(data.scene);else paintStyle(ctx,data.style,data.scene,random,W,H);lettering(data,l);artwork=data;finalized=finalize;$('status').textContent=`${{garden:'꽃 정원',water:'빛나는 호수',sunset:'노을 들판',winter:'겨울 풍경',autumn:'단풍 숲길'}[data.scene]}에 시를 담았습니다. · ${styleNames[data.style]} · ${l.size}px${l.adjusted?' (화면 맞춤)':''}`;canvas.setAttribute('aria-label',`${styleNames[data.style]} 화풍 ${finalize?'최종 시화':'시화 미리보기'}`);if(finalize)$('status').textContent='최종 시화 제작 완료 · '+$('status').textContent+' · 아래 최종 PNG 저장 버튼을 누르세요.';else $('status').textContent+=' · 최종 제작 버튼으로 완성할 수 있습니다.';}catch(error){artwork=null;finalized=false;$('status').textContent=error.message;}finally{busy=false;$('apply-design').disabled=false;$('final-create').disabled=false;$('variation').disabled=!artwork;$('download').disabled=!artwork||!finalized;}}
 $('editor').addEventListener('submit',event=>{event.preventDefault();const poem=$('poem').value.trim();if(!poem){$('status').textContent='시 본문을 입력해 주세요.';$('poem').focus();return;}const title=$('title').value.trim()||'제목 없는 시';render({style:selectedStyle,title,author:$('author').value.trim(),poem,position:$('position').value,font:$('font').value,fontSize:Number($('font-size').value),scene:$('scene').value==='auto'?chooseScene(title+' '+poem):$('scene').value});});
 $('poem').addEventListener('input',()=>{$('count').textContent=$('poem').value.length.toLocaleString()+' / 1,500';});
 $('font-size').addEventListener('input',()=>{$('font-size-output').textContent=$('font-size').value+'px';});
-function redrawIfHasPoem(){if($('poem').value.trim())$('editor').requestSubmit();}
-$('font').addEventListener('change',redrawIfHasPoem);
-$('font-size').addEventListener('change',redrawIfHasPoem);
+function markDesignPending(){if($('poem').value.trim())$('status').textContent='설정이 변경되었습니다. 오른쪽의 설정 적용 또는 최종 시화 제작을 눌러주세요.';}
+for(const id of ['font','font-size','scene','position'])$(id).addEventListener('change',markDesignPending);
 function fillExample(){for(const key of ['title','author','poem'])$(key).value=example[key];$('poem').dispatchEvent(new Event('input'));}
 $('example').addEventListener('click',fillExample);
-$('variation').addEventListener('click',()=>{if(artwork)render({...artwork});});
-$('download').addEventListener('click',()=>{if(!artwork)return;canvas.toBlob(blob=>{if(!blob){$('status').textContent='이미지 저장에 실패했습니다. 다시 시도해 주세요.';return;}const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`${artwork.title.replace(/[\\/:*?"<>|\x00-\x1f]/g,'_')}-시화.png`;link.click();setTimeout(()=>URL.revokeObjectURL(url),30000);},'image/png');});
+$('variation').addEventListener('click',()=>{if(artwork)render({...artwork},{finalize:false});});
+$('apply-design').addEventListener('click',()=>{$('editor').requestSubmit();});
+$('final-create').addEventListener('click',()=>{
+ const poem=$('poem').value.trim();
+ if(!poem){$('status').textContent='최종 제작할 시를 먼저 입력해 주세요.';$('poem').focus();return;}
+ const title=$('title').value.trim()||'제목 없는 시';
+ render({style:selectedStyle,title,author:$('author').value.trim(),poem,position:$('position').value,font:$('font').value,fontSize:Number($('font-size').value),scene:$('scene').value==='auto'?chooseScene(title+' '+poem):$('scene').value},{finalize:true});
+});
+$('download').addEventListener('click',()=>{if(!artwork||!finalized)return;canvas.toBlob(blob=>{if(!blob){$('status').textContent='이미지 저장에 실패했습니다. 다시 시도해 주세요.';return;}const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`${artwork.title.replace(/[\\/:*?"<>|\x00-\x1f]/g,'_')}-시화.png`;link.click();setTimeout(()=>URL.revokeObjectURL(url),30000);},'image/png');});
 const picker=$('style-picker');
 picker.addEventListener('click',event=>{
  const button=event.target.closest('button[data-style]');
  if(!button||busy)return;
  selectedStyle=button.dataset.style;
  for(const choice of picker.querySelectorAll('button[data-style]'))choice.setAttribute('aria-pressed',String(choice===button));
- $('editor').requestSubmit();
+ markDesignPending();
 });
 $('clear-poem').addEventListener('click',()=>{
  if(($('poem').value.trim()||$('title').value.trim())&&!window.confirm('입력한 시 제목과 본문을 지우시겠습니까?'))return;
  $('poem').value='';$('title').value='';$('poem').dispatchEvent(new Event('input'));
  $('revision-panel').hidden=true;$('revised-poem').value='';previousPoem=null;
- artwork=null;$('variation').disabled=true;$('download').disabled=true;
+ artwork=null;finalized=false;$('variation').disabled=true;$('download').disabled=true;
  ctx.clearRect(0,0,W,H);ctx.fillStyle='#f0f2ea';ctx.fillRect(0,0,W,H);
  $('status').textContent='시 입력을 지웠습니다. 새 시를 입력해 주세요.';$('poem').focus();
 });
