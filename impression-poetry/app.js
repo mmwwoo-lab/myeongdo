@@ -3,7 +3,7 @@ import {revisePoem,buildExpertPrompt} from './revision.js';
 const $=id=>document.getElementById(id);
 const canvas=$('art'),ctx=canvas.getContext('2d');
 const W=1920,H=1080;
-let seed=Date.now()>>>0, artwork=null, busy=false, finalized=false, selectedStyle='impression', previousPoem=null, scrollToPainting=false;
+let seed=Date.now()>>>0, artwork=null, busy=false, finalized=false, selectedStyle='impression', previousPoem=null, scrollToPainting=false, renderVersion=0;
 const fonts={brush:'PoetryBrush',pen:'"Nanum Pen Script"',gowun:'"Gowun Batang"',song:'"Song Myung"',serif:'"Noto Serif KR"'};
 const familyFor=data=>fonts[data.font]||fonts.brush;
 const fontSpec=(data,size)=> (data.bold?'700 ':'400 ')+Math.round(size)+'px '+familyFor(data);
@@ -105,7 +105,7 @@ $('final-create').addEventListener('click',()=>{
  const poem=$('poem').value.trim();
  if(!poem){$('status').textContent='최종 제작할 시를 먼저 입력해 주세요.';$('poem').focus();return;}
  const title=$('title').value.trim()||'제목 없는 시';
- render({style:selectedStyle,title,author:$('author').value.trim(),poem,position:$('position').value,font:$('font').value,fontSize:Number($('font-size').value),scene:$('scene').value==='auto'?chooseScene(title+' '+poem):$('scene').value},{finalize:true});
+ render({style:selectedStyle,title,author:$('author').value.trim(),poem,position:$('position').value,font:$('font').value,fontSize:Number($('font-size').value),bold:$('font-bold').checked,scene:$('scene').value==='auto'?chooseScene(title+' '+poem):$('scene').value},{finalize:true});
 });
 $('download').addEventListener('click',()=>{if(!artwork||!finalized)return;canvas.toBlob(blob=>{if(!blob){$('status').textContent='이미지 저장에 실패했습니다. 다시 시도해 주세요.';return;}const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`${artwork.title.replace(/[\\/:*?"<>|\x00-\x1f]/g,'_')}-시화.png`;link.click();setTimeout(()=>URL.revokeObjectURL(url),30000);},'image/png');});
 const picker=$('style-picker');
@@ -168,5 +168,5 @@ $('ai-rewrite').addEventListener('click',async()=>{
   fallback.value=prompt;fallback.focus();fallback.select();
  }
 });
-fontPicker.classList.add('is-bold');updateFontCards();
-fillExample();render({...example,style:selectedStyle,scene:'water',position:'right',font:'brush',fontSize:56,bold:true});
+fontPicker.classList.toggle('is-bold',$('font-bold').checked);updateFontCards();
+fillExample();render({...example,style:selectedStyle,scene:'water',position:'right',font:'brush',fontSize:56,bold:$('font-bold').checked});
