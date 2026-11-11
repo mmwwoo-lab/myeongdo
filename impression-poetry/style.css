@@ -21,3 +21,34 @@
 .swatch-illustration{background:radial-gradient(circle at 75% 27%,#ffdf85 0 12%,transparent 12.5%),radial-gradient(ellipse at 24% 110%,#47735e 0 55%,transparent 56%),radial-gradient(ellipse at 85% 120%,#8ba97f 0 55%,transparent 56%),#c4dce1}
 .swatch-renaissance{background:radial-gradient(ellipse at 57% 45%,#fff0b6 0 6%,transparent 50%),linear-gradient(90deg,#ad8b58 0 11%,transparent 11% 80%,#ad8b58 80% 91%,transparent 91%),linear-gradient(145deg,#748f8a,#e6c18e 54%,#79694c)}
 @media(max-width:700px){.style-swatch{height:57px}.style-grid button{padding:9px}}
+
+/* Typography controls and the reversible poetry revision studio. */
+.typography{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start;margin:0 0 3px}
+.typography select{width:100%;margin:0;height:38px}
+.typography .label-row{margin-bottom:8px;align-items:center}
+.typography .label-row label{margin:0}
+.typography output{font-size:11px;color:#667f63;font-variant-numeric:tabular-nums}
+input[type=range]{appearance:auto;display:block;width:100%;border:0;padding:0;margin:10px 0 4px;height:17px;accent-color:#647e5c;background:transparent;cursor:pointer}
+.font-hint{font-size:10px;color:#7d8978;line-height:1.6;margin:5px 0 19px}
+.poem-commands{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;margin:-7px 0 20px}
+.poem-commands button{padding:11px 10px;font-size:11px;white-space:nowrap}
+.rewrite-button{background:#eaf0e5;color:#315d46;border-color:#abbfa7;font-weight:650}
+.rewrite-button:hover{background:#dae8d5}
+.clear-button{background:#fffaf7;color:#97615d;border-color:#e4d2cb}
+.clear-button:hover{background:#faebe4}
+.revision-panel{margin:3px 0 22px;padding:14px;background:#fbfaf5;border:1px solid #c6d4be;border-radius:8px}
+.revision-panel[hidden]{display:none}
+.revision-heading{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px}
+.revision-heading strong{font-size:13px;color:#344f3a}
+.revision-heading span{font-size:10px;color:#72836d}
+.revision-desc{font-size:11px;line-height:1.65;color:#637260;margin:8px 0 12px}
+.revision-panel textarea{min-height:145px;resize:vertical;width:100%;background:#fff;line-height:1.75;margin:0 0 10px;font-size:12px}
+.revision-notes{border-top:1px solid #e3e8db;padding-top:8px;margin-top:4px}
+.revision-notes p{font-size:10px;color:#687968;line-height:1.65;margin:5px 0}
+.revision-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:13px 0}
+.revision-actions button{padding:10px 5px;font-size:11px}
+.revision-actions .apply-revision{background:#3d5445;color:white;border-color:#3d5445}
+.ai-rewrite{display:block;width:100%;background:#f0e9d7;border-color:#dcc9a3;color:#615139;font-size:11px;padding:11px 6px}
+.revision-privacy{font-size:10px;color:#788176;line-height:1.6;margin:9px 0 0}
+textarea.manual-prompt{margin-top:12px;min-height:110px;font-size:11px}
+@media(max-width:400px){.poem-commands{grid-template-columns:1fr 1fr}.poem-commands button{white-space:normal}.typography{gap:9px}}
