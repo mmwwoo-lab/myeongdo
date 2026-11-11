@@ -52,3 +52,45 @@ input[type=range]{appearance:auto;display:block;width:100%;border:0;padding:0;ma
 .revision-privacy{font-size:10px;color:#788176;line-height:1.6;margin:9px 0 0}
 textarea.manual-prompt{margin-top:12px;min-height:110px;font-size:11px}
 @media(max-width:400px){.poem-commands{grid-template-columns:1fr 1fr}.poem-commands button{white-space:normal}.typography{gap:9px}}
+
+/* Production workspace: poem editing on the left, all visual controls on the right. */
+.design-panel{background:#fffcf7;border:1px solid #dfe3d6;border-radius:9px;padding:21px 23px;margin-bottom:23px;box-shadow:0 6px 26px #344d3009}
+.design-heading{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:15px}
+.design-heading h3{font-size:17px;font-weight:650;color:#354c3d;margin:0;letter-spacing:-.6px}
+.design-heading p{font-size:11px;color:#7b8776;margin:0;line-height:1.5}
+.design-panel .style-control{margin-bottom:17px}
+.design-panel .style-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.design-panel .style-grid button{padding:8px;min-height:92px}
+.design-panel .style-grid button:last-child{grid-column:auto;display:block;min-height:92px}
+.design-panel .style-grid button:last-child .style-swatch{width:100%;height:48px;margin-bottom:7px}
+.design-panel .style-grid button[aria-pressed=true],.design-panel .style-grid button:last-child[aria-pressed=true]{padding:7px}
+.design-panel .style-text{white-space:normal}
+.design-panel .typography{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:20px}
+.design-panel .options{max-width:610px}
+.design-panel .options select{width:100%;height:38px}
+.design-panel .font-hint{margin-top:7px;margin-bottom:18px}
+.design-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2px}
+.design-actions button{font-size:14px;font-weight:650;min-height:49px;border-radius:6px}
+.apply-design{background:#f1f5ec;color:#3f5f4c;border:1px solid #aebfa9}
+.apply-design:hover{background:#e2ecdc}
+.final-create{background:#355a43;color:white;border:1px solid #355a43}
+.final-create:hover{background:#49795a}
+.design-hint{font-size:10px;color:#7c8979;line-height:1.6;text-align:center;margin:10px 0 0}
+.preview .canvas-frame{scroll-margin-top:20px}
+.preview-footer .actions .save{font-weight:650}
+@media(max-width:1150px) and (min-width:701px){
+ .design-panel .style-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .design-heading{display:block}
+ .design-heading p{margin-top:5px}
+}
+@media(max-width:700px){
+ .workspace>.preview{grid-row:auto}
+ .design-panel{padding:17px 15px;margin-bottom:18px}
+ .design-heading{display:block}
+ .design-heading p{margin-top:5px}
+ .design-panel .style-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .design-panel .style-grid button:last-child{grid-column:auto}
+ .design-actions{grid-template-columns:1fr;gap:8px}
+ .design-actions button{width:100%;min-height:46px}
+ .preview-footer{flex-wrap:wrap}
+}
