@@ -129,6 +129,8 @@ $('clear-poem').addEventListener('click',()=>{
  ++renderVersion;busy=false;scrollToPainting=false;
  $('poem').value='';$('title').value='';$('author').value='';$('poem').dispatchEvent(new Event('input'));
  $('revision-panel').hidden=true;$('revised-poem').value='';previousPoem=null;
+ // A cleared poem starts without forced bold; users can opt in again.
+ $('font-bold').checked=false;fontPicker.classList.toggle('is-bold',false);
  choosePaintingStyle('impression');$('scene').value='auto';
  for(const id of ['apply-design','paint-selected-style','final-create'])$(id).disabled=false;
  artwork=null;finalized=false;$('variation').disabled=true;$('download').disabled=true;
