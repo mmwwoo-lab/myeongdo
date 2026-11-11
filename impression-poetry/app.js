@@ -103,7 +103,7 @@ $('apply-revision').addEventListener('click',()=>{
  const next=$('revised-poem').value.trim();
  if(!next){$('status').textContent='재창작된 시가 비어 있습니다.';return;}
  if(next.length>1500){$('status').textContent='재창작 시는 1,500자까지 적용할 수 있습니다.';return;}
- previousPoem={title:$('title').value,poem:$('poem').value};
+ if(!previousPoem)previousPoem={title:$('title').value,poem:$('poem').value};
  $('poem').value=next;$('poem').dispatchEvent(new Event('input'));
  $('undo-revision').disabled=false;
  $('editor').requestSubmit();
