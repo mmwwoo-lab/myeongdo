@@ -21,7 +21,12 @@
 <button type="button" id="ai-rewrite" class="ai-rewrite">AI 정밀 재창작 · ChatGPT 열기 ↗</button>
 <p class="revision-privacy">AI 정밀 재창작은 전문 퇴고 지침과 시를 복사한 뒤 새 창에서 ChatGPT를 엽니다. 붙여넣어 전송하는 경우에만 외부 서비스로 전달됩니다.</p>
 </section>
-<fieldset class="style-control"><legend>시화 그리기 종류 <small>5가지 화풍</small></legend><p class="style-help">원하는 그림을 누르면 시화 미리보기에 적용됩니다.</p>
+<p class="privacy">시화 제작 및 즉시 퇴고 과정에서 시 내용은 서버로 전송되지 않습니다.</p>
+</form>
+<section class="preview"><div class="preview-heading"><h2><span>02</span> 풍경이 되다</h2><span class="pill">16:9 · 1920 × 1080</span></div>
+<section class="design-panel" aria-label="시화 디자인 설정">
+ <div class="design-heading"><h3>시화 디자인 설정</h3><p>화풍과 글꼴, 크기, 풍경을 선택한 후 적용하세요.</p></div>
+ <fieldset class="style-control"><legend>그림 화풍 선택 <small>5가지</small></legend><p class="style-help">그림을 선택하고 아래의 설정 적용 버튼을 눌러주세요.</p>
 <div id="style-picker" class="style-grid" role="group" aria-label="다섯 가지 그림 화풍">
 <button type="button" data-style="impression" aria-pressed="true"><span class="style-swatch swatch-impression" aria-hidden="true"></span><span class="style-text">인상파<small>빛 번지는 붓결</small></span></button>
 <button type="button" data-style="pop" aria-pressed="false"><span class="style-swatch swatch-pop" aria-hidden="true"></span><span class="style-text">팝아트<small>강렬한 색채</small></span></button>
@@ -31,8 +36,12 @@
 </div></fieldset>
 <div class="typography"><div><label for="font">시화 글꼴</label><select id="font"><option value="brush">나눔 붓글씨</option><option value="myeongjo">나눔 명조</option><option value="gowun">고운 바탕</option><option value="sans">단정한 고딕</option><option value="gungsuh">전통 궁서</option></select></div><div><div class="label-row"><label for="font-size">글자 크기</label><output for="font-size" id="font-size-output">60px</output></div><input type="range" id="font-size" min="28" max="88" step="2" value="60" aria-label="시화 글자 크기"></div></div><p class="font-hint">시가 길면 화면에 맞도록 글씨가 자동으로 조금 줄어듭니다.</p>
 <div class="options"><div><label for="scene">풍경</label><select id="scene"><option value="auto">시에서 자동 선택</option><option value="garden">꽃이 피는 정원</option><option value="water">빛나는 호수</option><option value="sunset">노을 진 들판</option><option value="winter">고요한 겨울</option><option value="autumn">가을 단풍 숲길</option></select></div><div><label for="position">글씨 위치</label><select id="position"><option value="right">오른쪽</option><option value="left">왼쪽</option><option value="center">가운데</option></select></div></div>
-<button class="primary" type="submit" id="generate">시화 그리기 <span>↗</span></button><p class="privacy">시화 제작 및 즉시 퇴고 과정에서 시 내용은 서버로 전송되지 않습니다.</p>
-</form>
-<section class="preview"><div class="preview-heading"><h2><span>02</span> 풍경이 되다</h2><span class="pill">16:9 · 1920 × 1080</span></div><div class="canvas-frame"><canvas id="art" width="1920" height="1080" aria-label="선택한 화풍의 풍경 위에 시를 배치한 시화 미리보기"></canvas></div><div class="preview-footer"><p id="status" role="status" aria-live="polite">시를 담아 첫 번째 풍경을 그려보세요.</p><div class="actions"><button id="variation" type="button" disabled>다른 붓결</button><button id="download" class="save" type="button" disabled>PNG 저장 ↓</button></div></div><div class="note"><span>✦</span><p>한 편의 시, 한 장의 풍경<br><small>시의 단어에 어울리는 풍경을 Canvas 붓터치로 그립니다.<br>글꼴과 글자 크기를 선택하고 재창작 초안을 비교하여 완성합니다.</small></p></div></section>
+
+ <div class="design-actions">
+  <button type="button" id="apply-design" class="apply-design">설정 적용 · 미리보기</button>
+  <button type="button" id="final-create" class="final-create">✦ 최종 시화 제작</button>
+ </div>
+ <p class="design-hint">최종 제작을 누르면 선택한 설정으로 1920 × 1080 시화를 완성하고 PNG 저장 버튼이 활성화됩니다.</p>
+</section><div class="canvas-frame"><canvas id="art" width="1920" height="1080" aria-label="선택한 화풍의 풍경 위에 시를 배치한 시화 미리보기"></canvas></div><div class="preview-footer"><p id="status" role="status" aria-live="polite">시를 담아 첫 번째 풍경을 그려보세요.</p><div class="actions"><button id="variation" type="button" disabled>다른 붓결</button><button id="download" class="save" type="button" disabled>최종 PNG 저장 ↓</button></div></div><div class="note"><span>✦</span><p>한 편의 시, 한 장의 풍경<br><small>시의 단어에 어울리는 풍경을 Canvas 붓터치로 그립니다.<br>글꼴과 글자 크기를 선택하고 재창작 초안을 비교하여 완성합니다.</small></p></div></section>
 </div></main><footer>시의 빛 <span>당신의 문장이 오래 머무는 곳.</span></footer><script type="module" src="app.js"></script>
 </body></html>
