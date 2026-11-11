@@ -1,4 +1,4 @@
-export const styleNames={pop:'팝아트',impression:'인상파',abstract:'추상파',illustration:'일러스트',renaissance:'르네상스'};
+export const styleNames={pop:'팝아트',impression:'인상파',abstract:'추상파',illustration:'일러스트',renaissance:'스테인드글라스'};
 export function paintStyle(ctx,style,scene,random,W,H){
  const themes={garden:['#f6ddb8','#7eaa6b','#ef82a1'],water:['#cbe8ee','#489db1','#f8d77e'],sunset:['#f4bd93','#b66b82','#ffd779'],winter:['#e4e9f1','#899dbb','#faf6e9'],autumn:['#f5d8ac','#b66f3e','#dd9a43']};
  const p=themes[scene];
@@ -27,19 +27,73 @@ export function paintStyle(ctx,style,scene,random,W,H){
   if(scene==='water'){ctx.fillStyle='#89c6ce';ctx.fillRect(0,690,W,390);for(let i=0;i<40;i++){ctx.strokeStyle='#d4ece6';ctx.lineWidth=4;const x=random()*W,y=720+random()*330;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+35+random()*90,y);ctx.stroke();}}
   for(let i=0;i<7;i++){const x=80+i*100,y=470+random()*180;ctx.fillStyle='#816b52';ctx.fillRect(x-6,y,12,300);ellipse(x,y,50,100,scene==='winter'?'#eef0ea':scene==='autumn'?(i%2?'#c96b37':'#e7a64e'):'#688f65');}
   if(scene==='autumn')for(let i=0;i<130;i++){const x=random()*850,y=810+random()*230;ellipse(x,y,4+random()*13,2+random()*7,['#bb5437','#e49c42','#d4bb63'][i%3]);}else if(scene!=='winter')for(let i=0;i<40;i++)flower(random()*850,830+random()*190,8+random()*10,p[2]);
+
  }else{
-  const sky=ctx.createLinearGradient(0,0,0,H);sky.addColorStop(0,'#7c999c');sky.addColorStop(.5,'#ead3a0');sky.addColorStop(1,'#564e38');ctx.fillStyle=sky;ctx.fillRect(0,0,W,H);
-  for(let i=0;i<90;i++)ellipse(random()*W,120+random()*350,70+random()*130,12+random()*22,'rgba(246,225,182,.09)');
-  hill(530,'#a5a48a',110);hill(620,'#7b8974',150);hill(770,'#576d52',120);hill(990,'#414f36',100);
-  if(scene==='water'){ctx.fillStyle='#9aada0';ctx.beginPath();ctx.moveTo(780,620);ctx.bezierCurveTo(200,820,800,850,350,H);ctx.lineTo(1000,H);ctx.bezierCurveTo(1200,850,700,800,850,620);ctx.fill();}
-  // Architectural perspective and warm glazing evoke a classical painted landscape.
-  ctx.fillStyle='#cfb98b';ctx.fillRect(85,100,70,900);ctx.fillRect(690,100,70,900);ctx.fillStyle='#a48a60';ctx.fillRect(70,980,710,50);
-  ctx.strokeStyle='#c7ae80';ctx.lineWidth=68;ctx.beginPath();ctx.moveTo(120,400);ctx.bezierCurveTo(120,-15,725,-15,725,400);ctx.stroke();
-  for(let x of [100,125,705,730]){ctx.strokeStyle='rgba(255,239,196,.35)';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(x,370);ctx.lineTo(x,970);ctx.stroke();}
-  if(scene==='garden')for(let i=0;i<90;i++)flower(170+random()*480,820+random()*150,3+random()*5,['#c39a72','#b56b66'][i%2]);
-  if(scene==='winter'){ctx.fillStyle='rgba(240,234,214,.45)';ctx.fillRect(155,870,535,60);}if(scene==='autumn'){for(let i=0;i<400;i++){const x=180+random()*570,y=390+random()*560;ellipse(x,y,2+random()*10,2+random()*7,['#b64e2e','#db8e38','#edbd63'][i%3]);}}
-  const glow=ctx.createRadialGradient(800,280,30,800,280,1100);glow.addColorStop(0,'rgba(255,228,168,.3)');glow.addColorStop(1,'rgba(52,30,13,.32)');ctx.fillStyle=glow;ctx.fillRect(0,0,W,H);
-  for(let i=0;i<12000;i++){ctx.fillStyle=i%2?'rgba(255,235,188,.04)':'rgba(45,26,13,.05)';ctx.fillRect(random()*W,random()*H,1+random()*3,1+random()*3);}
+  // Cut-glass mosaic panels with dark lead seams; five seasonal palettes.
+  const glassColors={
+   garden:['#3c9b78','#98bf72','#e5a24a','#e8c966','#cf6a79','#68acc0','#366b9c'],
+   water:['#1d6086','#3f8fae','#7cc5c9','#c7e6d4','#e7d781','#456fb0','#78b2d0'],
+   sunset:['#7b5192','#bd547a','#e1754f','#e6a642','#f4d17c','#426b9a','#9b6278'],
+   winter:['#486a9e','#8aafcc','#b8d9e4','#e4eff2','#84a3bd','#b4c8d8','#c5d9e7'],
+   autumn:['#9c4a36','#ca643c','#ed9d42','#f1c55b','#8a743a','#a34041','#be853e']
+  };
+  const tiles=glassColors[scene]||glassColors.garden;
+  function pane(points,color){
+   ctx.beginPath();ctx.moveTo(points[0][0],points[0][1]);
+   for(let i=1;i<points.length;i++)ctx.lineTo(points[i][0],points[i][1]);
+   ctx.closePath();ctx.fillStyle=color;ctx.fill();
+   ctx.strokeStyle='#22282c';ctx.lineWidth=7;ctx.lineJoin='round';ctx.stroke();
+   ctx.save();ctx.clip();
+   const shine=ctx.createLinearGradient(0,0,W,H);
+   shine.addColorStop(0,'rgba(255,255,255,.29)');shine.addColorStop(.45,'rgba(255,255,255,.02)');shine.addColorStop(1,'rgba(12,20,25,.13)');
+   ctx.fillStyle=shine;ctx.fillRect(0,0,W,H);ctx.restore();
+  }
+  ctx.fillStyle='#243038';ctx.fillRect(0,0,W,H);
+  // Small glass cells occupy the whole landscape, joined by visible solder lines.
+  for(let y=0;y<H;y+=108){
+   for(let x=0;x<W;x+=144){
+    const x2=Math.min(W,x+144),y2=Math.min(H,y+108),dx=(random()-.5)*48,dy=(random()-.5)*40;
+    const a=tiles[Math.floor(random()*tiles.length)];
+    const b=tiles[Math.floor(random()*tiles.length)];
+    pane([[x,y],[x2,y],[x2+dx*.3,y2+dy*.2],[x+dx,y2]],a);
+    if(random()>.4)pane([[x+dx,y2],[x2+dx*.3,y2+dy*.2],[x2,y2],[x2,y2-24]],b);
+   }
+  }
+  // Jewel-like rose window / sun, placed left of the poem.
+  const cx=610,cy=250,radius=146,n=12;
+  for(let i=0;i<n;i++){
+   const a=i*Math.PI*2/n,b=(i+1)*Math.PI*2/n;
+   pane([[cx,cy],[cx+Math.cos(a)*radius,cy+Math.sin(a)*radius],[cx+Math.cos(b)*radius,cy+Math.sin(b)*radius]],['#f3df8c','#e5a85a','#d16d64'][i%3]);
+  }
+  ctx.strokeStyle='#242a30';ctx.lineWidth=15;ctx.beginPath();ctx.arc(cx,cy,radius,0,Math.PI*2);ctx.stroke();
+  // Distant jagged mountains, river or fields: separate shaped colored glass.
+  for(let x=0;x<960;x+=160){
+   const ridge=460+random()*160;
+   pane([[x,710],[x,ridge+130],[x+80,ridge-65],[x+160,ridge+105],[x+160,710]],tiles[(Math.floor(x/160)+2)%tiles.length]);
+  }
+  if(scene==='water'){
+   for(let y=700;y<H;y+=70){
+    for(let x=0;x<1000;x+=160){
+     pane([[x,y],[x+80,y-16],[x+160,y],[x+160,y+70],[x,y+70]],['#2b80ad','#72c0cc','#4e9fbc','#b2d9dc'][Math.floor(random()*4)]);
+    }
+   }
+  }else{
+   for(let y=740;y<H;y+=105){
+    for(let x=0;x<980;x+=140){
+     pane([[x,y],[x+70,y-35],[x+140,y],[x+140,y+105],[x,y+105]],tiles[Math.floor(random()*tiles.length)]);
+    }
+   }
+  }
+  // Flower and leaf tesserae in foreground, especially autumn branches.
+  if(scene!=='winter'){
+   for(let i=0;i<26;i++){
+    const x=30+random()*850,y=745+random()*260,size=12+random()*24;
+    pane([[x,y-size],[x+size,y],[x,y+size],[x-size,y]],tiles[(i+4)%tiles.length]);
+   }
+  }
+  const shimmer=ctx.createLinearGradient(0,0,W,H);
+  shimmer.addColorStop(0,'rgba(255,246,198,.20)');shimmer.addColorStop(.50,'rgba(255,255,255,.03)');shimmer.addColorStop(1,'rgba(12,19,34,.20)');
+  ctx.fillStyle=shimmer;ctx.fillRect(0,0,W,H);
  }
  ctx.restore();
 }
