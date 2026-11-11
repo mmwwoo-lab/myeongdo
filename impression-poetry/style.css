@@ -94,3 +94,40 @@ textarea.manual-prompt{margin-top:12px;min-height:110px;font-size:11px}
  .design-actions button{width:100%;min-height:46px}
  .preview-footer{flex-wrap:wrap}
 }
+
+/* Five readable and distinctly poetic Korean font faces. */
+.poem-type-panel{margin:19px 0 18px;padding:17px 18px;background:#f8f7f1;border:1px solid #e1e5d8;border-radius:9px}
+.type-heading{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;margin:0 0 12px}
+.type-heading h4{font-size:13px;color:#374c40;margin:0;font-weight:700}
+.type-heading small{font-size:10px;font-weight:400;color:#899382}
+.type-heading p{font-size:10px;color:#7c8978;margin:0}
+.font-select{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;border:0!important;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.font-choices{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.font-choices button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:0;min-height:98px;padding:10px 5px;text-align:center;background:#fffdf9;border:1px solid #d6dccc;border-radius:7px}
+.font-choices button:hover{background:#eef3e9;border-color:#8ba58e}
+.font-choices button[aria-pressed=true]{border:2px solid #3d7454;background:#e8f1e5;padding:9px 4px;box-shadow:0 0 0 1px #cfe2c9}
+.font-example{display:block;font-size:19px;line-height:1.45;white-space:normal;color:#1a3024;word-break:keep-all}
+.font-choices.is-bold .font-example{font-weight:700;-webkit-text-stroke:.35px currentColor}
+.font-choices small{font-size:10px;line-height:1.4;color:#657b6b}
+.sample-brush{font-family:PoetryBrush,serif;font-size:26px}
+.sample-pen{font-family:'Nanum Pen Script',cursive;font-size:26px}
+.sample-gowun{font-family:'Gowun Batang',serif}
+.sample-song{font-family:'Song Myung',serif}
+.sample-serif{font-family:'Noto Serif KR',serif}
+.bold-option{display:inline-flex;align-items:center;gap:9px;margin:15px 0 18px;font-size:12px;font-weight:650;color:#2a4936;cursor:pointer}
+.bold-option input{appearance:auto;accent-color:#3d7454;width:17px;height:17px;margin:0;flex:0 0 auto}
+.font-size-panel{background:#fffefb;border:1px solid #dce3d6;border-radius:8px;padding:14px}
+.font-size-panel .label-row{align-items:center;margin:0 0 6px}
+.font-size-panel .label-row label{font-size:12px;font-weight:650;margin:0}
+.font-size-panel output{font-size:17px;color:#2e5b3d;font-weight:700;font-variant-numeric:tabular-nums}
+.size-control-row{display:flex;align-items:center;gap:12px}
+.size-control-row button{min-width:48px;height:44px;padding:5px;background:#edf3e8;border-color:#b7c8ae;font-size:18px;font-weight:700;color:#2e5b3d}
+.size-control-row button:hover{background:#dcebd4}
+.size-control-row input[type=range]{flex:1;min-width:0;height:30px;margin:0;accent-color:#3c7154;cursor:pointer}
+.size-ticks{display:flex;justify-content:space-between;gap:4px;margin:0 58px 13px;color:#71806f;font-size:10px;font-variant-numeric:tabular-nums}
+.apply-size{display:block;width:100%;border:1px solid #8da88f;background:#dceade;color:#284c36;font-size:13px;font-weight:700;min-height:43px}
+.apply-size:hover{background:#c7dfcd}
+.font-size-panel .font-hint{font-size:11px;color:#73816f;line-height:1.6;margin:9px 0 0}
+.preview .design-panel{margin-top:19px}
+@media(max-width:1200px){.font-choices{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.font-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.poem-type-panel{padding:14px 12px}.size-control-row{gap:6px}.size-ticks{margin-left:49px;margin-right:49px}}
