@@ -178,3 +178,14 @@ textarea.manual-prompt{margin-top:12px;min-height:110px;font-size:11px}
  .preview .size-control-row button{min-width:44px;height:44px}
  .preview .apply-size{min-height:44px}
 }
+
+/* Explicit art-style selection, followed by a dedicated paint action. */
+.preview .style-action{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:10px}
+.preview .selected-style-label{font-size:11px;font-weight:650;color:#476549}
+.preview .paint-selected-style{display:inline-flex;align-items:center;justify-content:center;min-height:38px;border:1px solid #315b45;border-radius:6px;background:#365d46;color:#fff;font-size:12px;font-weight:700;padding:8px 15px;white-space:nowrap}
+.preview .paint-selected-style:hover{background:#4a7958}
+.preview .paint-selected-style:disabled{opacity:.5;cursor:wait}
+@media(max-width:700px){
+  .preview .paint-selected-style{min-height:44px;flex:1}
+  .preview .style-action{align-items:stretch}
+}
