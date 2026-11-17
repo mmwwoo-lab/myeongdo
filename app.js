@@ -13,7 +13,6 @@
     poetryChapterFilter: "all",
     poetrySearchQuery: "",
     selectedEssayId: "essay-1",
-    selectedNewsId: "news-1",
     artCategoryFilter: "all",
     currentModalArtId: "art-4",
     tocCategoryFilter: "all",
@@ -24,7 +23,7 @@
   const ttsState = {
     sessionId: 0, // 비동기 타이머·이벤트 충돌 방지용 고유 세션 토큰
     status: "idle", // 'idle' | 'playing' | 'paused'
-    sourceSection: "today-poem", // 'today-poem' | 'poetry-book' | 'life-essays' | 'literary-news' | 'art-gallery'
+    sourceSection: "today-poem", // 'today-poem' | 'poetry-book' | 'life-essays' | 'art-gallery'
     workId: "poem-1",
     workTitle: "",
     workTypeLabel: "시 낭송",
@@ -131,7 +130,7 @@
     initTodayPoemSection();
     initPoetryBookSection();
     // 생활수필은 외부 전자수필집 링크만 제공
-    initNewspaperSection();
+
     initArtGallerySection();
     initHomeArtPreview();
     initModalsAndSearch();
@@ -139,7 +138,7 @@
 
     // URL 해시가 있으면 해당 섹션으로 이동
     const hash = window.location.hash.replace("#", "");
-    const validSections = ["today-poem", "poetry-book", "life-essays", "novel-writing", "literary-news", "art-gallery"];
+    const validSections = ["today-poem", "poetry-book", "life-essays", "novel-writing", "art-gallery"];
     if (validSections.includes(hash)) {
       switchSection(hash, false);
     }
@@ -157,7 +156,6 @@
     const totalWorks =
       MUSEUM_DATA.poems.length +
       MUSEUM_DATA.essays.length +
-      MUSEUM_DATA.newspaper.length +
       MUSEUM_DATA.artworks.length;
 
     const heroTocBtn = document.getElementById("hero-open-toc-btn");
@@ -291,9 +289,6 @@
       updateGlobalBarMetadata("디지털 시집", p.title, "읽어주기 버튼을 누르면 시 낭송이 시작됩니다");
     } else if (sectionId === "life-essays") {
       updateGlobalBarMetadata("생활수필", "명도재 생활수필 전자수필집", "전자수필집 읽기 링크를 눌러 감상하세요");
-    } else if (sectionId === "literary-news") {
-      const n = MUSEUM_DATA.newspaper.find((x) => x.id === state.selectedNewsId) || MUSEUM_DATA.newspaper[0];
-      updateGlobalBarMetadata("문예신문", n.title, "읽어주기 버튼을 누르면 기사 낭독이 시작됩니다");
     } else if (sectionId === "art-gallery") {
       const a = MUSEUM_DATA.artworks.find((x) => x.id === state.currentModalArtId) || MUSEUM_DATA.artworks[0];
       updateGlobalBarMetadata("미술 작품 해설", a.title, "읽어주기 버튼을 누르면 작품 해설을 읽어줍니다");
@@ -773,137 +768,6 @@
   // ==========================================================================
   // 4. 문예신문 (Literary Newspaper)
   // ==========================================================================
-  function initNewspaperSection() {
-    const tabsContainer = document.getElementById("news-issue-tabs");
-    tabsContainer.innerHTML = MUSEUM_DATA.newspaper
-      .map(
-        (item, idx) => `
-        <button type="button" class="news-tab-btn ${idx === 0 ? "active" : ""}" data-news-id="${item.id}">
-          ${escapeHtml(item.issue)}
-        </button>
-      `
-      )
-      .join("");
-
-    tabsContainer.querySelectorAll(".news-tab-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const id = btn.getAttribute("data-news-id");
-        renderNewspaperArticle(id, true);
-      });
-    });
-
-    const navigateNews = (offset) => {
-      const idx = MUSEUM_DATA.newspaper.findIndex((n) => n.id === state.selectedNewsId);
-      const nextIdx = (idx + offset + MUSEUM_DATA.newspaper.length) % MUSEUM_DATA.newspaper.length;
-      renderNewspaperArticle(MUSEUM_DATA.newspaper[nextIdx].id, true);
-    };
-
-    document.getElementById("prev-news-btn")?.addEventListener("click", () => navigateNews(-1));
-    document.getElementById("next-news-btn")?.addEventListener("click", () => navigateNews(1));
-
-    renderNewspaperArticle(state.selectedNewsId, false);
-  }
-
-  function renderNewspaperArticle(newsId, scrollIntoView = false) {
-    const idx = MUSEUM_DATA.newspaper.findIndex((n) => n.id === newsId);
-    const article = idx >= 0 ? MUSEUM_DATA.newspaper[idx] : MUSEUM_DATA.newspaper[0];
-    const actualIdx = idx >= 0 ? idx : 0;
-    const prevId = state.selectedNewsId;
-    state.selectedNewsId = article.id;
-
-    if (
-      ttsState.status !== "idle" &&
-      ttsState.sourceSection === "literary-news" &&
-      prevId !== article.id
-    ) {
-      stopTTS();
-    }
-
-    document.querySelectorAll("#news-issue-tabs .news-tab-btn").forEach((btn) => {
-      btn.classList.toggle("active", btn.getAttribute("data-news-id") === article.id);
-    });
-
-    const newsInd = document.getElementById("news-page-indicator");
-    if (newsInd) {
-      newsInd.textContent = `${actualIdx + 1} / ${MUSEUM_DATA.newspaper.length}`;
-    }
-
-    document.getElementById("news-issue-label").textContent = article.issue;
-    document.getElementById("news-category-label").textContent = article.category;
-    document.getElementById("news-date-label").textContent = `발행일: ${article.date}`;
-    document.getElementById("news-headline").textContent = article.title;
-    document.getElementById("news-subheadline").textContent = article.subtitle;
-    document.getElementById("news-byline").textContent = `필자: ${article.author}`;
-
-    const leadEl = document.getElementById("news-lead-summary");
-    leadEl.textContent = article.summary;
-    leadEl.title = "클릭하면 요약문부터 기사를 읽어줍니다";
-    leadEl.style.cursor = "pointer";
-    leadEl.onclick = () => startNewsTTS(1);
-
-    const bodyEl = document.getElementById("news-article-body");
-    bodyEl.innerHTML = article.content;
-
-    // 기사 내 각 단락 클릭 시 해당 단락부터 낭독 시작
-    const blockEls = Array.from(
-      bodyEl.querySelectorAll("h4, p, blockquote, li")
-    );
-    blockEls.forEach((el, bIdx) => {
-      el.classList.add("news-tts-block");
-      el.title = "클릭하면 이 단락부터 읽어줍니다";
-      el.addEventListener("click", () => {
-        startNewsTTS(bIdx + 2); // 0: 제목, 1: 요약문, 2~: 본문 단락
-      });
-    });
-
-    const photosEl = document.getElementById("news-archive-photos");
-    if (article.images && article.images.length > 0) {
-      photosEl.hidden = false;
-      photosEl.innerHTML = article.images
-        .map(
-          (imgSrc, imgIdx) => `
-          <div class="news-photo-card" data-photo-src="${imgSrc}" data-photo-title="${escapeHtml(article.title)} — 수록 자료 ${imgIdx + 1}">
-            <img src="${imgSrc}" alt="${escapeHtml(article.title)} 자료 이미지 ${imgIdx + 1}" loading="lazy" />
-            <span>🔍 수록 지면 / 발표 자료 원본 크게 보기 (${imgIdx + 1})</span>
-          </div>
-        `
-        )
-        .join("");
-
-      photosEl.querySelectorAll(".news-photo-card").forEach((card) => {
-        card.addEventListener("click", () => {
-          openArtLightbox({
-            id: "news-photo",
-            title: card.getAttribute("data-photo-title"),
-            category: article.issue,
-            year: article.date,
-            medium: "문예신문 · 학술지 수록 원본 자료",
-            image: card.getAttribute("data-photo-src"),
-            meaning: article.summary,
-            prompt: "『대구예술』 및 수성구미술가협회 학술세미나에 수록된 명도재 이명우 대표의 원고 및 지면 아카이브입니다."
-          });
-        });
-      });
-    } else {
-      photosEl.hidden = true;
-      photosEl.innerHTML = "";
-    }
-
-    if (ttsState.status === "idle" && state.currentSection === "literary-news") {
-      updateGlobalBarMetadata("문예신문", article.title, "읽어주기 버튼을 누르면 기사 낭독이 시작됩니다");
-    }
-
-    if (scrollIntoView) {
-      document.getElementById("newspaper-broadsheet")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  }
-
-  // ==========================================================================
-  // 5. 미술 작품 (Art Gallery)
-  // ==========================================================================
   function initArtGallerySection() {
     const tabs = document.querySelectorAll("#art-filter-tabs .chapter-tab");
     tabs.forEach((tab) => {
@@ -957,7 +821,11 @@
 
     if (viewAllButton) {
       viewAllButton.textContent = `전체 작품 ${MUSEUM_DATA.artworks.length}점 보기 →`;
-      viewAllButton.addEventListener("click", () => switchSection("art-gallery", true));
+      viewAllButton.setAttribute("href", "#art-gallery");
+      viewAllButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        switchSection("art-gallery", true);
+      });
     }
   }
 
@@ -987,10 +855,20 @@
       .join("");
 
     grid.querySelectorAll(".art-card").forEach((card) => {
-      card.addEventListener("click", () => {
+      card.tabIndex = 0;
+      card.setAttribute("role", "button");
+      card.setAttribute("aria-label", "작품 크게 보기 및 해설");
+      const openCard = () => {
         const id = card.getAttribute("data-art-id");
         const art = MUSEUM_DATA.artworks.find((a) => a.id === id);
         if (art) openArtLightbox(art);
+      };
+      card.addEventListener("click", openCard);
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openCard();
+        }
       });
     });
   }
@@ -1188,12 +1066,7 @@
           )
         : [];
     const matchedEssays = [];
-    const matchedNews =
-      cat === "all" || cat === "news"
-        ? MUSEUM_DATA.newspaper.filter((n) =>
-            matchItem([n.title, n.subtitle, n.issue, n.summary, n.content])
-          )
-        : [];
+    const matchedNews = [];
     const matchedArts =
       cat === "all" || cat === "art"
         ? MUSEUM_DATA.artworks.filter((a) =>
@@ -1254,26 +1127,6 @@
       `;
     }
 
-    if (matchedNews.length > 0) {
-      html += `
-        <section class="toc-modal-section">
-          <h4>📰 문예신문 (${matchedNews.length}편)</h4>
-          <div class="toc-modal-grid">
-            ${matchedNews
-              .map(
-                (n) => `
-              <button type="button" class="toc-jump-card" data-jump-type="news" data-jump-id="${n.id}">
-                <strong>${escapeHtml(n.title)}</strong>
-                <span>${escapeHtml(n.issue)}</span>
-              </button>
-            `
-              )
-              .join("")}
-          </div>
-        </section>
-      `;
-    }
-
     if (matchedArts.length > 0) {
       html += `
         <section class="toc-modal-section">
@@ -1318,9 +1171,6 @@
         } else if (type === "essay") {
           switchSection("life-essays", false);
           renderEssayReader(id, true);
-        } else if (type === "news") {
-          switchSection("literary-news", true);
-          renderNewspaperArticle(id, false);
         } else if (type === "art") {
           switchSection("art-gallery", true);
           const art = MUSEUM_DATA.artworks.find((a) => a.id === id);
@@ -1371,15 +1221,7 @@
     document.getElementById("reader-tts-play")?.addEventListener("click", () => startReaderPoemTTS(0));
     document.getElementById("reader-tts-pause")?.addEventListener("click", pauseTTS);
     document.getElementById("reader-tts-resume")?.addEventListener("click", resumeTTS);
-    document.getElementById("reader-tts-stop")?.addEventListener("click", stopTTS);
-
-    // 4) 문예신문 컨트롤
-    document.getElementById("news-tts-play")?.addEventListener("click", () => startNewsTTS(0));
-    document.getElementById("news-tts-pause")?.addEventListener("click", pauseTTS);
-    document.getElementById("news-tts-resume")?.addEventListener("click", resumeTTS);
-    document.getElementById("news-tts-stop")?.addEventListener("click", stopTTS);
-
-    // 5) 미술 작품 모달 해설 컨트롤
+    document.getElementById("reader-tts-stop")?.addEventListener("click", stopTTS);        // 5) 미술 작품 모달 해설 컨트롤
     document.getElementById("art-tts-play")?.addEventListener("click", () => startArtModalTTS(0));
     document.getElementById("art-tts-pause")?.addEventListener("click", pauseTTS);
     document.getElementById("art-tts-resume")?.addEventListener("click", resumeTTS);
@@ -1395,7 +1237,7 @@
       if (state.currentSection === "today-poem") startTodayPoemTTS(0);
       else if (state.currentSection === "poetry-book") startReaderPoemTTS(0);
       else if (state.currentSection === "life-essays") startEssayTTS(0);
-      else if (state.currentSection === "literary-news") startNewsTTS(0);
+
       else if (state.currentSection === "art-gallery") {
         const art = MUSEUM_DATA.artworks.find((a) => a.id === state.currentModalArtId) || MUSEUM_DATA.artworks[0];
         if (art) {
@@ -1446,21 +1288,6 @@
       ...stanzaEls.map((el) => ({ text: el.textContent.trim(), domElement: el }))
     ];
     beginTTSSession("poetry-book", poem.id, poem.title, "디지털 시집 낭송", chunks, startIndex);
-  }
-
-  function startNewsTTS(startIndex = 0) {
-    const article =
-      MUSEUM_DATA.newspaper.find((n) => n.id === state.selectedNewsId) || MUSEUM_DATA.newspaper[0];
-    const leadEl = document.getElementById("news-lead-summary");
-    const blockEls = Array.from(
-      document.querySelectorAll("#news-article-body h4, #news-article-body p, #news-article-body blockquote, #news-article-body li")
-    );
-    const chunks = [
-      { text: `${article.title}. ${article.subtitle}. 필자 ${article.author}.`, domElement: null },
-      ...(leadEl ? [{ text: leadEl.textContent.trim(), domElement: leadEl }] : []),
-      ...blockEls.map((el) => ({ text: el.textContent.trim(), domElement: el }))
-    ];
-    beginTTSSession("literary-news", article.id, article.title, "문예신문 낭독", chunks, startIndex);
   }
 
   function startArtModalTTS(startIndex = 0) {
@@ -1700,7 +1527,6 @@
       "today-poem": "today-tts-status",
       "poetry-book": "reader-tts-status",
       "life-essays": "essay-tts-status",
-      "literary-news": "news-tts-status",
       "art-gallery": "art-tts-status"
     };
     const pillId = map[sourceSection];
@@ -1720,7 +1546,7 @@
       waveEl.classList.toggle("playing", isPlaying);
     }
 
-    const prefixes = ["global", "today", "reader", "essay", "news", "art"];
+    const prefixes = ["global", "today", "reader", "essay", "art"];
     prefixes.forEach((prefix) => {
       const playBtn = document.getElementById(`${prefix}-tts-play`);
       const pauseBtn = document.getElementById(`${prefix}-tts-pause`);
