@@ -15,7 +15,7 @@
     selectedEssayId: "essay-1",
     selectedNewsId: "news-1",
     artCategoryFilter: "all",
-    currentModalArtId: "art-1",
+    currentModalArtId: "art-4",
     tocCategoryFilter: "all",
     fontSize: "normal"
   };
@@ -132,6 +132,7 @@
     initEssaysSection();
     initNewspaperSection();
     initArtGallerySection();
+    initHomeArtPreview();
     initModalsAndSearch();
     initTTSControls();
 
@@ -191,6 +192,10 @@
 
   function switchSection(sectionId, scrollToMain = true) {
     state.currentSection = sectionId;
+
+    // 전시실에서는 중복된 하단 미리보기를 숨겨 전체 작품 감상에 집중하도록 처리
+    const homeArtShowcase = document.getElementById("home-art-showcase");
+    if (homeArtShowcase) homeArtShowcase.hidden = sectionId === "art-gallery";
 
     // 상단 메뉴 활성화 표시
     document.querySelectorAll(".main-nav .nav-link").forEach((link) => {
@@ -966,6 +971,38 @@
     document.getElementById("next-art-btn")?.addEventListener("click", () => navigateModalArt(1));
 
     renderArtGalleryGrid();
+  }
+
+  // 메인페이지 하단 대표 작품 8점: 기존 갤러리 작품 데이터와 확대 보기 모달 공유
+  function initHomeArtPreview() {
+    const grid = document.getElementById("home-art-grid");
+    const viewAllButton = document.getElementById("home-art-all-btn");
+    if (!grid) return;
+
+    const selectedIds = ["art-4", "art-5", "art-6", "art-8", "art-11", "art-12", "art-15", "art-19"];
+    const featured = selectedIds
+      .map((id) => MUSEUM_DATA.artworks.find((a) => a.id === id))
+      .filter(Boolean);
+
+    grid.innerHTML = featured.map((art) => `
+      <button type="button" class="home-art-tile" data-art-id="${escapeHtml(art.id)}" aria-label="${escapeHtml(art.title)} 작품 크게 보기">
+        <span class="home-art-image"><img src="${escapeHtml(art.image)}" alt="${escapeHtml(art.title)}" loading="lazy" decoding="async"></span>
+        <span class="home-art-work-title">${escapeHtml(art.title)}</span>
+        <span class="home-art-work-cat">${escapeHtml(art.category)}</span>
+      </button>
+    `).join("");
+
+    grid.querySelectorAll(".home-art-tile").forEach((tile) => {
+      tile.addEventListener("click", () => {
+        const art = MUSEUM_DATA.artworks.find((a) => a.id === tile.getAttribute("data-art-id"));
+        if (art) openArtLightbox(art);
+      });
+    });
+
+    if (viewAllButton) {
+      viewAllButton.textContent = `전체 작품 ${MUSEUM_DATA.artworks.length}점 보기 →`;
+      viewAllButton.addEventListener("click", () => switchSection("art-gallery", true));
+    }
   }
 
   function renderArtGalleryGrid() {
