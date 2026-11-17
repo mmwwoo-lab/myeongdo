@@ -130,7 +130,7 @@
     initFontControls();
     initTodayPoemSection();
     initPoetryBookSection();
-    initEssaysSection();
+    // 생활수필은 외부 전자수필집 링크만 제공
     initNewspaperSection();
     initArtGallerySection();
     initHomeArtPreview();
@@ -290,8 +290,7 @@
       const p = MUSEUM_DATA.poems.find((x) => x.id === state.selectedPoemId) || MUSEUM_DATA.poems[0];
       updateGlobalBarMetadata("디지털 시집", p.title, "읽어주기 버튼을 누르면 시 낭송이 시작됩니다");
     } else if (sectionId === "life-essays") {
-      const e = MUSEUM_DATA.essays.find((x) => x.id === state.selectedEssayId) || MUSEUM_DATA.essays[0];
-      updateGlobalBarMetadata("생활수필", e.title, "읽어주기 버튼을 누르면 수필 낭독이 시작됩니다");
+      updateGlobalBarMetadata("생활수필", "명도재 생활수필 전자수필집", "전자수필집 읽기 링크를 눌러 감상하세요");
     } else if (sectionId === "literary-news") {
       const n = MUSEUM_DATA.newspaper.find((x) => x.id === state.selectedNewsId) || MUSEUM_DATA.newspaper[0];
       updateGlobalBarMetadata("문예신문", n.title, "읽어주기 버튼을 누르면 기사 낭독이 시작됩니다");
@@ -771,107 +770,6 @@
   // ==========================================================================
   // 3. 생활수필 (Life Essays)
   // ==========================================================================
-  function initEssaysSection() {
-    const tocList = document.getElementById("essay-toc-list");
-    const countBadge = document.getElementById("essay-count-badge");
-    if (countBadge) {
-      countBadge.textContent = `${MUSEUM_DATA.essays.length}편`;
-    }
-
-    tocList.innerHTML = MUSEUM_DATA.essays
-      .map(
-        (essay, idx) => `
-        <button type="button" class="essay-nav-card ${idx === 0 ? "active" : ""}" data-essay-id="${essay.id}">
-          <span class="cat">${escapeHtml(essay.category)} · ${escapeHtml(essay.date)}</span>
-          <h4>${idx + 1}. ${escapeHtml(essay.title)}</h4>
-          <p>${escapeHtml(essay.summary)}</p>
-        </button>
-      `
-      )
-      .join("");
-
-    tocList.querySelectorAll(".essay-nav-card").forEach((card) => {
-      card.addEventListener("click", () => {
-        const id = card.getAttribute("data-essay-id");
-        renderEssayReader(id, true);
-      });
-    });
-
-    const navigateEssay = (offset) => {
-      const idx = MUSEUM_DATA.essays.findIndex((e) => e.id === state.selectedEssayId);
-      const nextIdx = (idx + offset + MUSEUM_DATA.essays.length) % MUSEUM_DATA.essays.length;
-      renderEssayReader(MUSEUM_DATA.essays[nextIdx].id, true);
-    };
-
-    document.getElementById("prev-essay-top-btn")?.addEventListener("click", () => navigateEssay(-1));
-    document.getElementById("next-essay-top-btn")?.addEventListener("click", () => navigateEssay(1));
-    document.getElementById("prev-essay-btn")?.addEventListener("click", () => navigateEssay(-1));
-    document.getElementById("next-essay-btn")?.addEventListener("click", () => navigateEssay(1));
-
-    renderEssayReader(state.selectedEssayId, false);
-  }
-
-  function renderEssayReader(essayId, scrollIntoView = false) {
-    const idx = MUSEUM_DATA.essays.findIndex((e) => e.id === essayId);
-    const essay = idx >= 0 ? MUSEUM_DATA.essays[idx] : MUSEUM_DATA.essays[0];
-    const actualIdx = idx >= 0 ? idx : 0;
-    const prevId = state.selectedEssayId;
-    state.selectedEssayId = essay.id;
-
-    if (
-      ttsState.status !== "idle" &&
-      ttsState.sourceSection === "life-essays" &&
-      prevId !== essay.id
-    ) {
-      stopTTS();
-    }
-
-    const pageInd = document.getElementById("essay-page-indicator");
-    if (pageInd) {
-      pageInd.textContent = `${actualIdx + 1} / ${MUSEUM_DATA.essays.length}`;
-    }
-
-    document.getElementById("essay-reader-category").textContent = essay.category;
-    document.getElementById("essay-reader-date").textContent = essay.date;
-    document.getElementById("essay-reader-time").textContent = `읽기 시간 약 ${essay.readTime}`;
-    document.getElementById("essay-reader-title").textContent = essay.title;
-    document.getElementById("essay-reader-summary").textContent = essay.summary;
-
-    const paragraphs = essay.content
-      .split(/\n\s*\n/)
-      .map((p) => p.trim())
-      .filter(Boolean);
-
-    const bodyEl = document.getElementById("essay-reader-body");
-    bodyEl.innerHTML = paragraphs
-      .map(
-        (para, pIdx) =>
-          `<p class="essay-paragraph" data-para-index="${pIdx}" title="클릭하면 이 문단부터 읽어줍니다">${escapeHtml(para)}</p>`
-      )
-      .join("");
-
-    bodyEl.querySelectorAll(".essay-paragraph").forEach((el, pIdx) => {
-      el.addEventListener("click", () => {
-        startEssayTTS(pIdx + 1);
-      });
-    });
-
-    document.querySelectorAll("#essay-toc-list .essay-nav-card").forEach((card) => {
-      card.classList.toggle("active", card.getAttribute("data-essay-id") === essay.id);
-    });
-
-    if (ttsState.status === "idle" && state.currentSection === "life-essays") {
-      updateGlobalBarMetadata("생활수필", essay.title, "읽어주기 버튼을 누르면 수필 낭독이 시작됩니다");
-    }
-
-    if (scrollIntoView) {
-      document.getElementById("essay-reader-card")?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
-  }
-
   // ==========================================================================
   // 4. 문예신문 (Literary Newspaper)
   // ==========================================================================
@@ -1289,12 +1187,7 @@
             matchItem([p.title, p.subtitle || "", p.chapter, p.content, p.critique || "", (p.tags || []).join(" ")])
           )
         : [];
-    const matchedEssays =
-      cat === "all" || cat === "essay"
-        ? MUSEUM_DATA.essays.filter((e) =>
-            matchItem([e.title, e.category, e.summary, e.content])
-          )
-        : [];
+    const matchedEssays = [];
     const matchedNews =
       cat === "all" || cat === "news"
         ? MUSEUM_DATA.newspaper.filter((n) =>
@@ -1480,12 +1373,6 @@
     document.getElementById("reader-tts-resume")?.addEventListener("click", resumeTTS);
     document.getElementById("reader-tts-stop")?.addEventListener("click", stopTTS);
 
-    // 3) 생활수필 컨트롤
-    document.getElementById("essay-tts-play")?.addEventListener("click", () => startEssayTTS(0));
-    document.getElementById("essay-tts-pause")?.addEventListener("click", pauseTTS);
-    document.getElementById("essay-tts-resume")?.addEventListener("click", resumeTTS);
-    document.getElementById("essay-tts-stop")?.addEventListener("click", stopTTS);
-
     // 4) 문예신문 컨트롤
     document.getElementById("news-tts-play")?.addEventListener("click", () => startNewsTTS(0));
     document.getElementById("news-tts-pause")?.addEventListener("click", pauseTTS);
@@ -1559,16 +1446,6 @@
       ...stanzaEls.map((el) => ({ text: el.textContent.trim(), domElement: el }))
     ];
     beginTTSSession("poetry-book", poem.id, poem.title, "디지털 시집 낭송", chunks, startIndex);
-  }
-
-  function startEssayTTS(startIndex = 0) {
-    const essay = MUSEUM_DATA.essays.find((e) => e.id === state.selectedEssayId) || MUSEUM_DATA.essays[0];
-    const paraEls = Array.from(document.querySelectorAll("#essay-reader-body .essay-paragraph"));
-    const chunks = [
-      { text: `${essay.title}. 수필, 명도재 이명우.`, domElement: null },
-      ...paraEls.map((el) => ({ text: el.textContent.trim(), domElement: el }))
-    ];
-    beginTTSSession("life-essays", essay.id, essay.title, "생활수필 낭독", chunks, startIndex);
   }
 
   function startNewsTTS(startIndex = 0) {
