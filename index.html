@@ -18,6 +18,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Noto+Serif+KR:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+<style>
+/* 명도재 소설쓰기: 연속 추가형 문학 작품 목록 */
+.novel-archive-intro{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:20px 0 24px;padding:18px 22px;border:1px solid #dbd0c4;border-radius:16px;background:linear-gradient(125deg,#faf7f1,#eee5da)}
+.novel-archive-intro strong{font-size:18px}.novel-archive-intro p{margin:7px 0 0;color:#76695d;line-height:1.7}
+.novel-count{flex-shrink:0;padding:8px 14px;border-radius:30px;color:#725143;background:#fffdf8;border:1px solid #ddcfc1;font-weight:700}
+.novel-archive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:22px;margin:16px 0 42px}
+.novel-item{display:flex;flex-direction:column;overflow:hidden;border:1px solid #e0d4c8;border-radius:18px;background:#fffdfa;box-shadow:0 12px 28px rgba(60,40,24,.08)}
+.novel-cover{position:relative;aspect-ratio:16/9;background:#e9dbcb;overflow:hidden}
+.novel-cover img{display:block;width:100%;height:100%;object-fit:contain}
+.novel-cover-no{position:absolute;top:12px;left:12px;border-radius:24px;padding:6px 11px;background:#fffdf5ed;color:#62453a;font-size:12px;font-weight:700}
+.novel-item-body{padding:22px;display:flex;flex-direction:column;flex:1}
+.novel-meta{font-size:12px;color:#927460;letter-spacing:.03em}
+.novel-item h3{font-family:serif;margin:9px 0 12px;font-size:23px;line-height:1.35;color:#2c2825}
+.novel-item p{font-size:14px;line-height:1.9;color:#61564d;flex:1;margin:0 0 20px}
+.novel-read{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border-radius:30px;background:#705346;color:white!important;padding:11px 18px;font-size:14px;font-weight:700;text-decoration:none}
+.novel-read:hover{background:#50392f}
+body.night .novel-archive-intro,body.night .novel-item{background:var(--paper);border-color:var(--line)}
+body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .novel-archive-intro p{color:var(--muted)}
+@media(max-width:600px){.novel-archive-intro{align-items:flex-start;flex-direction:column;padding:16px}.novel-item-body{padding:18px}}
+</style>
 </head>
 <body class="font-size-normal">
   <!-- 한국적 수묵담채(水墨淡彩) 산수·매화 한지 배경 레이어 -->
@@ -71,6 +91,9 @@
         </button>
         <button type="button" class="nav-link" data-nav="life-essays">
           <span class="nav-icon">🍵</span> 생활수필
+        </button>
+        <button type="button" class="nav-link" data-nav="novel-writing">
+          <span class="nav-icon">📚</span> 명도재 소설쓰기
         </button>
         <button type="button" class="nav-link" data-nav="literary-news">
           <span class="nav-icon">📰</span> 문예신문
@@ -365,12 +388,7 @@
           <p>《명도재 생활수필》은 교단을 떠난 뒤 새롭게 마주한 일상과 예술, 사람과 가족의 이야기를 담은 이명우의 산문 연재입니다. 오래된 이발소의 향기, 월촌역 친구들과의 만남, 신천의 백로, 홍콩 가족여행 뒤 끓여 먹은 라면 한 그릇까지, 사소한 하루에 깃든 마음을 차분히 기록합니다. 글을 따라가며 기억의 온기를 느껴보고, 오디오 낭독으로도 삶의 장면들을 만나 보세요.</p>
           <a class="literary-work-link" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/web.html" target="_blank" rel="noopener noreferrer" aria-label="명도재 생활수필 전자수필집 새 창에서 읽기">생활수필 전자책 읽기 <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="literary-work-card">
-          <div class="literary-work-meta">명도재 이명우 · 첫 중편소설 · 전 13장</div>
-          <h3>🍂 가을비가 묻는 길</h3>
-          <p>명도재 이명우의 첫 중편소설 《가을비가 묻는 길》은 1987년 가을 대구를 무대로, 그림과 생계 사이에서 흔들리는 청년 화가 윤재와 낡은 은하소극장의 마지막 공연을 준비하는 무용수 지연의 만남을 그립니다. 시대의 변화와 예술을 향한 열망 속에서 두 사람은 사랑과 선택의 의미를 묻습니다. 13장에 걸쳐 펼쳐지는 서정적인 이야기를 웹소설로 읽고, 오디오 낭독으로도 감상해 보세요.</p>
-          <a class="literary-work-link" href="https://myeongdojae-gaulbi-novel.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="중편소설 가을비가 묻는 길 새 창에서 읽기">중편소설 읽기 <span aria-hidden="true">↗</span></a>
-        </article>
+        
       </div>
 
       <div class="essays-layout">
@@ -436,6 +454,24 @@
     <!-- ==========================================
          4. 문예신문 (Literary Newspaper)
          ========================================== -->
+    <!-- 연속 등록형 소설 작품관: 작품 목록은 novels.js 에서 관리 -->
+    <section id="section-novel-writing" class="view-section" aria-labelledby="heading-novel-writing">
+      <div class="section-header">
+        <div class="section-title-group">
+          <span class="section-kicker">MYEONGDO FICTION · 明道齋 小說</span>
+          <h2 id="heading-novel-writing" class="section-title">📚 명도재 소설쓰기</h2>
+          <p class="section-desc">화가의 눈으로 장면을 그리고, 시인의 언어로 삶을 기록하는 명도재 이명우의 소설 작품관. 작품마다 독립된 웹소설로 열립니다.</p>
+        </div>
+      </div>
+      <div class="novel-archive-intro">
+        <div><strong>연재 작품 목록</strong><p>첫 번째부터 순서대로 읽어 보세요. 작품이 추가되면 다음 번호로 이어집니다.</p></div>
+        <span id="novel-count" class="novel-count" aria-live="polite">전 2편</span>
+      </div>
+      <div id="novel-archive-grid" class="novel-archive-grid" aria-label="명도재 소설 작품 목록">
+        <p>소설 작품 목록을 불러오고 있습니다.</p>
+      </div>
+    </section>
+
     <section id="section-literary-news" class="view-section" aria-labelledby="heading-literary-news">
       <div class="newspaper-masthead">
         <div class="masthead-top-line">
@@ -552,6 +588,7 @@
         <button type="button" class="footer-nav-btn" data-nav="today-poem">오늘의 시</button>
         <button type="button" class="footer-nav-btn" data-nav="poetry-book">디지털 시집</button>
         <button type="button" class="footer-nav-btn" data-nav="life-essays">생활수필</button>
+        <button type="button" class="footer-nav-btn" data-nav="novel-writing">명도재 소설쓰기</button>
         <button type="button" class="footer-nav-btn" data-nav="literary-news">문예신문</button>
         <button type="button" class="footer-nav-btn" data-nav="art-gallery">미술 작품</button>
         <button type="button" class="footer-nav-btn" id="footer-toc-btn">전체 목차</button>
@@ -716,6 +753,7 @@
   </div>
 
   <script src="data.js"></script>
+  <script src="novels.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
