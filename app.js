@@ -126,6 +126,7 @@
 
     initAuthorBanner();
     initNavigation();
+    initNovelWritingSection();
     initFontControls();
     initTodayPoemSection();
     initPoetryBookSection();
@@ -138,7 +139,7 @@
 
     // URL 해시가 있으면 해당 섹션으로 이동
     const hash = window.location.hash.replace("#", "");
-    const validSections = ["today-poem", "poetry-book", "life-essays", "literary-news", "art-gallery"];
+    const validSections = ["today-poem", "poetry-book", "life-essays", "novel-writing", "literary-news", "art-gallery"];
     if (validSections.includes(hash)) {
       switchSection(hash, false);
     }
@@ -178,6 +179,63 @@
   // ==========================================================================
   // 메뉴 네비게이션
   // ==========================================================================
+
+  // 소설 연속 등록형 작품관: novels.js 목록만 추가하면 순번·카드 자동 생성
+  function initNovelWritingSection() {
+    const grid = document.getElementById("novel-archive-grid");
+    if (!grid) return;
+    const works = Array.isArray(window.MYEONGDO_NOVELS) ? window.MYEONGDO_NOVELS : [];
+    const count = document.getElementById("novel-count");
+    if (count) count.textContent = "전 " + works.length + "편";
+    grid.replaceChildren();
+    if (!works.length) {
+      const empty = document.createElement("p");
+      empty.textContent = "등록된 소설이 없습니다.";
+      grid.appendChild(empty);
+      return;
+    }
+    works.forEach((novel, index) => {
+      const card = document.createElement("article");
+      card.className = "novel-item";
+      const cover = document.createElement("div");
+      cover.className = "novel-cover";
+      if (novel.cover) {
+        const img = document.createElement("img");
+        img.src = novel.cover;
+        img.alt = novel.title + " 대표 삽화";
+        img.loading = "lazy";
+        img.decoding = "async";
+        cover.appendChild(img);
+      } else {
+        cover.style.background = "linear-gradient(140deg,#bda38e,#e5d9c4 45%,#8b6c61)";
+      }
+      const number = document.createElement("span");
+      number.className = "novel-cover-no";
+      number.textContent = "작품 " + String(index + 1).padStart(2,"0");
+      cover.appendChild(number);
+      card.appendChild(cover);
+      const body = document.createElement("div");
+      body.className = "novel-item-body";
+      const meta = document.createElement("div");
+      meta.className = "novel-meta";
+      meta.textContent = "명도재 이명우 · " + (novel.published || "중편소설") + (novel.chapters ? " · 전 " + novel.chapters + "장" : "");
+      const title = document.createElement("h3");
+      title.textContent = "《" + novel.title + "》";
+      const desc = document.createElement("p");
+      desc.textContent = novel.description || "";
+      const link = document.createElement("a");
+      link.className = "novel-read";
+      link.href = novel.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "웹소설 읽기 ↗";
+      link.setAttribute("aria-label", novel.title + " 새 창에서 읽기");
+      body.append(meta,title,desc,link);
+      card.appendChild(body);
+      grid.appendChild(card);
+    });
+  }
+
   function initNavigation() {
     document.querySelectorAll("[data-nav]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
