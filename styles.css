@@ -2546,3 +2546,114 @@ body {
   .literary-work-card p { font-size: 0.93rem; }
   .literary-work-link { width: 100%; }
 }
+
+
+/* 메인페이지 최하단 미술 작품 미리보기 (기존 갤러리 데이터 사용) */
+.home-art-showcase {
+  max-width: 1340px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.home-art-showcase[hidden] { display: none; }
+.home-art-inner {
+  padding: 1.8rem;
+  border: 1.5px solid var(--border-strong);
+  border-top: 4px solid var(--pine-indigo);
+  border-radius: 18px;
+  background: var(--bg-hanji-card);
+  box-shadow: var(--shadow-soft);
+}
+.home-art-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.35rem;
+}
+.home-art-heading h2 {
+  font-size: 1.7rem;
+  color: var(--ink-deep);
+  margin-bottom: 0.4rem;
+}
+.home-art-heading p {
+  font: 0.96rem/1.7 var(--font-sans);
+  color: var(--ink-muted);
+}
+.home-art-all-btn {
+  min-height: 44px;
+  border: 1px solid var(--pine-indigo);
+  border-radius: 10px;
+  padding: 0.65rem 1.05rem;
+  font: 700 0.95rem var(--font-sans);
+  color: #fff;
+  background: var(--pine-indigo);
+  cursor: pointer;
+}
+.home-art-all-btn:hover,
+.home-art-all-btn:focus-visible { filter: brightness(1.14); }
+.home-art-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.home-art-tile {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fffefa;
+  color: var(--ink-deep);
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.home-art-tile:hover,
+.home-art-tile:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  outline-offset: 3px;
+}
+.home-art-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  background: #f5f1e9;
+}
+.home-art-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.home-art-work-title {
+  display: block;
+  padding: 0.75rem 0.75rem 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.home-art-work-cat {
+  display: block;
+  padding: 0 0.75rem 0.8rem;
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+@media (max-width: 850px) {
+  .home-art-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 480px) {
+  .home-art-showcase { padding: 0 0.8rem; margin-bottom: 1.5rem; }
+  .home-art-inner { padding: 1rem; }
+  .home-art-heading { gap: 0.8rem; }
+  .home-art-heading h2 { font-size: 1.35rem; }
+  .home-art-grid { gap: 0.6rem; }
+  .home-art-work-title { font-size: 0.87rem; }
+  .home-art-work-cat { font-size: 0.73rem; }
+}
