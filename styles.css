@@ -2473,3 +2473,76 @@ body {
   border-left-color: var(--celadon-teal);
   background: linear-gradient(90deg, rgba(45, 92, 87, 0.13) 0%, rgba(246, 238, 224, 0.75) 100%);
 }
+
+/* 명도재 작품 링크: 생활수필 및 소설 공개 웹북 */
+.literary-works-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin: 0 0 1.8rem;
+}
+.literary-work-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  gap: 0.65rem;
+  padding: 1.45rem 1.55rem;
+  border: 1.5px solid var(--border-strong);
+  border-top: 4px solid var(--celadon-teal);
+  border-radius: 16px;
+  background: var(--bg-hanji-card);
+  box-shadow: var(--shadow-soft);
+}
+.literary-work-meta {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.035em;
+  color: var(--celadon-teal);
+}
+.literary-work-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  line-height: 1.45;
+  color: var(--ink-deep);
+}
+.literary-work-card p {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: var(--ink-body);
+  overflow-wrap: anywhere;
+}
+.literary-work-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0.67rem 1.1rem;
+  border: 1px solid var(--celadon-teal);
+  border-radius: 9px;
+  background: var(--celadon-teal);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.literary-work-link:hover,
+.literary-work-link:focus-visible {
+  background: var(--pine-indigo);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+@media (max-width: 680px) {
+  .literary-works-links { grid-template-columns: 1fr; gap: 0.85rem; }
+  .literary-work-card { padding: 1.15rem 1.1rem; }
+  .literary-work-card h3 { font-size: 1.22rem; }
+  .literary-work-card p { font-size: 0.93rem; }
+  .literary-work-link { width: 100%; }
+}
