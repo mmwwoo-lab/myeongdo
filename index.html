@@ -380,8 +380,8 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
         </div>
       </div>
 
-      <!-- 명도재 웹 문학 작품: 생활수필 전자책과 중편소설 바로가기 -->
-      <div class="literary-works-links" aria-label="명도재 웹 문학 작품 바로가기">
+      <!-- 명도재 생활수필 전자수필집 링크만 표시 -->
+      <div class="literary-works-links" aria-label="명도재 전자수필집 바로가기">
         <article class="literary-work-card">
           <div class="literary-work-meta">명도재 이명우 · 웹 전자수필집</div>
           <h3>📖 명도재 생활수필</h3>
@@ -391,64 +391,6 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
         
       </div>
 
-      <div class="essays-layout">
-        <!-- 수필 목차 리스트 -->
-        <aside class="essay-toc-panel" aria-label="생활수필 목차">
-          <div class="toc-sidebar-header">
-            <h3>🍵 수필 목차</h3>
-            <span class="count-pill" id="essay-count-badge">6편</span>
-          </div>
-          <div class="essay-list-cards" id="essay-toc-list"></div>
-        </aside>
-
-        <!-- 수필 본문 리더 -->
-        <article class="hanji-essay-reader" id="essay-reader-card">
-          <div class="book-nav-top">
-            <button type="button" class="book-page-btn" id="prev-essay-top-btn">← 이전 수필</button>
-            <span class="book-page-indicator" id="essay-page-indicator">1 / 6</span>
-            <button type="button" class="book-page-btn" id="next-essay-top-btn">다음 수필 →</button>
-          </div>
-          <header class="essay-reader-header">
-            <div class="essay-meta-top">
-              <span class="essay-cat-badge" id="essay-reader-category"></span>
-              <span class="essay-date-text" id="essay-reader-date"></span>
-              <span class="essay-time-text" id="essay-reader-time"></span>
-            </div>
-            <h3 class="essay-reader-title" id="essay-reader-title"></h3>
-            <p class="essay-reader-summary" id="essay-reader-summary"></p>
-            <div class="poem-author-sign">
-              <span>글 · 명도재 이명우</span>
-              <span class="mini-seal">明道</span>
-            </div>
-          </header>
-
-          <!-- 수필 읽어주기 / 일시정지 / 이어 읽기 컨트롤 바 -->
-          <div class="inline-tts-toolbar" role="region" aria-label="생활수필 낭독 컨트롤">
-            <div class="tts-btn-group">
-              <button type="button" class="tts-ctrl-btn play" id="essay-tts-play">
-                <span>🔊 수필 읽어주기</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn pause" id="essay-tts-pause" disabled>
-                <span>⏸ 일시정지</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn resume" id="essay-tts-resume" disabled>
-                <span>▶ 이어 읽기</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn stop" id="essay-tts-stop" disabled>
-                <span>⏹ 정지</span>
-              </button>
-            </div>
-            <div class="tts-status-pill" id="essay-tts-status">낭독 대기 중</div>
-          </div>
-
-          <div class="essay-body-content" id="essay-reader-body"></div>
-
-          <div class="essay-footer-nav">
-            <button type="button" class="book-page-btn" id="prev-essay-btn">← 이전 수필</button>
-            <button type="button" class="book-page-btn" id="next-essay-btn">다음 수필 →</button>
-          </div>
-        </article>
-      </div>
     </section>
 
     <!-- ==========================================
