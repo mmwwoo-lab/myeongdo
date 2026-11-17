@@ -38,6 +38,22 @@ body.night .novel-archive-intro,body.night .novel-item{background:var(--paper);b
 body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .novel-archive-intro p{color:var(--muted)}
 @media(max-width:600px){.novel-archive-intro{align-items:flex-start;flex-direction:column;padding:16px}.novel-item-body{padding:18px}}
 </style>
+<style>
+/* 생활수필: 신문형 / 책자형 두 가지 읽기 방식 */
+.essay-editions-heading{padding:10px 2px 14px;text-align:center}
+.essay-editions-heading strong{font-family:var(--font-serif,Georgia,serif);font-size:clamp(18px,2.6vw,25px);color:var(--ink)}
+.essay-editions-heading p{color:var(--ink-muted,#736960);line-height:1.8;font-size:14px;margin:10px 0}
+.essay-editions-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:14px 0 38px}
+.essay-edition-card{overflow:hidden;display:flex;flex-direction:column;min-width:0;border-radius:17px;background:var(--paper,#fffdf9);border:1px solid var(--line,#e3d8c9);box-shadow:0 12px 35px #3b2b2014}
+.essay-edition-image{display:flex;align-items:center;justify-content:center;background:linear-gradient(120deg,#efe7da,#e0d3c4);height:225px;overflow:hidden;padding:12px}
+.essay-edition-image img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.essay-edition-content{padding:21px;display:flex;flex-direction:column;flex:1}
+.essay-edition-label{font-size:12px;color:#966a51;font-weight:700;letter-spacing:.04em}
+.essay-edition-card h3{font-size:clamp(19px,2.2vw,24px);margin:8px 0 10px;line-height:1.4;color:var(--ink)}
+.essay-edition-content p{font-size:14px;line-height:1.85;color:var(--ink-muted,#736960);flex:1;margin:0 0 18px}
+.essay-edition-link{align-self:flex-start}
+@media(max-width:680px){.essay-editions-grid{grid-template-columns:1fr;gap:14px}.essay-edition-image{height:195px}.essay-edition-content{padding:18px}}
+</style>
 </head>
 <body class="font-size-normal">
   <!-- 한국적 수묵담채(水墨淡彩) 산수·매화 한지 배경 레이어 -->
@@ -377,15 +393,34 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
         </div>
       </div>
 
-      <!-- 명도재 생활수필 전자수필집 링크만 표시 -->
-      <div class="literary-works-links" aria-label="명도재 전자수필집 바로가기">
-        <article class="literary-work-card">
-          <div class="literary-work-meta">명도재 이명우 · 웹 전자수필집</div>
-          <h3>📖 명도재 생활수필</h3>
-          <p>《명도재 생활수필》은 교단을 떠난 뒤 새롭게 마주한 일상과 예술, 사람과 가족의 이야기를 담은 이명우의 산문 연재입니다. 오래된 이발소의 향기, 월촌역 친구들과의 만남, 신천의 백로, 홍콩 가족여행 뒤 끓여 먹은 라면 한 그릇까지, 사소한 하루에 깃든 마음을 차분히 기록합니다. 글을 따라가며 기억의 온기를 느껴보고, 오디오 낭독으로도 삶의 장면들을 만나 보세요.</p>
-          <a class="literary-work-link" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/web.html" target="_blank" rel="noopener noreferrer" aria-label="명도재 생활수필 전자수필집 새 창에서 읽기">생활수필 전자책 읽기 <span aria-hidden="true">↗</span></a>
+      <!-- 생활수필 보기 방식: 신문형 및 책자형 전용 링크 (개별 수필 6편 복원 없음) -->
+      <div class="essay-editions-heading">
+        <strong>명도재 이명우의 디지털 생활수필집</strong>
+        <p>신문처럼 펼쳐 읽거나, 책장을 넘기며 읽을 수 있습니다. 원하는 방식을 선택해 주세요.</p>
+      </div>
+      <div class="essay-editions-grid" aria-label="생활수필집 신문형과 책자형">
+        <article class="essay-edition-card">
+          <a class="essay-edition-image" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/web.html" target="_blank" rel="noopener noreferrer" aria-label="명도재 생활수필 신문형 읽기">
+            <img src="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/images/newspaper-preview.png" loading="lazy" decoding="async" alt="명도재 생활수필 신문형 지면 미리보기" />
+          </a>
+          <div class="essay-edition-content">
+            <span class="essay-edition-label">01 · 신문형 웹수필집</span>
+            <h3>📰 생활수필 · 신문형</h3>
+            <p>신문 지면을 보듯 작품을 골라 읽는 디지털 수필관입니다. 작품 소개와 삽화, 음성 낭독 기능을 함께 만나보세요.</p>
+            <a class="literary-work-link essay-edition-link" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/web.html" target="_blank" rel="noopener noreferrer">신문형 수필집 읽기 <span aria-hidden="true">↗</span></a>
+          </div>
         </article>
-        
+        <article class="essay-edition-card">
+          <a class="essay-edition-image" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/index.html" target="_blank" rel="noopener noreferrer" aria-label="명도재 생활수필 책자형 읽기">
+            <img src="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/images/cover.svg" loading="lazy" decoding="async" alt="명도재 생활수필 책자형 디지털 수필집 표지" />
+          </a>
+          <div class="essay-edition-content">
+            <span class="essay-edition-label">02 · 책자형 전자수필집</span>
+            <h3>📖 생활수필 · 책자형</h3>
+            <p>실제 책처럼 페이지를 넘기며 차분히 읽을 수 있는 전자수필집입니다. 목차와 이전·다음 페이지 탐색으로 감상해 보세요.</p>
+            <a class="literary-work-link essay-edition-link" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/index.html" target="_blank" rel="noopener noreferrer">책자형 수필집 읽기 <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </div>
 
     </section>
