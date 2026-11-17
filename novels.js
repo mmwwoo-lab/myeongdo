@@ -7,7 +7,7 @@ window.MYEONGDO_NOVELS = [
     chapters: 13,
     description: "1987년 가을 대구. 그림과 생계 사이에서 흔들리는 청년 화가 윤재와 낡은 은하소극장의 마지막 공연을 준비하는 무용수 지연. 예술과 사랑, 인생의 선택을 그린 첫 번째 중편소설.",
     url: "https://myeongdojae-gaulbi-novel.vercel.app/",
-    cover: "",
+    cover: "https://myeongdojae-gaulbi-novel.vercel.app/cover.jpg",
     published: "첫 번째 중편소설"
   },
   {
