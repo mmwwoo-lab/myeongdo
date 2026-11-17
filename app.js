@@ -333,7 +333,7 @@
     const t = poem.title + " " + (poem.tags || []).join(" ");
     if (t.includes("매화")) return MUSEUM_DATA.artworks.find((a) => a.id === "art-6");
     if (t.includes("시장") || t.includes("우뭇가사리")) return MUSEUM_DATA.artworks.find((a) => a.id === "art-5");
-    if (t.includes("앞산") || t.includes("인왕")) return MUSEUM_DATA.artworks.find((a) => a.id === "art-2");
+    if (t.includes("앞산") || t.includes("인왕")) return MUSEUM_DATA.artworks.find((a) => a.id === "art-4");
     if (t.includes("주리못") || t.includes("벤치") || t.includes("연인")) return MUSEUM_DATA.artworks.find((a) => a.id === "art-11");
     if (t.includes("고산골") || t.includes("물에게")) return MUSEUM_DATA.artworks.find((a) => a.id === "art-10");
     if (t.includes("신천") || t.includes("왜가리")) return MUSEUM_DATA.artworks.find((a) => a.id === "art-9");
