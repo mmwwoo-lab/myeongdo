@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>명도재 디지털 문학관 — 시인·화가 이명우</title>
-  <meta name="description" content="명도재(明道齋) 이명우 시인·화가의 디지털 문학관. 오늘의 시, 디지털 시집, 생활수필, 문예신문, 수묵담채 및 AI 미술 작품 아카이브." />
+  <meta name="description" content="명도재(明道齋) 이명우 시인·화가의 디지털 문학관. 오늘의 시, 디지털 시집, 생활수필집, 소설, 수묵담채 및 AI 미술 작품 아카이브." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:url" content="https://mmwwoo-lab.github.io/myeongdo/" />
   <meta property="og:title" content="명도재 디지털 문학관 — 시인·화가 이명우" />
-  <meta property="og:description" content="명도재(明道齋) 이명우 시인·화가의 서정시 30편, 생활수필, 문예신문, 수묵담채 및 AI 미술 작품 아카이브." />
+  <meta property="og:description" content="명도재(明道齋) 이명우 시인·화가의 서정시 30편, 생활수필집, 소설, 수묵담채 및 AI 미술 작품 아카이브." />
   <meta property="og:image" content="https://mmwwoo-lab.github.io/myeongdo/assets/portrait_leemyungwoo.png" />
   <link rel="canonical" href="https://mmwwoo-lab.github.io/myeongdo/" />
   <link rel="icon" type="image/png" href="assets/portrait_leemyungwoo.png" />
@@ -94,9 +94,6 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
         </button>
         <button type="button" class="nav-link" data-nav="novel-writing">
           <span class="nav-icon">📚</span> 명도재 소설쓰기
-        </button>
-        <button type="button" class="nav-link" data-nav="literary-news">
-          <span class="nav-icon">📰</span> 문예신문
         </button>
         <button type="button" class="nav-link" data-nav="art-gallery">
           <span class="nav-icon">🎨</span> 미술 작품
@@ -393,9 +390,6 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
 
     </section>
 
-    <!-- ==========================================
-         4. 문예신문 (Literary Newspaper)
-         ========================================== -->
     <!-- 연속 등록형 소설 작품관: 작품 목록은 novels.js 에서 관리 -->
     <section id="section-novel-writing" class="view-section" aria-labelledby="heading-novel-writing">
       <div class="section-header">
@@ -414,72 +408,6 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
       </div>
     </section>
 
-    <section id="section-literary-news" class="view-section" aria-labelledby="heading-literary-news">
-      <div class="newspaper-masthead">
-        <div class="masthead-top-line">
-          <span>발행처: 명도재 디지털 문학관</span>
-          <span class="masthead-hanja">明 道 齋 文 藝 新 報</span>
-          <span>특집호 · 문학평론 및 AI 예술학술 아카이브</span>
-        </div>
-        <h2 id="heading-literary-news" class="masthead-title">명도재 문예신문</h2>
-        <p class="masthead-sub">『대구예술』 특별기고문 · 수성구미술가협회 학술세미나 발제 · 서지월 시인의 현대시창작 평론 특집</p>
-
-        <!-- 신문 호수/기사 선택 탭 -->
-        <div class="news-issue-tabs" id="news-issue-tabs" role="tablist"></div>
-      </div>
-
-      <div class="newspaper-broadsheet" id="newspaper-broadsheet">
-        <article class="news-main-article">
-          <header class="news-article-header">
-            <div class="news-kicker-row">
-              <span class="news-issue-badge" id="news-issue-label"></span>
-              <span class="news-cat-badge" id="news-category-label"></span>
-              <span class="news-date-label" id="news-date-label"></span>
-            </div>
-            <h3 class="news-headline" id="news-headline"></h3>
-            <p class="news-subheadline" id="news-subheadline"></p>
-            <div class="news-byline" id="news-byline"></div>
-          </header>
-
-          <!-- 신문 기사 음성 낭독 바 -->
-          <div class="inline-tts-toolbar" role="region" aria-label="문예신문 기사 낭독 컨트롤">
-            <div class="tts-btn-group">
-              <button type="button" class="tts-ctrl-btn play" id="news-tts-play">
-                <span>🔊 기사 읽어주기</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn pause" id="news-tts-pause" disabled>
-                <span>⏸ 일시정지</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn resume" id="news-tts-resume" disabled>
-                <span>▶ 이어 읽기</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn stop" id="news-tts-stop" disabled>
-                <span>⏹ 정지</span>
-              </button>
-            </div>
-            <div class="tts-status-pill" id="news-tts-status">낭독 대기 중</div>
-          </div>
-
-          <div class="news-lead-summary" id="news-lead-summary"></div>
-
-          <!-- 기사 본문 다단 레이아웃 -->
-          <div class="news-columns-body" id="news-article-body"></div>
-
-          <!-- 수록 지면 및 자료 사진 갤러리 -->
-          <div class="news-archive-photos" id="news-archive-photos"></div>
-
-          <div class="essay-footer-nav">
-            <button type="button" class="book-page-btn" id="prev-news-btn">← 이전 호 기사</button>
-            <span class="book-page-indicator" id="news-page-indicator">1 / 4</span>
-            <button type="button" class="book-page-btn" id="next-news-btn">다음 호 기사 →</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         5. 미술 작품 (Art Gallery)
-         ========================================== -->
     <section id="section-art-gallery" class="view-section" aria-labelledby="heading-art-gallery">
       <div class="section-header">
         <div class="section-title-group">
@@ -510,7 +438,7 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
           <h2 id="home-art-title">🎨 명도재 미술 작품</h2>
           <p>한지 위의 먹빛에서 디지털 회화까지, 작품을 누르면 그림과 창작 해설을 자세히 감상할 수 있습니다.</p>
         </div>
-        <button type="button" class="home-art-all-btn" id="home-art-all-btn">전체 작품 17점 보기 →</button>
+        <a href="#art-gallery" class="home-art-all-btn" id="home-art-all-btn" aria-label="명도재 미술 작품관 전체 작품 보기">전체 작품 17점 보기 →</a>
       </div>
       <div class="home-art-grid" id="home-art-grid" aria-label="미술 작품 미리보기"></div>
     </div>
@@ -523,7 +451,7 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
         <span class="seal-stamp">明道</span>
         <div>
           <strong>명도재 디지털 문학관 (明道齋 李明雨 文學館)</strong>
-          <p>시인 · 화가 · 인공지능(AI) 명도재 대표 이명우의 시집 · 수필 · 문예신문 · 미술 아카이브</p>
+          <p>시인 · 화가 · 인공지능(AI) 명도재 대표 이명우의 시집 · 수필집 · 소설 · 미술 아카이브</p>
         </div>
       </div>
       <div class="footer-links">
@@ -531,7 +459,6 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
         <button type="button" class="footer-nav-btn" data-nav="poetry-book">디지털 시집</button>
         <button type="button" class="footer-nav-btn" data-nav="life-essays">생활수필</button>
         <button type="button" class="footer-nav-btn" data-nav="novel-writing">명도재 소설쓰기</button>
-        <button type="button" class="footer-nav-btn" data-nav="literary-news">문예신문</button>
         <button type="button" class="footer-nav-btn" data-nav="art-gallery">미술 작품</button>
         <button type="button" class="footer-nav-btn" id="footer-toc-btn">전체 목차</button>
       </div>
@@ -613,9 +540,8 @@ body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .
       <div class="modal-filter-tabs" id="modal-filter-tabs" role="tablist" aria-label="목차 분야별 필터">
         <button type="button" class="chapter-tab active" data-toc-cat="all">전체 보기 (60)</button>
         <button type="button" class="chapter-tab" data-toc-cat="poem">📖 디지털 시집 (30)</button>
-        <button type="button" class="chapter-tab" data-toc-cat="essay">🍵 생활수필 (6)</button>
-        <button type="button" class="chapter-tab" data-toc-cat="news">📰 문예신문 (4)</button>
-        <button type="button" class="chapter-tab" data-toc-cat="art">🎨 미술 작품 (20)</button>
+        <button type="button" class="chapter-tab" data-toc-cat="essay">🍵 생활수필집 링크</button>
+        <button type="button" class="chapter-tab" data-toc-cat="art">🎨 미술 작품 (17)</button>
       </div>
 
       <div class="modal-toc-body" id="modal-toc-body"></div>
