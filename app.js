@@ -221,13 +221,20 @@
       title.textContent = "《" + novel.title + "》";
       const desc = document.createElement("p");
       desc.textContent = novel.description || "";
-      const link = document.createElement("a");
+      const link = document.createElement(novel.url ? "a" : "span");
       link.className = "novel-read";
-      link.href = novel.url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.textContent = "웹소설 읽기 ↗";
-      link.setAttribute("aria-label", novel.title + " 새 창에서 읽기");
+      if (novel.url) {
+        link.href = novel.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "웹소설 읽기 ↗";
+        link.setAttribute("aria-label", novel.title + " 새 창에서 읽기");
+      } else {
+        link.textContent = "공개 주소 확인 중";
+        link.setAttribute("aria-label", novel.title + " 공개 주소 확인 중");
+        link.style.opacity = "0.65";
+        link.style.cursor = "default";
+      }
       body.append(meta,title,desc,link);
       card.appendChild(body);
       grid.appendChild(card);
