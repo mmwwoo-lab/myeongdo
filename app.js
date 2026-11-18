@@ -220,7 +220,13 @@
       fallbackSub.textContent = "명도재 이명우 · 소설 제" + (index + 1) + "편";
       fallback.append(ornament, fallbackTitle, fallbackSub);
       cover.appendChild(fallback);
-      if (novel.cover) {
+      if (novel.inlineCoverSvg) {
+        // Built-in trusted illustration: render SVG directly, avoiding broken image URLs.
+        const svgHolder = document.createElement("div");
+        svgHolder.className = "novel-cover-inline-svg";
+        svgHolder.innerHTML = novel.inlineCoverSvg;
+        cover.appendChild(svgHolder);
+      } else if (novel.cover) {
         const img = document.createElement("img");
         img.className = "novel-cover-image";
         img.alt = novel.title + " 대표 삽화";
