@@ -23,7 +23,7 @@ window.MYEONGDO_NOVELS = [
     chapters: 11,
     description: "1987–1988년 대구. 인쇄소의 활자공 윤재와 여공 미자가 찍혀 나온 한 줄의 문장을 다시 읽으며, 사라진 정류장 자리에서 서로의 이름과 삶을 지켜 내는 세 번째 완결 소설. 흑백 펜화 삽화와 장별 낭독.",
     url: "https://myeongdojae-song-atelier-mmwwoo-6434.vercel.app/",
-    cover: "assets/novel-03-cover.svg",
+    cover: "https://myeongdojae-song-atelier-mmwwoo-6434.vercel.app/images/01-%EB%8F%84%EC%8B%9C%EC%9D%98-%EB%92%B7%EB%AA%A8%EC%8A%B5.jpg",
     published: "세 번째 완결 소설"
   }
   ,{
