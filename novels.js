@@ -13,9 +13,9 @@ window.MYEONGDO_NOVELS = [
   {
     title: "노래가 머문 화실",
     chapters: 10,
-    description: "1987년 대구. 청년 화가 박윤재와 성악가 서미란이 만나 그림과 노래, 사랑과 현실 사이에서 자신만의 삶을 찾아가는 두 번째 중편소설. 10장 수채화 삽화와 음성 낭독.",
-    url: "https://myeongdojae-song-atelier-mmwwoo-6434.vercel.app/",
-    cover: "https://d2ol7oe51mr4n9.cloudfront.net/user_3J2hxdXpcRATNnuvuEW1eyoSYce/e840ecb8-93f6-4014-a882-0f2720b9bb4c.png",
+    description: "1987년 대구. 청년 화가 박윤재와 성악가 서미란이 만나 그림과 노래, 사랑과 현실 사이에서 자신만의 삶을 찾아가는 두 번째 중편소설. 독립 재창작본 · 10개 장 · 장별 음성 낭독.",
+    url: "https://mmwwoo-lab.github.io/myeongdo/novel-02/",
+    cover: "novel-02/cover.svg",
     published: "두 번째 중편소설"
   },
   {
