@@ -22,15 +22,15 @@ window.MYEONGDO_NOVELS = [
     title: "이름이 내리는 정류장",
     chapters: 11,
     description: "1987–1988년 대구. 인쇄소의 활자공 윤재와 여공 미자가 찍혀 나온 한 줄의 문장을 다시 읽으며, 사라진 정류장 자리에서 서로의 이름과 삶을 지켜 내는 세 번째 완결 소설. 흑백 펜화 삽화와 장별 낭독.",
-    url: "", // 제3작 공식 공개 URL 확인 전까지 제2작으로 잘못 이동하지 않도록 비활성화
-    cover: "",
+    url: "https://myeongdojae-song-atelier-mmwwoo-6434.vercel.app/",
+    cover: "assets/novel-03-cover.svg",
     published: "세 번째 완결 소설"
   }
   ,{
     title: "대명동 방 한 칸",
     description: "명도재 이명우의 네 번째 소설. 작품을 읽으려면 아래 웹소설 읽기를 선택하세요.",
     url: "https://daemyeong-bang-han-kan.korea8014lee.chatgpt.site",
-    cover: "",
+    cover: "assets/novel-04-cover.svg",
     published: "네 번째 소설"
   }
 ];
