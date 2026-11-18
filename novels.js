@@ -30,7 +30,7 @@ window.MYEONGDO_NOVELS = [
     title: "대명동 방 한 칸",
     description: "명도재 이명우의 네 번째 소설. 작품을 읽으려면 아래 웹소설 읽기를 선택하세요.",
     url: "https://daemyeong-bang-han-kan.korea8014lee.chatgpt.site",
-    cover: "assets/novel-04-cover.svg",
+    cover: "https://mmwwoo-lab.github.io/myeongdo/assets/novel-04-cover.svg?v=20261118",
     published: "네 번째 소설"
   }
 ];
