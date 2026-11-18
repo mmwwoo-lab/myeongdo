@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 900" role="img" aria-label="이름이 내리는 정류장 소설 표지">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#283443"/><stop offset=".62" stop-color="#4e5458"/><stop offset="1" stop-color="#a88b6d"/></linearGradient><pattern id="grain" width="25" height="25" patternUnits="userSpaceOnUse"><circle cx="7" cy="9" r="1.2" fill="#fff" opacity=".08"/></pattern></defs>
+<rect width="720" height="900" fill="url(#bg)"/><rect width="720" height="900" fill="url(#grain)"/>
+<circle cx="555" cy="172" r="112" fill="#e6c99a" opacity=".12"/><path d="M0 690Q180 625 360 675T720 660V900H0" fill="#1a2833" opacity=".75"/>
+<g opacity=".9" stroke="#d0c3af" fill="none" stroke-width="9"><path d="M134 640V362H495V640"/><path d="M93 362H538"/><path d="M170 432H458"/><path d="M134 640H495"/></g><path d="M290 640V498h65v142" fill="#d7c7ad" opacity=".26"/><circle cx="543" cy="609" r="35" fill="#c7ae90"/><path d="M501 702Q503 643 543 642Q592 644 593 702" fill="#c7ae90"/>
+<text x="72" y="90" fill="#e9dbc8" font-size="23" font-family="sans-serif" letter-spacing="5">명도재 이명우의 소설</text>
+<text x="72" y="216" fill="#fff5e8" font-size="60" font-weight="bold" font-family="serif">이름이 내리는</text><text x="72" y="290" fill="#fff5e8" font-size="65" font-weight="bold" font-family="serif">정류장</text>
+<path d="M72 318H375" stroke="#d7bc97" stroke-width="3"/><text x="72" y="790" fill="#e9dbc8" font-size="27" font-family="serif">제3편 · 문학관 미리보기</text><text x="72" y="839" fill="#eee4d4" font-size="20" font-family="sans-serif">MYEONGDO DIGITAL LITERATURE</text></svg>
