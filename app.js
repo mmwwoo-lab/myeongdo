@@ -192,24 +192,53 @@
       grid.appendChild(empty);
       return;
     }
+    const tones = [
+      ["#4a5661", "#d2b199", "#a66e65"],
+      ["#5d624f", "#d5b995", "#956d59"],
+      ["#444c55", "#ae9990", "#e4c6a6"],
+      ["#554438", "#d3b18c", "#8a7563"]
+    ];
     works.forEach((novel, index) => {
       const card = document.createElement("article");
       card.className = "novel-item";
       const cover = document.createElement("div");
       cover.className = "novel-cover";
+      const colors = tones[index % tones.length];
+      // A visible illustrated title backdrop is always present, even if a remote image fails.
+      const fallback = document.createElement("div");
+      fallback.className = "novel-cover-fallback";
+      fallback.style.background = `linear-gradient(150deg,${colors[0]},${colors[1]} 55%,${colors[2]})`;
+      const ornament = document.createElement("div");
+      ornament.className = "novel-cover-ornament";
+      ornament.setAttribute("aria-hidden", "true");
+      ornament.textContent = "明道齋";
+      const fallbackTitle = document.createElement("strong");
+      fallbackTitle.className = "novel-cover-fallback-title";
+      fallbackTitle.textContent = novel.title;
+      const fallbackSub = document.createElement("span");
+      fallbackSub.className = "novel-cover-fallback-sub";
+      fallbackSub.textContent = "명도재 이명우 · 소설 제" + (index + 1) + "편";
+      fallback.append(ornament, fallbackTitle, fallbackSub);
+      cover.appendChild(fallback);
       if (novel.cover) {
         const img = document.createElement("img");
-        img.src = novel.cover;
+        img.className = "novel-cover-image";
         img.alt = novel.title + " 대표 삽화";
-        img.loading = "lazy";
+        img.loading = index < 4 ? "eager" : "lazy";
         img.decoding = "async";
+        img.addEventListener("load", () => {
+          if (img.naturalWidth > 0) cover.classList.add("image-loaded");
+        });
+        img.addEventListener("error", () => {
+          cover.classList.remove("image-loaded");
+          img.remove();
+        });
+        img.src = novel.cover;
         cover.appendChild(img);
-      } else {
-        cover.style.background = "linear-gradient(140deg,#bda38e,#e5d9c4 45%,#8b6c61)";
       }
       const number = document.createElement("span");
       number.className = "novel-cover-no";
-      number.textContent = "작품 " + String(index + 1).padStart(2,"0");
+      number.textContent = "작품 " + String(index + 1).padStart(2, "0");
       cover.appendChild(number);
       card.appendChild(cover);
       const body = document.createElement("div");
@@ -235,7 +264,7 @@
         link.style.opacity = "0.65";
         link.style.cursor = "default";
       }
-      body.append(meta,title,desc,link);
+      body.append(meta, title, desc, link);
       card.appendChild(body);
       grid.appendChild(card);
     });
