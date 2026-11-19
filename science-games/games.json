@@ -1,0 +1,22 @@
+[
+  {
+    "id": "01",
+    "name": "태양계 우주탐험대",
+    "url": "https://myeongdo-kids-science-space-mmwwoo-6434.vercel.app/"
+  },
+  {
+    "id": "02",
+    "name": "인체 속 탐험대",
+    "url": "https://myeongdo-kids-science-body-mmwwoo-6434.vercel.app/"
+  },
+  {
+    "id": "03",
+    "name": "어린이 기상예보관",
+    "url": "https://myeongdo-kids-science-weather-mmwwoo-6434.vercel.app/"
+  },
+  {
+    "id": "04",
+    "name": "꼬마 과학자의 실험실",
+    "url": "https://myeongdo-kids-science-lab-mmwwoo-6434.vercel.app/"
+  }
+]
