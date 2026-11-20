@@ -75,7 +75,7 @@ section#works{margin:28px 0}
   <div class="poem" id="sourceBody"></div>
   <div class="buttonrow"><button type="button" id="sourceReadBtn" onclick="readOriginal()">▶ 원시 듣기</button><button type="button" onclick="stopReading()">■ 정지</button></div>
 </details>
-<h3 class="chooser-heading">네 편의 창작시 선택</h3>
+<h3 class="chooser-heading">네 편의 창작시 선택</h3><p id="workSelectionHelp" class="muted">한 작품을 선택하면 원고·시평·오디오 감상이 함께 전환됩니다.</p>
 <div class="buttonrow poet-select" id="poetBtns" role="group" aria-label="선택한 회차의 창작시 4편"></div>
 <div class="grid reading-grid">
   <article class="card" aria-label="창작시 원고">
@@ -102,7 +102,7 @@ section#works{margin:28px 0}
     </div>
   </article>
 </div>
-<div class="archive-actions"><button type="button" onclick="exportArchive()">제1~4회 작품 자료 백업</button></div>
+<div class="archive-actions"><button type="button" onclick="copyWorkLink()">현재 작품 링크 복사</button><button type="button" onclick="exportArchive()">제1~4회 작품 자료 백업</button></div>
 <p id="audioStatus" class="muted" role="status" aria-live="polite">오디오 대기 중</p>
 <p class="muted">오디오 읽기는 브라우저에 설치된 한국어 음성으로 재생됩니다. 음성 종류는 기기 환경에 따라 달라집니다.</p>
 </section></main><footer>© 2026 명도재 시창작소 · 기획/발행 명도재 이명우 · AI 창작 시범전 · 원작 및 모델 출처에 관한 표기는 작품별로 구분합니다.</footer><script>
@@ -113,6 +113,9 @@ let activeEpisodeId="ep-004";
 let data=seed, selectedPoemIndex=0, currentEpisode=null, readingSeq=0, readingPaused=false, pendingChunks=[], spokenLabel="";
 const $=id=>document.getElementById(id);
 const poemById=id=>data.poems.find(p=>p.id===id);
+function readInitialSelection(){try{const q=new URLSearchParams(window.location.search);const ep=q.get("episode");return episodes.find(e=>String(e.number)===ep)?.id||activeEpisodeId}catch{return activeEpisodeId}}
+function updateWorkUrl(){try{const q=new URL(window.location.href);q.searchParams.set("episode",String(currentEpisode.number));q.searchParams.set("poem",data.poems[selectedPoemIndex].id);window.history.replaceState(null,"",q.pathname+q.search+q.hash)}catch{}}
+function copyWorkLink(){const value=window.location.href;if(navigator.clipboard?.writeText){navigator.clipboard.writeText(value).then(()=>setAudioStatus("현재 작품 링크를 복사했습니다.")).catch(()=>setAudioStatus("주소창에서 링크를 복사해 주세요."))}else setAudioStatus("주소창에서 현재 작품 링크를 복사해 주세요.")}
 const originalById=id=>(data.originals||[]).find(p=>p.episode===id);
 function renderEpisodeList(){
  const root=$("episodeList");root.replaceChildren();
@@ -146,12 +149,12 @@ function selectEpisode(id){
    const p=poemById(pid);if(!p)return;
    const b=document.createElement("button");b.type="button";b.textContent=p.name+" 창작시";b.onclick=()=>setPoemById(pid);$("poetBtns").append(b)
  });
- renderEpisodeList();if(e.poemIds.length)setPoemById(e.poemIds[0]);
+ renderEpisodeList();const requested=new URLSearchParams(window.location.search).get("poem");const chosen=e.poemIds.includes(requested)?requested:e.poemIds[0];if(chosen)setPoemById(chosen);
 }
 function setPoemById(pid){
  const i=data.poems.findIndex(p=>p.id===pid);if(i===-1)return;stopReading();selectedPoemIndex=i;const p=data.poems[i];
  $("poetLabel").textContent=p.label+" · 창작 연구";$("poemTitle").textContent=p.title;
- $("poemBody").textContent=p.body;$("review").textContent=p.review;
+ $("poemBody").textContent=p.body;$("review").textContent=p.review;updateWorkUrl();
  const e=currentEpisode;
  [...$("poetBtns").children].forEach((b,j)=>{const v=e.poemIds[j]===pid;b.classList.toggle("active",v);b.setAttribute("aria-pressed",String(v))});
 }
@@ -204,5 +207,5 @@ function validateData(){
  if(errs.length)console.warn("작품 자료 점검:",errs.join(", "))
  return errs.length===0
 }
-function init(){validateData();selectEpisode(activeEpisodeId)}init();
+function init(){validateData();selectEpisode(readInitialSelection());window.addEventListener("popstate",()=>selectEpisode(readInitialSelection()))}init();
 </script></body></html>
