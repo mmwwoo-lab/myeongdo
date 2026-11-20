@@ -1,0 +1,103 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>명도재 시창작소 | 공식 창작 전시관</title><meta name="description" content="명도재 이명우의 AI 시창작소. 시·시평·시학 연구를 만나는 문학 전시 공간"><style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#101c29;color:#edf0ed;font:16px/1.9 system-ui,"Malgun Gothic",sans-serif}header{background:radial-gradient(ellipse at 50% 0%,#53687b,#122337 75%);padding:95px 20px;text-align:center}small{color:#e5c69a;letter-spacing:.2em}h1{font:normal clamp(40px,7vw,78px) Georgia,"Batang",serif;margin:15px}header p{color:#d6e0e7}nav{position:sticky;top:0;background:#0c1928ee;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;padding:12px;z-index:9}a{color:#ecd0a4;text-decoration:none}nav a{color:white}main{max-width:1050px;margin:auto;padding:10px 22px 70px}section{padding-top:40px}h2{font:normal 34px Georgia,"Batang",serif;border-bottom:1px solid #586574;padding-bottom:12px}.sub{color:#bdcbd6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card,article{background:#1b2c3c;border:1px solid #3f5869;border-radius:17px;padding:24px}article{margin:24px 0;padding:clamp(20px,5vw,45px)}h3{font:normal 29px "Batang",serif;color:#edcb98}.verse{white-space:pre-line;font:19px/2.2 "Batang","Malgun Gothic",serif;padding:12px 0}.review{background:#102338;border-left:3px solid #edbf84;padding:15px 20px}.tag{font-size:13px;color:#bfd9e7}button{padding:8px 14px;border-radius:8px;background:#35516a;color:white;border:1px solid #899eab;cursor:pointer}textarea{width:100%;height:110px;background:#0d1d2d;color:white;padding:14px;font:inherit;border:1px solid #718092;border-radius:9px}footer{text-align:center;padding:35px;border-top:1px solid #4e6577;color:#b5c8d0}</style></head><body><header><small>MYEONGDOJAE POETRY ATELIER</small><h1>명도재 시창작소</h1><p>한 편의 기억, 네 개의 시선<br>문학과 인공지능이 함께 여는 시적 상상력</p><p>기획 · 명도재 이명우　|　AI 비서실장 총괄</p><a href="#works">첫 번째 작품 감상하기 ↓</a></header><nav><a href="#intro">회사 소개</a><a href="#works">창작시·시평</a><a href="#org">운영 조직</a><a href="#study">시학 연구</a><a href="#memo">개인 메모</a></nav><main><section id="intro"><h2>명도재 시창작소 소개</h2><p class="sub">단어와 문장, 삶의 장면을 네 가지 시적 관점으로 발전시키는 AI 융합 문학 연구소입니다. 공개된 작품은 실제 시인들의 신작이 아닌 해당 시인의 문학적 경향을 참고한 독립 AI 창작 시범작입니다.</p><div class="grid"><div class="card">📖 <b>시학 연구</b><p>한국 대표 시인과 시의 형식, 언어와 이미지 연구</p></div><div class="card">✍️ <b>창작 연구</b><p>이성두·전진식·곽의영·서지월의 시적 성향 비교</p></div><div class="card">📝 <b>시평과 퇴고</b><p>상징·운율·함축·독창성 중심의 자체 비평</p></div><div class="card">🎨 <b>디지털 아카이브</b><p>시·시화·영상으로 확장하는 문학 전시</p></div></div></section><section id="works"><h2>제1호 기획전: 첫눈이 오는 날</h2><p class="sub">첫눈, 호빵, 군고구마, 두 아이, 복실이의 유년 기억에서 출발한 네 편의 창작시입니다. 원작 전문을 확보하지 못한 상태의 소재 기반 시범 작품입니다.</p><div id="poems"></div></section><section id="org"><h2>비서실장 운영 조직</h2><div class="grid" id="orgs"></div><p class="sub">대표 이명우 → AI 비서실장 → 전문 부서 → 비서실장 검수 → 대표 최종 승인. 부서 명칭은 AI 업무 분담 역할이며 실제 채용된 전문 인력이 아닙니다.</p></section><section id="study"><h2>한국 현대시 연구</h2><div id="studylist" class="grid"></div></section><section id="memo"><h2>나의 창작 메모</h2><p class="sub">메모는 방문자의 브라우저에만 저장되며 공동 저장소에 자동 게시되지 않습니다.</p><textarea id="note" placeholder="다음 작품의 단어와 문장을 적어주세요"></textarea><p><button id="save">내 기기에 저장</button> <button id="download">메모 다운로드</button> <button id="export">전시 작품 JSON 다운로드</button></p><p id="feedback" aria-live="polite"></p></section><section><h2>저작권과 출처 안내</h2><p>전시 시는 실제 시인의 발표 작품·공동 집필 작품이 아니며 AI 보조 창작 연구 결과입니다. 시평 역시 특정 실명 문학박사가 직접 작성하거나 감수한 평론이 아닙니다. 시화·MP4 완성본 등 추가 자료는 순차적으로 검증하여 공개합니다.</p></section></main><footer>© 2026 명도재 시창작소 · 대표 명도재 이명우</footer><script>
+const works=[
+{n:"이성두",d:"생활 서정·온기·그리움",t:"눈이 먼저 찾아온 골목",p:`낡은 골목에 눈이 내리면
+잊었다 믿었던 이름이 돌아온다
+
+문방구 앞 찬 손을 비비던 아이
+호빵 하나를 반으로 갈라
+더 따뜻한 쪽을 건네던 아이
+
+그때는 몰랐다
+마음을 나누면
+추위도 반으로 줄어든다는 것을
+
+복실이는 눈밭을 뛰어다니고
+집집마다 저녁 불빛이 켜졌지
+
+해마다 첫눈은
+먼 데서 오는 편지가 되어
+내 마음의 우체통을 두드린다
+
+받는 사람도 보내는 사람도
+이젠 어른이 되었지만
+그 골목만은 아직 따뜻하다`,r:"호빵과 문방구라는 소박한 사물로 사라진 시간을 복원하는 생활 서정의 작품이다. '마음의 우체통'은 첫눈을 과거에서 도착한 편지로 바꾼다. 익숙한 그리움의 어휘를 조금 더 절제하면 여운이 깊어질 것이다."},
+{n:"전진식",d:"현대 도시·인간관계·성찰",t:"첫눈의 행선지",p:`첫눈 예보가 뜬 휴대전화
+사람들은 고개를 숙이고 걷는다
+
+횡단보도 앞
+초록 불을 기다리는 동안
+눈송이 하나가 화면을 덮는다
+
+세상은 이렇게 바쁜데
+저 작은 흰 점 하나는
+어디로 가는 것일까
+
+아주 오래전
+군고구마를 반으로 쪼개던 손
+복실이를 불러 세우던 목소리
+
+그 손도 그 목소리도
+역 이름처럼 멀어졌으나
+가슴에는 아직 환승하지 못한
+한 정거장이 남아 있다
+
+신호가 바뀌어
+모두가 앞으로 걸어갈 때
+나는 잠시 하늘 쪽을 바라본다`,r:"도시의 신호체계와 개인의 기억을 교차시키는 시다. '환승하지 못한 한 정거장'이라는 비유는 떠나보내지 못한 인연을 현대적 이미지로 형상화한다. 휴대전화와 눈송이의 대비가 주제의식을 선명하게 한다."},
+{n:"곽의영",d:"가족애·인생의 품격·추억",t:"눈 오는 날의 온기",p:`세월은 많은 것을 가져갔지만
+내게 남겨 둔 것이 하나 있다
+
+첫눈이 오던 저녁
+작은 손에 쥐여 주던
+따뜻한 군고구마 한쪽
+
+그 겨울 우리는
+가진 것이 많지 않아도
+서로의 웃음으로 넉넉했다
+
+복실이는 발자국을 남기고
+소년과 소녀는
+그 뒤를 따라 웃었다
+
+오래 산다는 것은
+잊는 일이 아니라
+작은 온기를 다시 알아보는 일
+
+오늘 내리는 눈을 보며
+나는 그때의 아이들에게
+늦은 인사를 건넨다`,r:"유년의 소박한 배려가 인생의 성찰로 이어진다. '작은 온기를 다시 알아보는 일'은 시의 윤리적 중심이다. 감정 진술이 다소 직접적인 부분은 장면으로 대체하면 시적 긴장을 높일 수 있다."},
+{n:"서지월",d:"향토 서정·전통 운율·고향",t:"눈발 속에 남은 고향",p:`감나무 끝 붉은 열매 하나
+눈발 속에 등을 밝히고
+
+논둑길 가느다란 발자국
+저녁을 향해 굽어 간다
+
+소년아 소녀야
+그날의 개울은 어디로 갔느냐
+
+복실이 짖던 마당에
+흰 눈이 소복소복 쌓이고
+처마 끝 고드름은
+어릴 적 노래를 매단다
+
+먼 산마루 흰 숨결 따라
+잊힌 이름들이 돌아와
+
+내 가슴 한구석
+그리운 고향집 문풍지를
+밤새 가만가만 흔든다`,r:"감나무·논둑·처마·문풍지 등 향토 사물이 고향의 장소성을 만든다. '소년아 소녀야'라는 호명과 반복되는 음성은 민요적 울림을 구성한다. 정형적인 향수의 이미지 사이에 구체적 경험 한 장면을 더하면 독자성이 강화될 것이다."}
+];
+const esc=s=>s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+document.getElementById("poems").innerHTML=works.map((w,i)=>`<article><span class="tag">AI 창작 연구 · ${esc(w.n)} 연구 시선 · ${esc(w.d)}</span><h3>${esc(w.t)}</h3><div class="verse">${esc(w.p)}</div><h4>명도재 문학비평실 · 작품 시평</h4><div class="review">${esc(w.r)}</div><p><button data-read="${i}">낭독 듣기</button> <button data-stop="1">낭독 정지</button></p></article>`).join("");
+document.querySelectorAll("[data-read]").forEach(b=>b.onclick=()=>{speechSynthesis.cancel();const w=works[Number(b.dataset.read)],u=new SpeechSynthesisUtterance(w.t+"。"+w.p);u.lang="ko-KR";u.rate=.8;speechSynthesis.speak(u)});
+document.querySelectorAll("[data-stop]").forEach(b=>b.onclick=()=>speechSynthesis.cancel());
+const departments=["시학·문헌연구실","4인 시창작연구실","문학비평·퇴고실","시화·미술제작실","영상·오디오제작실","웹앱·저장소관리실","저작권·품질검증실","홍보·독자소통실"];
+document.getElementById("orgs").innerHTML=departments.map((x,i)=>`<div class="card"><strong>0${i+1}</strong> · ${esc(x)}</div>`).join("");
+const poets=[["김소월","민요적 율격·그리움"],["윤동주","자기 성찰·순결한 언어"],["정지용","감각적 이미지·절제"],["백석","향토어·이야기"],["한용운","역설·님과 해방"],["이상","실험적 언어·분열"],["서정주","생명성·신화적 상상"],["박목월","자연과 향토 서정"],["조지훈","전통 미학·고전적 품격"],["박두진","자연·생명과 이상"],["김춘수","존재·이름의 상징"],["김수영","자유·현실 비판"],["신동엽","민중·역사 의식"],["고은","다성적 서사·생명"],["신경림","민중의 삶·구어"],["정현종","존재·관계의 경이"],["황동규","실존적 성찰·지적 서정"],["도종환","서정·공동체 정서"],["정호승","사랑·상처와 위로"],["나태주","일상·간결한 감성"]];
+document.getElementById("studylist").innerHTML=poets.map(([n,d])=>`<div class="card"><b>${esc(n)}</b><p>${esc(d)}</p></div>`).join("");
+const note=document.getElementById("note");try{note.value=localStorage.getItem("myeongdo_poetry_note")||""}catch(e){}
+document.getElementById("save").onclick=()=>{try{localStorage.setItem("myeongdo_poetry_note",note.value);document.getElementById("feedback").textContent="현재 브라우저에 저장되었습니다."}catch(e){document.getElementById("feedback").textContent="브라우저 저장을 사용할 수 없습니다."}};
+function dl(name,data){const b=new Blob([JSON.stringify(data,null,2)],{type:"application/json;charset=utf-8"}),a=document.createElement("a"),url=URL.createObjectURL(b);a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+document.getElementById("download").onclick=()=>dl("myeongdo-poetry-note.json",{memo:note.value,savedAt:new Date().toISOString()});
+document.getElementById("export").onclick=()=>dl("myeongdo-poetry-works.json",works);
+</script></body></html>
