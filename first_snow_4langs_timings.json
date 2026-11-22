@@ -1,0 +1,890 @@
+{
+  "ko": {
+    "total_dur": 98.62,
+    "voice": "ko-KR-SunHiNeural",
+    "items": [
+      {
+        "index": 0,
+        "stanza_idx": 0,
+        "stanza_title": "표제 · 시인",
+        "display": "첫눈 ― 명도재 이명우",
+        "start": 1.2,
+        "end": 5.082,
+        "duration": 3.882
+      },
+      {
+        "index": 1,
+        "stanza_idx": 1,
+        "stanza_title": "제 1 연 · 첫눈과 그리움",
+        "display": "첫눈이라는 이름을 가만히 불러 본다",
+        "start": 6.782,
+        "end": 10.016,
+        "duration": 3.234
+      },
+      {
+        "index": 2,
+        "stanza_idx": 1,
+        "stanza_title": "제 1 연 · 첫눈과 그리움",
+        "display": "운동장에 서면 하루가 조금 느려지고",
+        "start": 10.816,
+        "end": 14.234,
+        "duration": 3.418
+      },
+      {
+        "index": 3,
+        "stanza_idx": 1,
+        "stanza_title": "제 1 연 · 첫눈과 그리움",
+        "display": "차가운 바람이 볼끝에 살며시 내려앉는다",
+        "start": 14.984,
+        "end": 18.73,
+        "duration": 3.746
+      },
+      {
+        "index": 4,
+        "stanza_idx": 1,
+        "stanza_title": "제 1 연 · 첫눈과 그리움",
+        "display": "하얀 눈송이 하나",
+        "start": 19.58,
+        "end": 21.233,
+        "duration": 1.653
+      },
+      {
+        "index": 5,
+        "stanza_idx": 1,
+        "stanza_title": "제 1 연 · 첫눈과 그리움",
+        "display": "오래된 그리움처럼 어깨에 내려앉는다",
+        "start": 21.933,
+        "end": 25.371,
+        "duration": 3.437
+      },
+      {
+        "index": 6,
+        "stanza_idx": 2,
+        "stanza_title": "제 2 연 · 운동장의 하얀 설렘",
+        "display": "어린 날 친구들과 눈사람을 만들던 운동장",
+        "start": 27.171,
+        "end": 31.337,
+        "duration": 4.167
+      },
+      {
+        "index": 7,
+        "stanza_idx": 2,
+        "stanza_title": "제 2 연 · 운동장의 하얀 설렘",
+        "display": "작은 손 호호 불며 웃던 그 소녀",
+        "start": 32.137,
+        "end": 35.068,
+        "duration": 2.93
+      },
+      {
+        "index": 8,
+        "stanza_idx": 2,
+        "stanza_title": "제 2 연 · 운동장의 하얀 설렘",
+        "display": "눈사람의 까만 눈을 달아 주고",
+        "start": 35.868,
+        "end": 38.434,
+        "duration": 2.566
+      },
+      {
+        "index": 9,
+        "stanza_idx": 2,
+        "stanza_title": "제 2 연 · 운동장의 하얀 설렘",
+        "display": "내 마음에는 하얀 설렘 하나 남겨 놓았다",
+        "start": 39.184,
+        "end": 42.836,
+        "duration": 3.652
+      },
+      {
+        "index": 10,
+        "stanza_idx": 3,
+        "stanza_title": "제 3 연 · 첫눈 오는 날의 약속",
+        "display": "첫눈이 오는 날 다시 만나자던 말",
+        "start": 44.636,
+        "end": 47.942,
+        "duration": 3.306
+      },
+      {
+        "index": 11,
+        "stanza_idx": 3,
+        "stanza_title": "제 3 연 · 첫눈 오는 날의 약속",
+        "display": "누가 먼저 꺼냈는지 기억나지 않지만",
+        "start": 48.742,
+        "end": 51.694,
+        "duration": 2.952
+      },
+      {
+        "index": 12,
+        "stanza_idx": 3,
+        "stanza_title": "제 3 연 · 첫눈 오는 날의 약속",
+        "display": "해마다 첫눈이 내리면",
+        "start": 52.494,
+        "end": 54.243,
+        "duration": 1.749
+      },
+      {
+        "index": 13,
+        "stanza_idx": 3,
+        "stanza_title": "제 3 연 · 첫눈 오는 날의 약속",
+        "display": "나는 그 약속을 혼자 꺼내 본다",
+        "start": 54.943,
+        "end": 58.045,
+        "duration": 3.103
+      },
+      {
+        "index": 14,
+        "stanza_idx": 4,
+        "stanza_title": "제 4 연 · 따뜻한 발자국과 작은 꽃",
+        "display": "소녀가 지나간 자리에는",
+        "start": 59.845,
+        "end": 61.806,
+        "duration": 1.96
+      },
+      {
+        "index": 15,
+        "stanza_idx": 4,
+        "stanza_title": "제 4 연 · 따뜻한 발자국과 작은 꽃",
+        "display": "아직도 따뜻한 발자국이 남아 있을까",
+        "start": 62.506,
+        "end": 65.503,
+        "duration": 2.998
+      },
+      {
+        "index": 16,
+        "stanza_idx": 4,
+        "stanza_title": "제 4 연 · 따뜻한 발자국과 작은 꽃",
+        "display": "그날 미처 전하지 못한 마음은",
+        "start": 66.453,
+        "end": 68.762,
+        "duration": 2.309
+      },
+      {
+        "index": 17,
+        "stanza_idx": 4,
+        "stanza_title": "제 4 연 · 따뜻한 발자국과 작은 꽃",
+        "display": "눈 속에 묻힌 작은 꽃처럼 피어 있을까",
+        "start": 69.512,
+        "end": 73.276,
+        "duration": 3.764
+      },
+      {
+        "index": 18,
+        "stanza_idx": 5,
+        "stanza_title": "제 5 연 · 오늘도 내리는 첫눈",
+        "display": "오늘도 운동장에 첫눈이 내린다",
+        "start": 75.076,
+        "end": 77.903,
+        "duration": 2.827
+      },
+      {
+        "index": 19,
+        "stanza_idx": 5,
+        "stanza_title": "제 5 연 · 오늘도 내리는 첫눈",
+        "display": "눈사람은 그 자리에 없고",
+        "start": 78.753,
+        "end": 80.956,
+        "duration": 2.202
+      },
+      {
+        "index": 20,
+        "stanza_idx": 5,
+        "stanza_title": "제 5 연 · 오늘도 내리는 첫눈",
+        "display": "그 소녀도 어디에 사는지 모르지만",
+        "start": 81.706,
+        "end": 84.428,
+        "duration": 2.722
+      },
+      {
+        "index": 21,
+        "stanza_idx": 6,
+        "stanza_title": "제 6 연 · 마음속 소년의 기다림",
+        "display": "첫눈이 오는 날이면",
+        "start": 86.128,
+        "end": 87.84,
+        "duration": 1.712
+      },
+      {
+        "index": 22,
+        "stanza_idx": 6,
+        "stanza_title": "제 6 연 · 마음속 소년의 기다림",
+        "display": "내 마음속 어린 소년 하나",
+        "start": 88.64,
+        "end": 90.854,
+        "duration": 2.214
+      },
+      {
+        "index": 23,
+        "stanza_idx": 6,
+        "stanza_title": "제 6 연 · 마음속 소년의 기다림",
+        "display": "아직도 그 소녀를 기다리고 있다.",
+        "start": 91.704,
+        "end": 94.623,
+        "duration": 2.919
+      }
+    ]
+  },
+  "en": {
+    "total_dur": 90.8,
+    "voice": "en-US-JennyNeural",
+    "items": [
+      {
+        "index": 0,
+        "stanza_idx": 0,
+        "stanza_title": "Title · Poet",
+        "display": "First Snow ― Myungdojae Lee Myung-woo",
+        "start": 1.2,
+        "end": 5.403,
+        "duration": 4.203
+      },
+      {
+        "index": 1,
+        "stanza_idx": 1,
+        "stanza_title": "Stanza 1 · First Snow & Longing",
+        "display": "Quietly, I call out the name of the first snow",
+        "start": 7.103,
+        "end": 10.091,
+        "duration": 2.988
+      },
+      {
+        "index": 2,
+        "stanza_idx": 1,
+        "stanza_title": "Stanza 1 · First Snow & Longing",
+        "display": "Standing in the schoolyard, the day slows down",
+        "start": 10.841,
+        "end": 13.865,
+        "duration": 3.024
+      },
+      {
+        "index": 3,
+        "stanza_idx": 1,
+        "stanza_title": "Stanza 1 · First Snow & Longing",
+        "display": "A cool breeze gently rests upon my cheek",
+        "start": 14.615,
+        "end": 17.397,
+        "duration": 2.782
+      },
+      {
+        "index": 4,
+        "stanza_idx": 1,
+        "stanza_title": "Stanza 1 · First Snow & Longing",
+        "display": "A single white snowflake",
+        "start": 18.197,
+        "end": 19.928,
+        "duration": 1.732
+      },
+      {
+        "index": 5,
+        "stanza_idx": 1,
+        "stanza_title": "Stanza 1 · First Snow & Longing",
+        "display": "Settles on my shoulder like an old longing",
+        "start": 20.578,
+        "end": 23.326,
+        "duration": 2.748
+      },
+      {
+        "index": 6,
+        "stanza_idx": 2,
+        "stanza_title": "Stanza 2 · White Flutter in the Schoolyard",
+        "display": "The schoolyard where we built a snowman as children",
+        "start": 25.026,
+        "end": 27.854,
+        "duration": 2.828
+      },
+      {
+        "index": 7,
+        "stanza_idx": 2,
+        "stanza_title": "Stanza 2 · White Flutter in the Schoolyard",
+        "display": "That girl who smiled, blowing warmth into her small hands",
+        "start": 28.604,
+        "end": 32.306,
+        "duration": 3.701
+      },
+      {
+        "index": 8,
+        "stanza_idx": 2,
+        "stanza_title": "Stanza 2 · White Flutter in the Schoolyard",
+        "display": "Put two dark eyes upon the snowman",
+        "start": 33.056,
+        "end": 35.282,
+        "duration": 2.226
+      },
+      {
+        "index": 9,
+        "stanza_idx": 2,
+        "stanza_title": "Stanza 2 · White Flutter in the Schoolyard",
+        "display": "And left a white flutter inside my heart",
+        "start": 35.982,
+        "end": 38.447,
+        "duration": 2.465
+      },
+      {
+        "index": 10,
+        "stanza_idx": 3,
+        "stanza_title": "Stanza 3 · The Promise of First Snow",
+        "display": "The words saying, let us meet again when the first snow falls",
+        "start": 40.147,
+        "end": 44.022,
+        "duration": 3.875
+      },
+      {
+        "index": 11,
+        "stanza_idx": 3,
+        "stanza_title": "Stanza 3 · The Promise of First Snow",
+        "display": "I cannot recall who spoke them first",
+        "start": 44.772,
+        "end": 47.042,
+        "duration": 2.27
+      },
+      {
+        "index": 12,
+        "stanza_idx": 3,
+        "stanza_title": "Stanza 3 · The Promise of First Snow",
+        "display": "Yet every year when the first snow comes",
+        "start": 47.792,
+        "end": 50.385,
+        "duration": 2.593
+      },
+      {
+        "index": 13,
+        "stanza_idx": 3,
+        "stanza_title": "Stanza 3 · The Promise of First Snow",
+        "display": "I quietly take out that promise alone",
+        "start": 51.035,
+        "end": 53.486,
+        "duration": 2.451
+      },
+      {
+        "index": 14,
+        "stanza_idx": 4,
+        "stanza_title": "Stanza 4 · Warm Footprints & Little Flower",
+        "display": "In the place where the girl once passed",
+        "start": 55.186,
+        "end": 57.52,
+        "duration": 2.334
+      },
+      {
+        "index": 15,
+        "stanza_idx": 4,
+        "stanza_title": "Stanza 4 · Warm Footprints & Little Flower",
+        "display": "Do her warm footprints still remain?",
+        "start": 58.17,
+        "end": 60.162,
+        "duration": 1.992
+      },
+      {
+        "index": 16,
+        "stanza_idx": 4,
+        "stanza_title": "Stanza 4 · Warm Footprints & Little Flower",
+        "display": "Is the heart I could not confess that day",
+        "start": 61.062,
+        "end": 63.387,
+        "duration": 2.325
+      },
+      {
+        "index": 17,
+        "stanza_idx": 4,
+        "stanza_title": "Stanza 4 · Warm Footprints & Little Flower",
+        "display": "Blooming like a tiny flower buried in the snow?",
+        "start": 64.087,
+        "end": 66.82,
+        "duration": 2.733
+      },
+      {
+        "index": 18,
+        "stanza_idx": 5,
+        "stanza_title": "Stanza 5 · First Snow Falling Today",
+        "display": "Today again, the first snow falls on the schoolyard",
+        "start": 68.52,
+        "end": 71.747,
+        "duration": 3.227
+      },
+      {
+        "index": 19,
+        "stanza_idx": 5,
+        "stanza_title": "Stanza 5 · First Snow Falling Today",
+        "display": "The snowman is no longer there",
+        "start": 72.547,
+        "end": 74.459,
+        "duration": 1.912
+      },
+      {
+        "index": 20,
+        "stanza_idx": 5,
+        "stanza_title": "Stanza 5 · First Snow Falling Today",
+        "display": "And I do not know where that girl lives now",
+        "start": 75.159,
+        "end": 77.443,
+        "duration": 2.285
+      },
+      {
+        "index": 21,
+        "stanza_idx": 6,
+        "stanza_title": "Stanza 6 · The Boy Waiting Within",
+        "display": "Whenever the day of the first snow arrives",
+        "start": 79.043,
+        "end": 81.467,
+        "duration": 2.423
+      },
+      {
+        "index": 22,
+        "stanza_idx": 6,
+        "stanza_title": "Stanza 6 · The Boy Waiting Within",
+        "display": "A young boy deep within my heart",
+        "start": 82.217,
+        "end": 84.273,
+        "duration": 2.056
+      },
+      {
+        "index": 23,
+        "stanza_idx": 6,
+        "stanza_title": "Stanza 6 · The Boy Waiting Within",
+        "display": "Is still waiting for that girl.",
+        "start": 85.073,
+        "end": 86.801,
+        "duration": 1.729
+      }
+    ]
+  },
+  "zh": {
+    "total_dur": 94.91,
+    "voice": "zh-CN-XiaoxiaoNeural",
+    "items": [
+      {
+        "index": 0,
+        "stanza_idx": 0,
+        "stanza_title": "标题 · 诗人",
+        "display": "初雪 ― 明道斋 李明雨",
+        "start": 1.2,
+        "end": 4.512,
+        "duration": 3.312
+      },
+      {
+        "index": 1,
+        "stanza_idx": 1,
+        "stanza_title": "第一诗节 · 初雪与思念",
+        "display": "轻轻呼唤着初雪这个名字",
+        "start": 6.212,
+        "end": 9.157,
+        "duration": 2.945
+      },
+      {
+        "index": 2,
+        "stanza_idx": 1,
+        "stanza_title": "第一诗节 · 初雪与思念",
+        "display": "站在操场上，一天仿佛慢了下来",
+        "start": 9.957,
+        "end": 13.26,
+        "duration": 3.302
+      },
+      {
+        "index": 3,
+        "stanza_idx": 1,
+        "stanza_title": "第一诗节 · 初雪与思念",
+        "display": "微凉的风，轻轻落在脸颊旁",
+        "start": 14.01,
+        "end": 17.062,
+        "duration": 3.053
+      },
+      {
+        "index": 4,
+        "stanza_idx": 1,
+        "stanza_title": "第一诗节 · 初雪与思念",
+        "display": "一片洁白的雪花",
+        "start": 17.862,
+        "end": 19.642,
+        "duration": 1.78
+      },
+      {
+        "index": 5,
+        "stanza_idx": 1,
+        "stanza_title": "第一诗节 · 初雪与思念",
+        "display": "宛如久违的思念，落在肩头",
+        "start": 20.342,
+        "end": 23.28,
+        "duration": 2.937
+      },
+      {
+        "index": 6,
+        "stanza_idx": 2,
+        "stanza_title": "第二诗节 · 操场上的纯白悸动",
+        "display": "年少时与朋友们一起堆雪人的操场",
+        "start": 25.08,
+        "end": 28.812,
+        "duration": 3.732
+      },
+      {
+        "index": 7,
+        "stanza_idx": 2,
+        "stanza_title": "第二诗节 · 操场上的纯白悸动",
+        "display": "对着小手呵气微笑的那个女孩",
+        "start": 29.612,
+        "end": 32.487,
+        "duration": 2.875
+      },
+      {
+        "index": 8,
+        "stanza_idx": 2,
+        "stanza_title": "第二诗节 · 操场上的纯白悸动",
+        "display": "为雪人镶上黑黑的眼睛",
+        "start": 33.287,
+        "end": 35.679,
+        "duration": 2.392
+      },
+      {
+        "index": 9,
+        "stanza_idx": 2,
+        "stanza_title": "第二诗节 · 操场上的纯白悸动",
+        "display": "在我心里，留下了一抹纯白的悸动",
+        "start": 36.429,
+        "end": 39.824,
+        "duration": 3.396
+      },
+      {
+        "index": 10,
+        "stanza_idx": 3,
+        "stanza_title": "第三诗节 · 初雪之日的约定",
+        "display": "初雪降临时再次相见的话语",
+        "start": 41.624,
+        "end": 44.834,
+        "duration": 3.209
+      },
+      {
+        "index": 11,
+        "stanza_idx": 3,
+        "stanza_title": "第三诗节 · 初雪之日的约定",
+        "display": "已记不清是谁先提起",
+        "start": 45.634,
+        "end": 48.074,
+        "duration": 2.441
+      },
+      {
+        "index": 12,
+        "stanza_idx": 3,
+        "stanza_title": "第三诗节 · 初雪之日的约定",
+        "display": "但每当岁末初雪飘落",
+        "start": 48.824,
+        "end": 51.043,
+        "duration": 2.219
+      },
+      {
+        "index": 13,
+        "stanza_idx": 3,
+        "stanza_title": "第三诗节 · 初雪之日的约定",
+        "display": "我总会独自取出那份约定",
+        "start": 51.743,
+        "end": 54.212,
+        "duration": 2.469
+      },
+      {
+        "index": 14,
+        "stanza_idx": 4,
+        "stanza_title": "第四诗节 · 温暖的脚印与小花",
+        "display": "女孩走过的地方",
+        "start": 56.012,
+        "end": 57.641,
+        "duration": 1.63
+      },
+      {
+        "index": 15,
+        "stanza_idx": 4,
+        "stanza_title": "第四诗节 · 温暖的脚印与小花",
+        "display": "是否还留着温暖的脚印",
+        "start": 58.341,
+        "end": 60.637,
+        "duration": 2.296
+      },
+      {
+        "index": 16,
+        "stanza_idx": 4,
+        "stanza_title": "第四诗节 · 温暖的脚印与小花",
+        "display": "那天未能传达的心意",
+        "start": 61.537,
+        "end": 63.646,
+        "duration": 2.109
+      },
+      {
+        "index": 17,
+        "stanza_idx": 4,
+        "stanza_title": "第四诗节 · 温暖的脚印与小花",
+        "display": "是否如埋在雪中的小花般悄然绽放",
+        "start": 64.396,
+        "end": 68.207,
+        "duration": 3.811
+      },
+      {
+        "index": 18,
+        "stanza_idx": 5,
+        "stanza_title": "第五诗节 · 今日飘落的初雪",
+        "display": "今天，操场上又飘起了初雪",
+        "start": 70.007,
+        "end": 73.105,
+        "duration": 3.099
+      },
+      {
+        "index": 19,
+        "stanza_idx": 5,
+        "stanza_title": "第五诗节 · 今日飘落的初雪",
+        "display": "雪人已不在原地",
+        "start": 73.905,
+        "end": 75.639,
+        "duration": 1.734
+      },
+      {
+        "index": 20,
+        "stanza_idx": 5,
+        "stanza_title": "第五诗节 · 今日飘落的初雪",
+        "display": "也不知道那个女孩如今身在何方",
+        "start": 76.389,
+        "end": 79.977,
+        "duration": 3.588
+      },
+      {
+        "index": 21,
+        "stanza_idx": 6,
+        "stanza_title": "第六诗节 · 心中少年的等待",
+        "display": "每当初雪降临的日子",
+        "start": 81.677,
+        "end": 83.78,
+        "duration": 2.103
+      },
+      {
+        "index": 22,
+        "stanza_idx": 6,
+        "stanza_title": "第六诗节 · 心中少年的等待",
+        "display": "我心中的那个年少少年",
+        "start": 84.58,
+        "end": 86.897,
+        "duration": 2.318
+      },
+      {
+        "index": 23,
+        "stanza_idx": 6,
+        "stanza_title": "第六诗节 · 心中少年的等待",
+        "display": "依然在静静等待着那个女孩。",
+        "start": 87.747,
+        "end": 90.908,
+        "duration": 3.16
+      }
+    ]
+  },
+  "ja": {
+    "total_dur": 110.89,
+    "voice": "ja-JP-NanamiNeural",
+    "items": [
+      {
+        "index": 0,
+        "stanza_idx": 0,
+        "stanza_title": "表題 · 詩人",
+        "display": "初雪 ― 明道斎 李明雨",
+        "start": 1.2,
+        "end": 5.489,
+        "duration": 4.289
+      },
+      {
+        "index": 1,
+        "stanza_idx": 1,
+        "stanza_title": "第 1 連 · 初雪と懐かしさ",
+        "display": "初雪という名前をそっと呼んでみる",
+        "start": 7.189,
+        "end": 10.5,
+        "duration": 3.31
+      },
+      {
+        "index": 2,
+        "stanza_idx": 1,
+        "stanza_title": "第 1 連 · 初雪と懐かしさ",
+        "display": "校庭に立つと一日が少しゆっくりと流れ",
+        "start": 11.3,
+        "end": 15.615,
+        "duration": 4.315
+      },
+      {
+        "index": 3,
+        "stanza_idx": 1,
+        "stanza_title": "第 1 連 · 初雪と懐かしさ",
+        "display": "冷たい風が頬の先にやさしく舞い降りる",
+        "start": 16.365,
+        "end": 20.238,
+        "duration": 3.874
+      },
+      {
+        "index": 4,
+        "stanza_idx": 1,
+        "stanza_title": "第 1 連 · 初雪と懐かしさ",
+        "display": "白い雪の結晶ひとつ",
+        "start": 21.038,
+        "end": 23.208,
+        "duration": 2.17
+      },
+      {
+        "index": 5,
+        "stanza_idx": 1,
+        "stanza_title": "第 1 連 · 初雪と懐かしさ",
+        "display": "遠い日の恋しさのように肩に舞い降りる",
+        "start": 23.908,
+        "end": 27.619,
+        "duration": 3.711
+      },
+      {
+        "index": 6,
+        "stanza_idx": 2,
+        "stanza_title": "第 2 連 · 校庭の白いきらめき",
+        "display": "幼い日、友だちと雪だるまを作った校庭",
+        "start": 29.419,
+        "end": 33.456,
+        "duration": 4.037
+      },
+      {
+        "index": 7,
+        "stanza_idx": 2,
+        "stanza_title": "第 2 連 · 校庭の白いきらめき",
+        "display": "小さな手に息を吹きかけ微笑んでいたあの少女",
+        "start": 34.256,
+        "end": 38.466,
+        "duration": 4.21
+      },
+      {
+        "index": 8,
+        "stanza_idx": 2,
+        "stanza_title": "第 2 連 · 校庭の白いきらめき",
+        "display": "雪だるまの黒い目をつけてくれて",
+        "start": 39.266,
+        "end": 41.989,
+        "duration": 2.723
+      },
+      {
+        "index": 9,
+        "stanza_idx": 2,
+        "stanza_title": "第 2 連 · 校庭の白いきらめき",
+        "display": "私の心には白いときめきをひとつ残していった",
+        "start": 42.739,
+        "end": 47.454,
+        "duration": 4.715
+      },
+      {
+        "index": 10,
+        "stanza_idx": 3,
+        "stanza_title": "第 3 連 · 初雪の日の約束",
+        "display": "初雪の降る日にまた会おうと言った言葉",
+        "start": 49.254,
+        "end": 52.958,
+        "duration": 3.704
+      },
+      {
+        "index": 11,
+        "stanza_idx": 3,
+        "stanza_title": "第 3 連 · 初雪の日の約束",
+        "display": "誰が先に言い出したのか思い出せないけれど",
+        "start": 53.758,
+        "end": 57.352,
+        "duration": 3.594
+      },
+      {
+        "index": 12,
+        "stanza_idx": 3,
+        "stanza_title": "第 3 連 · 初雪の日の約束",
+        "display": "毎年、初雪が降るたびに",
+        "start": 58.102,
+        "end": 60.951,
+        "duration": 2.85
+      },
+      {
+        "index": 13,
+        "stanza_idx": 3,
+        "stanza_title": "第 3 連 · 初雪の日の約束",
+        "display": "私はその約束をひとり取り出してみる",
+        "start": 61.651,
+        "end": 65.351,
+        "duration": 3.7
+      },
+      {
+        "index": 14,
+        "stanza_idx": 4,
+        "stanza_title": "第 4 連 · 温かい足跡と小さな花",
+        "display": "少女が通り過ぎた場所には",
+        "start": 67.151,
+        "end": 69.462,
+        "duration": 2.311
+      },
+      {
+        "index": 15,
+        "stanza_idx": 4,
+        "stanza_title": "第 4 連 · 温かい足跡と小さな花",
+        "display": "今も温かい足跡が残っているだろうか",
+        "start": 70.162,
+        "end": 73.6,
+        "duration": 3.439
+      },
+      {
+        "index": 16,
+        "stanza_idx": 4,
+        "stanza_title": "第 4 連 · 温かい足跡と小さな花",
+        "display": "あの日、伝えられなかった想いは",
+        "start": 74.5,
+        "end": 77.298,
+        "duration": 2.798
+      },
+      {
+        "index": 17,
+        "stanza_idx": 4,
+        "stanza_title": "第 4 連 · 温かい足跡と小さな花",
+        "display": "雪の中に埋もれた小さな花のように咲いているだろうか",
+        "start": 78.048,
+        "end": 82.92,
+        "duration": 4.872
+      },
+      {
+        "index": 18,
+        "stanza_idx": 5,
+        "stanza_title": "第 5 連 · 今日も降る初雪",
+        "display": "今日も校庭に初雪が降る",
+        "start": 84.72,
+        "end": 87.153,
+        "duration": 2.432
+      },
+      {
+        "index": 19,
+        "stanza_idx": 5,
+        "stanza_title": "第 5 連 · 今日も降る初雪",
+        "display": "雪だるまはその場所になく",
+        "start": 87.953,
+        "end": 90.202,
+        "duration": 2.249
+      },
+      {
+        "index": 20,
+        "stanza_idx": 5,
+        "stanza_title": "第 5 連 · 今日も降る初雪",
+        "display": "あの少女もどこで暮らしているのか分からないけれど",
+        "start": 90.952,
+        "end": 94.867,
+        "duration": 3.915
+      },
+      {
+        "index": 21,
+        "stanza_idx": 6,
+        "stanza_title": "第 6 連 · 心の中の少年の待ちわび",
+        "display": "初雪の降る日になると",
+        "start": 96.567,
+        "end": 98.683,
+        "duration": 2.115
+      },
+      {
+        "index": 22,
+        "stanza_idx": 6,
+        "stanza_title": "第 6 連 · 心の中の少年の待ちわび",
+        "display": "私の心の中の幼い少年ひとり",
+        "start": 99.483,
+        "end": 102.849,
+        "duration": 3.366
+      },
+      {
+        "index": 23,
+        "stanza_idx": 6,
+        "stanza_title": "第 6 連 · 心の中の少年の待ちわび",
+        "display": "今もあの少女を待ち続けている。",
+        "start": 103.699,
+        "end": 106.888,
+        "duration": 3.189
+      }
+    ]
+  }
+}
