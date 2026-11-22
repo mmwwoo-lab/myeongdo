@@ -1,666 +1,290 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>명도재 디지털 문학관 — 시인·화가 이명우</title>
-  <meta name="description" content="명도재(明道齋) 이명우 시인·화가의 디지털 문학관. 오늘의 시, 디지털 시집, 생활수필집, 소설, 수묵담채 및 AI 미술 작품 아카이브." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ko_KR" />
-  <meta property="og:url" content="https://mmwwoo-lab.github.io/myeongdo/" />
-  <meta property="og:title" content="명도재 디지털 문학관 — 시인·화가 이명우" />
-  <meta property="og:description" content="명도재(明道齋) 이명우 시인·화가의 서정시 30편, 생활수필집, 소설, 수묵담채 및 AI 미술 작품 아카이브." />
-  <meta property="og:image" content="https://mmwwoo-lab.github.io/myeongdo/assets/portrait_leemyungwoo.png" />
-  <link rel="canonical" href="https://mmwwoo-lab.github.io/myeongdo/" />
-  <link rel="icon" type="image/png" href="assets/portrait_leemyungwoo.png" />
-  <!-- 가독성 높은 한국어 서정 명조 및 고딕 웹폰트 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Noto+Serif+KR:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-<style>
-/* 명도재 소설쓰기: 연속 추가형 문학 작품 목록 */
-.novel-archive-intro{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:20px 0 24px;padding:18px 22px;border:1px solid #dbd0c4;border-radius:16px;background:linear-gradient(125deg,#faf7f1,#eee5da)}
-.novel-archive-intro strong{font-size:18px}.novel-archive-intro p{margin:7px 0 0;color:#76695d;line-height:1.7}
-.novel-count{flex-shrink:0;padding:8px 14px;border-radius:30px;color:#725143;background:#fffdf8;border:1px solid #ddcfc1;font-weight:700}
-.novel-archive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:22px;margin:16px 0 42px}
-.novel-item{display:flex;flex-direction:column;overflow:hidden;border:1px solid #e0d4c8;border-radius:18px;background:#fffdfa;box-shadow:0 12px 28px rgba(60,40,24,.08)}
-.novel-cover{position:relative;aspect-ratio:16/9;min-height:320px;background:#e9dbcb;overflow:hidden;isolation:isolate}
-.novel-cover-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:32px 26px;text-align:center;color:#fff8ed}
-.novel-cover-ornament{font-family:serif;font-size:22px;letter-spacing:.35em;opacity:.85}
-.novel-cover-fallback-title{font-family:serif;font-size:clamp(25px,3vw,38px);line-height:1.35;text-shadow:0 2px 12px #0005;overflow-wrap:anywhere}
-.novel-cover-fallback-sub{font-size:14px;letter-spacing:.07em}
-.novel-cover-inline-svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:hidden}.novel-cover-inline-svg svg{display:block;width:100%;height:100%;object-fit:cover}.novel-cover-image{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;background:#e9dbcb;z-index:1}
-.novel-cover-no{position:absolute;top:12px;left:12px;border-radius:24px;padding:6px 11px;background:#fffdf5ed;color:#62453a;font-size:12px;font-weight:700}
-.novel-item-body{padding:22px;display:flex;flex-direction:column;flex:1}
-.novel-meta{font-size:12px;color:#927460;letter-spacing:.03em}
-.novel-item h3{font-family:serif;margin:9px 0 12px;font-size:23px;line-height:1.35;color:#2c2825}
-.novel-item p{font-size:14px;line-height:1.9;color:#61564d;flex:1;margin:0 0 20px}
-.novel-read{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;border-radius:30px;background:#705346;color:white!important;padding:11px 18px;font-size:14px;font-weight:700;text-decoration:none}
-.novel-read:hover{background:#50392f}
-body.night .novel-archive-intro,body.night .novel-item{background:var(--paper);border-color:var(--line)}
-body.night .novel-item h3{color:var(--ink)}body.night .novel-item p,body.night .novel-archive-intro p{color:var(--muted)}
-@media(max-width:600px){.novel-cover{min-height:260px}.novel-archive-intro{align-items:flex-start;flex-direction:column;padding:16px}.novel-item-body{padding:18px}}
-</style>
-<style>
-/* 생활수필: 신문형 / 책자형 두 가지 읽기 방식 */
-.essay-editions-heading{padding:10px 2px 14px;text-align:center}
-.essay-editions-heading strong{font-family:var(--font-serif,Georgia,serif);font-size:clamp(18px,2.6vw,25px);color:var(--ink)}
-.essay-editions-heading p{color:var(--ink-muted,#736960);line-height:1.8;font-size:14px;margin:10px 0}
-.essay-editions-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:14px 0 38px}
-.essay-edition-card{overflow:hidden;display:flex;flex-direction:column;min-width:0;border-radius:17px;background:var(--paper,#fffdf9);border:1px solid var(--line,#e3d8c9);box-shadow:0 12px 35px #3b2b2014}
-.essay-edition-image{display:flex;align-items:center;justify-content:center;background:linear-gradient(120deg,#efe7da,#e0d3c4);height:225px;overflow:hidden;padding:12px}
-.essay-edition-image img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
-.essay-edition-content{padding:21px;display:flex;flex-direction:column;flex:1}
-.essay-edition-label{font-size:12px;color:#966a51;font-weight:700;letter-spacing:.04em}
-.essay-edition-card h3{font-size:clamp(19px,2.2vw,24px);margin:8px 0 10px;line-height:1.4;color:var(--ink)}
-.essay-edition-content p{font-size:14px;line-height:1.85;color:var(--ink-muted,#736960);flex:1;margin:0 0 18px}
-.essay-edition-link{align-self:flex-start}
-@media(max-width:680px){.essay-editions-grid{grid-template-columns:1fr;gap:14px}.essay-edition-image{height:195px}.essay-edition-content{padding:18px}}
-</style>
+  <title>명도재 시화 시낭송 9:16 AI 쇼츠 감상관 — 〈첫눈〉 (명도재 이명우 · 4개국어)</title>
+  <style>
+    :root {
+      --bg: #0c101b;
+      --card: #151c2e;
+      --border: #2c3a5c;
+      --gold: #ffd992;
+      --ice: #9fd2ff;
+      --text: #f6f9ff;
+      --muted: #9eb0d1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 10%, #1d2a47 0%, var(--bg) 76%);
+      color: var(--text);
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', serif;
+      min-height: 100vh;
+      padding: 28px 20px 56px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1120px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 22px; }
+    .badge {
+      display: inline-block;
+      padding: 5px 16px;
+      border-radius: 999px;
+      background: rgba(159, 210, 255, 0.14);
+      border: 1px solid rgba(159, 210, 255, 0.45);
+      color: var(--ice);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    h1 { font-size: 30px; font-weight: 800; margin-bottom: 4px; }
+    .author-tag { color: var(--gold); font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    .subtitle { color: var(--muted); font-size: 15px; max-width: 820px; margin: 0 auto; }
+    .lang-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 24px;
+    }
+    .lang-btn {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .lang-btn:hover { border-color: var(--ice); transform: translateY(-1px); }
+    .lang-btn.active {
+      background: rgba(159, 210, 255, 0.18);
+      border-color: var(--gold);
+      color: var(--gold);
+      box-shadow: 0 6px 20px rgba(159, 210, 255, 0.16);
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    @media (max-width: 860px) {
+      .main-grid { grid-template-columns: 1fr; }
+    }
+    .phone-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 14px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.68);
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .video-wrap {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .info-panel { display: flex; flex-direction: column; gap: 16px; }
+    .panel-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+    }
+    .panel-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .stanza-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 10px;
+    }
+    .stanza-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .stanza-item:hover { border-color: var(--ice); }
+    .stanza-item.active {
+      border-color: var(--gold);
+      background: rgba(255, 217, 146, 0.14);
+    }
+    .stanza-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--ice);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .stanza-item.active .stanza-head { color: var(--gold); }
+    .stanza-sub { font-size: 13px; color: var(--text); white-space: pre-line; }
+    .dl-bar { display: flex; flex-wrap: wrap; gap: 10px; }
+    .dl-link {
+      display: inline-block;
+      text-decoration: none;
+      background: rgba(159, 210, 255, 0.14);
+      border: 1px solid var(--ice);
+      color: var(--ice);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .dl-link:hover { border-color: var(--gold); color: var(--gold); }
+  </style>
 </head>
-<body class="font-size-normal">
-  <!-- 한국적 수묵담채(水墨淡彩) 산수·매화 한지 배경 레이어 -->
-  <div class="sumie-bg" aria-hidden="true">
-    <div class="sumie-wash-top"></div>
-    <div class="sumie-wash-plum"></div>
-    <div class="sumie-wash-celadon"></div>
-    <!-- 원산(遠山) 수묵 산수 능선 SVG -->
-    <svg class="sumie-mountains-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="inkMountainFar" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#3a4b54" stop-opacity="0.14" />
-          <stop offset="100%" stop-color="#f6f1e7" stop-opacity="0.0" />
-        </linearGradient>
-        <linearGradient id="inkMountainMid" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#253238" stop-opacity="0.18" />
-          <stop offset="100%" stop-color="#f6f1e7" stop-opacity="0.02" />
-        </linearGradient>
-        <linearGradient id="inkMountainNear" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stop-color="#1a2124" stop-opacity="0.22" />
-          <stop offset="100%" stop-color="#f6f1e7" stop-opacity="0.05" />
-        </linearGradient>
-      </defs>
-      <!-- 먼 산 (담묵) -->
-      <path fill="url(#inkMountainFar)" d="M0,160 Q180,60 360,130 T720,110 T1080,140 T1440,90 L1440,320 L0,320 Z"></path>
-      <!-- 중간 산 (중묵 + 청묵 담채) -->
-      <path fill="url(#inkMountainMid)" d="M0,210 Q220,120 420,185 T860,145 T1220,190 T1440,150 L1440,320 L0,320 Z"></path>
-      <!-- 가까운 능선 (농묵 여백) -->
-      <path fill="url(#inkMountainNear)" d="M0,255 Q260,195 540,240 T1020,210 T1440,235 L1440,320 L0,320 Z"></path>
-    </svg>
-  </div>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge">❄️🎙️ 명도재 시화 시낭송 9:16 AI 쇼츠 4개국어 감상관</div>
+      <h1>첫눈</h1>
+      <div class="author-tag">명도재 이명우</div>
+      <p class="subtitle">수채화 시화 배경 · 4개 언어(한국어·영어·중국어·일본어) 맑고 세련된 전문 여성 시낭송 음색 · 피아노·오르골(첼레스타)·현악 배경음악 및 발화 길이 보정 SRT 자막</p>
+    </header>
 
-  <!-- 상단 헤더 및 네비게이션 -->
-  <header class="site-header" id="top">
-    <div class="header-inner">
-      <a href="#today-poem" class="brand-logo" data-nav="today-poem" aria-label="명도재 디지털 문학관 홈으로">
-        <span class="seal-stamp" aria-hidden="true">明道</span>
-        <div class="brand-text">
-          <h1 class="site-title">명도재 디지털 문학관</h1>
-          <p class="site-subtitle">시인 · 화가 이명우의 서정시와 수묵담채의 정원</p>
-        </div>
-      </a>
-
-      <!-- PC 및 태블릿 메인 메뉴 -->
-      <nav class="main-nav" aria-label="주요 메뉴">
-        <button type="button" class="nav-link active" data-nav="today-poem">
-          <span class="nav-icon">🌸</span> 오늘의 시
-        </button>
-        <button type="button" class="nav-link" data-nav="poetry-book">
-          <span class="nav-icon">📖</span> 디지털 시집
-        </button>
-        <button type="button" class="nav-link" data-nav="life-essays">
-          <span class="nav-icon">🍵</span> 생활수필
-        </button>
-        <button type="button" class="nav-link" data-nav="novel-writing">
-          <span class="nav-icon">📚</span> 명도재 소설쓰기
-        </button>
-        <button type="button" class="nav-link" data-nav="art-gallery">
-          <span class="nav-icon">🎨</span> 미술 작품
-        </button>
-      </nav>
-
-      <!-- 검색·목차 및 글자 크기 도구 -->
-      <div class="header-tools">
-        <div class="quick-search-box">
-          <input
-            type="search"
-            id="header-search-input"
-            placeholder="작품·시구 검색..."
-            aria-label="작품 제목 또는 시구 검색"
-            autocomplete="off"
-          />
-          <button type="button" id="open-toc-btn" class="tool-btn toc-trigger-btn" title="전체 작품 목차 및 통합 검색 열기">
-            <span>🔍 검색·목차</span>
-          </button>
-        </div>
-
-        <div class="font-controls" role="group" aria-label="글자 크기 조절">
-          <button type="button" class="font-btn" data-fontsize="small" title="글자 작게">가-</button>
-          <button type="button" class="font-btn active" data-fontsize="normal" title="기본 글자 크기">가</button>
-          <button type="button" class="font-btn" data-fontsize="large" title="글자 크게">가+</button>
-          <button type="button" class="font-btn" data-fontsize="xlarge" title="글자 아주 크게">특대</button>
-        </div>
-      </div>
+    <div class="lang-tabs">
+      <button class="lang-btn active" onclick="switchLang('ko')" id="tab-ko">🇰🇷 한국어 시낭송 (01:38)</button>
+      <button class="lang-btn" onclick="switchLang('en')" id="tab-en">🇺🇸 영어 시낭송 (01:30)</button>
+      <button class="lang-btn" onclick="switchLang('zh')" id="tab-zh">🇨🇳 중국어 시낭송 (01:35)</button>
+      <button class="lang-btn" onclick="switchLang('ja')" id="tab-ja">🇯🇵 일본어 시낭송 (01:51)</button>
     </div>
-  </header>
 
-  <!-- 작가 소개 및 문학관 환영 배너 -->
-  <section class="hero-banner">
-    <div class="hero-container">
-      <div class="hero-text-col">
-        <div class="hero-badge">
-          <span class="badge-dot"></span>
-          <span>明道齋 李明雨 文學館 · 수묵담채(水墨淡彩)와 서정시의 만남</span>
-        </div>
-        <h2 class="hero-heading">
-          어머니의 바늘땀처럼 한 땀씩 꿰맨 시어,<br />
-          비 갠 앞산과 주리못에 번지는 수묵담채의 여백
-        </h2>
-        <p class="hero-quote" id="author-philosophy"></p>
-        <div class="hero-actions">
-          <button type="button" class="btn-primary" id="hero-listen-today-btn">
-            <span>🔊 오늘의 시 낭송 듣기</span>
-          </button>
-          <button type="button" class="btn-secondary" id="hero-open-toc-btn">
-            <span>📑 전체 작품 목차 보기 (66편)</span>
-          </button>
-          <button type="button" class="btn-outline" id="hero-author-modal-btn">
-            <span>✒️ 작가 명도재 이명우 소개</span>
-          </button>
+    <div class="main-grid">
+      <div class="phone-card">
+        <div class="video-wrap">
+          <video id="poemVideo" controls preload="metadata">
+            <source src="첫눈_명도재_이명우_9대16쇼츠_한국어(ko).mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
-      <div class="hero-visual-col">
-        <div class="hero-portrait-card">
-          <div class="portrait-frame">
-            <img src="assets/portrait_leemyungwoo.png" alt="명도재 이명우 시인·화가 초상" class="portrait-img" />
-            <span class="portrait-seal">明道之印</span>
+
+      <div class="info-panel">
+        <div class="panel-card">
+          <div class="panel-title">
+            <span id="langTitle">🇰🇷 한국어 전문 여성 시낭송 (ko-KR-SunHiNeural) · 전 6연 타임라인</span>
+            <small style="color:var(--muted); font-weight:400;">연 카드를 클릭하면 해당 낭송 구간으로 이동합니다</small>
           </div>
-          <div class="portrait-caption">
-            <strong>명도재(明道齋) 이명우</strong>
-            <span>시인 · 화가 · AI 예술창작 연구가</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 메인 콘텐츠 영역 -->
-  <main class="main-content" id="main-content">
-
-    <!-- ==========================================
-         1. 오늘의 시 (Today's Poem)
-         ========================================== -->
-    <section id="section-today-poem" class="view-section active" aria-labelledby="heading-today-poem">
-      <div class="section-header">
-        <div class="section-title-group">
-          <span class="section-kicker">TODAY’S LYRIC POEM</span>
-          <h2 id="heading-today-poem" class="section-title">오늘의 시</h2>
-          <p class="section-desc">날마다 한 편의 시를 수채화 화선지 위에 펼쳐 놓고, 음성 낭송으로 깊이 음미합니다.</p>
-        </div>
-        <div class="today-selector-wrap">
-          <label for="today-poem-select" class="sr-only">오늘의 추천 시 선택</label>
-          <select id="today-poem-select" class="watercolor-select" aria-label="오늘의 시 선택"></select>
-          <button type="button" id="random-today-poem-btn" class="btn-pill" title="다른 시를 오늘의 시로 감상">
-            🌿 다른 시 펼쳐보기
-          </button>
-        </div>
-      </div>
-
-      <div class="today-poem-stage">
-        <!-- 오늘의 시 본문 카드 -->
-        <article class="hanji-poem-card" id="today-poem-card">
-          <div class="poem-card-ornament-top"></div>
-          <header class="poem-card-header">
-            <div class="poem-meta-row">
-              <span class="poem-chapter-badge" id="today-poem-chapter"></span>
-              <span class="poem-date-badge" id="today-poem-date"></span>
-            </div>
-            <h3 class="poem-main-title" id="today-poem-title"></h3>
-            <p class="poem-subtitle" id="today-poem-subtitle"></p>
-            <div class="poem-author-sign">
-              <span>시(詩) · 명도재 이명우</span>
-              <span class="mini-seal">明道</span>
-            </div>
-          </header>
-
-          <!-- 시 읽어주기 / 일시정지 / 이어 읽기 컨트롤 바 -->
-          <div class="inline-tts-toolbar" role="region" aria-label="오늘의 시 낭송 컨트롤">
-            <div class="tts-btn-group">
-              <button type="button" class="tts-ctrl-btn play" id="today-tts-play">
-                <span>🔊 읽어주기</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn pause" id="today-tts-pause" disabled>
-                <span>⏸ 일시정지</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn resume" id="today-tts-resume" disabled>
-                <span>▶ 이어 읽기</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn stop" id="today-tts-stop" disabled>
-                <span>⏹ 정지</span>
-              </button>
-            </div>
-            <div class="tts-status-pill" id="today-tts-status">낭송 대기 중</div>
-          </div>
-
-          <!-- 시 본문 (연 단위 하이라이트 지원) -->
-          <div class="poem-body-text" id="today-poem-body"></div>
-
-          <div class="poem-tags-row" id="today-poem-tags"></div>
-
-          <div class="essay-footer-nav">
-            <button type="button" class="book-page-btn" id="prev-today-poem-btn">← 이전 시</button>
-            <button type="button" class="book-page-btn" id="next-today-poem-btn">다음 시 →</button>
-          </div>
-        </article>
-
-        <!-- 오늘의 시 해설 및 어울리는 수묵담채화 패널 -->
-        <aside class="today-side-panel">
-          <div class="companion-art-card">
-            <div class="companion-art-img-wrap" id="today-companion-img-wrap" role="button" tabindex="0" title="클릭하면 시화 작품을 크게 감상합니다">
-              <img id="today-companion-img" src="assets/seminar_image9.png" alt="시화 이미지" />
-            </div>
-            <div class="companion-art-info">
-              <span class="kicker-tag">시와 어우러진 명도재 화첩</span>
-              <h4 id="today-companion-title">홍매(紅梅)와 파랑새 두 마리</h4>
-              <p id="today-companion-desc">거친 먹선 위에 피어난 봄 매화와 파랑새의 정취</p>
-              <div class="companion-art-actions">
-                <button type="button" class="text-link-btn" id="today-companion-zoom-btn">🔍 이 작품 크게 보기</button>
-                <button type="button" class="text-link-btn" data-nav="art-gallery">미술 작품관 전체 보기 →</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="critique-box" id="today-critique-box">
-            <div class="critique-header">
-              <span class="critique-badge">문학평론 · 시평(詩評)</span>
-              <strong id="today-critique-author">서지월 시인</strong>
-            </div>
-            <p class="critique-content" id="today-critique-text"></p>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         2. 디지털 시집 (Digital Poetry Collection)
-         ========================================== -->
-    <section id="section-poetry-book" class="view-section" aria-labelledby="heading-poetry-book">
-      <div class="section-header">
-        <div class="section-title-group">
-          <span class="section-kicker">DIGITAL POETRY ANTHOLOGY</span>
-          <h2 id="heading-poetry-book" class="section-title">디지털 시집 (전 30편)</h2>
-          <p class="section-desc">제1부부터 제4부까지 수록된 명도재 이명우 시인의 시편을 목차와 검색으로 자유롭게 펼쳐 읽고 낭송으로 감상하세요.</p>
+          <div class="stanza-list" id="stanzaList"></div>
         </div>
 
-        <div class="poetry-filter-bar">
-          <div class="chapter-tabs" id="poetry-chapter-tabs" role="tablist">
-            <button type="button" class="chapter-tab active" data-chapter="all">전체 (30)</button>
-            <button type="button" class="chapter-tab" data-chapter="제1부 어머니의 바늘땀과 그리움">제1부 어머니의 바늘땀</button>
-            <button type="button" class="chapter-tab" data-chapter="제2부 가창 주리못의 사계">제2부 가창 주리못</button>
-            <button type="button" class="chapter-tab" data-chapter="제3부 대구 신천과 앞산의 풍경">제3부 신천과 앞산</button>
-            <button type="button" class="chapter-tab" data-chapter="제4부 사물의 온기와 길 위의 사색">제4부 사물의 온기</button>
-          </div>
-          <div class="section-search-wrap">
-            <input type="search" id="poetry-search-input" placeholder="시 제목·시어·해설 검색..." aria-label="디지털 시집 내 검색" />
-          </div>
-        </div>
-      </div>
-
-      <div class="poetry-workspace">
-        <!-- 좌측: 시집 목차 연결 사이드바 -->
-        <aside class="toc-sidebar" aria-label="디지털 시집 목차">
-          <div class="toc-sidebar-header">
-            <h3>📑 시집 목차</h3>
-            <span id="poetry-count-badge" class="count-pill">30편</span>
-          </div>
-          <div class="toc-scroll-list" id="poetry-toc-list"></div>
-        </aside>
-
-        <!-- 우측: 선택한 시 상세 감상실 + 전체 시 카드 그리드 -->
-        <div class="poetry-reader-column">
-          <article class="hanji-poem-card book-reader-card" id="book-reader-card">
-            <div class="book-nav-top">
-              <button type="button" class="book-page-btn" id="prev-poem-btn">← 이전 시</button>
-              <span class="book-page-indicator" id="book-page-indicator">1 / 30</span>
-              <button type="button" class="book-page-btn" id="next-poem-btn">다음 시 →</button>
-            </div>
-
-            <header class="poem-card-header">
-              <div class="poem-meta-row">
-                <span class="poem-chapter-badge" id="reader-poem-chapter"></span>
-                <span class="poem-date-badge" id="reader-poem-date"></span>
-              </div>
-              <h3 class="poem-main-title" id="reader-poem-title"></h3>
-              <p class="poem-subtitle" id="reader-poem-subtitle"></p>
-              <div class="poem-author-sign">
-                <span>명도재 이명우</span>
-                <span class="mini-seal">明道</span>
-              </div>
-            </header>
-
-            <!-- 디지털 시집 낭송 컨트롤 -->
-            <div class="inline-tts-toolbar" role="region" aria-label="디지털 시집 낭송 컨트롤">
-              <div class="tts-btn-group">
-                <button type="button" class="tts-ctrl-btn play" id="reader-tts-play">
-                  <span>🔊 시 읽어주기</span>
-                </button>
-                <button type="button" class="tts-ctrl-btn pause" id="reader-tts-pause" disabled>
-                  <span>⏸ 일시정지</span>
-                </button>
-                <button type="button" class="tts-ctrl-btn resume" id="reader-tts-resume" disabled>
-                  <span>▶ 이어 읽기</span>
-                </button>
-                <button type="button" class="tts-ctrl-btn stop" id="reader-tts-stop" disabled>
-                  <span>⏹ 정지</span>
-                </button>
-              </div>
-              <div class="tts-status-pill" id="reader-tts-status">낭송 대기 중</div>
-            </div>
-
-            <div class="poem-body-text" id="reader-poem-body"></div>
-
-            <div class="poem-tags-row" id="reader-poem-tags"></div>
-
-            <div class="critique-box" id="reader-critique-box">
-              <div class="critique-header">
-                <span class="critique-badge">시평(詩評) 및 작품 해설</span>
-                <strong id="reader-critique-author"></strong>
-              </div>
-              <p class="critique-content" id="reader-critique-text"></p>
-            </div>
-
-            <div class="essay-footer-nav">
-              <button type="button" class="book-page-btn" id="prev-poem-bottom-btn">← 이전 시</button>
-              <span class="book-page-indicator" id="book-page-bottom-indicator">1 / 30</span>
-              <button type="button" class="book-page-btn" id="next-poem-bottom-btn">다음 시 →</button>
-            </div>
-          </article>
-
-          <div class="sub-grid-header">
-            <h3>수록 시 전체 목록 (클릭하면 위 감상실에서 펼쳐집니다)</h3>
-          </div>
-          <div class="poem-cards-grid" id="poetry-cards-grid"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-         3. 생활수필 (Life Essays)
-         ========================================== -->
-    <section id="section-life-essays" class="view-section" aria-labelledby="heading-life-essays">
-      <div class="section-header">
-        <div class="section-title-group">
-          <span class="section-kicker">ESSAYS ON LIFE & ART</span>
-          <h2 id="heading-life-essays" class="section-title">생활수필</h2>
-          <p class="section-desc">교단을 떠난 뒤 마주한 화폭과 시, 가창 주리못과 봉덕시장의 일상, 어머님에 대한 그리움을 담은 산문집입니다.</p>
-        </div>
-      </div>
-
-      <!-- 생활수필 보기 방식: 신문형 및 책자형 전용 링크 (개별 수필 6편 복원 없음) -->
-      <div class="essay-editions-heading">
-        <strong>명도재 이명우의 디지털 생활수필집</strong>
-        <p>신문처럼 펼쳐 읽거나, 책장을 넘기며 읽을 수 있습니다. 원하는 방식을 선택해 주세요.</p>
-      </div>
-      <div class="essay-editions-grid" aria-label="생활수필집 신문형과 책자형">
-        <article class="essay-edition-card">
-          <a class="essay-edition-image" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/web.html" target="_blank" rel="noopener noreferrer" aria-label="명도재 생활수필 신문형 읽기">
-            <img src="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/images/newspaper-preview.png" loading="lazy" decoding="async" alt="명도재 생활수필 신문형 지면 미리보기" />
-          </a>
-          <div class="essay-edition-content">
-            <span class="essay-edition-label">01 · 신문형 웹수필집</span>
-            <h3>📰 생활수필 · 신문형</h3>
-            <p>신문 지면을 보듯 작품을 골라 읽는 디지털 수필관입니다. 작품 소개와 삽화, 음성 낭독 기능을 함께 만나보세요.</p>
-            <a class="literary-work-link essay-edition-link" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/web.html" target="_blank" rel="noopener noreferrer">신문형 수필집 읽기 <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-        <article class="essay-edition-card">
-          <a class="essay-edition-image" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/index.html" target="_blank" rel="noopener noreferrer" aria-label="명도재 생활수필 책자형 읽기">
-            <img src="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/images/cover.svg" loading="lazy" decoding="async" alt="명도재 생활수필 책자형 디지털 수필집 표지" />
-          </a>
-          <div class="essay-edition-content">
-            <span class="essay-edition-label">02 · 책자형 전자수필집</span>
-            <h3>📖 생활수필 · 책자형</h3>
-            <p>실제 책처럼 페이지를 넘기며 차분히 읽을 수 있는 전자수필집입니다. 목차와 이전·다음 페이지 탐색으로 감상해 보세요.</p>
-            <a class="literary-work-link essay-edition-link" href="https://mmwwoo-lab.github.io/myeongdo-1029-1/essay-book/index.html" target="_blank" rel="noopener noreferrer">책자형 수필집 읽기 <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-      </div>
-
-    </section>
-
-    <!-- 연속 등록형 소설 작품관: 작품 목록은 novels.js 에서 관리 -->
-    <section id="section-novel-writing" class="view-section" aria-labelledby="heading-novel-writing">
-      <div class="section-header">
-        <div class="section-title-group">
-          <span class="section-kicker">MYEONGDO FICTION · 明道齋 小說</span>
-          <h2 id="heading-novel-writing" class="section-title">📚 명도재 소설쓰기</h2>
-          <p class="section-desc">화가의 눈으로 장면을 그리고, 시인의 언어로 삶을 기록하는 명도재 이명우의 소설 작품관. 작품마다 독립된 웹소설로 열립니다.</p>
-        </div>
-      </div>
-      <div class="novel-archive-intro">
-        <div><strong>연재 작품 목록</strong><p>첫 번째부터 순서대로 읽어 보세요. 작품이 추가되면 다음 번호로 이어집니다.</p></div>
-        <span id="novel-count" class="novel-count" aria-live="polite">전 3편</span>
-      </div>
-      <div id="novel-archive-grid" class="novel-archive-grid" aria-label="명도재 소설 작품 목록">
-        <p>소설 작품 목록을 불러오고 있습니다.</p>
-      </div>
-    </section>
-
-    <section id="section-art-gallery" class="view-section" aria-labelledby="heading-art-gallery">
-      <div class="section-header">
-        <div class="section-title-group">
-          <span class="section-kicker">MYEONGDO ART GALLERY</span>
-          <h2 id="heading-art-gallery" class="section-title">미술 작품 (전 17점)</h2>
-          <p class="section-desc">대형 수묵설경과 수묵담채 문인화, 전통 합죽선 부채 그림, 초현실 AI 메타프롬프트 회화까지 명도(明道) 이명우 화백의 화첩입니다.</p>
-        </div>
-
-        <div class="art-filter-tabs" id="art-filter-tabs" role="tablist">
-          <button type="button" class="chapter-tab active" data-artcat="all">전체 작품 (17)</button>
-          <button type="button" class="chapter-tab" data-artcat="전통수묵·진경산수">전통수묵·진경산수 (1)</button>
-          <button type="button" class="chapter-tab" data-artcat="수묵담채·한국적서정">수묵담채·한국적서정 (6)</button>
-          <button type="button" class="chapter-tab" data-artcat="초현실·현대조형·부채">초현실·현대조형·합죽선 (10)</button>
-        </div>
-      </div>
-
-      <div class="art-gallery-grid" id="art-gallery-grid"></div>
-    </section>
-
-  </main>
-
-  <!-- 메인페이지 하단: 명도재 미술 작품 미리보기 -->
-  <section class="home-art-showcase" id="home-art-showcase" aria-labelledby="home-art-title">
-    <div class="home-art-inner">
-      <div class="home-art-heading">
-        <div>
-          <span class="section-kicker">MYEONGDO ART · SELECTED WORKS</span>
-          <h2 id="home-art-title">🎨 명도재 미술 작품</h2>
-          <p>한지 위의 먹빛에서 디지털 회화까지, 작품을 누르면 그림과 창작 해설을 자세히 감상할 수 있습니다.</p>
-        </div>
-        <a href="#art-gallery" class="home-art-all-btn" id="home-art-all-btn" aria-label="명도재 미술 작품관 전체 작품 보기">전체 작품 17점 보기 →</a>
-      </div>
-      <div class="home-art-grid" id="home-art-grid" aria-label="미술 작품 미리보기"></div>
-    </div>
-  </section>
-
-  <!-- 푸터 -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="seal-stamp">明道</span>
-        <div>
-          <strong>명도재 디지털 문학관 (明道齋 李明雨 文學館)</strong>
-          <p>시인 · 화가 · 인공지능(AI) 명도재 대표 이명우의 시집 · 수필집 · 소설 · 미술 아카이브</p>
-        </div>
-      </div>
-      <div class="footer-links">
-        <button type="button" class="footer-nav-btn" data-nav="today-poem">오늘의 시</button>
-        <button type="button" class="footer-nav-btn" data-nav="poetry-book">디지털 시집</button>
-        <button type="button" class="footer-nav-btn" data-nav="life-essays">생활수필</button>
-        <button type="button" class="footer-nav-btn" data-nav="novel-writing">명도재 소설쓰기</button>
-        <button type="button" class="footer-nav-btn" data-nav="art-gallery">미술 작품</button>
-        <button type="button" class="footer-nav-btn" id="footer-toc-btn">전체 목차</button>
-      </div>
-      <p class="footer-copy">© 2026 명도재 이명우 디지털 문학관. All Rights Reserved.</p>
-    </div>
-  </footer>
-
-  <!-- ==========================================
-       하단 고정 음성 낭송 플레이어 바 (읽어주기 / 일시정지 / 이어 읽기)
-       ========================================== -->
-  <aside class="global-tts-bar" id="global-tts-bar" aria-label="전역 시·수필 낭송 오디오 컨트롤러">
-    <div class="tts-bar-inner">
-      <div class="tts-now-playing">
-        <span class="tts-wave-indicator" id="tts-wave-indicator" aria-hidden="true">
-          <i></i><i></i><i></i><i></i>
-        </span>
-        <div class="tts-track-info">
-          <span class="tts-track-badge" id="global-tts-badge">시·수필 낭송실</span>
-          <strong class="tts-track-title" id="global-tts-title">오늘의 시 — 재봉틀 앞의 시간</strong>
-          <span class="tts-track-progress" id="global-tts-progress">읽어주기 버튼을 누르면 낭송이 시작됩니다</span>
-        </div>
-      </div>
-
-      <div class="tts-main-controls">
-        <button type="button" class="global-tts-btn play" id="global-tts-play" title="처음부터 읽어주기">
-          <span>🔊 읽어주기</span>
-        </button>
-        <button type="button" class="global-tts-btn pause" id="global-tts-pause" disabled title="낭송 일시정지">
-          <span>⏸ 일시정지</span>
-        </button>
-        <button type="button" class="global-tts-btn resume" id="global-tts-resume" disabled title="멈춘 곳부터 이어 읽기">
-          <span>▶ 이어 읽기</span>
-        </button>
-        <button type="button" class="global-tts-btn stop" id="global-tts-stop" disabled title="낭송 정지">
-          <span>⏹ 정지</span>
-        </button>
-      </div>
-
-      <div class="tts-extra-controls">
-        <label class="tts-speed-label" for="tts-rate-select">낭송 속도</label>
-        <select id="tts-rate-select" class="tts-rate-select" aria-label="낭송 속도 선택">
-          <option value="0.82">0.8x 천천히</option>
-          <option value="0.92" selected>0.9x 서정적</option>
-          <option value="1.0">1.0x 보통</option>
-          <option value="1.15">1.15x 조금 빠르게</option>
-        </select>
-
-        <button type="button" class="bgm-toggle-btn" id="bgm-toggle-btn" aria-pressed="false" title="은은한 명상 배경 선율 켜기/끄기">
-          <span>🎹 배경선율 꺼짐</span>
-        </button>
-      </div>
-    </div>
-  </aside>
-
-  <!-- ==========================================
-       모달 1: 통합 작품 검색 및 전체 목차 연결 모달
-       ========================================== -->
-  <div class="modal-backdrop" id="toc-modal" hidden aria-hidden="true">
-    <div class="modal-dialog toc-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="toc-modal-title">
-      <header class="modal-header">
-        <div>
-          <span class="section-kicker">SEARCH & TABLE OF CONTENTS</span>
-          <h3 id="toc-modal-title">작품 통합 검색 및 전체 목차</h3>
-        </div>
-        <button type="button" class="modal-close-btn" id="close-toc-modal-btn" aria-label="목차 창 닫기">✕</button>
-      </header>
-
-      <div class="modal-search-bar">
-        <input
-          type="search"
-          id="modal-search-input"
-          placeholder="찾으시는 시 제목, 시구(예: 재봉틀, 주리못, 어머니, 앞산), 수필, 미술 작품을 입력하세요..."
-          aria-label="전체 작품 검색어 입력"
-        />
-        <button type="button" class="btn-pill" id="modal-search-clear-btn" title="검색어 초기화">초기화</button>
-        <span class="search-result-count" id="modal-search-count">전체 60편</span>
-      </div>
-
-      <div class="modal-filter-tabs" id="modal-filter-tabs" role="tablist" aria-label="목차 분야별 필터">
-        <button type="button" class="chapter-tab active" data-toc-cat="all">전체 보기 (60)</button>
-        <button type="button" class="chapter-tab" data-toc-cat="poem">📖 디지털 시집 (30)</button>
-        <button type="button" class="chapter-tab" data-toc-cat="essay">🍵 생활수필집 링크</button>
-        <button type="button" class="chapter-tab" data-toc-cat="art">🎨 미술 작품 (17)</button>
-      </div>
-
-      <div class="modal-toc-body" id="modal-toc-body"></div>
-    </div>
-  </div>
-
-  <!-- ==========================================
-       모달 2: 미술 작품 상세 및 메타프롬프트 감상 라이트박스
-       ========================================== -->
-  <div class="modal-backdrop" id="art-modal" hidden aria-hidden="true">
-    <div class="modal-dialog art-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="art-modal-title">
-      <header class="modal-header">
-        <div>
-          <span class="section-kicker" id="art-modal-cat">미술 작품 상세 감상</span>
-          <h3 id="art-modal-title"></h3>
-        </div>
-        <button type="button" class="modal-close-btn" id="close-art-modal-btn" aria-label="작품 상세 창 닫기">✕</button>
-      </header>
-      <div class="art-modal-body">
-        <div class="art-modal-img-col">
-          <img id="art-modal-img" src="" alt="" />
-        </div>
-        <div class="art-modal-info-col">
-          <div class="inline-tts-toolbar art-modal-tts-bar" role="region" aria-label="미술 작품 해설 음성 안내">
-            <div class="tts-btn-group">
-              <button type="button" class="tts-ctrl-btn play" id="art-tts-play">
-                <span>🔊 해설 읽어주기</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn pause" id="art-tts-pause" disabled>
-                <span>⏸ 일시정지</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn resume" id="art-tts-resume" disabled>
-                <span>▶ 이어 읽기</span>
-              </button>
-              <button type="button" class="tts-ctrl-btn stop" id="art-tts-stop" disabled>
-                <span>⏹ 정지</span>
-              </button>
-            </div>
-            <div class="tts-status-pill" id="art-tts-status">해설 대기 중</div>
-          </div>
-          <div class="art-meta-item">
-            <strong>제작 연도 · 재료 및 기법</strong>
-            <p id="art-modal-medium"></p>
-          </div>
-          <div class="art-meta-item">
-            <strong>작품 의미 및 작가 노트</strong>
-            <p id="art-modal-meaning"></p>
-          </div>
-          <div class="art-meta-item prompt-showcase">
-            <strong>🖌️ 명도재 메타프롬프트 / 창작 설계</strong>
-            <p id="art-modal-prompt"></p>
-          </div>
-          <div class="essay-footer-nav art-modal-nav" id="art-modal-nav">
-            <button type="button" class="book-page-btn" id="prev-art-btn">← 이전 작품</button>
-            <span class="book-page-indicator" id="art-modal-indicator">1 / 20</span>
-            <button type="button" class="book-page-btn" id="next-art-btn">다음 작품 →</button>
+        <div class="panel-card">
+          <div class="panel-title">📦 언어별 영상 및 배경음악 내려받기</div>
+          <div class="dl-bar">
+            <a class="dl-link" href="첫눈_명도재_이명우_9대16쇼츠_한국어(ko).mp4" download>🎬 한국어 9:16 MP4</a>
+            <a class="dl-link" href="첫눈_명도재_이명우_9대16쇼츠_영어(en).mp4" download>🎬 영어 9:16 MP4</a>
+            <a class="dl-link" href="첫눈_명도재_이명우_9대16쇼츠_중국어(zh).mp4" download>🎬 중국어 9:16 MP4</a>
+            <a class="dl-link" href="첫눈_명도재_이명우_9대16쇼츠_일본어(ja).mp4" download>🎬 일본어 9:16 MP4</a>
+            <a class="dl-link" href="첫눈_명도재_이명우_9대16쇼츠_배경음악.mp3" download>🎼 피아노·오르골·현악 배경음악 MP3</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ==========================================
-       모달 3: 작가 명도재 이명우 상세 소개 모달
-       ========================================== -->
-  <div class="modal-backdrop" id="author-modal" hidden aria-hidden="true">
-    <div class="modal-dialog author-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="author-modal-title">
-      <header class="modal-header">
-        <div>
-          <span class="section-kicker">ABOUT THE POET & ARTIST</span>
-          <h3 id="author-modal-title">명도재(明道齋) 이명우 작가 소개</h3>
-        </div>
-        <button type="button" class="modal-close-btn" id="close-author-modal-btn" aria-label="작가 소개 창 닫기">✕</button>
-      </header>
-      <div class="author-modal-body" id="author-modal-body"></div>
-    </div>
-  </div>
+  <script>
+    const DATA = {
+      ko: {
+        title: "🇰🇷 한국어 전문 여성 시낭송 (ko-KR-SunHiNeural · 98.6초)",
+        src: "첫눈_명도재_이명우_9대16쇼츠_한국어(ko).mp4",
+        stanzas: [
+          { idx: 0, title: "표제 · 시인", time: "01.2s ~ 05.1s", seek: 1.0, text: "첫눈 ― 명도재 이명우" },
+          { idx: 1, title: "제 1 연 · 첫눈과 그리움", time: "06.8s ~ 25.4s", seek: 6.5, text: "첫눈이라는 이름을 가만히 불러 본다\n운동장에 서면 하루가 조금 느려지고\n차가운 바람이 볼끝에 살며시 내려앉는다\n하얀 눈송이 하나\n오래된 그리움처럼 어깨에 내려앉는다" },
+          { idx: 2, title: "제 2 연 · 운동장의 하얀 설렘", time: "27.2s ~ 42.8s", seek: 27.0, text: "어린 날 친구들과 눈사람을 만들던 운동장\n작은 손 호호 불며 웃던 그 소녀\n눈사람의 까만 눈을 달아 주고\n내 마음에는 하얀 설렘 하나 남겨 놓았다" },
+          { idx: 3, title: "제 3 연 · 첫눈 오는 날의 약속", time: "44.6s ~ 58.0s", seek: 44.4, text: "첫눈이 오는 날 다시 만나자던 말\n누가 먼저 꺼냈는지 기억나지 않지만\n해마다 첫눈이 내리면\n나는 그 약속을 혼자 꺼내 본다" },
+          { idx: 4, title: "제 4 연 · 따뜻한 발자국과 작은 꽃", time: "59.8s ~ 73.3s", seek: 59.6, text: "소녀가 지나간 자리에는\n아직도 따뜻한 발자국이 남아 있을까\n그날 미처 전하지 못한 마음은\n눈 속에 묻힌 작은 꽃처럼 피어 있을까" },
+          { idx: 5, title: "제 5 연 · 오늘도 내리는 첫눈", time: "75.1s ~ 84.4s", seek: 74.8, text: "오늘도 운동장에 첫눈이 내린다\n눈사람은 그 자리에 없고\n그 소녀도 어디에 사는지 모르지만" },
+          { idx: 6, title: "제 6 연 · 마음속 소년의 기다림", time: "86.1s ~ 94.6s", seek: 85.9, text: "첫눈이 오는 날이면\n내 마음속 어린 소년 하나\n아직도 그 소녀를 기다리고 있다." }
+        ]
+      },
+      en: {
+        title: "🇺🇸 영어 전문 여성 시낭송 (en-US-JennyNeural · 90.8초)",
+        src: "첫눈_명도재_이명우_9대16쇼츠_영어(en).mp4",
+        stanzas: [
+          { idx: 0, title: "Title · Poet", time: "01.2s ~ 05.4s", seek: 1.0, text: "First Snow ― Myungdojae Lee Myung-woo" },
+          { idx: 1, title: "Stanza 1 · First Snow & Longing", time: "07.1s ~ 23.3s", seek: 6.9, text: "Quietly, I call out the name of the first snow\nStanding in the schoolyard, the day slows down\nA cool breeze gently rests upon my cheek\nA single white snowflake\nSettles on my shoulder like an old longing" },
+          { idx: 2, title: "Stanza 2 · White Flutter in the Schoolyard", time: "25.0s ~ 38.4s", seek: 24.8, text: "The schoolyard where we built a snowman as children\nThat girl who smiled, blowing warmth into her small hands\nPut two dark eyes upon the snowman\nAnd left a white flutter inside my heart" },
+          { idx: 3, title: "Stanza 3 · The Promise of First Snow", time: "40.1s ~ 53.5s", seek: 39.9, text: "The words saying, let us meet again when the first snow falls\nI cannot recall who spoke them first\nYet every year when the first snow comes\nI quietly take out that promise alone" },
+          { idx: 4, title: "Stanza 4 · Warm Footprints & Little Flower", time: "55.2s ~ 66.8s", seek: 55.0, text: "In the place where the girl once passed\nDo her warm footprints still remain?\nIs the heart I could not confess that day\nBlooming like a tiny flower buried in the snow?" },
+          { idx: 5, title: "Stanza 5 · First Snow Falling Today", time: "68.5s ~ 77.4s", seek: 68.3, text: "Today again, the first snow falls on the schoolyard\nThe snowman is no longer there\nAnd I do not know where that girl lives now" },
+          { idx: 6, title: "Stanza 6 · The Boy Waiting Within", time: "79.0s ~ 86.8s", seek: 78.8, text: "Whenever the day of the first snow arrives\nA young boy deep within my heart\nIs still waiting for that girl." }
+        ]
+      },
+      zh: {
+        title: "🇨🇳 중국어 전문 여성 시낭송 (zh-CN-XiaoxiaoNeural · 94.9초)",
+        src: "첫눈_명도재_이명우_9대16쇼츠_중국어(zh).mp4",
+        stanzas: [
+          { idx: 0, title: "标题 · 诗人", time: "01.2s ~ 04.5s", seek: 1.0, text: "初雪 ― 明道斋 李明雨" },
+          { idx: 1, title: "第一诗节 · 初雪与思念", time: "06.2s ~ 23.3s", seek: 6.0, text: "轻轻呼唤着初雪这个名字\n站在操场上，一天仿佛慢了下来\n微凉的风，轻轻落在脸颊旁\n一片洁白的雪花\n宛如久违的思念，落在肩头" },
+          { idx: 2, title: "第二诗节 · 操场上的纯白悸动", time: "25.1s ~ 39.8s", seek: 24.9, text: "年少时与朋友们一起堆雪人的操场\n对着小手呵气微笑的那个女孩\n为雪人镶上黑黑的眼睛\n在我心里，留下了一抹纯白的悸动" },
+          { idx: 3, title: "第三诗节 · 初雪之日的约定", time: "41.6s ~ 54.2s", seek: 41.4, text: "初雪降临时再次相见的话语\n已记不清是谁先提起\n但每当岁末初雪飘落\n我总会独自取出那份约定" },
+          { idx: 4, title: "第四诗节 · 温暖的脚印与小花", time: "56.0s ~ 68.2s", seek: 55.8, text: "女孩走过的地方\n是否还留着温暖的脚印\n那天未能传达的心意\n是否如埋在雪中的小花般悄然绽放" },
+          { idx: 5, title: "第五诗节 · 今日飘落的初雪", time: "70.0s ~ 80.0s", seek: 69.8, text: "今天，操场上又飘起了初雪\n雪人已不在原地\n也不知道那个女孩如今身在何方" },
+          { idx: 6, title: "第六诗节 · 心中少年的等待", time: "81.7s ~ 90.9s", seek: 81.5, text: "每当初雪降临的日子\n我心中的那个年少少年\n依然在静静等待着那个女孩。" }
+        ]
+      },
+      ja: {
+        title: "🇯🇵 일본어 전문 여성 시낭송 (ja-JP-NanamiNeural · 110.9초)",
+        src: "첫눈_명도재_이명우_9대16쇼츠_일본어(ja).mp4",
+        stanzas: [
+          { idx: 0, title: "表題 · 詩人", time: "01.2s ~ 05.5s", seek: 1.0, text: "初雪 ― 明道斎 李明雨" },
+          { idx: 1, title: "第 1 連 · 初雪と懐かしさ", time: "07.2s ~ 27.6s", seek: 7.0, text: "初雪という名前をそっと呼んでみる\n校庭に立つと一日が少しゆっくりと流れ\n冷たい風が頬の先にやさしく舞い降りる\n白い雪の結晶ひとつ\n遠い日の恋しさのように肩に舞い降りる" },
+          { idx: 2, title: "第 2 連 · 校庭の白いきらめき", time: "29.4s ~ 47.5s", seek: 29.2, text: "幼い日、友だちと雪だるまを作った校庭\n小さな手に息を吹きかけ微笑んでいたあの少女\n雪だるまの黒い目をつけてくれて\n私の心には白いときめきをひとつ残していった" },
+          { idx: 3, title: "第 3 連 · 初雪の日の約束", time: "49.3s ~ 65.4s", seek: 49.0, text: "初雪の降る日にまた会おうと言った言葉\n誰が先に言い出したのか思い出せないけれど\n毎年、初雪が降るたびに\n私はその約束をひとり取り出してみる" },
+          { idx: 4, title: "第 4 連 · 温かい足跡と小さな花", time: "67.2s ~ 83.2s", seek: 67.0, text: "少女が通り過ぎた場所には\n今も温かい足跡が残っているだろうか\nあの日、伝えられなかった想いは\n雪の中に埋もれた小さな花のように咲いているだろうか" },
+          { idx: 5, title: "第 5 連 · 今日も降る初雪", time: "85.0s ~ 96.3s", seek: 84.8, text: "今日も校庭に初雪が降る\n雪だるまはその場所になく\nあの少女もどこで暮らしているのか分からないけれど" },
+          { idx: 6, title: "第 6 連 · 心の中の少年の待ちわび", time: "98.0s ~ 106.9s", seek: 97.8, text: "初雪の降る日になると\n私の心の中の幼い少年ひとり\n今もあの少女を待ち続けている。" }
+        ]
+      }
+    };
 
-  <script src="data.js"></script>
-  <script src="novels.js?v=20261118e"></script>
-  <script src="app.js?v=20261118d"></script>
+    const video = document.getElementById('poemVideo');
+    const stanzaList = document.getElementById('stanzaList');
+    const langTitle = document.getElementById('langTitle');
+
+    function renderStanzas(lang) {
+      const info = DATA[lang];
+      langTitle.textContent = info.title;
+      stanzaList.innerHTML = '';
+      info.stanzas.forEach((s, i) => {
+        const div = document.createElement('div');
+        div.className = 'stanza-item' + (i === 0 ? ' active' : '');
+        div.id = 'st-item-' + i;
+        div.innerHTML = `<div class="stanza-head"><span>${s.title}</span><span>${s.time}</span></div><div class="stanza-sub">${s.text}</div>`;
+        div.onclick = () => {
+          video.currentTime = s.seek;
+          video.play();
+        };
+        stanzaList.appendChild(div);
+      });
+    }
+
+    function switchLang(lang) {
+      ['ko', 'en', 'zh', 'ja'].forEach(l => {
+        document.getElementById('tab-' + l).classList.toggle('active', l === lang);
+      });
+      video.src = DATA[lang].src;
+      video.load();
+      video.play();
+      renderStanzas(lang);
+    }
+
+    renderStanzas('ko');
+  </script>
 </body>
 </html>
