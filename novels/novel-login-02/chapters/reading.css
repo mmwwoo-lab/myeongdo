@@ -1,0 +1,11 @@
+/* 제5편 · 기존 소설과 동일한 독서 본문 크기 */
+.paper .chapter-content p{font-size:clamp(16px,1.6vw,19px);line-height:2.12;word-break:keep-all;margin:0 0 1.08em;text-align:left}
+.audio-reader{background:#f7f0e5;border:1px solid #d5c5b0;border-radius:10px;padding:13px 14px;margin:0 0 24px;font-family:system-ui,"Malgun Gothic",sans-serif;line-height:1.5}
+.audio-title{font-size:13px;font-weight:700;color:#735337;margin-bottom:10px}
+.audio-controls{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.audio-controls button,.audio-controls select{font:14px system-ui,"Malgun Gothic",sans-serif;min-height:36px;border-radius:7px;border:1px solid #b8a28a;background:white;color:#3b3026;padding:7px 11px}
+.audio-controls button{cursor:pointer}.audio-controls button:disabled{opacity:.48;cursor:not-allowed}
+.audio-controls button:focus-visible,.audio-controls select:focus-visible{outline:2px solid #895e37;outline-offset:2px}
+.audio-status{font:12px/1.65 system-ui,"Malgun Gothic",sans-serif;color:#685b50;margin-top:9px}
+.audio-controls label{display:inline-flex;align-items:center;gap:5px;color:#685b50;font-size:13px}
+@media(max-width:670px){.paper .chapter-content p{font-size:16px;line-height:2.05}.audio-reader{padding:12px}}
