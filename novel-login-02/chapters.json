@@ -1,159 +1,190 @@
 {
-  "series": "명도재 소설신문",
-  "issue": 2,
+  "series": "명도재 디지털 문학관",
+  "issue": 5,
   "title": "오늘도 세상은 로그인 중",
   "subtitle": "― 명도재에 사는 남자, 윤재",
   "author": "명도재 이명우",
+  "note": "30장 온라인 읽기 페이지. 본문은 대화의 최종 원고를 축약한 웹 독서용 원고이며 장별 페이지 대신 하나의 페이지에서 이동합니다.",
   "chapters": [
     {
       "number": 1,
-      "file": "chapters/chapter-01.html",
-      "status": "원고 미등록"
+      "title": "창밖에는 겨울이, 화면에는 세상이",
+      "url": "index.html#chapter-1",
+      "status": "등록"
     },
     {
       "number": 2,
-      "file": "chapters/chapter-02.html",
-      "status": "원고 미등록"
+      "title": "18억 원의 그림자",
+      "url": "index.html#chapter-2",
+      "status": "등록"
     },
     {
       "number": 3,
-      "file": "chapters/chapter-03.html",
-      "status": "원고 미등록"
+      "title": "빨간 숫자와 낙엽 한 장",
+      "url": "index.html#chapter-3",
+      "status": "등록"
     },
     {
       "number": 4,
-      "file": "chapters/chapter-04.html",
-      "status": "원고 미등록"
+      "title": "페이스북이라는 광장",
+      "url": "index.html#chapter-4",
+      "status": "등록"
     },
     {
       "number": 5,
-      "file": "chapters/chapter-05.html",
-      "status": "원고 미등록"
+      "title": "비서실장을 임명하다",
+      "url": "index.html#chapter-5",
+      "status": "등록"
     },
     {
       "number": 6,
-      "file": "chapters/chapter-06.html",
-      "status": "원고 미등록"
+      "title": "소설이 시작되는 자리",
+      "url": "index.html#chapter-6",
+      "status": "등록"
     },
     {
       "number": 7,
-      "file": "chapters/chapter-07.html",
-      "status": "원고 미등록"
+      "title": "고구마튀김 세 조각",
+      "url": "index.html#chapter-7",
+      "status": "등록"
     },
     {
       "number": 8,
-      "file": "chapters/chapter-08.html",
-      "status": "원고 미등록"
+      "title": "시인 둘이 와이카노",
+      "url": "index.html#chapter-8",
+      "status": "등록"
     },
     {
       "number": 9,
-      "file": "chapters/chapter-09.html",
-      "status": "원고 미등록"
+      "title": "연보라 편지가 도착했다",
+      "url": "index.html#chapter-9",
+      "status": "등록"
     },
     {
       "number": 10,
-      "file": "chapters/chapter-10.html",
-      "status": "원고 미등록"
+      "title": "거울 속의 여자",
+      "url": "index.html#chapter-10",
+      "status": "등록"
     },
     {
       "number": 11,
-      "file": "chapters/chapter-11.html",
-      "status": "원고 미등록"
+      "title": "팔공산의 아침",
+      "url": "index.html#chapter-11",
+      "status": "등록"
     },
     {
       "number": 12,
-      "file": "chapters/chapter-12.html",
-      "status": "원고 미등록"
+      "title": "가자미식혜가 익어가는 시간",
+      "url": "index.html#chapter-12",
+      "status": "등록"
     },
     {
       "number": 13,
-      "file": "chapters/chapter-13.html",
-      "status": "원고 미등록"
+      "title": "지하철을 타고 교실로 가는 사람",
+      "url": "index.html#chapter-13",
+      "status": "등록"
     },
     {
       "number": 14,
-      "file": "chapters/chapter-14.html",
-      "status": "원고 미등록"
+      "title": "무대에 오르는 사람들",
+      "url": "index.html#chapter-14",
+      "status": "등록"
     },
     {
       "number": 15,
-      "file": "chapters/chapter-15.html",
-      "status": "원고 미등록"
+      "title": "마음은 세상을 그리는 화가",
+      "url": "index.html#chapter-15",
+      "status": "등록"
     },
     {
       "number": 16,
-      "file": "chapters/chapter-16.html",
-      "status": "원고 미등록"
+      "title": "인공지능 강의실",
+      "url": "index.html#chapter-16",
+      "status": "등록"
     },
     {
       "number": 17,
-      "file": "chapters/chapter-17.html",
-      "status": "원고 미등록"
+      "title": "질문하는 아이",
+      "url": "index.html#chapter-17",
+      "status": "등록"
     },
     {
       "number": 18,
-      "file": "chapters/chapter-18.html",
-      "status": "원고 미등록"
+      "title": "아람이 저지른 실수",
+      "url": "index.html#chapter-18",
+      "status": "등록"
     },
     {
       "number": 19,
-      "file": "chapters/chapter-19.html",
-      "status": "원고 미등록"
+      "title": "지워진 문장",
+      "url": "index.html#chapter-19",
+      "status": "등록"
     },
     {
       "number": 20,
-      "file": "chapters/chapter-20.html",
-      "status": "원고 미등록"
+      "title": "고산골의 낮달",
+      "url": "index.html#chapter-20",
+      "status": "등록"
     },
     {
       "number": 21,
-      "file": "chapters/chapter-21.html",
-      "status": "원고 미등록"
+      "title": "월촌역 7번 출구",
+      "url": "index.html#chapter-21",
+      "status": "등록"
     },
     {
       "number": 22,
-      "file": "chapters/chapter-22.html",
-      "status": "원고 미등록"
+      "title": "기자와 시인들",
+      "url": "index.html#chapter-22",
+      "status": "등록"
     },
     {
       "number": 23,
-      "file": "chapters/chapter-23.html",
-      "status": "원고 미등록"
+      "title": "아내가 기다리는 저녁",
+      "url": "index.html#chapter-23",
+      "status": "등록"
     },
     {
       "number": 24,
-      "file": "chapters/chapter-24.html",
-      "status": "원고 미등록"
+      "title": "소설이 사라진 밤",
+      "url": "index.html#chapter-24",
+      "status": "등록"
     },
     {
       "number": 25,
-      "file": "chapters/chapter-25.html",
-      "status": "원고 미등록"
+      "title": "새벽의 복구",
+      "url": "index.html#chapter-25",
+      "status": "등록"
     },
     {
       "number": 26,
-      "file": "chapters/chapter-26.html",
-      "status": "원고 미등록"
+      "title": "신천을 따라 걷다",
+      "url": "index.html#chapter-26",
+      "status": "등록"
     },
     {
       "number": 27,
-      "file": "chapters/chapter-27.html",
-      "status": "원고 미등록"
+      "title": "도하의 작은 손가락",
+      "url": "index.html#chapter-27",
+      "status": "등록"
     },
     {
       "number": 28,
-      "file": "chapters/chapter-28.html",
-      "status": "원고 미등록"
+      "title": "18억 원과 2,000원",
+      "url": "index.html#chapter-28",
+      "status": "등록"
     },
     {
       "number": 29,
-      "file": "chapters/chapter-29.html",
-      "status": "원고 미등록"
+      "title": "명도재 소설신문",
+      "url": "index.html#chapter-29",
+      "status": "등록"
     },
     {
       "number": 30,
-      "file": "chapters/chapter-30.html",
-      "status": "원고 미등록"
+      "title": "다시 로그인하는 아침",
+      "url": "index.html#chapter-30",
+      "status": "등록"
     }
   ]
 }
