@@ -1,0 +1,24 @@
+
+:root{--ink:#292825;--paper:#fffaf2;--line:#b6a58e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:#e9e2d7;color:var(--ink);font-family:"Noto Serif KR",Batang,Georgia,serif}
+main{max-width:1020px;min-height:90vh;margin:22px auto;padding:32px 45px 55px;background:var(--paper);box-shadow:0 9px 35px #55452e20}
+header{text-align:center;border-top:5px double #41352a;border-bottom:3px double #41352a;padding:12px 0;margin-bottom:25px}
+.brand{font-size:clamp(24px,5vw,43px);font-weight:bold;letter-spacing:.1em}
+.meta{color:#786c60;font-size:13px;letter-spacing:.1em}
+h1{text-align:center;font-size:clamp(28px,4.5vw,46px);line-height:1.36;margin:22px 0 8px}
+h2{text-align:center;font-weight:normal;font-size:clamp(17px,3vw,25px);margin:0 0 12px}
+.byline{text-align:center;font-weight:bold;margin-bottom:25px}
+.cover{display:block;width:100%;max-width:900px;margin:20px auto;border:1px solid var(--line)}
+.lead{line-height:2;text-align:justify;max-width:760px;margin:25px auto}
+.chapter-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;list-style:none;padding:0}
+.chapter-grid a{display:block;text-decoration:none;color:inherit;padding:14px 10px;border:1px solid var(--line);background:#fcf5e9}
+.chapter-grid a:hover,.nav a:hover{background:#e7d8c2}
+.chapter-label{text-align:center;color:#7d5d42;font-size:14px}
+.article{max-width:760px;margin:auto;min-height:300px;line-height:2.1;font-size:17px;word-break:keep-all}
+.notice{padding:22px;border-left:4px solid #aa8a62;background:#f3eadb;margin-top:32px;font-size:15px;line-height:1.85}
+.nav{display:flex;justify-content:space-between;flex-wrap:wrap;gap:9px;margin:40px 0 10px}
+.nav a{padding:10px 13px;text-decoration:none;color:inherit;border:1px solid var(--line)}
+footer{text-align:center;color:#796d60;border-top:3px double var(--line);padding-top:18px;margin-top:40px;font-size:13px}
+@media(max-width:700px){main{margin:0;padding:19px 17px 40px}.chapter-grid{grid-template-columns:repeat(2,1fr)}.article{font-size:16px}.nav a{font-size:13px}}
+@media print{body{background:white}main{box-shadow:none;margin:0;max-width:none}.nav{display:none}}

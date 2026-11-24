@@ -1,0 +1,159 @@
+{
+  "series": "명도재 소설신문",
+  "issue": 2,
+  "title": "오늘도 세상은 로그인 중",
+  "subtitle": "― 명도재에 사는 남자, 윤재",
+  "author": "명도재 이명우",
+  "chapters": [
+    {
+      "number": 1,
+      "file": "chapters/chapter-01.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 2,
+      "file": "chapters/chapter-02.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 3,
+      "file": "chapters/chapter-03.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 4,
+      "file": "chapters/chapter-04.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 5,
+      "file": "chapters/chapter-05.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 6,
+      "file": "chapters/chapter-06.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 7,
+      "file": "chapters/chapter-07.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 8,
+      "file": "chapters/chapter-08.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 9,
+      "file": "chapters/chapter-09.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 10,
+      "file": "chapters/chapter-10.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 11,
+      "file": "chapters/chapter-11.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 12,
+      "file": "chapters/chapter-12.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 13,
+      "file": "chapters/chapter-13.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 14,
+      "file": "chapters/chapter-14.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 15,
+      "file": "chapters/chapter-15.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 16,
+      "file": "chapters/chapter-16.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 17,
+      "file": "chapters/chapter-17.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 18,
+      "file": "chapters/chapter-18.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 19,
+      "file": "chapters/chapter-19.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 20,
+      "file": "chapters/chapter-20.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 21,
+      "file": "chapters/chapter-21.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 22,
+      "file": "chapters/chapter-22.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 23,
+      "file": "chapters/chapter-23.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 24,
+      "file": "chapters/chapter-24.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 25,
+      "file": "chapters/chapter-25.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 26,
+      "file": "chapters/chapter-26.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 27,
+      "file": "chapters/chapter-27.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 28,
+      "file": "chapters/chapter-28.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 29,
+      "file": "chapters/chapter-29.html",
+      "status": "원고 미등록"
+    },
+    {
+      "number": 30,
+      "file": "chapters/chapter-30.html",
+      "status": "원고 미등록"
+    }
+  ]
+}
