@@ -21,7 +21,7 @@ window.MYEONGDO_NOVELS = [
   {
     title: "노래가 머문 화실",
     chapters: 11,
-    description: "1987년 대구. 청년 화가 박윤재와 성악가 서미란이 만나 그림과 노래, 사랑과 현실 사이에서 자신만의 삶을 찾아가는 두 번째 중편소설. 독립 재창작본 · 10개 장 · 장별 음성 낭독.",
+    description: "1987년 대구. 청년 화가 박윤재와 성악가 서미란이 만나 그림과 노래, 사랑과 현실 사이에서 자신만의 삶을 찾아가는 세 번째 중편소설. 독립 재창작본 · 10개 장 · 장별 음성 낭독.",
     url: "https://mmwwoo-lab.github.io/myeongdo/novel-02/",
     cover: "novel-02/original-art-01.png",
     published: "세 번째 중편소설"
@@ -29,7 +29,7 @@ window.MYEONGDO_NOVELS = [
   {
     title: "이름이 내리는 정류장",
     chapters: 11,
-    description: "1987–1988년 대구. 인쇄소의 활자공 윤재와 여공 미자가 찍혀 나온 한 줄의 문장을 다시 읽으며, 사라진 정류장 자리에서 서로의 이름과 삶을 지켜 내는 세 번째 완결 소설. 흑백 펜화 삽화와 장별 낭독.",
+    description: "1987–1988년 대구. 인쇄소의 활자공 윤재와 여공 미자가 찍혀 나온 한 줄의 문장을 다시 읽으며, 사라진 정류장 자리에서 서로의 이름과 삶을 지켜 내는 네 번째 완결 소설. 흑백 펜화 삽화와 장별 낭독.",
     url: "https://myeongdojae-song-atelier-mmwwoo-6434.vercel.app/",
     cover: "https://myeongdojae-song-atelier-mmwwoo-6434.vercel.app/images/01-%EB%8F%84%EC%8B%9C%EC%9D%98-%EB%92%B7%EB%AA%A8%EC%8A%B5.jpg",
     published: "네 번째 완결 소설"
