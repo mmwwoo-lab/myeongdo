@@ -7,7 +7,7 @@ host.parentNode.insertBefore(panel,host);const start=document.getElementById('au
 if(!supported){start.disabled=true;status.textContent='이 브라우저에서는 음성 읽기를 지원하지 않습니다. Chrome 또는 Edge에서 열어 주세요.';return;}
 let session=0,part=0,active=false,paused=false,utterance=null;const engine=window.speechSynthesis;
 // 한 번에 지나치게 긴 문장을 합성하지 않도록 문단을 나누고, 전체 장은 순차 읽기
-const texts=[...host.querySelectorAll('p,h2,h3')].map(el=>el.textContent.trim()).filter(Boolean).flatMap(t=>t.match(/[\\s\\S]{1,190}(?:[.!?。！？]|$)|[\\s\\S]{1,190}/g)||[t]);
+const texts=[...host.querySelectorAll('p,h2,h3')].map(el=>el.textContent.trim()).filter(Boolean).flatMap(t=>t.match(/[\s\S]{1,190}(?:[.!?。！？]|$)|[\s\S]{1,190}/g)||[t]);
 function sayState(t){status.textContent=t}function sync(){start.textContent=active?'↻ 처음부터 읽기':'▶ 읽기';pause.disabled=!active;stop.disabled=!active;pause.textContent=paused?'▶ 이어읽기':'⏸ 일시정지'}
 function voice(){const all=engine.getVoices();return all.find(v=>v.lang.toLowerCase()==='ko-kr'&&v.localService)||all.find(v=>v.lang.toLowerCase().startsWith('ko'))||null}
 function halt(announce){session++;active=false;paused=false;part=0;utterance=null;try{engine.cancel()}catch(_){}sync();if(announce)sayState('읽기를 정지했습니다.')}
