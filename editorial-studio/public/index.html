@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="기사 URL 또는 제목·출처·본문을 한 칸에 입력하고 기사 요약 보고서와 약 600자 명도재 시사칼럼을 제작·낭독하는 편집실">
-  <title>명도재 시사컬럼 | 기사 보고서 · 600자 칼럼 · 낭독</title>
+  <meta name="description" content="기사 URL 또는 제목·출처·본문을 한 칸에 입력하고 기사 요약 보고서와 약 700자 명도재 시사칼럼을 제작·낭독하는 편집실">
+  <title>명도재 시사컬럼 | 기사 보고서 · 700자 칼럼 · 낭독</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -16,11 +16,11 @@
 <main class="workspace">
   <aside class="editor card">
     <div class="card-heading"><span class="index">01</span><div><span class="overline">SOURCE DESK</span><h2>기사 자료 입력</h2></div></div>
-    <p class="guide">기사 주소 <strong>또는</strong> 기사 본문 가운데 <strong>하나만 입력</strong>하면 됩니다.</p>
-    <label for="articleUrl" class="field-label">방법 A · 기사 링크 주소</label>
+    <p class="guide">기사 주소 또는 기사 본문 중 하나를 입력하세요. 본문을 붙여넣으면 가장 안정적으로 작성할 수 있습니다.</p>
+    <label for="articleUrl" class="field-label">기사 링크 주소</label>
     <input id="articleUrl" type="url" placeholder="https://언론사주소/기사" autocomplete="url" maxlength="2000" spellcheck="false">
     <div class="or-separator"><span>또는</span></div>
-    <label for="articleBundle" class="field-label">방법 B · 제목·출처·본문 한 칸 입력</label>
+    <label for="articleBundle" class="field-label">기사 제목·출처·본문</label>
     <textarea id="articleBundle" rows="18" spellcheck="false" placeholder="제목: 기사 제목을 입력하세요
 출처: 언론사명 · 기자명 · 날짜
 내용:
@@ -28,7 +28,7 @@
 
 ※ 본문만 입력해도 됩니다."></textarea>
     <div class="input-guidance">기사 본문은 최소 100자 이상 필요합니다. 주소 자동 추출이 차단되면 본문을 붙여넣어 주세요.</div>
-    <button id="generateBtn" type="button" class="primary-action"><span class="icon">✦</span><span>기사 요약 보고서 · 600자 칼럼 작성</span></button>
+    <button id="generateBtn" type="button" class="primary-action"><span class="icon">✦</span><span>기사 요약 보고서 · 700자 칼럼 작성</span></button>
     <div class="minor-actions"><button type="button" id="sampleBtn">예시 기사 넣기</button><button type="button" id="clearBtn">전체 초기화</button></div>
     <section class="newsroom-note"><div class="note-title">편집 원칙</div><p>기사에서 확인 가능한 내용만 정리하고, 주장을 사실로 단정하지 않습니다. 칼럼은 명도재의 독립 시사평론 초안이며, 기사 원문·수치·반론을 검토한 뒤 발행해야 합니다.</p></section>
   </aside>
@@ -49,9 +49,9 @@
         <p class="disclaimer" id="reportDisclaimer">※ 입력 자료 기반 요약 초안으로, 별도의 사실 검증 결과는 아닙니다.</p>
       </section>
       <section class="column-section page-section" aria-labelledby="columnHeading">
-        <div class="section-strip column-label"><span>02 / EDITORIAL COLUMN</span><strong>하단 · 600자 시사칼럼</strong></div>
+        <div class="section-strip column-label"><span>02 / EDITORIAL COLUMN</span><strong>하단 · 700자 시사칼럼</strong></div>
         <h3 id="columnHeading">시사칼럼</h3>
-        <p class="byline">명도재 시사평론 · 독립 논설 초안 <span id="charCount">0자</span></p>
+        <p class="byline">명도재 이명우 · 독립 시사평론 <span id="charCount">0자</span></p>
         <div id="columnBody" class="column-text" contenteditable="true" spellcheck="false" role="textbox" aria-multiline="true" aria-label="시사칼럼 본문 편집">칼럼을 작성하면 이곳에 표시됩니다. 문장을 클릭하여 직접 수정할 수도 있습니다.</div>
         <div class="audio-panel">
           <div class="audio-heading"><span class="audio-status-dot" id="audioDot"></span><strong>칼럼 읽기</strong><span id="audioState">STANDBY · 한국어 음성</span></div>
