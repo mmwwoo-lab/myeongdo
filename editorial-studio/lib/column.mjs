@@ -72,7 +72,7 @@ const leadB='이 사안을 볼 때 가장 중요한 질문은 누가 옳다고 �
 const closeA='이번 논란의 해답은 자극적인 말보다 검증 가능한 자료에서 찾아야 한다. 언론도 사실과 해석의 경계를 지키며 질문해야 한다.';
 const closeB='행정과 정책은 시민의 눈높이에서 설명될 때 신뢰를 얻는다. 남은 과제는 책임 있는 주체가 답하고, 언론이 끝까지 확인하는 일이다.';
 /**
- * API 키 없이 동작하는 기사 기반 600자 독립 시사칼럼 초안.
+ * API 키 없이 동작하는 기사 기반 700자 독립 시사칼럼 초안.
  * 보도문을 사실로 인증하지 않으며, 긴 원문 복제 및 외부 사실 추가를 피합니다.
  */
 function shortSource(text, limit=54){
@@ -152,21 +152,21 @@ export function localColumn(article,title='') {
  ];
  let full=paras.join('\n\n');
  for(const sentence of extra){
-   if(full.length>=568)break;
-   if(full.length+sentence.length+1<=650){paras[2]+=' '+sentence;full=paras.join('\n\n');}
+   if(full.length>=680)break;
+   if(full.length+sentence.length+1<=760){paras[2]+=' '+sentence;full=paras.join('\n\n');}
  }
  // 과도하게 긴 원문에도 문장 중간을 절단하지 않도록 짧은 인용으로 다시 구성.
- if(full.length>650){
+ if(full.length>760){
   const shorter=`기사에는 ‘${shortSource(signals[0]||body,40)}’라는 내용이 담겨 있다. ${isDuplicated?'추가 확인이 필요하다.':`또 ‘${shortSource(signals[1]||body,36)}’라는 서술도 있다.`} 두 대목 모두 원문과 대조할 보도 내용이지 검증 완료된 사실은 아니다.`;
   paras[1]=shorter; full=paras.join('\n\n');
  }
- if(full.length>650){
+ if(full.length>760){
   paras[0]=`${theme} 보도는 중요한 질문을 남긴다. ${lens.lead}`;
   full=paras.join('\n\n');
  }
- if(full.length<540){
+ if(full.length<650){
   const add='특히 당사자의 설명과 공개 문서가 서로 맞는지 확인하고, 틀린 정보가 있다면 바로잡는 절차가 필요하다.';
-  if(full.length+add.length+1<=650){paras[3]+=' '+add;full=paras.join('\n\n');}
+  if(full.length+add.length+1<=760){paras[3]+=' '+add;full=paras.join('\n\n');}
  }
  const titleBase=sourceHeadline?shortSource(sourceHeadline,26):theme;
  const headline=`${titleBase} — 근거와 책임을 묻다`;
