@@ -16,7 +16,7 @@ const setStatus=msg=>e.status.textContent=msg;
 function countChars(s){return Array.from(s||'').length;}
 function text(el,value){el.textContent=String(value||'');}
 function dateLabel(){return new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',year:'numeric',month:'long',day:'numeric'}).format(new Date());}
-function setBusy(value){state.busy=value;e.generate.disabled=value;e.sample.disabled=value;e.clear.disabled=value;e.generate.innerHTML=value?'<span class="icon">◌</span><span>기사 정리·칼럼 작성 중…</span>':'<span class="icon">✦</span><span>기사 요약 보고서 · 600자 칼럼 작성</span>';}
+function setBusy(value){state.busy=value;e.generate.disabled=value;e.sample.disabled=value;e.clear.disabled=value;e.generate.innerHTML=value?'<span class="icon">◌</span><span>기사 정리·칼럼 작성 중…</span>':'<span class="icon">✦</span><span>기사 요약 보고서 · 700자 칼럼 작성</span>';}
 function errorText(x){return x?.message||String(x);}
 async function postAPI(path,payload){
  const ctrl=new AbortController();const timeout=setTimeout(()=>ctrl.abort(),25000);
@@ -123,7 +123,7 @@ function fallbackReport(article,title,source,summary){
 }
 async function generate(){
  if(state.busy)return;
- stopAudio(false);setBusy(true);setStatus('기사 자료를 확인하고 요약 보고서와 약 600자 시사칼럼을 작성합니다.');
+ stopAudio(false);setBusy(true);setStatus('기사 자료를 확인하고 요약 보고서와 약 700자 시사칼럼을 작성합니다.');
  try{
   const a=await resolveArticle();
   const response=await postAPI('/api/column',{article:a.article,title:a.title,source:a.source,sourceUrl:a.url});
